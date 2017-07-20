@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <base href="/tuikdoc/"></base>
+    <title>
+        
+            Button Groups - Tempo UI Kit and Guidelines
+        
+    </title>
+    <meta name="description" content="Button groups" />
+    <link rel="stylesheet" href="vendors/highlight/default.css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <script src="vendors/highlight/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/aui/5.2/css/aui.css" media="all">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/aui/5.2/css/aui-experimental.css" media="all"> -->
+  </head>
+  <body>
+    <article class="sg">
+        <nav class="sg-section sg-section--nav">
+            <div class="sg-nav">
+                <img class="sg-nav__logo" src="logo.png" alt="TEMPO UI KIT" width="179" height="46" />
+                <h2 class="sg-nav__title">Overview</h2>
+                <ol class="sg-nav__links">
+                  <li class="sg-nav__links__element ">
+                      <a href="changelog">Changelog</a>
+                  </li>
+                </ol>
+                <h2 class="sg-nav__title">Foundations</h2>
+                <h2 class="sg-nav__title">Components</h2>
+                <ol class="sg-nav__links">
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/buttons">Buttons</a>
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element sg-nav__links__element-is-active ">
+                          <a href="components/buttongroups">Button Groups</a>
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/forms">Forms</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/labels">Labels</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/textfields">Text Fields</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
+                          
+                      </li>
+                    
+                </ol>
+            <div>
+        </nav>
+        <section class="sg-section sg-section--main">
+            <div class="sg-content">
+                <h1 class="sg-h1">
+    Button Groups
+     
+</h1>
+
+<p class="sg-p">Use grouped buttons when there is a direct relationship between a given number of buttons. This pattern is normally used at the top of the page.</p>
+
+<h2 class="sg-h2">Default button</h2>
+
+
+
+<article class="sg-example" id="buttonGroupDefault">
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <button class="tuiButton">First button</button><button class="tuiButton">Mid button</button><button class="tuiButton">Last button</button>
+</div>
+
+    </section>
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h2 class="sg-h2">Active state</h2>
+
+
+
+<article class="sg-example" id="buttonGroupFirstActive">
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <button class="tuiButton tuiButton-is-active">First button</button><button class="tuiButton">Mid button</button><button class="tuiButton">Last button</button>
+</div>
+
+    </section>
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton-is-active&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+
+
+<article class="sg-example" id="buttonGroupMidActive">
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <button class="tuiButton">First button</button><button class="tuiButton tuiButton-is-active">Mid button</button><button class="tuiButton">Last button</button>
+</div>
+
+    </section>
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton-is-active&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+
+
+<article class="sg-example" id="buttonGroupLastActive">
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <button class="tuiButton">First button</button><button class="tuiButton">Mid button</button><button class="tuiButton tuiButton-is-active">Last button</button>
+</div>
+
+    </section>
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton-is-active&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h2 class="sg-h2">Using anchors</h2>
+
+
+
+<article class="sg-example" id="buttonGroupSemanticsAnchorsFirstActive">
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <a class="tuiButton tuiButton-is-active" href="#">First anchor</a><a class="tuiButton" href="#">Mid anchor</a><a class="tuiButton" href="#">Last anchor</a>
+</div>
+
+    </section>
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;a class=&#34;tuiButton tuiButton-is-active&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+
+
+
+<article class="sg-example" id="buttonGroupSemanticsAnchorsMidActive">
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <a class="tuiButton" href="#">First anchor</a><a class="tuiButton tuiButton-is-active" href="#">Mid anchor</a><a class="tuiButton" href="#">Last anchor</a>
+</div>
+
+    </section>
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;a class=&#34;tuiButton&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton tuiButton-is-active&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+
+
+
+<article class="sg-example" id="buttonGroupSemanticsAnchorsLastActive">
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <a class="tuiButton" href="#">First anchor</a><a class="tuiButton" href="#">Mid anchor</a><a class="tuiButton tuiButton-is-active" href="#">Last anchor</a>
+</div>
+
+    </section>
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;a class=&#34;tuiButton&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton tuiButton-is-active&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h2 class="sg-h2">Guidelines</h2>
+<p class="sg-p">Grouped buttons give users access to frequently performed, related actions. Only one button can be selected at a time, and initially, all buttons in the group are unselected.</p>
+
+
+
+<article class="sg-example" id="buttonGroupGuidelines">
+    <section class="sg-example__render">
+        <button class="tuiButton tuiButton--primary">Primary</button>
+<button class="tuiButton">Standard</button>
+<div class="tuiButtonGroup">
+   <button class="tuiButton">Assign</button><button class="tuiButton">Assign to me</button><button class="tuiButton">Comment</button>
+</div>
+
+    </section>
+    
+</article>
+
+<ul>
+    <li>Group buttons logically into sets based on their use and in order of importance</li>
+    <li>Ensure that button actions are clear and consistent</li>
+    <li>The most important action for a group set can be a primary button</li>
+</ul>
+            </div>
+        </section>
+    <article>
+  </body>
+</html>

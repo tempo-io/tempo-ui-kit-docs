@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <base href="/tuikdoc/"></base>
+    <title>
+        
+            Buttons - Tempo UI Kit and Guidelines
+        
+    </title>
+    <meta name="description" content="Buttons" />
+    <link rel="stylesheet" href="vendors/highlight/default.css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+
+    <script src="vendors/highlight/highlight.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/aui/5.2/css/aui.css" media="all">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/aui/5.2/css/aui-experimental.css" media="all"> -->
+  </head>
+  <body>
+    <article class="sg">
+        <nav class="sg-section sg-section--nav">
+            <div class="sg-nav">
+                <img class="sg-nav__logo" src="logo.png" alt="TEMPO UI KIT" width="179" height="46" />
+                <h2 class="sg-nav__title">Overview</h2>
+                <ol class="sg-nav__links">
+                  <li class="sg-nav__links__element ">
+                      <a href="changelog">Changelog</a>
+                  </li>
+                </ol>
+                <h2 class="sg-nav__title">Foundations</h2>
+                <h2 class="sg-nav__title">Components</h2>
+                <ol class="sg-nav__links">
+                    
+                      <li class="sg-nav__links__element sg-nav__links__element-is-active ">
+                          <a href="components/buttons">Buttons</a>
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/buttongroups">Button Groups</a>
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/forms">Forms</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/labels">Labels</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/textfields">Text Fields</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
+                          
+                      </li>
+                    
+                </ol>
+            <div>
+        </nav>
+        <section class="sg-section sg-section--main">
+            <div class="sg-content">
+                <h1 class="sg-h1">
+    Buttons
+     
+</h1>
+
+
+<p class="sg-p">Use buttons to trigger an immediate action such as saving a document. They are used in forms, toolbars, dialog footers and as stand-alone action triggers.</p>
+
+<h2 class="sg-h2">Default button</h2>
+<p class="sg-p">The default button applies to most use cases. When you add the default button to your interface, it appears enabled and ready to use.</p>
+
+
+<article class="sg-example" id="buttonsDefault">
+    <section class="sg-example__render">
+        <button class="tuiButton tst-button-default">Default</button>
+    </section>
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;button class=&#34;tuiButton tst-button-default&#34;&gt;Default&lt;/button&gt;</code></pre>
+    </section>
+    
+</article>
+
+
+
+
+
+
+<h2 class="sg-h2" id="tocmodifiers">Modifiers</h2>
+<dl class="">
+    <dt class="sg-dt">Primary</dt>
+    <dd class="sg-dd">To call attention to an action on a form, or highlight the strongest call to action on a page. Primary buttons should only appear once per screen (not including the application header or in a modal dialog). Keep in mind that not every screen needs a primary button.</dd>
+    <dt class="sg-dt">Subtle</dt>
+    <dd class="sg-dd">Use when a toolbar or default buttons would draw attention away from more important content. It is often used at the top of a page or section and must use an icon and label.</dd>
+    <dt class="sg-dt">Caution</dt>
+    <dd class="sg-dd">Only use this button type to call increased attention to an action that can have irreversible consequences.</dd>
+</dl>
+
+
+
+<article class="sg-example" id="buttonsModifiers">
+    <section class="sg-example__render">
+        <button class="tuiButton tuiButton--primary">Primary</button>
+<button class="tuiButton tuiButton--subtle">Subtle</button>
+<button class="tuiButton tuiButton--caution">Caution</button>
+
+    </section>
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Primary&lt;/button&gt;
+&lt;button class=&#34;tuiButton tuiButton--subtle&#34;&gt;Subtle&lt;/button&gt;
+&lt;button class=&#34;tuiButton tuiButton--caution&#34;&gt;Caution&lt;/button&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+
+
+
+
+<h2 class="sg-h2">States</h2>
+<h3 class="sg-h3">Disabled</h3>
+<p class="sg-p">Use when another action has to be completed first, such as changing a value in a field or waiting for a system response. It is used only with default and primary buttons, and it is normally dimmed until it is enabled.</p>
+
+
+
+<article class="sg-example" id="buttonsDisabled">
+    <section class="sg-example__render">
+        <button class="tuiButton" disabled="disabled">Disabled Default</button>
+<button class="tuiButton tuiButton--primary" disabled="disabled">Disabled Primary</button>
+<button class="tuiButton tuiButton--subtle" disabled="disabled">Disabled Subtle</button>
+<button class="tuiButton tuiButton--caution" disabled="disabled">Disabled Caution</button>
+
+    </section>
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;button class=&#34;tuiButton&#34; disabled=&#34;disabled&#34;&gt;Disabled Default&lt;/button&gt;
+&lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled Primary&lt;/button&gt;
+&lt;button class=&#34;tuiButton tuiButton--subtle&#34; disabled=&#34;disabled&#34;&gt;Disabled Subtle&lt;/button&gt;
+&lt;button class=&#34;tuiButton tuiButton--caution&#34; disabled=&#34;disabled&#34;&gt;Disabled Caution&lt;/button&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h3 class="sg-h3">Active</h3>
+<p class="sg-p">Indecates the button is pressed.</p>
+
+
+
+<article class="sg-example" id="buttonsStates">
+    <section class="sg-example__render">
+        <button class="tuiButton tuiButton-is-active">Default Active</button>
+<button class="tuiButton tuiButton--primary tuiButton-is-active">Primary Active</button>
+<button class="tuiButton tuiButton--subtle tuiButton-is-active">Subtle Active</button>
+<button class="tuiButton tuiButton--caution tuiButton-is-active">Caution Active</button>
+
+    </section>
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;button class=&#34;tuiButton tuiButton-is-active&#34;&gt;Default Active&lt;/button&gt;
+&lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;Primary Active&lt;/button&gt;
+&lt;button class=&#34;tuiButton tuiButton--subtle tuiButton-is-active&#34;&gt;Subtle Active&lt;/button&gt;
+&lt;button class=&#34;tuiButton tuiButton--caution tuiButton-is-active&#34;&gt;Caution Active&lt;/button&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+
+
+
+
+<h2 class="sg-h2">Semantics</h2>
+<h3 class="sg-h3">Anchors</h3>
+<p class="sg-p">You can use anchors as underlying elements.</p>
+
+
+
+<article class="sg-example" id="buttonsSemanticsAnchors">
+    <section class="sg-example__render">
+        <a class="tuiButton" href="#">Default</a>
+<a class="tuiButton tuiButton--primary" href="#">Primary</a>
+<a class="tuiButton tuiButton--subtle" href="#">Subtle</a>
+<a class="tuiButton tuiButton--caution" href="#">Caution</a>
+
+    </section>
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;a class=&#34;tuiButton&#34; href=&#34;#&#34;&gt;Default&lt;/a&gt;
+&lt;a class=&#34;tuiButton tuiButton--primary&#34; href=&#34;#&#34;&gt;Primary&lt;/a&gt;
+&lt;a class=&#34;tuiButton tuiButton--subtle&#34; href=&#34;#&#34;&gt;Subtle&lt;/a&gt;
+&lt;a class=&#34;tuiButton tuiButton--caution&#34; href=&#34;#&#34;&gt;Caution&lt;/a&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h3 class="sg-h3">Inputs</h3>
+<p class="sg-p">You can use inputs as underlying elements. For buttons, available types are: button, submit and reset.</p>
+
+
+
+<article class="sg-example" id="buttonsSemantics">
+    <section class="sg-example__render">
+        <input type="button" class="tuiButton" value="Button">
+<input type="submit" class="tuiButton tuiButton--primary" value="Submit">
+<input type="reset" class="tuiButton tuiButton--caution" value="Reset">
+
+    </section>
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;input type=&#34;button&#34; class=&#34;tuiButton&#34; value=&#34;Button&#34; /&gt;
+&lt;input type=&#34;submit&#34; class=&#34;tuiButton tuiButton--primary&#34; value=&#34;Submit&#34; /&gt;
+&lt;input type=&#34;reset&#34; class=&#34;tuiButton tuiButton--caution&#34; value=&#34;Reset&#34; /&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+
+
+<h2 class="sg-h2">Guidelines</h2>
+
+<h3 class="sg-h3">Labels</h3>
+<p class="sg-p">Make sure the purpose of the button is clear to the user. Use concise text that clearly describes the action the button performs. Labels are sentence case and are often a single word, a verb.</p>
+
+
+
+<article class="sg-example" id="buttonOrder">
+    <section class="sg-example__render">
+        <button class="tuiButton tuiButton--primary">Log work</button>
+<button class="tuiButton">Done</button>
+<button class="tuiButton tuiButton--caution">Delete worklog</button>
+<button class="tuiButton tuiButton--subtle">Cancel</button>
+
+    </section>
+    
+</article>
+
+
+<h3 class="sg-h3">Order</h3>
+<p class="sg-p">Buttons are right-aligned on the screen. Place the affirmative or expected action on the left, the dismissive action on the right. The exception to the rule is the "Back" button, which would be on the left.</p>
+
+
+
+<article class="sg-example" id="buttonOrder">
+    <section class="sg-example__render">
+        <button class="tuiButton tuiButton--primary">Primary</button>
+<button class="tuiButton">Default</button>
+<button class="tuiButton tuiButton--subtle">Subtle</button>
+
+    </section>
+    
+</article>
+            </div>
+        </section>
+    <article>
+  </body>
+</html>
