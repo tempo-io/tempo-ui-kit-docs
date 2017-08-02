@@ -645,3 +645,13 @@
 .tuiButton [class*=" tuiIcon-"] {
   font-size: 0.9em;
 }
+/*------------------------------------*\
+  #CHECKBOXES
+\*------------------------------------*/
+.tuiCheckbox {
+  font-size: x-large;
+  margin: 0;
+}
+.tuiCheckbox[disabled] {
+  cursor: not-allowed;
+}
