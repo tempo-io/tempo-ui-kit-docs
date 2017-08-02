@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="12px" viewBox="0 0 14 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>Action Check</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols">
+        <g id="Buttons-/-Icons-/-Actions-/-Check" transform="translate(-1.000000, -2.000000)">
+            <path d="M2.75319777,8.59220404 C2.38989921,8.17623217 1.7581757,8.13353202 1.34220383,8.49683059 C0.926231963,8.86012916 0.883531814,9.49185266 1.24683038,9.90782453 L4.52197884,13.6578245 C4.92059115,14.1142301 5.63029526,14.1140514 6.02867757,13.657445 L14.7535291,3.65744496 C15.116618,3.2412901 15.0735996,2.60958819 14.6574448,2.24649925 C14.2412899,1.88341032 13.609588,1.92642875 13.246499,2.34258361 L5.27477946,11.4793804 L2.75319777,8.59220404 Z" id="Action-Check"></path>
+        </g>
+    </g>
+</svg>

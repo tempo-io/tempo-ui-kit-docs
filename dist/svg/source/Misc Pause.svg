@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>Misc Pause</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols">
+        <g id="Buttons-/-Icons-/-Misc-/-Pause" transform="translate(-1.000000, -1.000000)">
+            <path d="M1,2.00684547 C1,1.45078007 1.44371665,1 1.99980749,1 L5.00019251,1 C5.55237094,1 6,1.44994876 6,2.00684547 L6,13.9931545 C6,14.5492199 5.55628335,15 5.00019251,15 L1.99980749,15 C1.44762906,15 1,14.5500512 1,13.9931545 L1,2.00684547 Z M10,2.00684547 C10,1.45078007 10.4437166,1 10.9998075,1 L14.0001925,1 C14.5523709,1 15,1.44994876 15,2.00684547 L15,13.9931545 C15,14.5492199 14.5562834,15 14.0001925,15 L10.9998075,15 C10.4476291,15 10,14.5500512 10,13.9931545 L10,2.00684547 Z" id="Misc-Pause"></path>
+        </g>
+    </g>
+</svg>

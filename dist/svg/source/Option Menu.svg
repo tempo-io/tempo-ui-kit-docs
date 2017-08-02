@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="10px" viewBox="0 0 14 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>Option Menu</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols">
+        <g id="Buttons-/-Icons-/-Options-/-Hamburger-menu" transform="translate(-1.000000, -3.000000)">
+            <path d="M1,12 C1,11.4477153 1.44994876,11 2.00684547,11 L13.9931545,11 C14.5492199,11 15,11.4438648 15,12 C15,12.5522847 14.5500512,13 13.9931545,13 L2.00684547,13 C1.45078007,13 1,12.5561352 1,12 Z M1,8 C1,7.44771525 1.44994876,7 2.00684547,7 L13.9931545,7 C14.5492199,7 15,7.44386482 15,8 C15,8.55228475 14.5500512,9 13.9931545,9 L2.00684547,9 C1.45078007,9 1,8.55613518 1,8 Z M1,4 C1,3.44771525 1.44994876,3 2.00684547,3 L13.9931545,3 C14.5492199,3 15,3.44386482 15,4 C15,4.55228475 14.5500512,5 13.9931545,5 L2.00684547,5 C1.45078007,5 1,4.55613518 1,4 Z" id="Option-Menu"></path>
+        </g>
+    </g>
+</svg>

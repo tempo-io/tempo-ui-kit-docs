@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 45.1 (43504) - http://www.bohemiancoding.com/sketch -->
+    <title>Action Add</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols">
+        <g id="Buttons-/-Icons-/-Actions-/-Add" transform="translate(-1.000000, -1.000000)">
+            <path d="M1.99077797,7 C1.44358641,7 1,7.44386482 1,8 L1,8 C1,8.55228475 1.45097518,9 1.99077797,9 L7,9 L7,14.009222 C7,14.5564136 7.44386482,15 8,15 L8,15 C8.55228475,15 9,14.5490248 9,14.009222 L9,9 L14.009222,9 C14.5564136,9 15,8.55613518 15,8 L15,8 C15,7.44771525 14.5490248,7 14.009222,7 L9,7 L9,1.99077797 C9,1.44358641 8.55613518,1 8,1 L8,1 C7.44771525,1 7,1.45097518 7,1.99077797 L7,7 L1.99077797,7 Z" id="Action-Add"></path>
+        </g>
+    </g>
+</svg>
