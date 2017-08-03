@@ -4,6 +4,9 @@
 /* stylelint-disable-line */
 /* why: baseline must be set in px */
 /*------------------------------------*\
+  #ZINDEXES
+\*------------------------------------*/
+/*------------------------------------*\
   #COLORS
 \*------------------------------------*/
 /*------------------------------------*\
@@ -17,6 +20,12 @@
 \*------------------------------------*/
 /*------------------------------------*\
   #INPUTS
+\*------------------------------------*/
+/*------------------------------------*\
+  #GRID
+\*------------------------------------*/
+/*------------------------------------*\
+  #footer
 \*------------------------------------*/
 /*------------------------------------*\
   #VARIABLES
@@ -75,6 +84,7 @@
   background-color: #F1F2F4;
   border-color: #F1F2F4;
   color: #BABABA;
+  cursor: not-allowed;
 }
 /*------------------------------------*\
   #MODIFIERS
@@ -259,6 +269,7 @@
           box-shadow: inset 0 0 0 0.071em #4C9AFF !important;
 }
 .tuiTextField[disabled] {
+  cursor: not-allowed;
   color: #c8c8c8;
   background-color: #f8f8f8;
 }
@@ -285,9 +296,6 @@
 .tuiLabel-is-required::after {
   content: '*';
 }
-/*------------------------------------*\
-  #GRID
-\*------------------------------------*/
 /*------------------------------------*\
   #FORMS
 \*------------------------------------*/
@@ -348,6 +356,9 @@
   border-top: 0px;
 }
 .tuiForm__footer {
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   display: -webkit-box;
@@ -357,9 +368,6 @@
           flex-wrap: wrap;
   padding: 0 1.4285em;
   margin-bottom: 0.7142em;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-          align-items: center;
   border-top: 1px solid #d9d9d9;
   padding-bottom: 0;
   margin-bottom: 0;
@@ -654,4 +662,137 @@
 }
 .tuiCheckbox[disabled] {
   cursor: not-allowed;
+}
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+/*------------------------------------*\
+  #BLANKET
+\*------------------------------------*/
+.tuiBlanket {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: fixed;
+  padding: 1em;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 5000;
+  overflow: scroll;
+  background-color: rgba(51, 97, 119, 0.45);
+}
+.tuiBlanket--subtle {
+  background-color: transparent;
+}
+/*------------------------------------*\
+  #BODY
+\*------------------------------------*/
+.tuiBlanket-is-displayed {
+  overflow: hidden;
+}
+/*------------------------------------*\
+  #DIALOG
+\*------------------------------------*/
+.tuiDialog {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: relative;
+  width: 42.8571428em;
+  background-color: white;
+  border-radius: 0.35714286em;
+  -webkit-box-shadow: 0 0.14285714em 0.71428571em rgba(0, 0, 0, 0.25);
+          box-shadow: 0 0.14285714em 0.71428571em rgba(0, 0, 0, 0.25);
+  margin: 0 auto;
+}
+.tuiDialog--small {
+  width: 28.5714285em;
+}
+.tuiDialog--large {
+  width: 57.1428571em;
+}
+.tuiDialog__close-button {
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  font-weight: bold;
+}
+.tuiDialog__header {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  box-pack: justify;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+          justify-content: space-between;
+  padding: 1.78571429em 1.42857143em 0 1.42857143em;
+}
+.tuiDialog__header--media {
+  padding: 0;
+  display: block;
+}
+.tuiDialog__header--media .tuiDialog__close-button {
+  position: absolute;
+  top: 1.78571429em;
+  right: 1.42857143em;
+}
+.tuiDialog__header__media {
+  border-top-left-radius: 0.35714286em;
+  border-top-right-radius: 0.35714286em;
+}
+.tuiDialog__header__title {
+  font-size: 1.428em;
+  font-weight: 400;
+  margin: 0;
+}
+.tuiDialog__body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 1.78571429em 1.42857143em;
+}
+.tuiDialog__footer {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  padding: 1.78571429em 1.42857143em;
+  border-top: 1px solid #d9d9d9;
+}
+.tuiDialog__footer__secondary {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-flex-basis: 0;
+          flex-basis: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+  max-width: 100%;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 40%;
+          flex: 0 0 40%;
+  max-width: 40%;
+  width: 40%;
+}
+.tuiDialog__footer__actions {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-flex-basis: 0;
+          flex-basis: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+  max-width: 100%;
+  text-align: right;
 }

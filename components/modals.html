@@ -5,10 +5,10 @@
     <base href="/"></base>
     <title>
         
-            Buttons - Tempo UI Kit and Guidelines
+            Modals - Tempo UI Kit and Guidelines
         
     </title>
-    <meta name="description" content="Buttons" />
+    <meta name="description" content="Modals" />
 
     <link rel="stylesheet" href="vendors/highlight/default.css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
@@ -312,7 +312,7 @@
                 <h2 class="sg-nav__title">Components</h2>
                 <ol class="sg-nav__links">
                     
-                      <li class="sg-nav__links__element sg-nav__links__element-is-active ">
+                      <li class="sg-nav__links__element ">
                           <a href="components/buttons">Buttons</a>
                           
                       </li>
@@ -351,7 +351,7 @@
                           
                       </li>
                     
-                      <li class="sg-nav__links__element ">
+                      <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                           <a href="components/modals">Modals</a>
                           
                               <em class="sg-draft-notification">Draft</em>
@@ -377,61 +377,179 @@
         
     
 
-    Buttons
+    Modals
+    
+        <em class="sg-draft-notification">Draft</em>
+
     
 </h1>
 
+<p class="sg-p">Use modal dialogs when you need a response from a user, to reveal critical information, or to show info without losing the context of the page. No other interactions on the main page can be accessed while a modal dialog is active.</p>
 
-<p class="sg-p">Use buttons to trigger an immediate action such as saving a document. They are used in forms, toolbars, dialog footers and as stand-alone action triggers.</p>
+<h2 class="sg-h2">Default</h2>
+<p class="sg-p">The basic dialog for modals should contain only valuable and relevant information. Simplify dialogs by removing unnecessary elements or content that doesn't support user tasks. If you find that the number of required elements for your design are making the dialog excessively large, then try a different design solution.</p>
+<p class="sg-p">A modal dialog is composed of two components, the <em>tuiBlanket</em> and a <em>tuiDialog</em>.</p>
 
-<h2 class="sg-h2">Default button</h2>
-<p class="sg-p">The default button applies to most use cases. When you add the default button to your interface, it appears enabled and ready to use.</p>
 
 
-<article class="sg-example" id="buttonsDefault">
+<article class="sg-example sg-modal-display" id="modalDefault">
     
     <section class="sg-example__render">
-        <button class="tuiButton tst-button-default">Default</button>
+        <div class="tuiBlanket">
+    <article class="tuiDialog">
+        <header class="tuiDialog__header"><h1 class="tuiDialog__header__title">Default dialog</h1></header>
+        <section class="tuiDialog__body">Modal Body</section>
+        <footer class="tuiDialog__footer">
+            <div class="tuiDialog__footer__secondary"><button class="tuiButton">Secondary button</button></div>
+            <div class="tuiDialog__footer__actions">
+                <button class="tuiButton tuiButton--primary">Primary</button>
+                <button class="tuiButton tuiButton--subtle">Action</button>
+            </div>
+        </footer>
+    </article>
+</div>
+
     </section>
     
     
     <section class="sg-example__source">
-        <pre><code class="html">&lt;button class=&#34;tuiButton tst-button-default&#34;&gt;Default&lt;/button&gt;</code></pre>
+        <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
+    &lt;article class=&#34;tuiDialog&#34;&gt;
+        &lt;header class=&#34;tuiDialog__header&#34;&gt;&lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Default dialog&lt;/h1&gt;&lt;/header&gt;
+        &lt;section class=&#34;tuiDialog__body&#34;&gt;Modal Body&lt;/section&gt;
+        &lt;footer class=&#34;tuiDialog__footer&#34;&gt;
+            &lt;div class=&#34;tuiDialog__footer__secondary&#34;&gt;&lt;button class=&#34;tuiButton&#34;&gt;Secondary button&lt;/button&gt;&lt;/div&gt;
+            &lt;div class=&#34;tuiDialog__footer__actions&#34;&gt;
+                &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Primary&lt;/button&gt;
+                &lt;button class=&#34;tuiButton tuiButton--subtle&#34;&gt;Action&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+</code></pre>
     </section>
     
 </article>
 
+<dl class="sg-dl">
+    <dt class="sg-dt">Header</dt>
+    <dd class="sg-dd">Contains the title of the modal and provides access to additional information and filters (in detailed dialogs).</dd>
 
+    <dt class="sg-dt">Title</dt>
+    <dd class="sg-dd">The title provides a concise overview of the contents of the modal dialog.</dd>
 
+    <dt class="sg-dt">Body</dt>
+    <dd class="sg-dd">The contents ofthe dialog. Don't try to cram too much info in here or include multiple steps. If multiple steps are required, consider using a whole page instead.</dd>
 
+    <dt class="sg-dt">Footer</dt>
+    <dd class="sg-dd">Contains a primary action, the ability to cancel the dialog, and may contain a text hint (in detailed dialogs).</dd>
 
-
-<h2 class="sg-h2" id="tocmodifiers">Modifiers</h2>
-<dl class="">
-    <dt class="sg-dt">Primary</dt>
-    <dd class="sg-dd">To call attention to an action on a form, or highlight the strongest call to action on a page. Primary buttons should only appear once per screen (not including the application header or in a modal dialog). Keep in mind that not every screen needs a primary button.</dd>
-    <dt class="sg-dt">Subtle</dt>
-    <dd class="sg-dd">Use when a toolbar or default buttons would draw attention away from more important content. It is often used at the top of a page or section and must use an icon and label.</dd>
-    <dt class="sg-dt">Caution</dt>
-    <dd class="sg-dd">Only use this button type to call increased attention to an action that can have irreversible consequences.</dd>
+    <dt class="sg-dt">Actions</dt>
+    <dd class="sg-dd">Contains a primary action and the ability to cancel and close the dialog. The main action should be a <a href="components/buttons#tocmodifiers">primary button</a> that uses self-describing action verbs ('Add' instead of 'OK').</dd>
 </dl>
 
 
 
-<article class="sg-example" id="buttonsModifiers">
+<h2 class="sg-h2">Close button</h2>
+
+
+
+<article class="sg-example sg-modal-display" id="modalCloseSvg">
     
     <section class="sg-example__render">
-        <button class="tuiButton tuiButton--primary">Primary</button>
-<button class="tuiButton tuiButton--subtle">Subtle</button>
-<button class="tuiButton tuiButton--caution">Caution</button>
+        <div class="tuiBlanket">
+    <article class="tuiDialog">
+        <header class="tuiDialog__header">
+           <h1 class="tuiDialog__header__title">Close button (SVG)</h1>
+           <button class="tuiDialog__close-button"><svg class="tuiIcon"><use xlink:href="#action-delete"/></svg></button>
+       </header>
+        <section class="tuiDialog__body">Modal Body</section>
+    </article>
+</div>
 
     </section>
     
     
     <section class="sg-example__source">
-        <pre><code class="html">&lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Primary&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--subtle&#34;&gt;Subtle&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--caution&#34;&gt;Caution&lt;/button&gt;
+        <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
+    &lt;article class=&#34;tuiDialog&#34;&gt;
+        &lt;header class=&#34;tuiDialog__header&#34;&gt;
+           &lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Close button (SVG)&lt;/h1&gt;
+           &lt;button class=&#34;tuiDialog__close-button &#34;&gt;&lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#action-delete&#34; /&gt;&lt;/svg&gt;&lt;/button&gt;
+       &lt;/header&gt;
+        &lt;section class=&#34;tuiDialog__body&#34;&gt;Modal Body&lt;/section&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+
+
+
+<article class="sg-example sg-modal-display" id="modalCloseFont">
+    
+    <section class="sg-example__render">
+        <div class="tuiBlanket">
+    <article class="tuiDialog">
+        <header class="tuiDialog__header">
+           <h1 class="tuiDialog__header__title">Close button (font)</h1>
+           <button class="tuiDialog__close-button"><i class="tuiIcon-action-delete"></i></button>
+       </header>
+        <section class="tuiDialog__body">Modal Body</section>
+    </article>
+</div>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
+    &lt;article class=&#34;tuiDialog&#34;&gt;
+        &lt;header class=&#34;tuiDialog__header&#34;&gt;
+           &lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Close button (font)&lt;/h1&gt;
+           &lt;button class=&#34;tuiDialog__close-button &#34;&gt;&lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;&lt;/button&gt;
+       &lt;/header&gt;
+        &lt;section class=&#34;tuiDialog__body&#34;&gt;Modal Body&lt;/section&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+
+
+
+<article class="sg-example sg-modal-display" id="modalCloseSuperLongTitle">
+    
+    <section class="sg-example__render">
+        <div class="tuiBlanket">
+    <article class="tuiDialog">
+        <header class="tuiDialog__header">
+           <h1 class="tuiDialog__header__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tellus enim, tincidunt ac fringilla at, pulvinar a eros. Maecenas at vestibulum sapien, vitae dictum nisl.</h1>
+           <button class="tuiDialog__close-button"><i class="tuiIcon-action-delete"></i></button>
+       </header>
+        <section class="tuiDialog__body">Modal Body</section>
+    </article>
+</div>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
+    &lt;article class=&#34;tuiDialog&#34;&gt;
+        &lt;header class=&#34;tuiDialog__header&#34;&gt;
+           &lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam tellus enim, tincidunt ac fringilla at, pulvinar a eros. Maecenas at vestibulum sapien, vitae dictum nisl.&lt;/h1&gt;
+           &lt;button class=&#34;tuiDialog__close-button &#34;&gt;&lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;&lt;/button&gt;
+       &lt;/header&gt;
+        &lt;section class=&#34;tuiDialog__body&#34;&gt;Modal Body&lt;/section&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
 </code></pre>
     </section>
     
@@ -442,112 +560,57 @@
 
 
 
-<h2 class="sg-h2">States</h2>
-<h3 class="sg-h3">Disabled</h3>
-<p class="sg-p">Use when another action has to be completed first, such as changing a value in a field or waiting for a system response. It is used only with default and primary buttons, and it is normally dimmed until it is enabled.</p>
+<h2 class="sg-h2">Media</h2>
+<style>
+    .modalWithBackgroundImage .myMedia {
+        background-image: url('assets/images/modal-background.jpg');
+        background-position: center;
+        height: 300px;
+    }
+</style>
 
 
 
-<article class="sg-example" id="buttonsDisabled">
+<article class="sg-example sg-modal-display" id="modalMedia">
     
     <section class="sg-example__render">
-        <button class="tuiButton" disabled="disabled">Disabled Default</button>
-<button class="tuiButton tuiButton--primary" disabled="disabled">Disabled Primary</button>
-<button class="tuiButton tuiButton--subtle" disabled="disabled">Disabled Subtle</button>
-<button class="tuiButton tuiButton--caution" disabled="disabled">Disabled Caution</button>
+        <div class="tuiBlanket">
+    <article class="tuiDialog tuiModal__dialog--media modalWithBackgroundImage">
+        <section class="tuiDialog__header tuiDialog__header--media">
+           <div class="tuiDialog__header__media myMedia"></div>
+           <button class="tuiDialog__close-button"><svg class="tuiIcon"><use xlink:href="#action-delete"/></svg></button>
+        </section>
+        <section class="tuiDialog__body">Modal Body</section>
+        <footer class="tuiDialog__footer">
+            <div class="tuiDialog__footer__secondary"><button class="tuiButton">Secondary button</button></div>
+            <div class="tuiDialog__footer__actions">
+                <button class="tuiButton tuiButton--primary">Primary</button>
+                <button class="tuiButton tuiButton--subtle">Action</button>
+            </div>
+        </footer>
+    </article>
+</div>
 
     </section>
     
     
     <section class="sg-example__source">
-        <pre><code class="html">&lt;button class=&#34;tuiButton&#34; disabled=&#34;disabled&#34;&gt;Disabled Default&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled Primary&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--subtle&#34; disabled=&#34;disabled&#34;&gt;Disabled Subtle&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--caution&#34; disabled=&#34;disabled&#34;&gt;Disabled Caution&lt;/button&gt;
-</code></pre>
-    </section>
-    
-</article>
-
-
-<h3 class="sg-h3">Active</h3>
-<p class="sg-p">Indecates the button is pressed.</p>
-
-
-
-<article class="sg-example" id="buttonsStates">
-    
-    <section class="sg-example__render">
-        <button class="tuiButton tuiButton-is-active">Default Active</button>
-<button class="tuiButton tuiButton--primary tuiButton-is-active">Primary Active</button>
-<button class="tuiButton tuiButton--subtle tuiButton-is-active">Subtle Active</button>
-<button class="tuiButton tuiButton--caution tuiButton-is-active">Caution Active</button>
-
-    </section>
-    
-    
-    <section class="sg-example__source">
-        <pre><code class="html">&lt;button class=&#34;tuiButton tuiButton-is-active&#34;&gt;Default Active&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;Primary Active&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--subtle tuiButton-is-active&#34;&gt;Subtle Active&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--caution tuiButton-is-active&#34;&gt;Caution Active&lt;/button&gt;
-</code></pre>
-    </section>
-    
-</article>
-
-
-
-
-
-
-<h2 class="sg-h2">Semantics</h2>
-<h3 id="tocsemanticsanchors" class="sg-h3">Anchors</h3>
-<p class="sg-p">You can use anchors as underlying elements.</p>
-
-
-
-<article class="sg-example" id="buttonsSemanticsAnchors">
-    
-    <section class="sg-example__render">
-        <a class="tuiButton" href="components/buttons#tocsemanticsanchors">Default</a>
-<a class="tuiButton tuiButton--primary" href="components/buttons#tocsemanticsanchors">Primary</a>
-<a class="tuiButton tuiButton--subtle" href="components/buttons#tocsemanticsanchors">Subtle</a>
-<a class="tuiButton tuiButton--caution" href="components/buttons#tocsemanticsanchors">Caution</a>
-
-    </section>
-    
-    
-    <section class="sg-example__source">
-        <pre><code class="html">&lt;a class=&#34;tuiButton&#34; href=&#34;components/buttons#tocsemanticsanchors&#34;&gt;Default&lt;/a&gt;
-&lt;a class=&#34;tuiButton tuiButton--primary&#34; href=&#34;components/buttons#tocsemanticsanchors&#34;&gt;Primary&lt;/a&gt;
-&lt;a class=&#34;tuiButton tuiButton--subtle&#34; href=&#34;components/buttons#tocsemanticsanchors&#34;&gt;Subtle&lt;/a&gt;
-&lt;a class=&#34;tuiButton tuiButton--caution&#34; href=&#34;components/buttons#tocsemanticsanchors&#34;&gt;Caution&lt;/a&gt;
-</code></pre>
-    </section>
-    
-</article>
-
-
-<h3 class="sg-h3">Inputs</h3>
-<p class="sg-p">You can use inputs as underlying elements. For buttons, available types are: button, submit and reset.</p>
-
-
-
-<article class="sg-example" id="buttonsSemantics">
-    
-    <section class="sg-example__render">
-        <input type="button" class="tuiButton" value="Button">
-<input type="submit" class="tuiButton tuiButton--primary" value="Submit">
-<input type="reset" class="tuiButton tuiButton--caution" value="Reset">
-
-    </section>
-    
-    
-    <section class="sg-example__source">
-        <pre><code class="html">&lt;input type=&#34;button&#34; class=&#34;tuiButton&#34; value=&#34;Button&#34; /&gt;
-&lt;input type=&#34;submit&#34; class=&#34;tuiButton tuiButton--primary&#34; value=&#34;Submit&#34; /&gt;
-&lt;input type=&#34;reset&#34; class=&#34;tuiButton tuiButton--caution&#34; value=&#34;Reset&#34; /&gt;
+        <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
+    &lt;article class=&#34;tuiDialog tuiModal__dialog--media modalWithBackgroundImage&#34;&gt;
+        &lt;section class=&#34;tuiDialog__header tuiDialog__header--media&#34;&gt;
+           &lt;div class=&#34;tuiDialog__header__media myMedia&#34;&gt;&lt;/div&gt;
+           &lt;button class=&#34;tuiDialog__close-button &#34;&gt;&lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#action-delete&#34; /&gt;&lt;/svg&gt;&lt;/button&gt;
+        &lt;/section&gt;
+        &lt;section class=&#34;tuiDialog__body&#34;&gt;Modal Body&lt;/section&gt;
+        &lt;footer class=&#34;tuiDialog__footer&#34;&gt;
+            &lt;div class=&#34;tuiDialog__footer__secondary&#34;&gt;&lt;button class=&#34;tuiButton&#34;&gt;Secondary button&lt;/button&gt;&lt;/div&gt;
+            &lt;div class=&#34;tuiDialog__footer__actions&#34;&gt;
+                &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Primary&lt;/button&gt;
+                &lt;button class=&#34;tuiButton tuiButton--subtle&#34;&gt;Action&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
 </code></pre>
     </section>
     
@@ -556,41 +619,242 @@
 
 
 
-<h2 class="sg-h2">Guidelines</h2>
-
-<h3 class="sg-h3">Labels</h3>
-<p class="sg-p">Make sure the purpose of the button is clear to the user. Use concise text that clearly describes the action the button performs. Labels are sentence case and are often a single word, a verb.</p>
 
 
 
-<article class="sg-example" id="buttonOrder">
+<h2 class="sg-h2">Standard sizes</h2>
+<p class="sg-p">Modal dialogs are available in 3 sizes. Simply add the <em>tuiDialog--small</em> or <em>tuiDialog--large</em> modifiers to the <em>tuiDialog</em> element.</p>
+
+<h3 class="sg-h3">Small</h3>
+
+
+
+<article class="sg-example sg-modal-display" id="modalSizeSmall">
     
     <section class="sg-example__render">
-        <button class="tuiButton tuiButton--primary">Log work</button>
-<button class="tuiButton">Done</button>
-<button class="tuiButton tuiButton--caution">Delete worklog</button>
-<button class="tuiButton tuiButton--subtle">Cancel</button>
+        <div class="tuiBlanket">
+    <article class="tuiDialog tuiDialog--small">
+        <header class="tuiDialog__header"><h1 class="tuiDialog__header__title">Small dialog</h1></header>
+        <section class="tuiDialog__body"></section>
+        <footer class="tuiDialog__footer">
+            <div class="tuiDialog__footer__actions">
+                <button class="tuiButton tuiButton--primary">Primary</button>
+            </div>
+        </footer>
+    </article>
+</div>
 
     </section>
     
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
+    &lt;article class=&#34;tuiDialog tuiDialog--small&#34;&gt;
+        &lt;header class=&#34;tuiDialog__header&#34;&gt;&lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Small dialog&lt;/h1&gt;&lt;/header&gt;
+        &lt;section class=&#34;tuiDialog__body&#34;&gt;&lt;/section&gt;
+        &lt;footer class=&#34;tuiDialog__footer&#34;&gt;
+            &lt;div class=&#34;tuiDialog__footer__actions&#34;&gt;
+                &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Primary&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
     
 </article>
 
 
-<h3 class="sg-h3">Order</h3>
-<p class="sg-p">Buttons are right-aligned on the screen. Place the affirmative or expected action on the left, the dismissive action on the right. The exception to the rule is the "Back" button, which would be on the left.</p>
+<h3 class="sg-h3">Medium (default)</h3>
 
 
 
-<article class="sg-example" id="buttonOrder">
+<article class="sg-example sg-modal-display" id="modalSizeMedium">
     
     <section class="sg-example__render">
-        <button class="tuiButton tuiButton--primary">Primary</button>
-<button class="tuiButton">Default</button>
-<button class="tuiButton tuiButton--subtle">Subtle</button>
+        <div class="tuiBlanket">
+    <article class="tuiDialog">
+        <header class="tuiDialog__header"><h1 class="tuiDialog__header__title">Medium dialog</h1></header>
+        <section class="tuiDialog__body"></section>
+        <footer class="tuiDialog__footer">
+            <div class="tuiDialog__footer__actions">
+                <button class="tuiButton tuiButton--primary">Primary</button>
+            </div>
+        </footer>
+    </article>
+</div>
 
     </section>
     
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
+    &lt;article class=&#34;tuiDialog&#34;&gt;
+        &lt;header class=&#34;tuiDialog__header&#34;&gt;&lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Medium dialog&lt;/h1&gt;&lt;/header&gt;
+        &lt;section class=&#34;tuiDialog__body&#34;&gt;&lt;/section&gt;
+        &lt;footer class=&#34;tuiDialog__footer&#34;&gt;
+            &lt;div class=&#34;tuiDialog__footer__actions&#34;&gt;
+                &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Primary&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h3 class="sg-h3">Large</h3>
+
+
+
+<article class="sg-example sg-modal-display" id="modalSizeLarge">
+    
+    <section class="sg-example__render">
+        <div class="tuiBlanket">
+    <article class="tuiDialog tuiDialog--large">
+        <header class="tuiDialog__header"><h1 class="tuiDialog__header__title">Large dialog</h1></header>
+        <section class="tuiDialog__body"></section>
+        <footer class="tuiDialog__footer">
+            <div class="tuiDialog__footer__actions">
+                <button class="tuiButton tuiButton--primary">Primary</button>
+            </div>
+        </footer>
+    </article>
+</div>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
+    &lt;article class=&#34;tuiDialog tuiDialog--large&#34;&gt;
+        &lt;header class=&#34;tuiDialog__header&#34;&gt;&lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Large dialog&lt;/h1&gt;&lt;/header&gt;
+        &lt;section class=&#34;tuiDialog__body&#34;&gt;&lt;/section&gt;
+        &lt;footer class=&#34;tuiDialog__footer&#34;&gt;
+            &lt;div class=&#34;tuiDialog__footer__actions&#34;&gt;
+                &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Primary&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h2 class="sg-h2">Subtle blanket</h2>
+<p class="sg-p">It is possible to display the dialog with a transparent blanket using the <em>.tuiBlanket--subtle</em> modifier.</p>
+
+
+
+<article class="sg-example sg-modal-display" id="modalSubtle">
+    
+    <section class="sg-example__render">
+        <div class="tuiBlanket tuiBlanket--subtle">
+    <article class="tuiDialog">
+        <header class="tuiDialog__header"><h1 class="tuiDialog__header__title">Subtle dialog</h1></header>
+        <section class="tuiDialog__body">Modal Body</section>
+        <footer class="tuiDialog__footer">
+            <div class="tuiDialog__footer__secondary"><button class="tuiButton">Secondary button</button></div>
+            <div class="tuiDialog__footer__actions">
+                <button class="tuiButton tuiButton--primary">Primary</button>
+                <button class="tuiButton tuiButton--subtle">Action</button>
+            </div>
+        </footer>
+    </article>
+</div>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;div class=&#34;tuiBlanket tuiBlanket--subtle&#34;&gt;
+    &lt;article class=&#34;tuiDialog&#34;&gt;
+        &lt;header class=&#34;tuiDialog__header&#34;&gt;&lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Subtle dialog&lt;/h1&gt;&lt;/header&gt;
+        &lt;section class=&#34;tuiDialog__body&#34;&gt;Modal Body&lt;/section&gt;
+        &lt;footer class=&#34;tuiDialog__footer&#34;&gt;
+            &lt;div class=&#34;tuiDialog__footer__secondary&#34;&gt;&lt;button class=&#34;tuiButton&#34;&gt;Secondary button&lt;/button&gt;&lt;/div&gt;
+            &lt;div class=&#34;tuiDialog__footer__actions&#34;&gt;
+                &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Primary&lt;/button&gt;
+                &lt;button class=&#34;tuiButton tuiButton--subtle&#34;&gt;Action&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h2 class="sg-h2">Scrolling</h2>
+<p class="sg-p">The height of a dialog is determined by the content. Apply the <em>tuiBlanket-is-displayed</em> class to the body of the document when displaying a modal to avoid having the underlying document scroll with the modal.</p>
+
+
+
+<article class="sg-example" id="modalScrolling">
+    
+    <section class="sg-example__render">
+        <script>
+    showScrollableModal = function(){
+        document.querySelector('.js-scrollable-modal').setAttribute('style', '');
+        document.querySelector('body').classList.add('tuiBlanket-is-displayed');
+    };
+
+    hideScrollableModal = function(){
+        document.querySelector('.js-scrollable-modal').setAttribute('style', 'display:none;');
+        document.querySelector('body').classList.remove('tuiBlanket-is-displayed');
+    };
+</script>
+
+<button class="tuiButton" onclick="showScrollableModal()">Show scrolling modal</button>
+
+<div class="tuiBlanket js-scrollable-modal" style="display:none">
+    <article class="tuiDialog">
+        <header class="tuiDialog__header"><h1 class="tuiDialog__header__title">Scrolling modal</h1></header>
+        <section class="tuiDialog__body" style="height: 1500px">Very tall modal body</section>
+        <footer class="tuiDialog__footer">
+            <div class="tuiDialog__footer__actions">
+                <button class="tuiButton tuiButton--primary" onclick="hideScrollableModal()">Close</button>
+            </div>
+        </footer>
+    </article>
+</div>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;script&gt;
+    showScrollableModal = function(){
+        document.querySelector(&#39;.js-scrollable-modal&#39;).setAttribute(&#39;style&#39;, &#39;&#39;);
+        document.querySelector(&#39;body&#39;).classList.add(&#39;tuiBlanket-is-displayed&#39;);
+    };
+
+    hideScrollableModal = function(){
+        document.querySelector(&#39;.js-scrollable-modal&#39;).setAttribute(&#39;style&#39;, &#39;display:none;&#39;);
+        document.querySelector(&#39;body&#39;).classList.remove(&#39;tuiBlanket-is-displayed&#39;);
+    };
+&lt;/script&gt;
+
+&lt;button class=&#34;tuiButton&#34; onClick=&#34;showScrollableModal()&#34;&gt;Show scrolling modal&lt;/button&gt;
+
+&lt;div class=&#34;tuiBlanket js-scrollable-modal&#34; style=&#34;display:none&#34;&gt;
+    &lt;article class=&#34;tuiDialog&#34;&gt;
+        &lt;header class=&#34;tuiDialog__header&#34;&gt;&lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Scrolling modal&lt;/h1&gt;&lt;/header&gt;
+        &lt;section class=&#34;tuiDialog__body&#34; style=&#34;height: 1500px;&#34;&gt;Very tall modal body&lt;/section&gt;
+        &lt;footer class=&#34;tuiDialog__footer&#34;&gt;
+            &lt;div class=&#34;tuiDialog__footer__actions&#34;&gt;
+                &lt;button class=&#34;tuiButton tuiButton--primary&#34; onClick=&#34;hideScrollableModal()&#34;&gt;Close&lt;/button&gt;
+            &lt;/div&gt;
+        &lt;/footer&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
     
 </article>
             </div>

@@ -285,7 +285,7 @@
     <article class="sg">
         <nav class="sg-section sg-section--nav">
             <div class="sg-nav">
-                <img class="sg-nav__logo" src="logo.png" alt="TEMPO UI KIT" width="179" height="46" />
+                <img class="sg-nav__logo" src="assets/images/logo.png" alt="TEMPO UI KIT" width="179" height="46" />
                 <h2 class="sg-nav__title">Overview</h2>
                 <ol class="sg-nav__links">
                   <li class="sg-nav__links__element ">
@@ -345,6 +345,14 @@
                     
                       <li class="sg-nav__links__element ">
                           <a href="components/lozenges">Lozenges</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/modals">Modals</a>
                           
                               <em class="sg-draft-notification">Draft</em>
 
@@ -438,10 +446,9 @@
 
 <p class="sg-p" id="tocsvgstorerefexample">Now icons can be rendered in the document by referencing it's <em>id</em>.</p>
 
-<div class="sg-icon-display">
-    
 
-<article class="sg-example" id="inconsInjectSvgStoreRefExample">
+
+<article class="sg-example sg-icon-display" id="inconsInjectSvgStoreRefExample">
     
     <section class="sg-example__render">
         <svg class="tuiIcon">
@@ -460,7 +467,6 @@
     
 </article>
 
-</div>
 
 <p class="sg-p">If you are lucky enough to not have to support any version of Internet Explorer (IE), you can embed the link to the sprite file with the <a href="foundations/icons-reference#tocquickreference">reference id</a>.</p>
 <div class="sg-callout sg-callout--warning">
@@ -486,10 +492,9 @@
 <h4 class="sg-h4">Using the SVG sources</h4>
 <p class="sg-p">It is also possible to use the SVG icon inline. All icons source are avaible in the <em>svg/source</em> directory. To use one inline, open the file, copy its content into your document and add the <em>tuiIcon</em> class.</p>
 
-<div class="sg-icon-display">
-    
 
-<article class="sg-example" id="iconsInlineSvgExample">
+
+<article class="sg-example sg-icon-display" id="iconsInlineSvgExample">
     
     <section class="sg-example__render">
         <svg class="tuiIcon" width="12px" height="14px" viewBox="0 0 12 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -522,8 +527,6 @@
     
 </article>
 
-</div>
-
 
 <h3 class="sg-h3">Consuming icons as Font</h3>
 <p class="sg-p">If you wish to use fonts, all required files can be found under the <em>fonts/</em> directory.</p>
@@ -553,10 +556,9 @@
 
 <p class="sg-p" id="tocfontfaceexample">Then you can render icons by using the proper <a href="foundations/icons-reference#tocquickreference">CSS class</a>.</p>
 
-<div class="sg-icon-display">
-    
 
-<article class="sg-example" id="inconsFontFaceExample">
+
+<article class="sg-example sg-icon-display" id="inconsFontFaceExample">
     
     <section class="sg-example__render">
         <i class="tuiIcon-arrow-down"></i>
@@ -571,7 +573,6 @@
     
 </article>
 
-</div>
 
 
 
@@ -633,10 +634,9 @@
 
 
 
-<div class="sg-icon-display">
-    
 
-<article class="sg-example" id="iconsSvgModifiersExample">
+
+<article class="sg-example sg-icon-display" id="iconsSvgModifiersExample">
     
     <section class="sg-example__render">
         <svg class="tuiIcon largeArrowDown">
@@ -667,7 +667,7 @@
     
 </article>
 
-</div>
+
 
 <h3 class="sg-h3">Modifying a font icon</h3>
 <p class="sg-p">When using font icons, the color of the icon can be modified by applying a new <em>color</em> and the icon size can be changed by setting the <em>font-size</em> as shown below.</p>
@@ -701,10 +701,9 @@
 
 
 
-<div class="sg-icon-display">
-    
 
-<article class="sg-example" id="iconsFontFaceModifiersExample">
+
+<article class="sg-example sg-icon-display" id="iconsFontFaceModifiersExample">
     
     <section class="sg-example__render">
         <i class="tuiIcon-arrow-down largeFontArrowDown"></i>
@@ -723,7 +722,7 @@
     
 </article>
 
-</div>
+
 
 
 
@@ -780,10 +779,9 @@
 <p class="sg-p">Hover the icon to trigger the animation.</p>
 
 
-<div class="sg-icon-display">
-    
 
-<article class="sg-example" id="iconsSvgAnimateExample">
+
+<article class="sg-example sg-icon-display" id="iconsSvgAnimateExample">
     
     <section class="sg-example__render">
         <svg class="tuiIcon rotatingIcon">
@@ -802,16 +800,14 @@
     
 </article>
 
-</div>
 
 <h3 class="sg-h3">Animating a font icon</h3>
 <p class="sg-p">Hover the icon to trigger the animation.</p>
 
 
-<div class="sg-icon-display">
-    
 
-<article class="sg-example" id="iconsFontAnimateExample">
+
+<article class="sg-example sg-icon-display" id="iconsFontAnimateExample">
     
     <section class="sg-example__render">
         <i class="tuiIcon-arrow-down rotatingIcon"></i>
@@ -826,7 +822,7 @@
     
 </article>
 
-</div>
+
 
 
 
