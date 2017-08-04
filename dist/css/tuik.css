@@ -563,6 +563,22 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.tuiIcon-information-questionmark:before {
+  content: "\e918";
+  color: #555;
+}
+.tuiIcon-information-warning:before {
+  content: "\e915";
+}
+.tuiIcon-information-light-bulb:before {
+  content: "\e916";
+}
+.tuiIcon-information-info:before {
+  content: "\e917";
+}
+.tuiIcon-misc-pause:before {
+  content: "\e910";
+}
 .tuiIcon-option-gear-full:before {
   content: "\e912";
 }
@@ -571,9 +587,6 @@
 }
 .tuiIcon-option-wrench-full:before {
   content: "\e914";
-}
-.tuiIcon-misc-pause:before {
-  content: "\e910";
 }
 .tuiIcon-misc-play:before {
   content: "\e911";

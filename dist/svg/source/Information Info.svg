@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>Buttons / Icons / Information / Information</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Buttons-/-Icons-/-Information-/-Info" fill="#000000">
+            <path d="M8,14 C11.3136977,14 14,11.3134864 14,7.99968763 C14,4.68603565 11.3138445,2 8,2 C4.68615552,2 2,4.68603565 2,7.99968763 C2,11.3134864 4.68630228,14 8,14 Z M8,15 C4.13388076,15 1,11.8656343 1,7.99968763 C1,4.13374091 4.13388076,1 8,1 C11.8661192,1 15,4.13374091 15,7.99968763 C15,11.8656343 11.8661192,15 8,15 Z" id="Oval" fill-rule="nonzero"></path>
+            <rect id="Rectangle-23" x="7" y="7" width="2" height="5" rx="1"></rect>
+            <rect id="Rectangle-23-Copy" x="7" y="4" width="2" height="1.90984441" rx="0.954922205"></rect>
+        </g>
+    </g>
+</svg>

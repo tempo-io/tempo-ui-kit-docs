@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46 (44423) - http://www.bohemiancoding.com/sketch -->
+    <title>Buttons / Icons / Information / Warning</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Buttons-/-Icons-/-Information-/-Warning" fill="#000000">
+            <path d="M12.7350527,13 C13.67204,13 14.2830553,12.104187 13.8671378,11.3399878 L9.13221364,2.63944017 C8.66808786,1.78685328 7.33200741,1.78685328 6.86788163,2.63944017 L2.1327957,11.3399878 C1.71703995,12.104187 2.32789353,13 3.26504259,13 L12.7350527,13 Z M12.7350527,14 L3.26504259,14 C1.60179882,14 0.458911355,12.3242386 1.25444781,10.8619659 L5.98958725,2.16131992 C6.83250975,0.612893361 9.16758552,0.612893361 10.0105684,2.16143082 L14.7454767,10.8619494 C15.5412432,12.324076 14.3982449,14 12.7350527,14 Z" id="Stroke-9" fill-rule="nonzero"></path>
+            <rect id="Rectangle-14" x="7" y="4.90163929" width="2" height="4.16258789" rx="1"></rect>
+            <rect id="Rectangle-14-Copy" x="7" y="10" width="2" height="1.94958844" rx="0.97479422"></rect>
+        </g>
+    </g>
+</svg>
