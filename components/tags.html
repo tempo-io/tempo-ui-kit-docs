@@ -5,10 +5,10 @@
     <base href="/"></base>
     <title>
         
-            Tempo UI Kit and Guidelines
+            Tags - Tempo UI Kit and Guidelines
         
     </title>
-    <meta name="description" content="Tempo UI Kit and Guidelines" />
+    <meta name="description" content="Tags" />
 
     <link rel="stylesheet" href="vendors/highlight/default.css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
@@ -360,7 +360,7 @@
                 <img class="sg-nav__logo" src="assets/images/logo.png" alt="TEMPO UI KIT" width="179" height="46" />
                 <h2 class="sg-nav__title">Overview</h2>
                 <ol class="sg-nav__links">
-                  <li class="sg-nav__links__element sg-nav__links__element-is-active ">
+                  <li class="sg-nav__links__element ">
                       <a href="changelog">Changelog</a>
                   </li>
                 </ol>
@@ -438,7 +438,7 @@
                           
                       </li>
                     
-                      <li class="sg-nav__links__element ">
+                      <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                           <a href="components/tags">Tags</a>
                           
                               <em class="sg-draft-notification">Draft</em>
@@ -464,93 +464,117 @@
         </nav>
         <section class="sg-section sg-section--main">
             <div class="sg-content">
-                <h1 class="sg-h1">Changelog</h1>
+                <h1 class="sg-h1">
+    
+        
+    
 
-<section class="sg-changelog">
-    <h2>[Unreleased]</h2><h2>[0.10.0] - 2017-08-11</h2><h3>Added</h3><ul>
-<li>Tags (.tuiTag)</li>
-<li>Tooltips (.tuiTooltip)</li>
-<li>Notifications (.tuiNotification)</li>
-<li>Typography distributed as tuik-typography.min.css (.tuiTypo-*)</li>
-<li>TextFields will not display an &quot;X&quot; is IE11 (applied ::-ms-clear { display: none; })</li>
-</ul>
-<h3>Fixed</h3><ul>
-<li>Documentation vertical scroll</li>
-</ul>
-<h2>[0.9.2] - 2017-08-04</h2><h3>Added</h3><ul>
-<li>Information icons</li>
-</ul>
-<h2>[0.9.0] - 2017-08-03</h2><h3>Updated</h3><ul>
-<li>Buttons and TextFields will also display the not-allowed cursor when disabled</li>
-</ul>
-<h3>Added</h3><ul>
-<li>Modals (.tuiBlanket and .tuiDialog)</li>
-</ul>
-<h2>[0.8.0] - 2017-08-02</h2><h3>Added</h3><ul>
-<li>Checkboxes (.tuiCheckbox)</li>
-</ul>
-<h3>Fixed</h3><ul>
-<li>Icon font in IE11</li>
-</ul>
-<h2>[0.7.0] - 2017-07-28</h2><h3>Added</h3><ul>
-<li>Icons (.tuiIcon)</li>
-</ul>
-<h2>[0.6.0] - 2017-07-27</h2><h3>Added</h3><ul>
-<li>Label (.tuiLabel) documentation reviewed</li>
-<li>Lozenges (.tuiLozenge)</li>
-</ul>
-<h3>Fixed</h3><ul>
-<li>Fore color of disabled button was changing when hovering</li>
-</ul>
-<h2>[0.5.0] - 2017-07-20</h2><h3>Added</h3><ul>
-<li>Added .tuiForm<strong>row--checkboxes and .tuiForm</strong>row--no-input modifiers to Forms</li>
-<li>Added .tuiTextField--hours and .tuiTextField--date modifiers to Text Fields</li>
-</ul>
-<h3>Fixed</h3><ul>
-<li>Bold label when Bootstrap is imported</li>
-</ul>
-<h2>[0.4.0] - 2017-07-20</h2><h3>Added</h3><ul>
-<li>Forms (.tuiForm)</li>
-<li>Changelogs added to documentation</li>
-<li>Text fields documentation reviewed</li>
-</ul>
-<h2>[0.3.1] - 2017-07-18</h2><h3>Fixed</h3><ul>
-<li>Enforced text-decoration and color on .tuiButton :hover, :active and :focus pseudo class selectors to fix issues caused by aui.css</li>
-</ul>
-<h2>[0.3.0] - 2017-07-14</h2><h3>Added</h3><ul>
-<li>Text fields (.tuiTextField)</li>
-<li>Anchors (<a>) can now be used as buttons (.tuiButton and .tuiButtonGroup elements)</li>
-<li>Labels (.tuiLabel)</li>
-</ul>
-<h3>Modified</h3><ul>
-<li>Buttons and Button Groups documentation updated</li>
-<li>Component documentation theme</li>
-</ul>
-<h2>[0.2.1] - 2017-07-10</h2><h3>Modified</h3><ul>
-<li>Removed Typography</li>
-</ul>
-<h2>[0.2.0] - 2017-07-10</h2><h3>Added</h3><ul>
-<li>Button Groups (.tuiButtonGroup)</li>
-<li>Implemented custom active/focus state outline (.tuiButton and .tuiButtonGroup)</li>
-</ul>
-<h3>Modified</h3><ul>
-<li>Button documentation reviewed and updated (out of draft)</li>
-<li>Button colors (.tuiButtons)</li>
-</ul>
-<h2>[0.1.0] - 2017-06-30</h2><h3>Added</h3><ul>
-<li>Buttons (.tuiButton)</li>
-</ul>
-<h3>Admin</h3><ul>
-<li>Documentation (npm run docs-)</li>
-<li>Less to CSS (npm run css-)</li>
-<li>Less Lint (npm run css-lint)</li>
-<li>SVG to SVG store (npm run svg-)</li>
-<li>Visual Regression Tests (npm run test-visual)</li>
-<li>Build CSS and SVG (npm run dist)</li>
-<li>Watch CSS and SVG (npm run watch-)</li>
-</ul>
+    Tags
+    
+        <em class="sg-draft-notification">Draft</em>
 
-</section>
+    
+</h1>
+
+
+<p class="sg-p">Tags are used to tag content with certain keywords; and optionally to link to resources showing more information related to that keyword. Tags are closeable.
+</p>
+
+<h3 class="sg-h3">Default</h3>
+<p class="sg-p">Simply a span with base class <em>tuiTag</em> and a closing font icon <em>tuiIcon-action-delete</em>.</p>
+
+
+
+<article class="sg-example" id="tagDefault">
+    
+    <section class="sg-example__render">
+        <span class="tuiTag">
+   <span class="tuiTag__label" title="Default tag">Default tag</span>
+   <a class="tuiIcon-action-delete" href="#"></a>
+</span>
+
+<span class="tuiTag">
+   <span class="tuiTag__label" title="Default tag">Tag with no close</span>
+</span>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
+   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Default tag&lt;/span&gt;
+   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiTag&#34;&gt;
+   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Tag with no close&lt;/span&gt;
+&lt;/span&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h3 class="sg-h3">SVG</h3>
+<p class="sg-p">Tags can also use <a href="foundations/icons#tocsvgstorerefexample">SVG icons</a> for the close button. We strongly recomend using the <em>#action-delete</em> icon.</p>
+
+
+
+<article class="sg-example" id="tagSvgIcon">
+    
+    <section class="sg-example__render">
+        <span class="tuiTag">
+   <span class="tuiTag__label" title="Default tag">Default tag</span>
+   <svg class="tuiIcon">
+       <use xlink:href="#action-delete"/>
+   </svg>
+</span>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
+   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Default tag&lt;/span&gt;
+   &lt;svg class=&#34;tuiIcon&#34;&gt;
+       &lt;use xlink:href=&#34;#action-delete&#34; /&gt;
+   &lt;/svg&gt;
+&lt;/span&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h3 class="sg-h3">Long label</h3>
+<p class="sg-p">Tags with long label text gets the ellipsis property with a maximum width of 100px.</p>
+<div class="sg-callout">
+    <h4 class="sg-callout__title">Title attribute</h4>
+    <p class="sg-callout__p">It is extremely important to use the title attribute to allow the user to read the full label of the tag when it is being truncated.</p>
+</div>
+
+
+
+<article class="sg-example" id="tagLongLabel">
+    
+    <section class="sg-example__render">
+        <span class="tuiTag">
+   <span class="tuiTag__label" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.</span>
+   <a class="tuiIcon-action-delete" href="#"></a>
+</span>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
+   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&lt;/span&gt;
+   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
+&lt;/span&gt;
+</code></pre>
+    </section>
+    
+</article>
             </div>
         </section>
     </article>

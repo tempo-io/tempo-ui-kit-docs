@@ -370,13 +370,18 @@
                       <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                           <a href="foundations/icons">Icons</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
                           <a href="foundations/icons-reference">Icons Reference</a>
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="foundations/typography">Typography</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
                           
                       </li>
                     
@@ -405,9 +410,6 @@
                       <li class="sg-nav__links__element ">
                           <a href="components/forms">Forms</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
@@ -417,9 +419,6 @@
                     
                       <li class="sg-nav__links__element ">
                           <a href="components/lozenges">Lozenges</a>
-                          
-                              <em class="sg-draft-notification">Draft</em>
-
                           
                       </li>
                     
@@ -432,7 +431,28 @@
                       </li>
                     
                       <li class="sg-nav__links__element ">
+                          <a href="components/notifications">Notifications</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/tags">Tags</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
                           <a href="components/textfields">Text Fields</a>
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/tooltips">Tooltips</a>
                           
                               <em class="sg-draft-notification">Draft</em>
 
@@ -451,15 +471,13 @@
 
     Icons
     
-        <em class="sg-draft-notification">Draft</em>
-
-    
 </h1>
 
-<p>Use <a href="foundations/icons-reference#tocquickreference">all the icons</a> to make stuff pretty.</p>
+<p class="sg-p">An icon is not just a pretty graphic. It is a visual representation of an object, action or idea, and its purpose must be immediately clear to the user to add value to the user experience.</p>
+<p>The TUIK icons are commonly used and recognizable. See <a href="foundations/icons-reference#tocquickreference">all TUIK icons</a>.</p>
 
 <h2 class="sg-h2">Resources</h2>
-<p class="sg-p">There's many methods to serving icons, we provide SVG sources files (or a single store/sprites file) and a more classic icon font. The following shows where you can find the different resources required to cosume our icons.</p>
+<p class="sg-p">In the TUIK we provide two methods for serving icons. We provide SVG source files (or a single store/sprites file) and the more common icon font. The following shows where you can find the resources required to consume our icons.</p>
 <article class="sg-example">
     <section class="sg-example__source">
         <pre><code class="language-plaintext">
@@ -478,10 +496,10 @@
 </article>
 
 <h3 class="sg-h3">Consuming icons as SVG</h3>
-<p class="sg-p">SVG related resources can be found under the <em>svg</em> directory. The <em>store.svg</em> is a sprites file containting all SVG icons. The individual icons source can be found under the <em>svg/source</em> directory.</p>
+<p class="sg-p">SVG related resources are found under the <em>svg/</em> directory. The <em>store.svg</em> is a sprites file that contains all SVG icons. The individual icon source files are found under the <em>svg/source</em> directory.</p>
 
 <h4 class="sg-h4">Using store.svg sprites</h4>
-<p class="sg-p">Start by inject the store in the document. Note that in most cases <em>style="display:none"</em> should be added to the <em>svg</em> element to avoid creating a large area of whitespace.</p>
+<p class="sg-p">Start by injecting the store into the document. Note that in most cases <em>style="display:none"</em> should be added to the <em>svg</em> element to avoid creating a large area of whitespace.</p>
 
 
 
@@ -540,7 +558,7 @@
 </article>
 
 
-<p class="sg-p">If you are lucky enough to not have to support any version of Internet Explorer (IE), you can embed the link to the sprite file with the <a href="foundations/icons-reference#tocquickreference">reference id</a>.</p>
+<p class="sg-p">You can embed the link to the sprite file with the <a href="foundations/icons-reference#tocquickreference">reference id</a>. Note that Internet Explorer (IE) does not support this.</p>
 <div class="sg-callout sg-callout--warning">
     <h4 class="sg-callout__title">Internet Explorer</h4>
     <p class="sg-callout__p">The following is NOT supported in Internet Explorer.</p>
@@ -562,7 +580,7 @@
 
 
 <h4 class="sg-h4">Using the SVG sources</h4>
-<p class="sg-p">It is also possible to use the SVG icon inline. All icons source are avaible in the <em>svg/source</em> directory. To use one inline, open the file, copy its content into your document and add the <em>tuiIcon</em> class.</p>
+<p class="sg-p">You can also use the SVG icon inline. All icons source are available in the <em>svg/source</em> directory. To use an icon inline, open the file, copy its contents into your document and add the <em>tuiIcon</em> class.</p>
 
 
 
@@ -601,8 +619,8 @@
 
 
 <h3 class="sg-h3">Consuming icons as Font</h3>
-<p class="sg-p">If you wish to use fonts, all required files can be found under the <em>fonts/</em> directory.</p>
-<p class="sg-p">Start by copying the fonts to your project and add a <em>@font-face</em> definition to your your CSS.</p>
+<p class="sg-p">If you wish to use fonts, all required files are found under the <em>fonts/</em> directory.</p>
+<p class="sg-p">Start by copying the fonts to your project and add an <em>@font-face</em> definition to your CSS.</p>
 
 
 
@@ -626,7 +644,7 @@
 </article>
 
 
-<p class="sg-p" id="tocfontfaceexample">Then you can render icons by using the proper <a href="foundations/icons-reference#tocquickreference">CSS class</a>.</p>
+<p class="sg-p" id="tocfontfaceexample">Then you can render icons by using the <a href="foundations/icons-reference#tocquickreference">CSS class</a>.</p>
 
 
 
@@ -674,9 +692,9 @@
 
 
 <h2 class="sg-h2">Color and Size</h2>
-<p class="sg-p">Altho similar, the style properties that needs to be set to change the size and color of a font icon is not the same as the ones used to update a SVG icon.</p>
-<h3 class="sg-h3">Modifying a SVG icon</h3>
-<p class="sg-p">You can modify the icon color by applying a new <em>fill</em> color and change the icon size by setting it's <em>height</em> and <em>width</em> as shown below.</p>
+<p class="sg-p">Although similar, the style properties used to change the size and color of a font icon are not the same as those used to update an SVG icon.</p>
+<h3 class="sg-h3">Modifying an SVG icon</h3>
+<p class="sg-p">You can modify the icon color by applying a new <em>fill</em> color, and change the icon size by setting it's <em>height</em> and <em>width</em> as shown below.</p>
 
 
 
@@ -742,7 +760,7 @@
 
 
 <h3 class="sg-h3">Modifying a font icon</h3>
-<p class="sg-p">When using font icons, the color of the icon can be modified by applying a new <em>color</em> and the icon size can be changed by setting the <em>font-size</em> as shown below.</p>
+<p class="sg-p">When using font icons, you can modify the color of the icon by applying a new <em>color</em> and you can change the icon size by setting the <em>font-size</em> as shown below.</p>
 
 
 
@@ -801,7 +819,7 @@
 
 
 <h2 class="sg-h2">Animation</h2>
-<p class="sg-p">Animations can be defined and applied the same way for both font icons and SVG icons.</p>
+<p class="sg-p">Animations can be defined and applied in the same way for both font and SVG icons.</p>
 
 
 
@@ -847,8 +865,8 @@
 </article>
 
 
-<h3 class="sg-h3">Animating a SVG icon</h3>
-<p class="sg-p">Hover the icon to trigger the animation.</p>
+<h3 class="sg-h3">Animating an SVG icon</h3>
+<p class="sg-p">Hover over the icon to trigger the animation.</p>
 
 
 
@@ -874,7 +892,7 @@
 
 
 <h3 class="sg-h3">Animating a font icon</h3>
-<p class="sg-p">Hover the icon to trigger the animation.</p>
+<p class="sg-p">Hover over the icon to trigger the animation.</p>
 
 
 
@@ -1076,6 +1094,6 @@
 </article>
             </div>
         </section>
-    <article>
+    </article>
   </body>
 </html>

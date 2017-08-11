@@ -5,10 +5,10 @@
     <base href="/"></base>
     <title>
         
-            Tempo UI Kit and Guidelines
+            Typography - Tempo UI Kit and Guidelines
         
     </title>
-    <meta name="description" content="Tempo UI Kit and Guidelines" />
+    <meta name="description" content="Typography" />
 
     <link rel="stylesheet" href="vendors/highlight/default.css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
@@ -360,7 +360,7 @@
                 <img class="sg-nav__logo" src="assets/images/logo.png" alt="TEMPO UI KIT" width="179" height="46" />
                 <h2 class="sg-nav__title">Overview</h2>
                 <ol class="sg-nav__links">
-                  <li class="sg-nav__links__element sg-nav__links__element-is-active ">
+                  <li class="sg-nav__links__element ">
                       <a href="changelog">Changelog</a>
                   </li>
                 </ol>
@@ -377,7 +377,7 @@
                           
                       </li>
                     
-                      <li class="sg-nav__links__element ">
+                      <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                           <a href="foundations/typography">Typography</a>
                           
                               <em class="sg-draft-notification">Draft</em>
@@ -464,93 +464,140 @@
         </nav>
         <section class="sg-section sg-section--main">
             <div class="sg-content">
-                <h1 class="sg-h1">Changelog</h1>
+                <h1 class="sg-h1">
+    
+        
+    
 
-<section class="sg-changelog">
-    <h2>[Unreleased]</h2><h2>[0.10.0] - 2017-08-11</h2><h3>Added</h3><ul>
-<li>Tags (.tuiTag)</li>
-<li>Tooltips (.tuiTooltip)</li>
-<li>Notifications (.tuiNotification)</li>
-<li>Typography distributed as tuik-typography.min.css (.tuiTypo-*)</li>
-<li>TextFields will not display an &quot;X&quot; is IE11 (applied ::-ms-clear { display: none; })</li>
-</ul>
-<h3>Fixed</h3><ul>
-<li>Documentation vertical scroll</li>
-</ul>
-<h2>[0.9.2] - 2017-08-04</h2><h3>Added</h3><ul>
-<li>Information icons</li>
-</ul>
-<h2>[0.9.0] - 2017-08-03</h2><h3>Updated</h3><ul>
-<li>Buttons and TextFields will also display the not-allowed cursor when disabled</li>
-</ul>
-<h3>Added</h3><ul>
-<li>Modals (.tuiBlanket and .tuiDialog)</li>
-</ul>
-<h2>[0.8.0] - 2017-08-02</h2><h3>Added</h3><ul>
-<li>Checkboxes (.tuiCheckbox)</li>
-</ul>
-<h3>Fixed</h3><ul>
-<li>Icon font in IE11</li>
-</ul>
-<h2>[0.7.0] - 2017-07-28</h2><h3>Added</h3><ul>
-<li>Icons (.tuiIcon)</li>
-</ul>
-<h2>[0.6.0] - 2017-07-27</h2><h3>Added</h3><ul>
-<li>Label (.tuiLabel) documentation reviewed</li>
-<li>Lozenges (.tuiLozenge)</li>
-</ul>
-<h3>Fixed</h3><ul>
-<li>Fore color of disabled button was changing when hovering</li>
-</ul>
-<h2>[0.5.0] - 2017-07-20</h2><h3>Added</h3><ul>
-<li>Added .tuiForm<strong>row--checkboxes and .tuiForm</strong>row--no-input modifiers to Forms</li>
-<li>Added .tuiTextField--hours and .tuiTextField--date modifiers to Text Fields</li>
-</ul>
-<h3>Fixed</h3><ul>
-<li>Bold label when Bootstrap is imported</li>
-</ul>
-<h2>[0.4.0] - 2017-07-20</h2><h3>Added</h3><ul>
-<li>Forms (.tuiForm)</li>
-<li>Changelogs added to documentation</li>
-<li>Text fields documentation reviewed</li>
-</ul>
-<h2>[0.3.1] - 2017-07-18</h2><h3>Fixed</h3><ul>
-<li>Enforced text-decoration and color on .tuiButton :hover, :active and :focus pseudo class selectors to fix issues caused by aui.css</li>
-</ul>
-<h2>[0.3.0] - 2017-07-14</h2><h3>Added</h3><ul>
-<li>Text fields (.tuiTextField)</li>
-<li>Anchors (<a>) can now be used as buttons (.tuiButton and .tuiButtonGroup elements)</li>
-<li>Labels (.tuiLabel)</li>
-</ul>
-<h3>Modified</h3><ul>
-<li>Buttons and Button Groups documentation updated</li>
-<li>Component documentation theme</li>
-</ul>
-<h2>[0.2.1] - 2017-07-10</h2><h3>Modified</h3><ul>
-<li>Removed Typography</li>
-</ul>
-<h2>[0.2.0] - 2017-07-10</h2><h3>Added</h3><ul>
-<li>Button Groups (.tuiButtonGroup)</li>
-<li>Implemented custom active/focus state outline (.tuiButton and .tuiButtonGroup)</li>
-</ul>
-<h3>Modified</h3><ul>
-<li>Button documentation reviewed and updated (out of draft)</li>
-<li>Button colors (.tuiButtons)</li>
-</ul>
-<h2>[0.1.0] - 2017-06-30</h2><h3>Added</h3><ul>
-<li>Buttons (.tuiButton)</li>
-</ul>
-<h3>Admin</h3><ul>
-<li>Documentation (npm run docs-)</li>
-<li>Less to CSS (npm run css-)</li>
-<li>Less Lint (npm run css-lint)</li>
-<li>SVG to SVG store (npm run svg-)</li>
-<li>Visual Regression Tests (npm run test-visual)</li>
-<li>Build CSS and SVG (npm run dist)</li>
-<li>Watch CSS and SVG (npm run watch-)</li>
-</ul>
+    Typography
+    
+        <em class="sg-draft-notification">Draft</em>
 
-</section>
+    
+</h1>
+
+<p class="sg-p">Tempo uses pre-defined font styles in order to ensure visual coherence within Tempo products. The main font size in Tempo is <em>14px</em>.</p>
+
+<h2 class="sg-h2">Resources</h2>
+<p class="sg-p">Since the TUIK will work with any typography settings, we've chosen to ship our prefered typography setup in a separate file. To apply these styles to your pages, simply inlude <em>tuik-typography.min.css</em> in your documents alongside <em>tuik.min.css</em>.</p>
+<article class="sg-example">
+    <section class="sg-example__source">
+        <pre><code class="language-plaintext">
+    tuik/
+    └── css/
+        ├── tuik-typography.css
+        ├── tuik-typography.min.css
+        ├── tuik.css
+        └── tuik.min.css
+        </code></pre>
+    </section>
+</article>
+
+<h2 class="sg-h2">Headers</h2>
+<p class="sg-p">All HTML headings, <em>&lt;h1&gt;</em> through <em>&lt;h6&gt;</em>, are available.</p>
+
+
+
+<article class="sg-example" id="typographyHeaders">
+    
+    <section class="sg-example__render">
+        <h1>Header 1 - Page Title</h1>
+<h2>Header 2 - Secondary Header</h2>
+<h3>Header 3 - Third Level Header</h3>
+<h4>Header 4 - Fourth Level Header</h4>
+<h5>Header 5 - Paragraph Header</h5>
+<h6>Header 6 - Element Text</h6>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;h1&gt;Header 1 - Page Title&lt;/h1&gt;
+&lt;h2&gt;Header 2 - Secondary Header&lt;/h2&gt;
+&lt;h3&gt;Header 3 - Third Level Header&lt;/h3&gt;
+&lt;h4&gt;Header 4 - Fourth Level Header&lt;/h4&gt;
+&lt;h5&gt;Header 5 - Paragraph Header&lt;/h5&gt;
+&lt;h6&gt;Header 6 - Element Text&lt;/h6&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<p class="sg-p"><em>tuiTypo-h1</em> through <em>tuiTypo-h6</em> classes are also available, for when you want to match the font styling of a heading but still want your text to be displayed inline.</p>
+
+
+
+<article class="sg-example" id="typographyHeaderClasses">
+    
+    <section class="sg-example__render">
+        <span class="tuiTypo-h1">Header 1 - Page Title</span><br>
+<span class="tuiTypo-h2">Header 2 - Secondary Header</span><br>
+<span class="tuiTypo-h3">Header 3 - Third Level Header</span><br>
+<span class="tuiTypo-h4">Header 4 - Fourth Level Header</span><br>
+<span class="tuiTypo-h5">Header 5 - Paragraph Header</span><br>
+<span class="tuiTypo-h6">Header 6 - Element Text</span>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;span class=&#34;tuiTypo-h1&#34;&gt;Header 1 - Page Title&lt;/span&gt;&lt;br/&gt;
+&lt;span class=&#34;tuiTypo-h2&#34;&gt;Header 2 - Secondary Header&lt;/span&gt;&lt;br/&gt;
+&lt;span class=&#34;tuiTypo-h3&#34;&gt;Header 3 - Third Level Header&lt;/span&gt;&lt;br/&gt;
+&lt;span class=&#34;tuiTypo-h4&#34;&gt;Header 4 - Fourth Level Header&lt;/span&gt;&lt;br/&gt;
+&lt;span class=&#34;tuiTypo-h5&#34;&gt;Header 5 - Paragraph Header&lt;/span&gt;&lt;br/&gt;
+&lt;span class=&#34;tuiTypo-h6&#34;&gt;Header 6 - Element Text&lt;/span&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h2 class="sg-h2">Paragraphs</h2>
+<p class="sg-p">The global default font-size is <em>14px</em>, with a line-height of <em>1.428em</em> (or <em>20px</em>). This is applied to the <em>&lt;body&gt;</em> and all paragraphs. <em>tuiTypo-p</em> class is also available, for when you want to match the font styling of a paragraph.</p>
+
+
+
+<article class="sg-example" id="typographyParagraphs">
+    
+    <section class="sg-example__render">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis tempor est. Cras odio lacus, aliquam id arcu vel, ornare aliquam erat. Suspendisse molestie id elit in tristique. Nam gravida porttitor dignissim. Cras faucibus nulla a pretium porta.</p>
+<h1 class="tuiTypo-p">Praesent justo mi, suscipit vitae viverra at, lobortis sit amet mi. Duis lobortis finibus leo, at varius dui ultricies convallis. Maecenas mattis tempus justo, sit amet elementum turpis viverra faucibus. Morbi sit amet consectetur leo.</h1>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis tempor est. Cras odio lacus, aliquam id arcu vel, ornare aliquam erat. Suspendisse molestie id elit in tristique. Nam gravida porttitor dignissim. Cras faucibus nulla a pretium porta.&lt;/p&gt;
+&lt;h1 class=&#34;tuiTypo-p&#34;&gt;Praesent justo mi, suscipit vitae viverra at, lobortis sit amet mi. Duis lobortis finibus leo, at varius dui ultricies convallis. Maecenas mattis tempus justo, sit amet elementum turpis viverra faucibus. Morbi sit amet consectetur leo.&lt;/h1&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h2 class="sg-h2">Hyperlinks</h2>
+<p class="sg-p">Hyperlinks are not underlined and of a distinctive blue color, they also inherit the size of there parent.</p>
+
+
+
+<article class="sg-example" id="typographyLinks">
+    
+    <section class="sg-example__render">
+        <a href="foundations/typography">Hyperlink Text</a>
+<h2>A <a href="foundations/typography">link</a> in a heading</h2>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;a href=&#34;foundations/typography&#34;&gt;Hyperlink Text&lt;/a&gt;
+&lt;h2&gt;A &lt;a href=&#34;foundations/typography&#34;&gt;link&lt;/a&gt; in a heading&lt;/h2&gt;
+</code></pre>
+    </section>
+    
+</article>
             </div>
         </section>
     </article>

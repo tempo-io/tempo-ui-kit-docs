@@ -370,13 +370,18 @@
                       <li class="sg-nav__links__element ">
                           <a href="foundations/icons">Icons</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
                           <a href="foundations/icons-reference">Icons Reference</a>
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="foundations/typography">Typography</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
                           
                       </li>
                     
@@ -405,9 +410,6 @@
                       <li class="sg-nav__links__element ">
                           <a href="components/forms">Forms</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
@@ -417,9 +419,6 @@
                     
                       <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                           <a href="components/lozenges">Lozenges</a>
-                          
-                              <em class="sg-draft-notification">Draft</em>
-
                           
                       </li>
                     
@@ -432,7 +431,28 @@
                       </li>
                     
                       <li class="sg-nav__links__element ">
+                          <a href="components/notifications">Notifications</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/tags">Tags</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
                           <a href="components/textfields">Text Fields</a>
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/tooltips">Tooltips</a>
                           
                               <em class="sg-draft-notification">Draft</em>
 
@@ -451,25 +471,41 @@
 
     Lozenges
     
-        <em class="sg-draft-notification">Draft</em>
-
-    
 </h1>
 
 
-<p class="sg-p">Text lozenges filled with colour, primarily used for displaying status. Available in both primary and subtle versions. Specific colors denote meanings that users can learn and recognise across our systems to become more efficient. Use primary lozenges by default. Consider using subtle lozenges for long tables with repeating lozenges, or when lozenges start to dominate the screen. Don't mix primary and subtle lozenges on a screen.</p>
+<p class="sg-p">Use text lozenges filled with color to indicate an item's status for quick recognition. Lozenges are available in both primary and subtle versions. You can use color to help convey meanings that users can learn and recognize across related products.</p>
 
-<h2 class="sg-h2" id="lozengePrimary">Lozenges Primary</h2>
-<h3 class="sg-h3">Markup</h3>
-<p class="sg-p">Simply a span with base class and type class. When no type class added, the default lozenge gets a blue background color. (Design team?)</p>
+<h2 class="sg-h2" id="lozengePrimary">Default</h2>
+<p class="sg-p">When no modifier classes are added, the default lozenge receives a blue background color.</p>
+
+
+
+<article class="sg-example" id="lozengeDefault">
+    
+    <section class="sg-example__render">
+        <span class="tuiLozenge">Default lozenge</span>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;span class=&#34;tuiLozenge&#34;&gt;Default lozenge&lt;/span&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h3 class="sg-h3">Colors</h3>
+<p class="sg-p">Many modifiers are available to change the colors of the lozenge.</p>
 
 
 
 <article class="sg-example" id="lozengePrimary">
     
     <section class="sg-example__render">
-        <span class="tuiLozenge">Default lozenge</span>
-<span class="tuiLozenge tuiLozenge--blue-navy">Blue Navy</span>
+        <span class="tuiLozenge tuiLozenge--blue-navy">Blue Navy</span>
 <span class="tuiLozenge tuiLozenge--blue-light">Blue Light</span>
 <span class="tuiLozenge tuiLozenge--blue-medium">Blue Medium</span>
 <span class="tuiLozenge tuiLozenge--green">Green</span>
@@ -483,8 +519,7 @@
     
     
     <section class="sg-example__source">
-        <pre><code class="html">&lt;span class=&#34;tuiLozenge&#34;&gt;Default lozenge&lt;/span&gt;
-&lt;span class=&#34;tuiLozenge tuiLozenge--blue-navy&#34;&gt;Blue Navy&lt;/span&gt;
+        <pre><code class="html">&lt;span class=&#34;tuiLozenge tuiLozenge--blue-navy&#34;&gt;Blue Navy&lt;/span&gt;
 &lt;span class=&#34;tuiLozenge tuiLozenge--blue-light&#34;&gt;Blue Light&lt;/span&gt;
 &lt;span class=&#34;tuiLozenge tuiLozenge--blue-medium&#34;&gt;Blue Medium&lt;/span&gt;
 &lt;span class=&#34;tuiLozenge tuiLozenge--green&#34;&gt;Green&lt;/span&gt;
@@ -499,9 +534,9 @@
 </article>
 
 
-<h2 class="sg-h2" id="lozengeSubtle">Lozenges Subtle</h2>
-<h3 class="sg-h3">Markup</h3>
-<p class="sg-p">Same markup as in primary lozenges but by adding the class <em>tuiLozenge--subtle</em> to the span.</p>
+<h2 class="sg-h2" id="lozengeSubtle">Subtle Lozenges</h2>
+<p class="sg-p">Consider using subtle lozenges (using <em>tuiLozenge--subtle</em> the modifier) in instances where they may dominate the screen, such as in long tables with repeating lozenges. Do not mix primary and subtle lozenges on a screen.</p>
+
 
 
 
@@ -539,6 +574,6 @@
 </article>
             </div>
         </section>
-    <article>
+    </article>
   </body>
 </html>

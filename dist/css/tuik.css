@@ -19,11 +19,31 @@
   #BOX
 \*------------------------------------*/
 /*------------------------------------*\
+  #ELLIPSIS
+\*------------------------------------*/
+/*------------------------------------*\
   #INPUTS
+\*------------------------------------*/
+/*------------------------------------*\
+  #CENTERING
 \*------------------------------------*/
 /*------------------------------------*\
   #GRID
 \*------------------------------------*/
+/*------------------------------------*\
+  #footer
+\*------------------------------------*/
+.o_icon_button {
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  font-size: 0.7857142857em;
+  font-weight: bold;
+}
 /*------------------------------------*\
   #footer
 \*------------------------------------*/
@@ -261,6 +281,9 @@
 }
 .tuiTextField::placeholder {
   color: #999999;
+}
+.tuiTextField::-ms-clear {
+  display: none;
 }
 .tuiTextField:focus {
   outline: 0 !important;
@@ -732,6 +755,7 @@
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+  font-size: 0.7857142857em;
   font-weight: bold;
 }
 .tuiDialog__header {
@@ -808,4 +832,402 @@
           flex-grow: 1;
   max-width: 100%;
   text-align: right;
+}
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+/*------------------------------------*\
+  #TOOLTIPS
+\*------------------------------------*/
+.tuiTooltip {
+  position: absolute;
+  z-index: 6000;
+  display: block;
+  margin: 0;
+  padding: 0.35714286em 0 0 0;
+}
+.tuiTooltip--top {
+  padding: 0 0 0.35714286em 0;
+}
+.tuiTooltip--right {
+  padding: 0 0 0 0.35714286em;
+}
+.tuiTooltip--bottom {
+  padding: 0.35714286em 0 0 0;
+}
+.tuiTooltip--left {
+  padding: 0 0.35714286em 0 0;
+}
+.tuiTooltip__content {
+  font-weight: 100;
+  line-height: 1.7142857143em;
+  max-width: 30em;
+  padding: 0.2142857143em 0.5714285714em;
+  color: #ffffff;
+  border-radius: 0.21428571em;
+  background-color: #12485a;
+}
+.tuiTooltip__pointer {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  top: 0;
+  left: 50%;
+  margin-left: -0.35714286em;
+  border-width: 0 0.35714286em 0.35714286em;
+  border-bottom-color: #12485a;
+}
+.tuiTooltip--top .tuiTooltip__pointer {
+  bottom: 0;
+  left: 50%;
+  margin-left: -0.35714286em;
+  border-width: 0.35714286em 0.35714286em 0;
+  border-top-color: #12485a;
+  top: inherit;
+  border-bottom-color: transparent;
+}
+.tuiTooltip--right .tuiTooltip__pointer {
+  top: 50%;
+  left: 0;
+  margin-top: -0.35714286em;
+  border-width: 0.35714286em 0.35714286em 0.35714286em 0;
+  border-right-color: #12485a;
+  margin-left: 0;
+  border-bottom-color: transparent;
+}
+.tuiTooltip--left .tuiTooltip__pointer {
+  top: 50%;
+  right: 0;
+  margin-top: -0.35714286em;
+  border-width: 0.35714286em 0 0.35714286em 0.35714286em;
+  border-left-color: #12485a;
+  left: auto;
+  margin-left: 0;
+  border-bottom-color: transparent;
+}
+/*------------------------------------*\
+  #ANIMATIONS
+\*------------------------------------*/
+.tuiTooltip.tuiFade {
+  display: none;
+}
+.tuiTooltip.tuiFade.in {
+  display: block;
+  -webkit-animation: fadeIn 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+       -o-animation: fadeIn 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+          animation: fadeIn 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+}
+.tuiTooltip.tuiFade.out {
+  display: block;
+  -webkit-animation: fadeOut 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+       -o-animation: fadeOut 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+          animation: fadeOut 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+}
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-o-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+/*------------------------------------*\
+  #NOTIFICATION
+\*------------------------------------*/
+.tuiNotification {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-flex-wrap: wrap;
+          flex-wrap: wrap;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  z-index: 7000;
+  background-color: white;
+  border-radius: 0.21428571em;
+  border: 1px solid #d9d9d9;
+  width: 26.7857142em;
+  padding: 0.92857143em 1.42857143em;
+  -webkit-box-shadow: 0 0.35714286em 0.71428571em 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.35714286em 0.71428571em 0 rgba(0, 0, 0, 0.2);
+}
+.tuiNotification__icon {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-flex-basis: 0;
+          flex-basis: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+  max-width: 100%;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+          flex-grow: 0;
+  -webkit-flex: 0 0 2.42857143em;
+          flex: 0 0 2.42857143em;
+  max-width: 2.42857143em;
+  margin-right: 1.4285714286em;
+  width: 2.42857143em;
+  height: 2.42857143em;
+  border-radius: 50%;
+  background-color: #71bb00;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+}
+.tuiNotification--warning .tuiNotification__icon {
+  background-color: #ff9200;
+}
+.tuiNotification--error .tuiNotification__icon {
+  background-color: #EF5658;
+}
+.tuiNotification__icon .tuiIcon {
+  fill: white;
+}
+.tuiNotification__icon [class^="tuiIcon-"],
+.tuiNotification__icon [class*=" tuiIcon-"] {
+  color: white;
+}
+.tuiNotification__content {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-flex-basis: 0;
+          flex-basis: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+  max-width: 100%;
+  padding-right: 1.0714285714em;
+  line-height: 1.71428571em;
+}
+.tuiNotification__close-button {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-flex-basis: 0;
+          flex-basis: 0;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+          flex-grow: 1;
+  max-width: 100%;
+  -webkit-box-flex: 0;
+  -webkit-flex-grow: 0;
+          flex-grow: 0;
+  -webkit-flex: 0 0 1.45454545em;
+          flex: 0 0 1.45454545em;
+  max-width: 1.45454545em;
+  width: 1.45454545em;
+  padding: 0;
+  cursor: pointer;
+  background: 0 0;
+  border: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  font-size: 0.7857142857em;
+  font-weight: bold;
+}
+/*------------------------------------*\
+  #ANIMATIONS
+\*------------------------------------*/
+.tuiNotification.tuiSlide {
+  position: fixed;
+  display: none;
+  top: 1.42857143em;
+}
+.tuiNotification.tuiSlide.in {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-animation: slideIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, fadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+       -o-animation: slideIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, fadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+          animation: slideIn 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, fadeIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+.tuiNotification.tuiSlide.out {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-animation: slideOut 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, fadeOut 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
+       -o-animation: slideOut 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, fadeOut 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
+          animation: slideOut 0.2s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, fadeOut 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@-webkit-keyframes slideIn {
+  from {
+    right: -27.49999991em;
+  }
+  to {
+    right: 1.42857143em;
+  }
+}
+@-o-keyframes slideIn {
+  from {
+    right: -27.49999991em;
+  }
+  to {
+    right: 1.42857143em;
+  }
+}
+@keyframes slideIn {
+  from {
+    right: -27.49999991em;
+  }
+  to {
+    right: 1.42857143em;
+  }
+}
+@-webkit-keyframes slideOut {
+  from {
+    right: 1.42857143em;
+  }
+  to {
+    right: -27.49999991em;
+  }
+}
+@-o-keyframes slideOut {
+  from {
+    right: 1.42857143em;
+  }
+  to {
+    right: -27.49999991em;
+  }
+}
+@keyframes slideOut {
+  from {
+    right: 1.42857143em;
+  }
+  to {
+    right: -27.49999991em;
+  }
+}
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+/*------------------------------------*\
+  #MIXINS
+\*------------------------------------*/
+/*------------------------------------*\
+  #TAGS
+\*------------------------------------*/
+.tuiTag {
+  background-color: rgba(217, 217, 217, 0.1);
+  border: 1px solid #d9d9d9;
+  color: #555555;
+  border-radius: 0.14285714em;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: inline-flex;
+  padding: 0 0.4em;
+  font-size: 0.785em;
+  line-height: 1.364em;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+}
+.tuiTag__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 9.0909090909em;
+}
+.tuiTag .tuiIcon-action-delete {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  margin-left: 5px;
+  cursor: pointer;
+  color: #555555;
+  font-size: 0.54545455em;
+}
+.tuiTag .tuiIcon {
+  text-decoration: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  margin-left: 5px;
+  cursor: pointer;
+  fill: #555555;
+  width: 0.54545455em;
+  height: 0.54545455em;
 }

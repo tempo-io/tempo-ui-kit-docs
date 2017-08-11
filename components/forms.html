@@ -370,13 +370,18 @@
                       <li class="sg-nav__links__element ">
                           <a href="foundations/icons">Icons</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
                           <a href="foundations/icons-reference">Icons Reference</a>
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="foundations/typography">Typography</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
                           
                       </li>
                     
@@ -405,9 +410,6 @@
                       <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                           <a href="components/forms">Forms</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
@@ -417,9 +419,6 @@
                     
                       <li class="sg-nav__links__element ">
                           <a href="components/lozenges">Lozenges</a>
-                          
-                              <em class="sg-draft-notification">Draft</em>
-
                           
                       </li>
                     
@@ -432,7 +431,28 @@
                       </li>
                     
                       <li class="sg-nav__links__element ">
+                          <a href="components/notifications">Notifications</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/tags">Tags</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
                           <a href="components/textfields">Text Fields</a>
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/tooltips">Tooltips</a>
                           
                               <em class="sg-draft-notification">Draft</em>
 
@@ -456,32 +476,28 @@
 
     Forms
     
-        <em class="sg-draft-notification">Draft</em>
-
-    
 </h1>
 
-<p class="sg-p">Use forms to allow people to enter data for use by the application, or to configure options. Forms are used to get information and guide people with minimal fuss. Designing forms well requires making decisions about structure, sequence, interface elements, field labels, help, and feedback.</p>
+<p class="sg-p">Use forms to allow users to enter data used by the application, or to configure options. Users should be able to complete forms quickly and without confusion. Designing forms well requires making decisions about it's structure, including the sequence of input fields, it's appearance on the page, using appropriate input fields, and clear field labels.</p>
 
 <div class="sg-callout">
     <h4 class="sg-callout__title">Form background color</h4>
-    <p class="sg-callout__p">The gray background color applied to the forms in the following examples is only to show form elements box boundaries.</p>
+    <p class="sg-callout__p">A gray background color is applied to the forms in the following examples to show form elements box boundaries.</p>
 </div>
 
 <h2 class="sg-h2" id="tocdefaultlayout">Default form layouts</h2>
-<p class="sg-p">
-    A form <em>tuiForm</em> is composed of <em>tuiForm__row</em> elements. Each is composed of at least one column <em>tuiForm__col</em>. The column hosting the field label must apply the <em>tuiForm__col--label</em> modifier.</p>
+<p class="sg-p">A form tuiForm is composed of <em>tuiForm__row</em> elements. Each is composed of at least one column <em>tuiForm__col</em>. The column hosting the field label must apply the <em>tuiForm__col--label</em> modifier.</p>
 
-<p class="sg-p">There's two row modifiers <em>tuiForm__row--checkbox</em> and <em>tuiForm__row--no-input</em> availble to help align checkbox and non-input fields label.</p>
+<p class="sg-p">There are two row-modifiers <em>tuiForm__row--checkbox</em> and <em>tuiForm__row--no-input</em> available to help align checkbox and non-input fields labels.</p>
 <dl>
     <dt class="sg-dt">Labels</dt>
-    <dd class="sg-dd">Standard label alignment is left-aligned with the field to its right.</dd>
+    <dd class="sg-dd">Standard label alignment is right-aligned, ensuring visual proximity with the adjacent field.</dd>
 
     <dt class="sg-dt">Required field label</dt>
-    <dd class="sg-dd">Mark required fields <a href="components/labels#tocrequired">with an asterisk (*)</a>. If all fields in the form are mandatory, this isn't necessary.</dd>
+    <dd class="sg-dd">Mark required fields <a href="components/labels#tocrequired">with an asterisk (*)</a>. If all fields in a form are required, you may want to include a statement above the form that instructs the user to complete all fields.</dd>
 
     <dt class="sg-dt">Disabled fields</dt>
-    <dd class="sg-dd">Show disabled fields if users need to know what controls might be available to them.</dd>
+    <dd class="sg-dd">Show disabled fields where there is a prerequisite condition that must be met before the user can enter a value, or when there is a scenario where that field would become available.</dd>
 
     <dt class="sg-dt">Field length</dt>
     <dd class="sg-dd">The length of the field should reflect the intended length of content.</dd>
@@ -614,7 +630,7 @@
 
 
 <h3 class="sg-h3" id="toclonglabels">Very long label</h3>
-<p class="sg-p">Long labels should wrap and should not be truncated.</p>
+<p class="sg-p">If a long label is needed, it should wrap and not be truncated.</p>
 
 
 
@@ -685,7 +701,7 @@
 
 
 <h2 class="sg-h2">Compact modifier <em class="sg-eperimental-notification">Experimental</em></h2>
-<p class="sg-p">When horizontal space is limited adding the <em>tuiForm--compact</em> modifier will render labels on top of the inputs.</p>
+<p class="sg-p">If horizontal space is limited, you can use the <em>tuiForm--compact</em> modifier to render labels above the input field.</p>
 
 
 
@@ -783,7 +799,7 @@
 
 <h2 class="sg-h2">Dividers</h2>
 <h3 class="sg-h3">Default divider</h3>
-<p class="sg-p">There's two types of deviders, the default divider <em>tuiForm__divider</em> will render a line between 2 fields.</p>
+<p class="sg-p">There are two types of dividers; the default divider <em>tuiForm__divider</em> renders a line between 2 fields.</p>
 
 
 
@@ -840,7 +856,7 @@
 
 
 <h3 class="sg-h3">Subtle divider</h3>
-<p class="sg-p">The subtle version of the divider <em>tuiForm__divider--subtle</em> will double the whitespace between 2 fields.</p>
+<p class="sg-p">The subtle version of the divider <em>tuiForm__divider--subtle</em> doubles the white space between 2 fields.</p>
 
 
 
@@ -912,10 +928,8 @@
 </article>
 
 
-<h2>Footer</h2>
-<p class="sg-p">
-    Form actions should be added within a <em>tuiForm__Footer</em> element. All elements added to the <em>tuiForm__footer__actions</em> will be aligned to the right. Use a <a href="components/buttons#tocmodifiers">primary button</a> for the main action, and a <a href="components/buttons#tocmodifiers">subtle button</a> to cancel.
-</p>
+<h2 class="sg-h2">Footer</h2>
+<p class="sg-p">Form actions are added within a <em>tuiForm__Footer</em> element. All elements added to the <em>tuiForm__footer__actions</em> are aligned to the right. Use a <a href="components/buttons#tocmodifiers">primary button for the main action, and a <a href="components/buttons#tocmodifiers">subtle button</a> to cancel.</a></p>
 
 
 
@@ -1132,6 +1146,6 @@
 </article>
             </div>
         </section>
-    <article>
+    </article>
   </body>
 </html>
