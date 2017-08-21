@@ -1209,10 +1209,13 @@
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  margin-left: 5px;
-  cursor: pointer;
+  margin-left: 0.3571428571em;
   color: #555555;
   font-size: 0.54545455em;
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
 }
 .tuiTag .tuiIcon {
   text-decoration: none;
@@ -1225,7 +1228,7 @@
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  margin-left: 5px;
+  margin-left: 0.3571428571em;
   cursor: pointer;
   fill: #555555;
   width: 0.54545455em;

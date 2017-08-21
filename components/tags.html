@@ -481,7 +481,7 @@
 </p>
 
 <h3 class="sg-h3">Default</h3>
-<p class="sg-p">Simply a span with base class <em>tuiTag</em> and a closing font icon <em>tuiIcon-action-delete</em>.</p>
+<p class="sg-p">Simply a span with base class <em>tuiTag</em>.</p>
 
 
 
@@ -490,11 +490,6 @@
     <section class="sg-example__render">
         <span class="tuiTag">
    <span class="tuiTag__label" title="Default tag">Default tag</span>
-   <a class="tuiIcon-action-delete" href="#"></a>
-</span>
-
-<span class="tuiTag">
-   <span class="tuiTag__label" title="Default tag">Tag with no close</span>
 </span>
 
     </section>
@@ -503,11 +498,6 @@
     <section class="sg-example__source">
         <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
    &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Default tag&lt;/span&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
-&lt;/span&gt;
-
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Tag with no close&lt;/span&gt;
 &lt;/span&gt;
 </code></pre>
     </section>
@@ -515,8 +505,43 @@
 </article>
 
 
-<h3 class="sg-h3">SVG</h3>
-<p class="sg-p">Tags can also use <a href="foundations/icons#tocsvgstorerefexample">SVG icons</a> for the close button. We strongly recomend using the <em>#action-delete</em> icon.</p>
+<h3 class="sg-h3">Dismissable (Font Icon)</h3>
+<p class="sg-p">If the tag is dismissable, add a <em>tuiIcon-action-delete</em> class to a <em>button</em> or <em>anchor</em> element.</p>
+
+
+
+<article class="sg-example" id="tagDismissable">
+    
+    <section class="sg-example__render">
+        <span class="tuiTag">
+   <span class="tuiTag__label" title="Default tag">Dismiss button</span>
+   <button class="tuiIcon-action-delete" href="#"></button>
+</span>
+<span class="tuiTag">
+   <span class="tuiTag__label" title="Default tag">Dismiss anchor</span>
+   <a class="tuiIcon-action-delete" href="#"></a>
+</span>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
+   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Dismiss button&lt;/span&gt;
+   &lt;button class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/button&gt;
+&lt;/span&gt;
+&lt;span class=&#34;tuiTag&#34;&gt;
+   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Dismiss anchor&lt;/span&gt;
+   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
+&lt;/span&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h3 class="sg-h3">Dismissable (SVG Icon)</h3>
+<p class="sg-p">You can also use <a href="foundations/icons#tocsvgstorerefexample">SVG icons</a> for the dismiss button but we strongly recomend using the <em>#action-delete</em> font icon as described earlier.</p>
 
 
 
@@ -546,6 +571,47 @@
 </article>
 
 
+<h3 class="sg-h3">Links</h3>
+<p class="sg-p">Tag label can also be an anchor.</p>
+
+
+
+<article class="sg-example" id="tagLink">
+    
+    <section class="sg-example__render">
+        <span class="tuiTag">
+   <a class="tuiTag__label" title="Default tag" href="#">Default link</a>
+</span>
+<span class="tuiTag">
+   <a class="tuiTag__label" title="Default tag" href="#">Link dismiss button</a>
+   <button class="tuiIcon-action-delete" href="#"></button>
+</span>
+<span class="tuiTag">
+   <a class="tuiTag__label" title="Default tag" href="#">Link dismiss anchor</a>
+   <a class="tuiIcon-action-delete" href="#"></a>
+</span>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
+   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34; href=&#34;#&#34;&gt;Default link&lt;/a&gt;
+&lt;/span&gt;
+&lt;span class=&#34;tuiTag&#34;&gt;
+   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34; href=&#34;#&#34;&gt;Link dismiss button&lt;/a&gt;
+   &lt;button class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/button&gt;
+&lt;/span&gt;
+&lt;span class=&#34;tuiTag&#34;&gt;
+   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34; href=&#34;#&#34;&gt;Link dismiss anchor&lt;/a&gt;
+   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
+&lt;/span&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
 <h3 class="sg-h3">Long label</h3>
 <p class="sg-p">Tags with long label text gets the ellipsis property with a maximum width of 100px.</p>
 <div class="sg-callout">
@@ -562,6 +628,10 @@
    <span class="tuiTag__label" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.</span>
    <a class="tuiIcon-action-delete" href="#"></a>
 </span>
+<span class="tuiTag">
+   <a class="tuiTag__label" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare." href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.</a>
+   <a class="tuiIcon-action-delete" href="#"></a>
+</span>
 
     </section>
     
@@ -569,6 +639,10 @@
     <section class="sg-example__source">
         <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
    &lt;span class=&#34;tuiTag__label&#34; title=&#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&lt;/span&gt;
+   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
+&lt;/span&gt;
+&lt;span class=&#34;tuiTag&#34;&gt;
+   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&#34; href=&#34;#&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&lt;/a&gt;
    &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
 &lt;/span&gt;
 </code></pre>
