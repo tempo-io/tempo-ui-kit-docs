@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'tuiIcons';
+  src:  url('/dist/fonts/tuiIcons.eot?zdeulf');
+  src:  url('/dist/fonts/tuiIcons.eot?zdeulf#iefix') format('embedded-opentype'),
+    url('/dist/fonts/tuiIcons.ttf?zdeulf') format('truetype'),
+    url('/dist/fonts/tuiIcons.woff?zdeulf') format('woff'),
+    url('/dist/fonts/tuiIcons.svg?zdeulf#tuiIcons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
