@@ -30,11 +30,6 @@ var Utils = function () {
 /* global Popper */
 
 var Dropdown = function () {
-  // validating dependencies
-  if (typeof Popper === 'undefined') {
-    throw new Error('TUIK requires Popper.js (https://popper.js.org)');
-  }
-
   var ClassNames = {
     DROPDOWN: 'tuiDropdown',
     ISOPEN: 'tuiDropdown-is-open',
@@ -48,6 +43,11 @@ var Dropdown = function () {
     // TODO: NICE TO HAVE -> allow selectors by testing on element type.
     function Dropdown(element) {
       _classCallCheck(this, Dropdown);
+
+      // validating dependencies
+      if (typeof Popper === 'undefined') {
+        throw new Error('TUIK requires Popper.js (https://popper.js.org)');
+      }
 
       this._element = element;
       this._menuElement = element.querySelector('.' + ClassNames.MENU);
