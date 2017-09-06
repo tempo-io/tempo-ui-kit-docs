@@ -101,9 +101,16 @@ var sgIconQuickReference = function(iconIds, containerSelector) {
 
 var sgTryExample = function(caller) {
     var renderedContainerElement = caller.parentNode.parentNode.querySelector('.sg-example__render');
+    var renderedScriptElement = caller.parentNode.parentNode.querySelector('.js-rendered-script');
 
     var formElement = document.querySelector('#sg-try-example');
+
     formElement.querySelector('textarea[name=html]').value = renderedContainerElement.innerHTML;
+    if(renderedScriptElement) {
+      console.log(renderedScriptElement.innerHTML)
+      formElement.querySelector('textarea[name=js]').value = renderedScriptElement.innerHTML;
+      console.log(formElement.querySelector('textarea[name=js]').value );
+    }
     formElement.submit();
 };
 
