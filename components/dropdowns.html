@@ -516,7 +516,7 @@
    </div>
 </div>
 
-<script>new Dropdown(document.querySelector('.js-default-dropdown'));</script>
+<script>sgOnDocumentReady(new Dropdown(document.querySelector('.js-default-dropdown')));</script>
 
     </section>
     
@@ -538,7 +538,7 @@
    &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;script&gt;new Dropdown(document.querySelector(&#39;.js-default-dropdown&#39;));&lt;/script&gt;
+&lt;script&gt;sgOnDocumentReady(new Dropdown(document.querySelector(&#39;.js-default-dropdown&#39;)));&lt;/script&gt;
 </code></pre>
     </section>
     
@@ -574,7 +574,7 @@
    </div>
 </div>
 
-<script>new Dropdown(document.querySelector('.js-disabled-dropdown'));</script>
+<script>sgOnDocumentReady(new Dropdown(document.querySelector('.js-disabled-dropdown')));</script>
 
     </section>
     
@@ -596,7 +596,7 @@
    &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;script&gt;new Dropdown(document.querySelector(&#39;.js-disabled-dropdown&#39;));&lt;/script&gt;
+&lt;script&gt;sgOnDocumentReady(new Dropdown(document.querySelector(&#39;.js-disabled-dropdown&#39;)));&lt;/script&gt;
 </code></pre>
     </section>
     
@@ -638,9 +638,11 @@
    </div>
 </div>
 <script>
+ sgOnDocumentReady(function() {
    new Dropdown(document.querySelector('.js-primary-dropdown'));
    new Dropdown(document.querySelector('.js-subtle-dropdown'));
    new Dropdown(document.querySelector('.js-caution-dropdown'));
+ });
 </script>
 
     </section>
@@ -673,9 +675,11 @@
    &lt;/div&gt;
 &lt;/div&gt;
 &lt;script&gt;
+ sgOnDocumentReady(function() {
    new Dropdown(document.querySelector(&#39;.js-primary-dropdown&#39;));
    new Dropdown(document.querySelector(&#39;.js-subtle-dropdown&#39;));
    new Dropdown(document.querySelector(&#39;.js-caution-dropdown&#39;));
+ });
 &lt;/script&gt;
 </code></pre>
     </section>
@@ -707,7 +711,7 @@
    </div>
 </div>
 
-<script>new Dropdown(document.querySelector('.js-split-dropdown'));</script>
+<script>sgOnDocumentReady(new Dropdown(document.querySelector('.js-split-dropdown')));</script>
 
     </section>
     
@@ -727,7 +731,7 @@
    &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;script&gt;new Dropdown(document.querySelector(&#39;.js-split-dropdown&#39;));&lt;/script&gt;
+&lt;script&gt;sgOnDocumentReady(new Dropdown(document.querySelector(&#39;.js-split-dropdown&#39;)));&lt;/script&gt;
 </code></pre>
     </section>
     
@@ -765,9 +769,11 @@
 </div>
 
 <script>
+ sgOnDocumentReady(function() {
    new Dropdown(document.querySelector('.js-split-toggle-disabled-dropdown'));
    new Dropdown(document.querySelector('.js-split-action-disabled-dropdown'));
    new Dropdown(document.querySelector('.js-split-disabled-dropdown'));
+ });
 </script>
 
     </section>
@@ -797,9 +803,11 @@
 &lt;/div&gt;
 
 &lt;script&gt;
+ sgOnDocumentReady(function() {
    new Dropdown(document.querySelector(&#39;.js-split-toggle-disabled-dropdown&#39;));
    new Dropdown(document.querySelector(&#39;.js-split-action-disabled-dropdown&#39;));
    new Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;));
+ });
 &lt;/script&gt;
 </code></pre>
     </section>

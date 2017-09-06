@@ -105,4 +105,15 @@ var sgTryExample = function(caller) {
     var formElement = document.querySelector('#sg-try-example');
     formElement.querySelector('textarea[name=html]').value = renderedContainerElement.innerHTML;
     formElement.submit();
-}
+};
+
+/**
+    sgOnDocumentReady
+*/
+function sgOnDocumentReady(fn) {
+  if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
+    fn();
+  } else {
+    document.addEventListener('DOMContentLoaded', fn);
+  }
+};
