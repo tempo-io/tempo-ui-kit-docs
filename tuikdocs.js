@@ -92,4 +92,17 @@ var sgIconQuickReference = function(iconIds, containerSelector) {
         interactive: true,
         arrow: true
     });
+};
+
+
+/**
+    sgTryExample
+*/
+
+var sgTryExample = function(caller) {
+    var renderedContainerElement = caller.parentNode.parentNode.querySelector('.sg-example__render');
+
+    var formElement = document.querySelector('#sg-try-example');
+    formElement.querySelector('textarea[name=html]').value = renderedContainerElement.innerHTML;
+    formElement.submit();
 }

@@ -10,17 +10,26 @@
     </title>
     <meta name="description" content="Icons Reference" />
 
+    <!-- TUIK DEPENDENCIES -->
+    <script src="vendors/popper/popper.js"></script>
+
+    <!-- TUIK -->
+    <link rel="stylesheet" href="dist/css/tuik-typography.css" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css" type="text/css">
+    <script src="dist/js/tuik.js"></script>
+
+    <!-- SG VENDRORS -->
+    <link rel="stylesheet" href="vendors/tippy/tippy.css">
+    <script src="vendors/tippy/tippy.min.js"></script>
     <link rel="stylesheet" href="vendors/highlight/default.css">
-    <link rel="stylesheet" href="css/main.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://unpkg.com/tippy.js@1.1.3/dist/tippy.css">
-    <script src="https://unpkg.com/tippy.js@1.1.3/dist/tippy.min.js"></script>
-
     <script src="vendors/highlight/highlight.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
+    <!-- SG -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
     <script src="tuikdocs.js"></script>
+
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 <symbol id="action-add" viewBox="0 0 14 14">
@@ -402,6 +411,11 @@
                       <li class="sg-nav__links__element ">
                           <a href="components/checkboxes">Checkboxes</a>
                           
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/dropdowns">Dropdowns</a>
+                          
                               <em class="sg-draft-notification">Draft</em>
 
                           
@@ -425,9 +439,6 @@
                       <li class="sg-nav__links__element ">
                           <a href="components/modals">Modals</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
@@ -441,9 +452,6 @@
                       <li class="sg-nav__links__element ">
                           <a href="components/tags">Tags</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
@@ -453,9 +461,6 @@
                     
                       <li class="sg-nav__links__element ">
                           <a href="components/tooltips">Tooltips</a>
-                          
-                              <em class="sg-draft-notification">Draft</em>
-
                           
                       </li>
                     
@@ -546,6 +551,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;svg class=&#34;tuiIcon&#34;&gt;
   &lt;use xlink:href=&#34;#action-add&#34; /&gt;
 &lt;/svg&gt;
@@ -580,6 +586,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;tuiIcon-action-edit&#34;&gt;&lt;/i&gt;
@@ -616,6 +623,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;svg class=&#34;tuiIcon&#34;&gt;
   &lt;use xlink:href=&#34;#arrow-down&#34; /&gt;
 &lt;/svg&gt;
@@ -650,6 +658,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;i class=&#34;tuiIcon-arrow-down&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;tuiIcon-arrow-left&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;tuiIcon-arrow-up&#34;&gt;&lt;/i&gt;
@@ -685,6 +694,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;svg class=&#34;tuiIcon&#34;&gt;
   &lt;use xlink:href=&#34;#chevron-down&#34; /&gt;
 &lt;/svg&gt;
@@ -719,6 +729,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;i class=&#34;tuiIcon-chevron-down&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;tuiIcon-chevron-left&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;tuiIcon-chevron-up&#34;&gt;&lt;/i&gt;
@@ -759,6 +770,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;svg class=&#34;tuiIcon&#34;&gt;
   &lt;use xlink:href=&#34;#information-info&#34; /&gt;
 &lt;/svg&gt;
@@ -795,6 +807,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;i class=&#34;tuiIcon-information-info&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;tuiIcon-information-light-bulb&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;tuiIcon-information-questionmark&#34;&gt;&lt;/i&gt;
@@ -828,6 +841,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;svg class=&#34;tuiIcon&#34;&gt;
   &lt;use xlink:href=&#34;#misc-pause&#34; /&gt;
 &lt;/svg&gt;
@@ -854,6 +868,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;i class=&#34;tuiIcon-misc-pause&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;tuiIcon-misc-play&#34;&gt;&lt;/i&gt;
 </code></pre>
@@ -884,6 +899,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;svg class=&#34;tuiIcon&#34;&gt;
   &lt;use xlink:href=&#34;#option-gear-full&#34; /&gt;
 &lt;/svg&gt;
@@ -914,6 +930,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;i class=&#34;tuiIcon-option-gear-full&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;tuiIcon-option-menu&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;tuiIcon-option-wrench-full&#34;&gt;&lt;/i&gt;
@@ -950,6 +967,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;svg class=&#34;tuiIcon&#34;&gt;
   &lt;use xlink:href=&#34;#pointer-down&#34; /&gt;
 &lt;/svg&gt;
@@ -984,6 +1002,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;i class=&#34;tuiIcon-pointer-down&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;tuiIcon-pointer-left&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;tuiIcon-pointer-up&#34;&gt;&lt;/i&gt;
@@ -992,6 +1011,33 @@
     </section>
     
 </article>
+
+                <form id="sg-try-example" method="post" action="http://jsfiddle.net/api/post/library/pure/" target="sgtryexample" style="display:none;">
+    <input type="submit">
+
+    <select name="panel_html"><option value="0">HTML</option></select>
+    <textarea name="html"></textarea>
+
+    <select name="panel_js">
+        <option value="0">JavaScript</option>
+        <option value="1">CoffeeScript</option>
+        <option value="2">JavaScript 1.7</option>
+    </select>
+    <textarea name="js"></textarea>
+
+    <select name="panel_css">
+        <option value="0">CSS</option>
+        <option value="1">SCSS</option>
+    </select>
+    <textarea name="css"></textarea>
+
+    <input type="text" name="title" value="">
+    <textarea name="description"></textarea>
+    <textarea name="resources">http://ui-kit.tempo.io/dist/css/tuik.min.css,http://ui-kit.tempo.io/dist/css/tuik-typography.min.css,http://ui-kit.tempo.io/css/font.css,http://ui-kit.tempo.io/dist/js/tuik.min.js</textarea>
+    <input type="text" name="dtd" value="html 5">
+    <input type="text" name="wrap" value="l">
+</form>
+
             </div>
         </section>
     </article>

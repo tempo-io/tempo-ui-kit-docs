@@ -5,10 +5,10 @@
     <base href="/"></base>
     <title>
         
-            Tempo UI Kit and Guidelines
+            Dropdowns - Tempo UI Kit and Guidelines
         
     </title>
-    <meta name="description" content="Tempo UI Kit and Guidelines" />
+    <meta name="description" content="Dropdowns" />
 
     <!-- TUIK DEPENDENCIES -->
     <script src="vendors/popper/popper.js"></script>
@@ -413,7 +413,7 @@
                           
                       </li>
                     
-                      <li class="sg-nav__links__element ">
+                      <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                           <a href="components/dropdowns">Dropdowns</a>
                           
                               <em class="sg-draft-notification">Draft</em>
@@ -469,8 +469,545 @@
         </nav>
         <section class="sg-section sg-section--main">
             <div class="sg-content">
-                <h1>404</h1>
-<h3>Whoops. Looks like what you're looking for can't be found.</h3>
+                <h1 class="sg-h1">
+    
+        
+    
+
+    Dropdowns
+    
+        <em class="sg-draft-notification">Draft</em>
+
+    
+</h1>
+
+<p class="sg-p">Use drop menus to let users select an action or option from a set of choices. Typically, drop menus are used when you have 5-15 options.</p>
+
+<h2 class="sg-h2">Best practices</h2>
+<p class="sg-p">There are many different components that can be used to give users the ability to select options. Here are some best practices around making the decision on which route is best for your user's journey.</p>
+<ul class="sg-ul">
+    <li class="sg-li">Sort the list in a logical order. For instance, put the most selected option at the top.</li>
+    <li class="sg-li">Simplify. Does an option rarely get selected? Re-evaluate if you really need that option.</li>
+    <li class="sg-li">Need an option to turn something on or off? Use a checkbox.</li>
+    <li class="sg-li">Need to select a single option from a set of options that are all visible on the page? Use radio buttons.</li>
+</ul>
+
+<h2 class="sg-h2">Default dropdown button</h2>
+<p class="sg-p">A single <em>tuiButton</em>, can be turned into a dropdown by adding a class <em>tuiButton--dropdown</em> on the button element and when placed within a <em>tuiDropdown</em>element.</p>
+
+
+
+
+<article class="sg-example" id="dropdownsDefault">
+    
+    <section class="sg-example__render">
+        <div class="tuiDropdown js-default-dropdown">
+   <button class="tuiButton tuiButton--dropdown">
+       Default dropdown
+   </button>
+   <div class="tuiDropdown__list">
+       <h3 class="tuiDropdown__list__header">Header</h3>
+       <a class="tuiDropdown__list__item" href="#">This is menu item 1</a>
+       <a class="tuiDropdown__list__item" href="#">This is menu item 2</a>
+       <a class="tuiDropdown__list__item tuiDropdown__list__item-is-disabled" href="#">Disabled menu item</a>
+       <hr class="tuiDropdown__list__divider">
+       <button class="tuiDropdown__list__item">Button menu item</button>
+       <button class="tuiDropdown__list__item" disabled="disabled">Disabled button</button>
+   </div>
+</div>
+
+<script>new Dropdown(document.querySelector('.js-default-dropdown'));</script>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;div class=&#34;tuiDropdown js-default-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;
+       Default dropdown
+   &lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item tuiDropdown__list__item-is-disabled&#34; href=&#34;#&#34;&gt;Disabled menu item&lt;/a&gt;
+       &lt;hr class=&#34;tuiDropdown__list__divider&#34;&gt;&lt;/hr&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34;&gt;Button menu item&lt;/button&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;new Dropdown(document.querySelector(&#39;.js-default-dropdown&#39;));&lt;/script&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h3 class="sg-h3">Disabled dropdown button</h3>
+<p class="sg-p">Dropdown buttons can be disabled in the same way buttons are by defining the <em>disabled</em> attribute.</p>
+
+<div class="sg-callout">
+    <h4 class="sg-callout__title">Use of anchors</h4>
+    <p class="sg-callout__p">Altho it is possible to use anchors for the toggle element of the dropdown we strongly recommend using buttons to ease handling of the dropdown disabled state.</p>
+</div>
+
+
+
+
+<article class="sg-example" id="dropdownsDisabled">
+    
+    <section class="sg-example__render">
+        <div class="tuiDropdown js-disabled-dropdown">
+   <button class="tuiButton tuiButton--dropdown" disabled="disabled">
+       Disabled dropdown
+   </button>
+   <div class="tuiDropdown__list">
+       <h3 class="tuiDropdown__list__header">Header</h3>
+       <a class="tuiDropdown__list__item" href="#">This is menu item 1</a>
+       <a class="tuiDropdown__list__item" href="#">This is menu item 2</a>
+       <a class="tuiDropdown__list__item tuiDropdown__list__item-is-disabled" href="#">Disabled menu item</a>
+       <hr class="tuiDropdown__list__divider">
+       <button class="tuiDropdown__list__item">Button menu item</button>
+       <button class="tuiDropdown__list__item" disabled="disabled">Disabled button</button>
+   </div>
+</div>
+
+<script>new Dropdown(document.querySelector('.js-disabled-dropdown'));</script>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;div class=&#34;tuiDropdown js-disabled-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown&#34; disabled=&#34;disabled&#34;&gt;
+       Disabled dropdown
+   &lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item tuiDropdown__list__item-is-disabled&#34; href=&#34;#&#34;&gt;Disabled menu item&lt;/a&gt;
+       &lt;hr class=&#34;tuiDropdown__list__divider&#34;&gt;&lt;/hr&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34;&gt;Button menu item&lt;/button&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;new Dropdown(document.querySelector(&#39;.js-disabled-dropdown&#39;));&lt;/script&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+
+<h3 class="sg-h3">Button modifiers</h3>
+<p class="sg-p">Dropdown can use any available button modifiers</p>
+
+
+
+
+<article class="sg-example" id="dropdownsModifiers">
+    
+    <section class="sg-example__render">
+        <div class="tuiDropdown js-primary-dropdown">
+   <button class="tuiButton tuiButton--dropdown tuiButton--primary">
+       Primary dropdown
+   </button>
+   <div class="tuiDropdown__list">
+       <a class="tuiDropdown__list__item" href="#">This is a menu item</a>
+   </div>
+</div>
+<div class="tuiDropdown js-subtle-dropdown">
+   <button class="tuiButton tuiButton--dropdown tuiButton--subtle">
+       Subtle dropdown
+   </button>
+   <div class="tuiDropdown__list">
+       <a class="tuiDropdown__list__item" href="#">This is a menu item</a>
+   </div>
+</div>
+<div class="tuiDropdown js-caution-dropdown">
+   <button class="tuiButton tuiButton--dropdown tuiButton--caution">
+       Caution dropdown
+   </button>
+   <div class="tuiDropdown__list">
+       <a class="tuiDropdown__list__item" href="#">This is a menu item</a>
+   </div>
+</div>
+<script>
+   new Dropdown(document.querySelector('.js-primary-dropdown'));
+   new Dropdown(document.querySelector('.js-subtle-dropdown'));
+   new Dropdown(document.querySelector('.js-caution-dropdown'));
+</script>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;div class=&#34;tuiDropdown js-primary-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown tuiButton--primary&#34;&gt;
+       Primary dropdown
+   &lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is a menu item&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiDropdown js-subtle-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown tuiButton--subtle&#34;&gt;
+       Subtle dropdown
+   &lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is a menu item&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiDropdown js-caution-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown tuiButton--caution&#34;&gt;
+       Caution dropdown
+   &lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is a menu item&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;script&gt;
+   new Dropdown(document.querySelector(&#39;.js-primary-dropdown&#39;));
+   new Dropdown(document.querySelector(&#39;.js-subtle-dropdown&#39;));
+   new Dropdown(document.querySelector(&#39;.js-caution-dropdown&#39;));
+&lt;/script&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+
+
+<h2 class="sg-h2">Split dropdown button</h2>
+<p class="sg-p">Similar to the default button but with the addition of <em>tuiButtonGroup</em> and <em>tuiDropdown--split</em> classes to the <em>tuiDropdown</em> element. The <em>tuiButton--dropdown</em> class is only needed on the second button element.</p>
+
+
+
+
+<article class="sg-example" id="dropdownsSplit">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup tuiDropdown tuiDropdown--split js-split-dropdown">
+   <button class="tuiButton">Dropdown split</button><button class="tuiButton tuiButton--dropdown"></button>
+   <div class="tuiDropdown__list">
+       <h3 class="tuiDropdown__list__header">Header</h3>
+       <a class="tuiDropdown__list__item" href="#">This is menu item 1</a>
+       <a class="tuiDropdown__list__item" href="#">This is menu item 2</a>
+       <a class="tuiDropdown__list__item tuiDropdown__list__item-is-disabled" href="#">Disabled menu item</a>
+       <hr class="tuiDropdown__list__divider">
+       <button class="tuiDropdown__list__item">Button menu item</button>
+       <button class="tuiDropdown__list__item" disabled="disabled">Disabled button</button>
+   </div>
+</div>
+
+<script>new Dropdown(document.querySelector('.js-split-dropdown'));</script>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split js-split-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;Dropdown split&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;&lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item tuiDropdown__list__item-is-disabled&#34; href=&#34;#&#34;&gt;Disabled menu item&lt;/a&gt;
+       &lt;hr class=&#34;tuiDropdown__list__divider&#34;&gt;&lt;/hr&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34;&gt;Button menu item&lt;/button&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;new Dropdown(document.querySelector(&#39;.js-split-dropdown&#39;));&lt;/script&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h3 class="sg-h3">Disabled split dropdown button</h3>
+<p class="sg-p">Split dropdown buttons can be disabled in the same way buttons are by defining the <em>disabled</em> attribute. The action button and the dropdown button can both be disabled and enabled individualy.</p>
+
+
+
+
+<article class="sg-example" id="dropdownsDisabledSplit">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup tuiDropdown tuiDropdown--split js-split-toggle-disabled-dropdown">
+   <button class="tuiButton">Disabled toggle</button><button class="tuiButton tuiButton--dropdown" disabled="disabled"></button>
+   <div class="tuiDropdown__list">
+       <a class="tuiDropdown__list__item" href="#">This is a menu item</a>
+   </div>
+</div>
+
+<div class="tuiButtonGroup tuiDropdown tuiDropdown--split js-split-action-disabled-dropdown">
+   <button class="tuiButton" disabled="disabled">Disabled action</button><button class="tuiButton tuiButton--dropdown"></button>
+   <div class="tuiDropdown__list">
+       <a class="tuiDropdown__list__item" href="#">This is a menu item</a>
+   </div>
+</div>
+
+<div class="tuiButtonGroup tuiDropdown tuiDropdown--split js-split-disabled-dropdown">
+   <button class="tuiButton" disabled="disabled">Fully action</button><button class="tuiButton tuiButton--dropdown" disabled="disabled"></button>
+   <div class="tuiDropdown__list">
+       <a class="tuiDropdown__list__item" href="#">This is a menu item</a>
+   </div>
+</div>
+
+<script>
+   new Dropdown(document.querySelector('.js-split-toggle-disabled-dropdown'));
+   new Dropdown(document.querySelector('.js-split-action-disabled-dropdown'));
+   new Dropdown(document.querySelector('.js-split-disabled-dropdown'));
+</script>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split js-split-toggle-disabled-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;Disabled toggle&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--dropdown&#34; disabled=&#34;disabled&#34;&gt;&lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is a menu item&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split js-split-action-disabled-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34; disabled=&#34;disabled&#34;&gt;Disabled action&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;&lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is a menu item&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split js-split-disabled-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34; disabled=&#34;disabled&#34;&gt;Fully action&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--dropdown&#34; disabled=&#34;disabled&#34;&gt;&lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is a menu item&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;script&gt;
+   new Dropdown(document.querySelector(&#39;.js-split-toggle-disabled-dropdown&#39;));
+   new Dropdown(document.querySelector(&#39;.js-split-action-disabled-dropdown&#39;));
+   new Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;));
+&lt;/script&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h2 class="sg-h2">Icons</h2>
+<p class="sg-p">An icon can be included in a dropdown item by adding <em>tuiIcon</em> within the button element. Can also be used with other types of buttons like split buttons.</p>
+
+
+
+
+<article class="sg-example" id="dropdownsWithIcon">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup tuiDropdown">
+   <button class="tuiButton tuiButton--dropdown"><i class="tuiIcon tuiIcon-option-gear-full"></i>Dropdown with icon</button>
+</div>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;div class=&#34;tuiButtonGroup tuiDropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;&lt;i class=&#34;tuiIcon tuiIcon-option-gear-full&#34;&gt;&lt;/i&gt;Dropdown with icon&lt;/button&gt;&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h3 class="sg-h3">Icon only dropdown button</h3>
+<p class="sg-p">Similar to the example above but with the <em>tuiDropdown--icon</em> modifier.</p>
+
+
+
+
+<article class="sg-example" id="dropdownsOnlyIcon">
+    
+    <section class="sg-example__render">
+        <div class="tuiDropdown tuiDropdown--icon">
+   <button class="tuiButton"><i class="tuiIcon tuiIcon-option-gear-full"></i></button>
+</div>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;div class=&#34;tuiDropdown tuiDropdown--icon&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;&lt;i class=&#34;tuiIcon tuiIcon-option-gear-full&#34;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h2 class="sg-h2">Menu</h2>
+<p class="sg-p">Both anchors (<em>&lt;a&gt;</em>) and buttons (<em>&lt;button&gt;</em>) can be used as menu items. Long text will be truncated.</p>
+
+<div class="sg-callout">
+    <h4 class="sg-callout__title">Title attribute</h4>
+    <p class="sg-callout__p">It is essential that you use the title attribute to ensure the user can read the full label of the menu element when it is being truncated.</p>
+</div>
+
+
+
+
+<article class="sg-example sg-dropdown-menu-display" id="dropdownsMenu">
+    
+    <section class="sg-example__render">
+        <div class="tuiDropdown">
+   <div class="tuiDropdown__list">
+       <a class="tuiDropdown__list__item" href="#">Anchor element</a>
+       <button class="tuiDropdown__list__item">Button element</button>
+       <a class="tuiDropdown__list__item" href="#" title="Super long text to show that long labels will eventually be truncated">Super long text to show that long labels will eventually be truncated</a>
+   </div>
+</div>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;div class=&#34;tuiDropdown&#34;&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;Anchor element&lt;/a&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34;&gt;Button element&lt;/button&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34; title=&#34;Super long text to show that long labels will eventually be truncated&#34;&gt;Super long text to show that long labels will eventually be truncated&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h3 class="sg-h3">Headers</h3>
+<p class="sg-p">Add a header to the dropdown menu by adding an element, usually a header (<em>&lt;h&gt;</em>), with the <em>tuiDropdown__list__header</em> class to the menu item.</p>
+
+
+
+
+<article class="sg-example sg-dropdown-menu-display" id="dropdownsMenuHeader">
+    
+    <section class="sg-example__render">
+        <div class="tuiDropdown">
+   <div class="tuiDropdown__list">
+       <h3 class="tuiDropdown__list__header">Header</h3>
+       <a class="tuiDropdown__list__item" href="#">This is menu item 1</a>
+       <a class="tuiDropdown__list__item" href="#">This is menu item 2</a>
+   </div>
+</div>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;div class=&#34;tuiDropdown&#34;&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h3 class="sg-h3">Dividers</h3>
+<p class="sg-p">Add a divider to the dropdown menu by adding an element, usually a horizontal rule (<em>&lt;hr&gt;</em>), with the class <em>tuiDropdown__list__divider</em> class to the menu item.</p>
+
+
+
+
+<article class="sg-example sg-dropdown-menu-display" id="dropdownsMenuDivider">
+    
+    <section class="sg-example__render">
+        <div class="tuiDropdown">
+   <div class="tuiDropdown__list">
+     <a class="tuiDropdown__list__item" href="#">This is menu item 1</a>
+     <a class="tuiDropdown__list__item" href="#">This is menu item 2</a>
+     <hr class="tuiDropdown__list__divider">
+     <a class="tuiDropdown__list__item" href="#">Another menu item</a>
+   </div>
+</div>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;div class=&#34;tuiDropdown&#34;&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+     &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+     &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+     &lt;hr class=&#34;tuiDropdown__list__divider&#34;&gt;&lt;/hr&gt;
+     &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;Another menu item&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
+
+
+<h3 class="sg-h3">Disabled items</h3>
+<p class="sg-p">You can disable anchor anchor (<em>&lt;a&gt;</em>) items by adding the <em>tuiDropdown__list__item-is-disabled</em> class to the element. You can disable button elements by using the <em>disabled</em> attribute.</p>
+
+
+
+
+<article class="sg-example sg-dropdown-menu-display" id="dropdownsMenuDisabledItem">
+    
+    <section class="sg-example__render">
+        <div class="tuiDropdown">
+   <div class="tuiDropdown__list">
+     <a class="tuiDropdown__list__item" href="#">Menu item</a>
+     <a class="tuiDropdown__list__item tuiDropdown__list__item-is-disabled" href="#">Disabled menu item</a>
+     <a class="tuiDropdown__list__item" href="#">Another menu item</a>
+     <button class="tuiDropdown__list__item" disabled="disabled">Disabled button
+   </button></div>
+</div>
+
+    </section>
+    
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;div class=&#34;tuiDropdown&#34;&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+     &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;Menu item&lt;/a&gt;
+     &lt;a class=&#34;tuiDropdown__list__item tuiDropdown__list__item-is-disabled&#34; href=&#34;#&#34;&gt;Disabled menu item&lt;/a&gt;
+     &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;Another menu item&lt;/a&gt;
+     &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+</article>
 
                 <form id="sg-try-example" method="post" action="http://jsfiddle.net/api/post/library/pure/" target="sgtryexample" style="display:none;">
     <input type="submit">

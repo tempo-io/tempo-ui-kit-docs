@@ -10,17 +10,26 @@
     </title>
     <meta name="description" content="Tags" />
 
+    <!-- TUIK DEPENDENCIES -->
+    <script src="vendors/popper/popper.js"></script>
+
+    <!-- TUIK -->
+    <link rel="stylesheet" href="dist/css/tuik-typography.css" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css" type="text/css">
+    <script src="dist/js/tuik.js"></script>
+
+    <!-- SG VENDRORS -->
+    <link rel="stylesheet" href="vendors/tippy/tippy.css">
+    <script src="vendors/tippy/tippy.min.js"></script>
     <link rel="stylesheet" href="vendors/highlight/default.css">
-    <link rel="stylesheet" href="css/main.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://unpkg.com/tippy.js@1.1.3/dist/tippy.css">
-    <script src="https://unpkg.com/tippy.js@1.1.3/dist/tippy.min.js"></script>
-
     <script src="vendors/highlight/highlight.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
+    <!-- SG -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
     <script src="tuikdocs.js"></script>
+
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 <symbol id="action-add" viewBox="0 0 14 14">
@@ -402,6 +411,11 @@
                       <li class="sg-nav__links__element ">
                           <a href="components/checkboxes">Checkboxes</a>
                           
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/dropdowns">Dropdowns</a>
+                          
                               <em class="sg-draft-notification">Draft</em>
 
                           
@@ -425,9 +439,6 @@
                       <li class="sg-nav__links__element ">
                           <a href="components/modals">Modals</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
@@ -441,9 +452,6 @@
                       <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                           <a href="components/tags">Tags</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
@@ -453,9 +461,6 @@
                     
                       <li class="sg-nav__links__element ">
                           <a href="components/tooltips">Tooltips</a>
-                          
-                              <em class="sg-draft-notification">Draft</em>
-
                           
                       </li>
                     
@@ -471,17 +476,13 @@
 
     Tags
     
-        <em class="sg-draft-notification">Draft</em>
-
-    
 </h1>
 
 
-<p class="sg-p">Tags are used to tag content with certain keywords; and optionally to link to resources showing more information related to that keyword. Tags are closeable.
-</p>
+<p class="sg-p">Tags are used to describe content with related keywords, and optionally to describe a link to resources providing more information related to that keyword. Tags can be dissmissed.</p>
 
 <h3 class="sg-h3">Default</h3>
-<p class="sg-p">Simply a span with base class <em>tuiTag</em>.</p>
+<p class="sg-p">An element with base class <em>tuiTag</em>.</p>
 
 
 
@@ -496,6 +497,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
    &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Default tag&lt;/span&gt;
 &lt;/span&gt;
@@ -506,7 +508,7 @@
 
 
 <h3 class="sg-h3">Dismissable (Font Icon)</h3>
-<p class="sg-p">If the tag is dismissable, add a <em>tuiIcon-action-delete</em> class to a <em>button</em> or <em>anchor</em> element.</p>
+<p class="sg-p">If the tag can be dismissed, add a <em>tuiIcon-action-delete</em> class to a <em>button</em> or <em>anchor</em> element.</p>
 
 
 
@@ -526,6 +528,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
    &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Dismiss button&lt;/span&gt;
    &lt;button class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/button&gt;
@@ -541,7 +544,7 @@
 
 
 <h3 class="sg-h3">Dismissable (SVG Icon)</h3>
-<p class="sg-p">You can also use <a href="foundations/icons#tocsvgstorerefexample">SVG icons</a> for the dismiss button but we strongly recomend using the <em>#action-delete</em> font icon as described earlier.</p>
+<p class="sg-p">You can also use an <a href="foundations/icons#tocsvgstorerefexample">SVG</a> icon for the dismiss button, but we strongly recommend using the <em>tuiIcon-action-delete</em> font icon as described previously.</p>
 
 
 
@@ -559,6 +562,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
    &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Default tag&lt;/span&gt;
    &lt;svg class=&#34;tuiIcon&#34;&gt;
@@ -572,7 +576,7 @@
 
 
 <h3 class="sg-h3">Links</h3>
-<p class="sg-p">Tag label can also be an anchor.</p>
+<p class="sg-p">A tag label can also be used as an anchor.</p>
 
 
 
@@ -595,6 +599,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
    &lt;a class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34; href=&#34;#&#34;&gt;Default link&lt;/a&gt;
 &lt;/span&gt;
@@ -613,10 +618,10 @@
 
 
 <h3 class="sg-h3">Long label</h3>
-<p class="sg-p">Tags with long label text gets the ellipsis property with a maximum width of 100px.</p>
+<p class="sg-p">Tags with long label text receive the ellipsis property with a maximum width of 100px.</p>
 <div class="sg-callout">
     <h4 class="sg-callout__title">Title attribute</h4>
-    <p class="sg-callout__p">It is extremely important to use the title attribute to allow the user to read the full label of the tag when it is being truncated.</p>
+    <p class="sg-callout__p">It is essential that you use the title attribute to ensure the user can read the full label of the tag when it is being truncated.</p>
 </div>
 
 
@@ -637,6 +642,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
    &lt;span class=&#34;tuiTag__label&#34; title=&#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&lt;/span&gt;
    &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
@@ -649,6 +655,33 @@
     </section>
     
 </article>
+
+                <form id="sg-try-example" method="post" action="http://jsfiddle.net/api/post/library/pure/" target="sgtryexample" style="display:none;">
+    <input type="submit">
+
+    <select name="panel_html"><option value="0">HTML</option></select>
+    <textarea name="html"></textarea>
+
+    <select name="panel_js">
+        <option value="0">JavaScript</option>
+        <option value="1">CoffeeScript</option>
+        <option value="2">JavaScript 1.7</option>
+    </select>
+    <textarea name="js"></textarea>
+
+    <select name="panel_css">
+        <option value="0">CSS</option>
+        <option value="1">SCSS</option>
+    </select>
+    <textarea name="css"></textarea>
+
+    <input type="text" name="title" value="">
+    <textarea name="description"></textarea>
+    <textarea name="resources">http://ui-kit.tempo.io/dist/css/tuik.min.css,http://ui-kit.tempo.io/dist/css/tuik-typography.min.css,http://ui-kit.tempo.io/css/font.css,http://ui-kit.tempo.io/dist/js/tuik.min.js</textarea>
+    <input type="text" name="dtd" value="html 5">
+    <input type="text" name="wrap" value="l">
+</form>
+
             </div>
         </section>
     </article>

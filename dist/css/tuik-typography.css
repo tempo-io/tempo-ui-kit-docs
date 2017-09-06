@@ -21,37 +21,37 @@ body {
 }
 .tuiTypo-h1,
 h1 {
-  font-size: 2.285em;
+  font-size: 2.2857143em;
   color: #333333;
   font-weight: normal;
 }
 .tuiTypo-h2,
 h2 {
-  font-size: 1.714em;
+  font-size: 1.7142857em;
   color: #333333;
   font-weight: normal;
 }
 .tuiTypo-h3,
 h3 {
-  font-size: 1.428em;
+  font-size: 1.4285714em;
   color: #333333;
   font-weight: normal;
 }
 .tuiTypo-h4,
 h4 {
-  font-size: 1.142em;
+  font-size: 1.1428571em;
   font-weight: bold;
   color: #333333;
 }
 .tuiTypo-h5,
 h5 {
-  font-size: 1em;
+  font-size: 1.0000000em;
   font-weight: bold;
   color: #333333;
 }
 .tuiTypo-h6,
 h6 {
-  font-size: 0.857em;
+  font-size: 0.85714286em;
   font-weight: bold;
   text-transform: uppercase;
   color: #333333;
@@ -59,7 +59,7 @@ h6 {
 .tuiTypo-p,
 p {
   font-size: 1em;
-  line-height: 1.4285714286em;
+  line-height: 1.4285714em;
   color: #333333;
   font-weight: normal;
 }

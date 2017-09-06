@@ -10,17 +10,26 @@
     </title>
     <meta name="description" content="Modals" />
 
+    <!-- TUIK DEPENDENCIES -->
+    <script src="vendors/popper/popper.js"></script>
+
+    <!-- TUIK -->
+    <link rel="stylesheet" href="dist/css/tuik-typography.css" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css" type="text/css">
+    <script src="dist/js/tuik.js"></script>
+
+    <!-- SG VENDRORS -->
+    <link rel="stylesheet" href="vendors/tippy/tippy.css">
+    <script src="vendors/tippy/tippy.min.js"></script>
     <link rel="stylesheet" href="vendors/highlight/default.css">
-    <link rel="stylesheet" href="css/main.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://unpkg.com/tippy.js@1.1.3/dist/tippy.css">
-    <script src="https://unpkg.com/tippy.js@1.1.3/dist/tippy.min.js"></script>
-
     <script src="vendors/highlight/highlight.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
+    <!-- SG -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
     <script src="tuikdocs.js"></script>
+
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 <symbol id="action-add" viewBox="0 0 14 14">
@@ -402,6 +411,11 @@
                       <li class="sg-nav__links__element ">
                           <a href="components/checkboxes">Checkboxes</a>
                           
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/dropdowns">Dropdowns</a>
+                          
                               <em class="sg-draft-notification">Draft</em>
 
                           
@@ -425,9 +439,6 @@
                       <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                           <a href="components/modals">Modals</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
@@ -441,9 +452,6 @@
                       <li class="sg-nav__links__element ">
                           <a href="components/tags">Tags</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
@@ -453,9 +461,6 @@
                     
                       <li class="sg-nav__links__element ">
                           <a href="components/tooltips">Tooltips</a>
-                          
-                              <em class="sg-draft-notification">Draft</em>
-
                           
                       </li>
                     
@@ -471,15 +476,12 @@
 
     Modals
     
-        <em class="sg-draft-notification">Draft</em>
-
-    
 </h1>
 
-<p class="sg-p">Use modal dialogs when you need a response from a user, to reveal critical information, or to show info without losing the context of the page. No other interactions on the main page can be accessed while a modal dialog is active.</p>
+<p class="sg-p">A modal dialog overlays the main application page. Users must interact with the modal dialog before they can return to the page. They are typically used to deliver critical information, to show additional information in context of the current page, or if you need a response from the user.</p>
+<p class="sg-p">A best practice is to keep modal dialogs simple and include only valuable and relevant information. Remove elements or content that does not support user tasks, or improve the user experience. If you find that the number of required elements for your design is bloating your dialog, then try a different design solution. Be sure to include an easy way for the user to close the dialog.</p>
 
 <h2 class="sg-h2">Default</h2>
-<p class="sg-p">The basic dialog for modals should contain only valuable and relevant information. Simplify dialogs by removing unnecessary elements or content that doesn't support user tasks. If you find that the number of required elements for your design are making the dialog excessively large, then try a different design solution.</p>
 <p class="sg-p">A modal dialog is composed of two components, the <em>tuiBlanket</em> and a <em>tuiDialog</em>.</p>
 
 
@@ -505,6 +507,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
     &lt;article class=&#34;tuiDialog&#34;&gt;
         &lt;header class=&#34;tuiDialog__header&#34;&gt;&lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Default dialog&lt;/h1&gt;&lt;/header&gt;
@@ -525,29 +528,29 @@
 
 <dl class="sg-dl">
     <dt class="sg-dt">Header</dt>
-    <dd class="sg-dd">Contains the title of the modal and provides access to additional information and filters (in detailed dialogs).</dd>
+    <dd class="sg-dd">Includes the title of the modal, and in cases where user might need additional help or support it may include elements such as a link button or filter.</dd>
 
     <dt class="sg-dt">Title</dt>
-    <dd class="sg-dd">The title provides a concise overview of the contents of the modal dialog.</dd>
+    <dd class="sg-dd">Provide a descriptive and concise title so that the user understands what the content is for and that they haven't left the original page.</dd>
 
     <dt class="sg-dt">Body</dt>
-    <dd class="sg-dd">The contents ofthe dialog. Don't try to cram too much info in here or include multiple steps. If multiple steps are required, consider using a whole page instead.</dd>
+    <dd class="sg-dd">The contents of the dialog. Don't try to cram too much information in here or include multiple steps. If multiple steps are required, consider using a whole page instead.</dd>
 
     <dt class="sg-dt">Footer</dt>
     <dd class="sg-dd">Contains a primary action, the ability to cancel the dialog, and may contain a text hint (in detailed dialogs).</dd>
 
     <dt class="sg-dt">Actions</dt>
-    <dd class="sg-dd">Contains a primary action and the ability to cancel and close the dialog. The main action should be a <a href="components/buttons#tocmodifiers">primary button</a> that uses self-describing action verbs ('Add' instead of 'OK').</dd>
+    <dd class="sg-dd">Contains a primary action and the ability to cancel and close the dialog. The main action should be a <a href="components/buttons#tocmodifiers">primary button</a> that uses a self-describing action verb ('Add' instead of 'OK').</dd>
 </dl>
 
 <h2 class="sg-h2">Close button</h2>
 <div class="sg-callout">
     <h4 class="sg-callout__title">Close button icons</h4>
-    <p class="sg-callout__p">The close button use icons thus you must include the <a href="foundations/icons">TUIK icons</a> in your project before adding close buttons to your modals.</p>
+    <p class="sg-callout__p">The close button includes an icon, therefore you must include <a href="foundations/icons">TUIK icons</a> in your project before adding a close button to a modal dialog.</p>
 </div>
 
 <h3 class="sg-h3">Using SVG</h3>
-<p class="sg-p">To create a close button using SVG icons see how you can <a href="foundations/icons#tocconsumingsvg">consume our SVG icons</a>.</p>
+<p class="sg-p">To create a close button using SVG icons, see how you can <a href="foundations/icons#tocconsumingsvg">consume our SVG icons</a>.
 
 
 
@@ -568,6 +571,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
     &lt;article class=&#34;tuiDialog&#34;&gt;
         &lt;header class=&#34;tuiDialog__header&#34;&gt;
@@ -584,7 +588,7 @@
 
 
 <h3 class="sg-h3">Using Font Icons</h3>
-<p class="sg-p">To create a close button using font icons see how you can <a href="foundations/icons#tocconsumingfont">consume our font icons</a>.</p>
+</p><p class="sg-p">To create a close button using font icons, see how you can <a href="foundations/icons#tocconsumingfont">consume our font icons</a>.</p>
 
 
 
@@ -606,6 +610,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
     &lt;article class=&#34;tuiDialog&#34;&gt;
         &lt;header class=&#34;tuiDialog__header&#34;&gt;
@@ -641,6 +646,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
     &lt;article class=&#34;tuiDialog&#34;&gt;
         &lt;header class=&#34;tuiDialog__header&#34;&gt;
@@ -695,6 +701,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
     &lt;article class=&#34;tuiDialog tuiModal__dialog--media modalWithBackgroundImage&#34;&gt;
         &lt;section class=&#34;tuiDialog__header tuiDialog__header--media&#34;&gt;
@@ -723,7 +730,7 @@
 
 
 <h2 class="sg-h2">Standard sizes</h2>
-<p class="sg-p">Modal dialogs are available in 3 sizes. Simply add the <em>tuiDialog--small</em> or <em>tuiDialog--large</em> modifiers to the <em>tuiDialog</em> element.</p>
+<p class="sg-p">Modal dialogs are available in three sizes. The default size is medium. Simply add the <em>tuiDialog--small</em> or <em>tuiDialog--large</em> modifiers to the tuiDialog element.</p>
 
 <h3 class="sg-h3">Small</h3>
 
@@ -748,6 +755,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
     &lt;article class=&#34;tuiDialog tuiDialog--small&#34;&gt;
         &lt;header class=&#34;tuiDialog__header&#34;&gt;&lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Small dialog&lt;/h1&gt;&lt;/header&gt;
@@ -788,6 +796,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
     &lt;article class=&#34;tuiDialog&#34;&gt;
         &lt;header class=&#34;tuiDialog__header&#34;&gt;&lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Medium dialog&lt;/h1&gt;&lt;/header&gt;
@@ -828,6 +837,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
     &lt;article class=&#34;tuiDialog tuiDialog--large&#34;&gt;
         &lt;header class=&#34;tuiDialog__header&#34;&gt;&lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Large dialog&lt;/h1&gt;&lt;/header&gt;
@@ -846,7 +856,7 @@
 
 
 <h2 class="sg-h2">Subtle blanket</h2>
-<p class="sg-p">It is possible to display the dialog with a transparent blanket using the <em>.tuiBlanket--subtle</em> modifier.</p>
+<p class="sg-p">You can display the dialog with a transparent blanket using the <em>tuiBlanket--subtle</em> modifier.</p>
 
 
 
@@ -871,6 +881,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;div class=&#34;tuiBlanket tuiBlanket--subtle&#34;&gt;
     &lt;article class=&#34;tuiDialog&#34;&gt;
         &lt;header class=&#34;tuiDialog__header&#34;&gt;&lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Subtle dialog&lt;/h1&gt;&lt;/header&gt;
@@ -891,7 +902,7 @@
 
 
 <h2 class="sg-h2">Scrolling</h2>
-<p class="sg-p">The height of a dialog is determined by the content. Apply the <em>tuiBlanket-is-displayed</em> class to the body of the document when displaying a modal to avoid having the underlying document scroll with the modal.</p>
+<p class="sg-p">The height of a dialog is determined by its content. Apply the <em>tuiBlanket-is-displayed</em> class to the body of the document when displaying a modal to avoid having the underlying document scroll with the modal.</p>
 
 
 
@@ -928,6 +939,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;script&gt;
     showScrollableModal = function(){
         document.querySelector(&#39;.js-scrollable-modal&#39;).setAttribute(&#39;style&#39;, &#39;&#39;);
@@ -957,6 +969,33 @@
     </section>
     
 </article>
+
+                <form id="sg-try-example" method="post" action="http://jsfiddle.net/api/post/library/pure/" target="sgtryexample" style="display:none;">
+    <input type="submit">
+
+    <select name="panel_html"><option value="0">HTML</option></select>
+    <textarea name="html"></textarea>
+
+    <select name="panel_js">
+        <option value="0">JavaScript</option>
+        <option value="1">CoffeeScript</option>
+        <option value="2">JavaScript 1.7</option>
+    </select>
+    <textarea name="js"></textarea>
+
+    <select name="panel_css">
+        <option value="0">CSS</option>
+        <option value="1">SCSS</option>
+    </select>
+    <textarea name="css"></textarea>
+
+    <input type="text" name="title" value="">
+    <textarea name="description"></textarea>
+    <textarea name="resources">http://ui-kit.tempo.io/dist/css/tuik.min.css,http://ui-kit.tempo.io/dist/css/tuik-typography.min.css,http://ui-kit.tempo.io/css/font.css,http://ui-kit.tempo.io/dist/js/tuik.min.js</textarea>
+    <input type="text" name="dtd" value="html 5">
+    <input type="text" name="wrap" value="l">
+</form>
+
             </div>
         </section>
     </article>

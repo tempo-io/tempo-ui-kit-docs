@@ -10,17 +10,26 @@
     </title>
     <meta name="description" content="Icons" />
 
+    <!-- TUIK DEPENDENCIES -->
+    <script src="vendors/popper/popper.js"></script>
+
+    <!-- TUIK -->
+    <link rel="stylesheet" href="dist/css/tuik-typography.css" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css" type="text/css">
+    <script src="dist/js/tuik.js"></script>
+
+    <!-- SG VENDRORS -->
+    <link rel="stylesheet" href="vendors/tippy/tippy.css">
+    <script src="vendors/tippy/tippy.min.js"></script>
     <link rel="stylesheet" href="vendors/highlight/default.css">
-    <link rel="stylesheet" href="css/main.css" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://unpkg.com/tippy.js@1.1.3/dist/tippy.css">
-    <script src="https://unpkg.com/tippy.js@1.1.3/dist/tippy.min.js"></script>
-
     <script src="vendors/highlight/highlight.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 
+    <!-- SG -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
     <script src="tuikdocs.js"></script>
+
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
 <symbol id="action-add" viewBox="0 0 14 14">
@@ -402,6 +411,11 @@
                       <li class="sg-nav__links__element ">
                           <a href="components/checkboxes">Checkboxes</a>
                           
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/dropdowns">Dropdowns</a>
+                          
                               <em class="sg-draft-notification">Draft</em>
 
                           
@@ -425,9 +439,6 @@
                       <li class="sg-nav__links__element ">
                           <a href="components/modals">Modals</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
@@ -441,9 +452,6 @@
                       <li class="sg-nav__links__element ">
                           <a href="components/tags">Tags</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
@@ -453,9 +461,6 @@
                     
                       <li class="sg-nav__links__element ">
                           <a href="components/tooltips">Tooltips</a>
-                          
-                              <em class="sg-draft-notification">Draft</em>
-
                           
                       </li>
                     
@@ -507,6 +512,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;!DOCTYPE html&gt;
 &lt;html lang=&#34;en&#34;&gt;
 &lt;head&gt;
@@ -549,6 +555,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;svg class=&#34;tuiIcon&#34;&gt;
   &lt;use xlink:href=&#34;#arrow-down&#34; /&gt;
 &lt;/svg&gt;
@@ -570,6 +577,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;svg viewBox=&#34;0 0 12 14&#34; class=&#34;tuiIcon&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
   &lt;use xlink:href=&#34;dist/svg/store.svg#arrow-down&#34;&gt;&lt;/use&gt;
 &lt;/svg&gt;
@@ -602,6 +610,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;svg class=&#34;tuiIcon&#34; width=&#34;12px&#34; height=&#34;14px&#34; viewBox=&#34;0 0 12 14&#34; version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;&gt;
     &lt;title&gt;Arrow Down&lt;/title&gt;
     &lt;desc&gt;Created with Sketch.&lt;/desc&gt;
@@ -628,6 +637,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="css">@font-face {
   font-family: &#39;tuiIcons&#39;;
   src:  url(&#39;/dist/fonts/tuiIcons.eot?zdeulf&#39;);
@@ -657,6 +667,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;i class=&#34;tuiIcon-arrow-down&#34;&gt;&lt;/i&gt;
 </code></pre>
     </section>
@@ -712,6 +723,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;style&gt;
    .largeArrowDown { height: 2.5em; width: 2.5em; } 
    .redArrowLeft { fill: red; } 
@@ -743,6 +755,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;svg class=&#34;tuiIcon largeArrowDown&#34;&gt;
   &lt;use xlink:href=&#34;#arrow-down&#34; /&gt;
 &lt;/svg&gt;
@@ -779,6 +792,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;style&gt;
    .largeFontArrowDown { font-size:2.5em; } 
    .redFontArrowLeft { color: red; } 
@@ -804,6 +818,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;i class=&#34;tuiIcon-arrow-down largeFontArrowDown&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;tuiIcon-arrow-left redFontArrowLeft&#34;&gt;&lt;/i&gt;
 &lt;i class=&#34;tuiIcon-arrow-right smallFontTransparentArrowRight&#34;&gt;&lt;/i&gt;
@@ -846,6 +861,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;style&gt;
    .rotatingIcon:hover {
        animation-name: rotate;
@@ -882,6 +898,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;svg class=&#34;tuiIcon rotatingIcon&#34;&gt;
   &lt;use xlink:href=&#34;#arrow-down&#34; /&gt;
 &lt;/svg&gt;
@@ -906,6 +923,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;i class=&#34;tuiIcon-arrow-down rotatingIcon&#34;&gt;&lt;/i&gt;
 </code></pre>
     </section>
@@ -947,6 +965,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;button class=&#34;tuiButton&#34;&gt;Arrow right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#arrow-right&#34; /&gt;&lt;/svg&gt;&lt;/button&gt;
 &lt;button class=&#34;tuiButton tuiButton--caution&#34;&gt;Pointer right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#pointer-right&#34; /&gt;&lt;/svg&gt;&lt;/button&gt;
 &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Chevron right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#chevron-right&#34; /&gt;&lt;/svg&gt;&lt;/button&gt;
@@ -972,6 +991,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;button class=&#34;tuiButton&#34; disabled=&#34;disabled&#34;&gt;Disabled arrow right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#arrow-right&#34; /&gt;&lt;/svg&gt;&lt;/button&gt;
 &lt;button class=&#34;tuiButton tuiButton--caution&#34; disabled=&#34;disabled&#34;&gt;Disabled pointer right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#pointer-right&#34; /&gt;&lt;/svg&gt;&lt;/button&gt;
 &lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled chevron right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#chevron-right&#34; /&gt;&lt;/svg&gt;&lt;/button&gt;
@@ -997,6 +1017,7 @@
     
     
     <section class="sg-example__source">
+        
         <pre><code class="html">&lt;a class=&#34;tuiButton&#34;&gt;Link arrow right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#arrow-right&#34; /&gt;&lt;/svg&gt;&lt;/a&gt;
 &lt;a class=&#34;tuiButton tuiButton--caution&#34;&gt;Link pointer right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#pointer-right&#34; /&gt;&lt;/svg&gt;&lt;/a&gt;
 &lt;a class=&#34;tuiButton tuiButton--primary&#34;&gt;Link chevron right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#chevron-right&#34; /&gt;&lt;/svg&gt;&lt;/a&gt;
@@ -1028,6 +1049,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;button class=&#34;tuiButton&#34;&gt;Arrow right &lt;svg class=&#34;tuiIcon&#34; viewBox=&#34;0 0 14 12&#34; version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;&gt;
     &lt;title&gt;Arrow Right&lt;/title&gt;
     &lt;desc&gt;Created with Sketch.&lt;/desc&gt;
@@ -1059,6 +1081,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;button class=&#34;tuiButton&#34;&gt;Arrow right &lt;i class=&#34;tuiIcon tuiIcon-arrow-right&#34;&gt;&lt;/i&gt;&lt;/button&gt;
 &lt;button class=&#34;tuiButton tuiButton--caution&#34;&gt;Pointer right &lt;i class=&#34;tuiIcon tuiIcon-pointer-right&#34;&gt;&lt;/i&gt;&lt;/button&gt;
 &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Chevron right &lt;i class=&#34;tuiIcon tuiIcon-chevron-right&#34;&gt;&lt;/i&gt;&lt;/button&gt;
@@ -1084,6 +1107,7 @@
     
     
     <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
         <pre><code class="html">&lt;a class=&#34;tuiButton&#34;&gt;Arrow right &lt;i class=&#34;tuiIcon tuiIcon-arrow-right&#34;&gt;&lt;/i&gt;&lt;/a&gt;
 &lt;a class=&#34;tuiButton tuiButton--caution&#34;&gt;Pointer right &lt;i class=&#34;tuiIcon tuiIcon-pointer-right&#34;&gt;&lt;/i&gt;&lt;/a&gt;
 &lt;a class=&#34;tuiButton tuiButton--primary&#34;&gt;Chevron right &lt;i class=&#34;tuiIcon tuiIcon-chevron-right&#34;&gt;&lt;/i&gt;&lt;/a&gt;
@@ -1092,6 +1116,33 @@
     </section>
     
 </article>
+
+                <form id="sg-try-example" method="post" action="http://jsfiddle.net/api/post/library/pure/" target="sgtryexample" style="display:none;">
+    <input type="submit">
+
+    <select name="panel_html"><option value="0">HTML</option></select>
+    <textarea name="html"></textarea>
+
+    <select name="panel_js">
+        <option value="0">JavaScript</option>
+        <option value="1">CoffeeScript</option>
+        <option value="2">JavaScript 1.7</option>
+    </select>
+    <textarea name="js"></textarea>
+
+    <select name="panel_css">
+        <option value="0">CSS</option>
+        <option value="1">SCSS</option>
+    </select>
+    <textarea name="css"></textarea>
+
+    <input type="text" name="title" value="">
+    <textarea name="description"></textarea>
+    <textarea name="resources">http://ui-kit.tempo.io/dist/css/tuik.min.css,http://ui-kit.tempo.io/dist/css/tuik-typography.min.css,http://ui-kit.tempo.io/css/font.css,http://ui-kit.tempo.io/dist/js/tuik.min.js</textarea>
+    <input type="text" name="dtd" value="html 5">
+    <input type="text" name="wrap" value="l">
+</form>
+
             </div>
         </section>
     </article>
