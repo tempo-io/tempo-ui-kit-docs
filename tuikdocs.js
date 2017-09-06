@@ -107,9 +107,7 @@ var sgTryExample = function(caller) {
 
     formElement.querySelector('textarea[name=html]').value = renderedContainerElement.innerHTML;
     if(renderedScriptElement) {
-      console.log(renderedScriptElement.innerHTML)
       formElement.querySelector('textarea[name=js]').value = renderedScriptElement.innerHTML;
-      console.log(formElement.querySelector('textarea[name=js]').value );
     }
     formElement.submit();
 };
@@ -117,6 +115,7 @@ var sgTryExample = function(caller) {
 /**
     sgOnDocumentReady
 */
+
 function sgOnDocumentReady(fn) {
   if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading"){
     fn();

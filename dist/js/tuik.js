@@ -1,5 +1,5 @@
 /*!
- * TUIK v0.11.0 (http://ui-kit.tempo.io)
+ * TUIK v0.11.1 (http://ui-kit.tempo.io)
  * Copyright 2017 Tempo ehf.
  */
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
