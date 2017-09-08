@@ -1405,6 +1405,19 @@
   border-bottom: 1px solid #d9d9d9;
 }
 /*------------------------------------*\
+  #COMPOSITION
+\*------------------------------------*/
+.tuiDropdown__list__item [class^="tuiIcon-"],
+.tuiDropdown__list__item [class*=" tuiIcon-"] {
+  font-size: 1em;
+}
+.tuiDropdown__list__item-is-disabled [class^="tuiIcon-"],
+.tuiDropdown__list__item-is-disabled [class*=" tuiIcon-"],
+.tuiDropdown__list__item[disabled] [class^="tuiIcon-"],
+.tuiDropdown__list__item[disabled] [class*=" tuiIcon-"] {
+  color: #c5c5c5;
+}
+/*------------------------------------*\
   #VARIABLES
 \*------------------------------------*/
 /*------------------------------------*\
