@@ -5,10 +5,10 @@
     <base href="/"></base>
     <title>
         
-            Tempo UI Kit and Guidelines
+            Cards - Tempo UI Kit and Guidelines
         
     </title>
-    <meta name="description" content="Tempo UI Kit and Guidelines" />
+    <meta name="description" content="Cards" />
 
     <!-- TUIK -->
     <link rel="stylesheet" href="dist/css/tuik-typography.css" type="text/css">
@@ -405,7 +405,7 @@
                           
                       </li>
                     
-                      <li class="sg-nav__links__element ">
+                      <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                           <a href="components/cards">Cards</a>
                           
                               <em class="sg-draft-notification">Draft</em>
@@ -474,14 +474,426 @@
         </nav>
         <section class="sg-section sg-section--main">
             <div class="sg-content">
-                <h1 class="sg-h1">Tempo UI Kit and Guidelines</h1>
-<p class="sg-p">The Tempo UI Kit is Tempos's official UI library, built according to the Tempo Design Guidelines.</p>
+                <h1 class="sg-h1">
+    
+        
+    
 
-<h2 class="sg-h2">Install</h2>
-<article class="sg-example">
-    <section class="sg-example__source">
-        <pre><code class="bash">npm install @temposoftware/tuik</code></pre>
+    Cards
+    
+        <em class="sg-draft-notification">Draft</em>
+
+    
+</h1>
+
+
+<p class="sg-p">The card component is a preview of more detailed content a user sees when actioned. The card is a user interface component that acts as an entry point to more detailed information. Varying sources of information are pooled together and presented in a digestible way.</p>
+
+<h2 class="sg-h2">Default</h2>
+<p class="sg-p">A default card, <em>tuiCard</em>, is a content container whitch works as a link to more detailed information. It includes content area <em>tuiCard__content</em> and an optional header <em>tuiCard__header</em> area that can include a title <em>tuiCard__header__title</em>, subtitle <em>tuiCard__header__subtitle</em> and an action link <em>tuiCard__header__action</em>.</p>
+
+<div class="sg-callout">
+    <h4 class="sg-callout__title">Mix and match</h4>
+    <p class="sg-callout__p">If you're displaying a list of cards that may or may not contain a header or where some might be reversed (see below), make sure the container is set a flex.</p>
+</div>
+
+
+
+
+<article class="sg-example sg-card-display" id="cardsDefault">
+    
+    <section class="sg-example__render">
+        <article class="tuiCard">
+   <header class="tuiCard__header">
+     <h1 class="tuiCard__header__title">Card title</h1>
+     <h2 class="tuiCard__header__subtitle">Card sub title</h2>
+     <a title="Actions" href="#" class="tuiCard__header__action"></a>
+   </header>
+   <section class="tuiCard__content">
+     With everytghing!
+   </section>
+</article>
+
+<article class="tuiCard">
+   <header class="tuiCard__header">
+     <h1 class="tuiCard__header__title">Card title</h1>
+     <a title="Actions" href="#" class="tuiCard__header__action"></a>
+   </header>
+   <section class="tuiCard__content">
+     No Subtitle!
+   </section>
+</article>
+
+<article class="tuiCard">
+   <section class="tuiCard__content">
+     No Header!
+   </section>
+</article>
+
     </section>
+    
+    
+
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;article class=&#34;tuiCard&#34;&gt;
+   &lt;header class=&#34;tuiCard__header&#34;&gt;
+     &lt;h1 class=&#34;tuiCard__header__title&#34;&gt;Card title&lt;/h1&gt;
+     &lt;h2 class=&#34;tuiCard__header__subtitle&#34;&gt;Card sub title&lt;/h2&gt;
+     &lt;a title=&#34;Actions&#34; href=&#34;#&#34; class=&#34;tuiCard__header__action&#34;&gt;&lt;/a&gt;
+   &lt;/header&gt;
+   &lt;section class=&#34;tuiCard__content&#34;&gt;
+     With everytghing!
+   &lt;/section&gt;
+&lt;/article&gt;
+
+&lt;article class=&#34;tuiCard&#34;&gt;
+   &lt;header class=&#34;tuiCard__header&#34;&gt;
+     &lt;h1 class=&#34;tuiCard__header__title&#34;&gt;Card title&lt;/h1&gt;
+     &lt;a title=&#34;Actions&#34; href=&#34;#&#34; class=&#34;tuiCard__header__action&#34;&gt;&lt;/a&gt;
+   &lt;/header&gt;
+   &lt;section class=&#34;tuiCard__content&#34;&gt;
+     No Subtitle!
+   &lt;/section&gt;
+&lt;/article&gt;
+
+&lt;article class=&#34;tuiCard&#34;&gt;
+   &lt;section class=&#34;tuiCard__content&#34;&gt;
+     No Header!
+   &lt;/section&gt;
+&lt;/article&gt;
+</code></pre>
+    </section>
+    
+    
+</article>
+
+
+<h3 class="sg-h3">Long titles</h3>
+<p class="sg-p">Both title and subtitle will be truncated if to long.</p>
+
+<div class="sg-callout">
+    <h4 class="sg-callout__title">Title attribute</h4>
+    <p class="sg-callout__p">It is essential that you use the title attribute to ensure the user can read the full title and subtile when it is being truncated.</p>
+</div>
+
+
+
+
+<article class="sg-example sg-card-display" id="cardsLongTitles">
+    
+    <section class="sg-example__render">
+        <article class="tuiCard">
+   <header class="tuiCard__header">
+     <h1 class="tuiCard__header__title" title="Long title...">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices lacus vel leo consectetur pretium. </h1>
+     <h2 class="tuiCard__header__subtitle" title="Long title...">Phasellus enim ante, euismod eu accumsan id, ullamcorper ac lacus.</h2>
+     <a title="Actions" href="#" class="tuiCard__header__action"></a>
+   </header>
+       <section class="tuiCard__content">
+           <svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1">
+               <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                   <g id="Create-report" transform="translate(-300.000000, -229.000000)">
+                       <g id="User-Report" transform="translate(265.000000, 196.000000)">
+                           <g id="User-Icon" transform="translate(35.000000, 33.000000)">
+                               <circle id="Button-Background" fill="#00B5A8" cx="50" cy="50" r="50"></circle>
+                               <path d="M30.6666717,72 C30.6666717,72 30.5864598,55.8191377 50.6856557,55.8191377 C70.7848517,55.8191377 70.6666586,72 70.6666586,72" id="Body" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                               <path d="M64,42.4618083 C64,35.2112998 58.0307998,29.3333333 50.6668037,29.3333333 C43.3028076,29.3333333 37.3333333,35.2112998 37.3333333,42.4618083 C37.3333333,49.7123168 43.3028076,55.5897436 50.6668037,55.5897436 C58.0307998,55.5897436 64,49.7123168 64,42.4618083 Z" id="Head" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                           </g>
+                       </g>
+                   </g>
+               </g>
+           </svg>
+       </section>
+</article>
+
+    </section>
+    
+    
+
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;article class=&#34;tuiCard&#34;&gt;
+   &lt;header class=&#34;tuiCard__header&#34;&gt;
+     &lt;h1 class=&#34;tuiCard__header__title&#34; title=&#34;Long title...&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices lacus vel leo consectetur pretium. &lt;/h1&gt;
+     &lt;h2 class=&#34;tuiCard__header__subtitle&#34; title=&#34;Long title...&#34;&gt;Phasellus enim ante, euismod eu accumsan id, ullamcorper ac lacus.&lt;/h2&gt;
+     &lt;a title=&#34;Actions&#34; href=&#34;#&#34; class=&#34;tuiCard__header__action&#34;&gt;&lt;/a&gt;
+   &lt;/header&gt;
+       &lt;section class=&#34;tuiCard__content&#34;&gt;
+           &lt;svg width=&#34;100px&#34; height=&#34;100px&#34; viewBox=&#34;0 0 100 100&#34; version=&#34;1.1&#34;&gt;
+               &lt;g id=&#34;Page-1&#34; stroke=&#34;none&#34; stroke-width=&#34;1&#34; fill=&#34;none&#34; fill-rule=&#34;evenodd&#34;&gt;
+                   &lt;g id=&#34;Create-report&#34; transform=&#34;translate(-300.000000, -229.000000)&#34;&gt;
+                       &lt;g id=&#34;User-Report&#34; transform=&#34;translate(265.000000, 196.000000)&#34;&gt;
+                           &lt;g id=&#34;User-Icon&#34; transform=&#34;translate(35.000000, 33.000000)&#34;&gt;
+                               &lt;circle id=&#34;Button-Background&#34; fill=&#34;#00B5A8&#34; cx=&#34;50&#34; cy=&#34;50&#34; r=&#34;50&#34;&gt;&lt;/circle&gt;
+                               &lt;path d=&#34;M30.6666717,72 C30.6666717,72 30.5864598,55.8191377 50.6856557,55.8191377 C70.7848517,55.8191377 70.6666586,72 70.6666586,72&#34; id=&#34;Body&#34; stroke=&#34;#FFFFFF&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;/path&gt;
+                               &lt;path d=&#34;M64,42.4618083 C64,35.2112998 58.0307998,29.3333333 50.6668037,29.3333333 C43.3028076,29.3333333 37.3333333,35.2112998 37.3333333,42.4618083 C37.3333333,49.7123168 43.3028076,55.5897436 50.6668037,55.5897436 C58.0307998,55.5897436 64,49.7123168 64,42.4618083 Z&#34; id=&#34;Head&#34; stroke=&#34;#FFFFFF&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;/path&gt;
+                           &lt;/g&gt;
+                       &lt;/g&gt;
+                   &lt;/g&gt;
+               &lt;/g&gt;
+           &lt;/svg&gt;
+       &lt;/section&gt;
+&lt;/article&gt;
+</code></pre>
+    </section>
+    
+    
+</article>
+
+
+<h2 class="sg-h2">Modifier</h2>
+
+<h3 class="sg-h3">Fluid modifier</h3>
+<p class="sg-p">If you need the card to stretch to it's content width, use the <em>tuiCard--fluid</em> modifier.</p>
+
+
+
+<article class="sg-example" id="cardsModifierFluid">
+    
+    <section class="sg-example__render">
+        <article class="tuiCard tuiCard--fluid">
+   <header class="tuiCard__header">
+     <h1 class="tuiCard__header__title">Card title</h1>
+     <h2 class="tuiCard__header__subtitle">Card sub title</h2>
+     <a title="Actions" href="#" class="tuiCard__header__action"></a>
+   </header>
+   <section class="tuiCard__content">
+     <img src="assets/images/card-background.jpg" alt="Card" width="400" height="300">
+   </section>
+</article>
+<article class="tuiCard tuiCard--fluid">
+   <header class="tuiCard__header">
+     <h1 class="tuiCard__header__title">Card title</h1>
+     <h2 class="tuiCard__header__subtitle">Card sub title</h2>
+     <a title="Actions" href="#" class="tuiCard__header__action"></a>
+   </header>
+   <section class="tuiCard__content">
+     <img src="assets/images/card-background.jpg" alt="Card" width="200" height="350">
+   </section>
+</article>
+
+    </section>
+    
+    
+
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;article class=&#34;tuiCard tuiCard--fluid&#34;&gt;
+   &lt;header class=&#34;tuiCard__header&#34;&gt;
+     &lt;h1 class=&#34;tuiCard__header__title&#34;&gt;Card title&lt;/h1&gt;
+     &lt;h2 class=&#34;tuiCard__header__subtitle&#34;&gt;Card sub title&lt;/h2&gt;
+     &lt;a title=&#34;Actions&#34; href=&#34;#&#34; class=&#34;tuiCard__header__action&#34;&gt;&lt;/a&gt;
+   &lt;/header&gt;
+   &lt;section class=&#34;tuiCard__content&#34;&gt;
+     &lt;img src=&#34;assets/images/card-background.jpg&#34; alt=&#34;Card&#34; width=&#34;400&#34; height=&#34;300&#34; /&gt;
+   &lt;/section&gt;
+&lt;/article&gt;
+&lt;article class=&#34;tuiCard tuiCard--fluid&#34;&gt;
+   &lt;header class=&#34;tuiCard__header&#34;&gt;
+     &lt;h1 class=&#34;tuiCard__header__title&#34;&gt;Card title&lt;/h1&gt;
+     &lt;h2 class=&#34;tuiCard__header__subtitle&#34;&gt;Card sub title&lt;/h2&gt;
+     &lt;a title=&#34;Actions&#34; href=&#34;#&#34; class=&#34;tuiCard__header__action&#34;&gt;&lt;/a&gt;
+   &lt;/header&gt;
+   &lt;section class=&#34;tuiCard__content&#34;&gt;
+     &lt;img src=&#34;assets/images/card-background.jpg&#34; alt=&#34;Card&#34; width=&#34;200&#34; height=&#34;350&#34; /&gt;
+   &lt;/section&gt;
+&lt;/article&gt;
+</code></pre>
+    </section>
+    
+    
+</article>
+
+
+<h3 class="sg-h3">Primary modifier</h3>
+<p class="sg-p">A <em>tuiCard--primary</em> modifier is available if you wish to provide more contrast to a given card.</p>
+
+
+
+<article class="sg-example sg-card-display" id="cardsModifierPrimary">
+    
+    <section class="sg-example__render">
+        <article class="tuiCard tuiCard--primary">
+   <header class="tuiCard__header">
+     <h1 class="tuiCard__header__title">Primary</h1>
+   </header>
+       <section class="tuiCard__content">
+           <svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1">
+               <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                   <g id="Create-report" transform="translate(-300.000000, -229.000000)">
+                       <g id="User-Report" transform="translate(265.000000, 196.000000)">
+                           <g id="User-Icon" transform="translate(35.000000, 33.000000)">
+                               <circle id="Button-Background" fill="#FFFFFF" cx="50" cy="50" r="50"></circle>
+                               <path d="M30.6666717,72 C30.6666717,72 30.5864598,55.8191377 50.6856557,55.8191377 C70.7848517,55.8191377 70.6666586,72 70.6666586,72" id="Body" stroke="#366175" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                               <path d="M64,42.4618083 C64,35.2112998 58.0307998,29.3333333 50.6668037,29.3333333 C43.3028076,29.3333333 37.3333333,35.2112998 37.3333333,42.4618083 C37.3333333,49.7123168 43.3028076,55.5897436 50.6668037,55.5897436 C58.0307998,55.5897436 64,49.7123168 64,42.4618083 Z" id="Head" stroke="#366175" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                           </g>
+                       </g>
+                   </g>
+               </g>
+           </svg>
+       </section>
+</article>
+
+    </section>
+    
+    
+
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;article class=&#34;tuiCard tuiCard--primary&#34;&gt;
+   &lt;header class=&#34;tuiCard__header&#34;&gt;
+     &lt;h1 class=&#34;tuiCard__header__title&#34;&gt;Primary&lt;/h1&gt;
+   &lt;/header&gt;
+       &lt;section class=&#34;tuiCard__content&#34;&gt;
+           &lt;svg width=&#34;100px&#34; height=&#34;100px&#34; viewBox=&#34;0 0 100 100&#34; version=&#34;1.1&#34;&gt;
+               &lt;g id=&#34;Page-1&#34; stroke=&#34;none&#34; stroke-width=&#34;1&#34; fill=&#34;none&#34; fill-rule=&#34;evenodd&#34;&gt;
+                   &lt;g id=&#34;Create-report&#34; transform=&#34;translate(-300.000000, -229.000000)&#34;&gt;
+                       &lt;g id=&#34;User-Report&#34; transform=&#34;translate(265.000000, 196.000000)&#34;&gt;
+                           &lt;g id=&#34;User-Icon&#34; transform=&#34;translate(35.000000, 33.000000)&#34;&gt;
+                               &lt;circle id=&#34;Button-Background&#34; fill=&#34;#FFFFFF&#34; cx=&#34;50&#34; cy=&#34;50&#34; r=&#34;50&#34;&gt;&lt;/circle&gt;
+                               &lt;path d=&#34;M30.6666717,72 C30.6666717,72 30.5864598,55.8191377 50.6856557,55.8191377 C70.7848517,55.8191377 70.6666586,72 70.6666586,72&#34; id=&#34;Body&#34; stroke=&#34;#366175&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;/path&gt;
+                               &lt;path d=&#34;M64,42.4618083 C64,35.2112998 58.0307998,29.3333333 50.6668037,29.3333333 C43.3028076,29.3333333 37.3333333,35.2112998 37.3333333,42.4618083 C37.3333333,49.7123168 43.3028076,55.5897436 50.6668037,55.5897436 C58.0307998,55.5897436 64,49.7123168 64,42.4618083 Z&#34; id=&#34;Head&#34; stroke=&#34;#366175&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;/path&gt;
+                           &lt;/g&gt;
+                       &lt;/g&gt;
+                   &lt;/g&gt;
+               &lt;/g&gt;
+           &lt;/svg&gt;
+       &lt;/section&gt;
+&lt;/article&gt;
+</code></pre>
+    </section>
+    
+    
+</article>
+
+
+<h3 class="sg-h3">Reversed modifier</h3>
+<p class="sg-p">It is possible to render the header at the top of the card, simply use the <em>tuiCard--reversed</em> modifier to do so.</p>
+
+
+
+<article class="sg-example sg-card-display" id="cardsModifierReversed">
+    
+    <section class="sg-example__render">
+        <article class="tuiCard tuiCard--reversed">
+   <header class="tuiCard__header">
+     <h1 class="tuiCard__header__title">Card title</h1>
+     <h2 class="tuiCard__header__subtitle">Card sub title</h2>
+     <a title="Actions" href="#" class="tuiCard__header__action"></a>
+   </header>
+   <section class="tuiCard__content">
+     Inverted
+   </section>
+</article>
+
+<article class="tuiCard tuiCard--primary tuiCard--reversed">
+   <header class="tuiCard__header">
+     <h1 class="tuiCard__header__title">Reversed primary</h1>
+   </header>
+       <section class="tuiCard__content">
+           <svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1">
+               <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                   <g id="Create-report" transform="translate(-300.000000, -229.000000)">
+                       <g id="User-Report" transform="translate(265.000000, 196.000000)">
+                           <g id="User-Icon" transform="translate(35.000000, 33.000000)">
+                               <circle id="Button-Background" fill="#FFFFFF" cx="50" cy="50" r="50"></circle>
+                               <path d="M30.6666717,72 C30.6666717,72 30.5864598,55.8191377 50.6856557,55.8191377 C70.7848517,55.8191377 70.6666586,72 70.6666586,72" id="Body" stroke="#366175" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                               <path d="M64,42.4618083 C64,35.2112998 58.0307998,29.3333333 50.6668037,29.3333333 C43.3028076,29.3333333 37.3333333,35.2112998 37.3333333,42.4618083 C37.3333333,49.7123168 43.3028076,55.5897436 50.6668037,55.5897436 C58.0307998,55.5897436 64,49.7123168 64,42.4618083 Z" id="Head" stroke="#366175" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                           </g>
+                       </g>
+                   </g>
+               </g>
+           </svg>
+       </section>
+</article>
+
+
+    </section>
+    
+    
+
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;article class=&#34;tuiCard tuiCard--reversed&#34;&gt;
+   &lt;header class=&#34;tuiCard__header&#34;&gt;
+     &lt;h1 class=&#34;tuiCard__header__title&#34;&gt;Card title&lt;/h1&gt;
+     &lt;h2 class=&#34;tuiCard__header__subtitle&#34;&gt;Card sub title&lt;/h2&gt;
+     &lt;a title=&#34;Actions&#34; href=&#34;#&#34; class=&#34;tuiCard__header__action&#34;&gt;&lt;/a&gt;
+   &lt;/header&gt;
+   &lt;section class=&#34;tuiCard__content&#34;&gt;
+     Inverted
+   &lt;/section&gt;
+&lt;/article&gt;
+
+&lt;article class=&#34;tuiCard tuiCard--primary tuiCard--reversed&#34;&gt;
+   &lt;header class=&#34;tuiCard__header&#34;&gt;
+     &lt;h1 class=&#34;tuiCard__header__title&#34;&gt;Reversed primary&lt;/h1&gt;
+   &lt;/header&gt;
+       &lt;section class=&#34;tuiCard__content&#34;&gt;
+           &lt;svg width=&#34;100px&#34; height=&#34;100px&#34; viewBox=&#34;0 0 100 100&#34; version=&#34;1.1&#34;&gt;
+               &lt;g id=&#34;Page-1&#34; stroke=&#34;none&#34; stroke-width=&#34;1&#34; fill=&#34;none&#34; fill-rule=&#34;evenodd&#34;&gt;
+                   &lt;g id=&#34;Create-report&#34; transform=&#34;translate(-300.000000, -229.000000)&#34;&gt;
+                       &lt;g id=&#34;User-Report&#34; transform=&#34;translate(265.000000, 196.000000)&#34;&gt;
+                           &lt;g id=&#34;User-Icon&#34; transform=&#34;translate(35.000000, 33.000000)&#34;&gt;
+                               &lt;circle id=&#34;Button-Background&#34; fill=&#34;#FFFFFF&#34; cx=&#34;50&#34; cy=&#34;50&#34; r=&#34;50&#34;&gt;&lt;/circle&gt;
+                               &lt;path d=&#34;M30.6666717,72 C30.6666717,72 30.5864598,55.8191377 50.6856557,55.8191377 C70.7848517,55.8191377 70.6666586,72 70.6666586,72&#34; id=&#34;Body&#34; stroke=&#34;#366175&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;/path&gt;
+                               &lt;path d=&#34;M64,42.4618083 C64,35.2112998 58.0307998,29.3333333 50.6668037,29.3333333 C43.3028076,29.3333333 37.3333333,35.2112998 37.3333333,42.4618083 C37.3333333,49.7123168 43.3028076,55.5897436 50.6668037,55.5897436 C58.0307998,55.5897436 64,49.7123168 64,42.4618083 Z&#34; id=&#34;Head&#34; stroke=&#34;#366175&#34; stroke-width=&#34;2&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34;&gt;&lt;/path&gt;
+                           &lt;/g&gt;
+                       &lt;/g&gt;
+                   &lt;/g&gt;
+               &lt;/g&gt;
+           &lt;/svg&gt;
+       &lt;/section&gt;
+&lt;/article&gt;
+
+</code></pre>
+    </section>
+    
+    
+</article>
+
+
+<h2 class="sg-h2">Hover animation</h2>
+<p class="sg-p">If you wish to provide a hover animation, just add the <em>tuiPop</em> class to the card.</p>
+
+
+
+<article class="sg-example sg-card-display" id="cardsHoverAnimation">
+    
+    <section class="sg-example__render">
+        <article class="tuiCard tuiPop">
+   <header class="tuiCard__header">
+     <h1 class="tuiCard__header__title">Card title</h1>
+     <h2 class="tuiCard__header__subtitle">Card sub title</h2>
+     <a title="Actions" href="#" class="tuiCard__header__action"></a>
+   </header>
+   <section class="tuiCard__content">Hover me!</section>
+</article>
+
+    </section>
+    
+    
+
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;article class=&#34;tuiCard tuiPop&#34;&gt;
+   &lt;header class=&#34;tuiCard__header&#34;&gt;
+     &lt;h1 class=&#34;tuiCard__header__title&#34;&gt;Card title&lt;/h1&gt;
+     &lt;h2 class=&#34;tuiCard__header__subtitle&#34;&gt;Card sub title&lt;/h2&gt;
+     &lt;a title=&#34;Actions&#34; href=&#34;#&#34; class=&#34;tuiCard__header__action&#34;&gt;&lt;/a&gt;
+   &lt;/header&gt;
+   &lt;section class=&#34;tuiCard__content&#34;&gt;Hover me!&lt;/section&gt;
+&lt;/article&gt;
+</code></pre>
+    </section>
+    
+    
 </article>
 
                 <form id="sg-try-example" method="post" action="http://jsfiddle.net/api/post/library/pure/" target="sgtryexample" style="display:none;">

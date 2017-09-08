@@ -97,5 +97,12 @@
     "dropdownBorderColor": "#d9d9d9",
     "dropdownMinWidth": "14.285714em",
     "dropdownMaxWidth": "21.428571em",
-    "dropdownListItemHoverBkgColor": "rgba(0, 115, 236, 0.15)"
+    "dropdownListItemHoverBkgColor": "rgba(0, 115, 236, 0.15)",
+    "cardHeight": "16.071429em",
+    "cardBorderRadius": "0.21428571em",
+    "cardBorderColor": "#d9d9d9",
+    "cardHeaderHeight": "3.2857143em",
+    "cardHeaderTitleColor": "#333333",
+    "cardHeaderSubTitleColor": "#999999",
+    "cardPrimaryBackgroundColor": "#366175"
 }

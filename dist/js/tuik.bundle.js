@@ -1,6 +1,14 @@
+/*!
+  * TUIK (http://ui-kit.tempo.io)
+  * Copyright 2017 Tempo ehf.
+  */
+ 
+var tuik = (function (exports) {
+'use strict';
+
 /**!
  * @fileOverview Kickass library to create and place poppers near their reference elements.
- * @version 1.12.4
+ * @version 1.12.5
  * @license
  * Copyright (c) 2016 Federico Zivolo and contributors
  *
@@ -22,12 +30,6 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  */
-(function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global.Popper = factory());
-}(this, (function () { 'use strict';
-
 var nativeHints = ['native code', '[object MutationObserverConstructor]'];
 
 /**
@@ -346,20 +348,18 @@ var isIE10$1 = function () {
   return isIE10;
 };
 
-function getSize(axis, body, html, computedStyle, includeScroll) {
-  return Math.max(body['offset' + axis], includeScroll ? body['scroll' + axis] : 0, html['client' + axis], html['offset' + axis], includeScroll ? html['scroll' + axis] : 0, isIE10$1() ? html['offset' + axis] + computedStyle['margin' + (axis === 'Height' ? 'Top' : 'Left')] + computedStyle['margin' + (axis === 'Height' ? 'Bottom' : 'Right')] : 0);
+function getSize(axis, body, html, computedStyle) {
+  return Math.max(body['offset' + axis], body['scroll' + axis], html['client' + axis], html['offset' + axis], html['scroll' + axis], isIE10$1() ? html['offset' + axis] + computedStyle['margin' + (axis === 'Height' ? 'Top' : 'Left')] + computedStyle['margin' + (axis === 'Height' ? 'Bottom' : 'Right')] : 0);
 }
 
 function getWindowSizes() {
-  var includeScroll = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
-
   var body = window.document.body;
   var html = window.document.documentElement;
   var computedStyle = isIE10$1() && window.getComputedStyle(html);
 
   return {
-    height: getSize('Height', body, html, computedStyle, includeScroll),
-    width: getSize('Width', body, html, computedStyle, includeScroll)
+    height: getSize('Height', body, html, computedStyle),
+    width: getSize('Width', body, html, computedStyle)
   };
 }
 
@@ -406,7 +406,7 @@ var defineProperty = function (obj, key, value) {
   return obj;
 };
 
-var _extends = Object.assign || function (target) {
+var _extends$1 = Object.assign || function (target) {
   for (var i = 1; i < arguments.length; i++) {
     var source = arguments[i];
 
@@ -428,7 +428,7 @@ var _extends = Object.assign || function (target) {
  * @returns {Object} ClientRect like output
  */
 function getClientRect(offsets) {
-  return _extends({}, offsets, {
+  return _extends$1({}, offsets, {
     right: offsets.left + offsets.width,
     bottom: offsets.top + offsets.height
   });
@@ -609,7 +609,7 @@ function getBoundaries(popper, reference, padding, boundariesElement) {
 
     // In case of HTML, we need a different computation
     if (boundariesNode.nodeName === 'HTML' && !isFixed(offsetParent)) {
-      var _getWindowSizes = getWindowSizes(false),
+      var _getWindowSizes = getWindowSizes(),
           height = _getWindowSizes.height,
           width = _getWindowSizes.width;
 
@@ -677,7 +677,7 @@ function computeAutoPlacement(placement, refRect, popper, reference, boundariesE
   };
 
   var sortedAreas = Object.keys(rects).map(function (key) {
-    return _extends({
+    return _extends$1({
       key: key
     }, rects[key], {
       area: getArea(rects[key])
@@ -1243,9 +1243,9 @@ function computeStyle(data, options) {
   };
 
   // Update `data` attributes, styles and arrowStyles
-  data.attributes = _extends({}, attributes, data.attributes);
-  data.styles = _extends({}, styles, data.styles);
-  data.arrowStyles = _extends({}, data.offsets.arrow, data.arrowStyles);
+  data.attributes = _extends$1({}, attributes, data.attributes);
+  data.styles = _extends$1({}, styles, data.styles);
+  data.arrowStyles = _extends$1({}, data.offsets.arrow, data.arrowStyles);
 
   return data;
 }
@@ -1515,7 +1515,7 @@ function flip(data, options) {
 
       // this object contains `position`, we want to preserve it along with
       // any additional property we may add in the future
-      data.offsets.popper = _extends({}, data.offsets.popper, getPopperOffsets(data.instance.popper, data.offsets.reference, data.placement));
+      data.offsets.popper = _extends$1({}, data.offsets.popper, getPopperOffsets(data.instance.popper, data.offsets.reference, data.placement));
 
       data = runModifiers(data.instance.modifiers, data, 'flip');
     }
@@ -1769,7 +1769,7 @@ function preventOverflow(data, options) {
 
   order.forEach(function (placement) {
     var side = ['left', 'top'].indexOf(placement) !== -1 ? 'primary' : 'secondary';
-    popper = _extends({}, popper, check[side](placement));
+    popper = _extends$1({}, popper, check[side](placement));
   });
 
   data.offsets.popper = popper;
@@ -1804,7 +1804,7 @@ function shift(data) {
       end: defineProperty({}, side, reference[side] + reference[measurement] - popper[measurement])
     };
 
-    data.offsets.popper = _extends({}, popper, shiftOffsets[shiftvariation]);
+    data.offsets.popper = _extends$1({}, popper, shiftOffsets[shiftvariation]);
   }
 
   return data;
@@ -2314,7 +2314,7 @@ var Popper = function () {
     this.update = debounce(this.update.bind(this));
 
     // with {} we create a new object with the options inside it
-    this.options = _extends({}, Popper.Defaults, options);
+    this.options = _extends$1({}, Popper.Defaults, options);
 
     // init state
     this.state = {
@@ -2329,13 +2329,13 @@ var Popper = function () {
 
     // Deep merge modifiers options
     this.options.modifiers = {};
-    Object.keys(_extends({}, Popper.Defaults.modifiers, options.modifiers)).forEach(function (name) {
-      _this.options.modifiers[name] = _extends({}, Popper.Defaults.modifiers[name] || {}, options.modifiers ? options.modifiers[name] : {});
+    Object.keys(_extends$1({}, Popper.Defaults.modifiers, options.modifiers)).forEach(function (name) {
+      _this.options.modifiers[name] = _extends$1({}, Popper.Defaults.modifiers[name] || {}, options.modifiers ? options.modifiers[name] : {});
     });
 
     // Refactoring modifiers' list (Object => Array)
     this.modifiers = Object.keys(this.options.modifiers).map(function (name) {
-      return _extends({
+      return _extends$1({
         name: name
       }, _this.options.modifiers[name]);
     })
@@ -2444,7 +2444,270 @@ Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
 Popper.placements = placements;
 Popper.Defaults = Defaults;
 
-return Popper;
+var Utils = function () {
+  var Utils = {
+    Events: {
+      triggerCustom: function triggerCustom(element, eventName, params) {
+        var event = document.createEvent('CustomEvent');
+        event.initCustomEvent(eventName, false, false, params);
+        element.dispatchEvent(event);
+      }
+    },
 
-})));
-//# sourceMappingURL=popper.js.map
+    KEYCODES: {
+      ESCAPE: 27,
+      ARROW_UP: 38,
+      ARROW_DOWN: 40,
+      TAB: 9,
+      SPACE: 32,
+      RIGHT_MOUSE_BUTTON_WHICH: 3
+    }
+  };
+
+  return Utils;
+}();
+
+var babelHelpers = {};
+var classCallCheck$1 = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+
+
+
+
+
+
+babelHelpers;
+
+var Dropdown = function () {
+  var ClassNames = {
+    DROPDOWN: 'tuiDropdown',
+    ISOPEN: 'tuiDropdown-is-open',
+    TOGGLE: 'tuiButton--dropdown',
+    MENU: 'tuiDropdown__list',
+    MENUITEM: 'tuiDropdown__list__item',
+    DISABLEDMENUITEM: 'tuiDropdown__list__item-is-disabled'
+  };
+
+  var Dropdown = function () {
+    // TODO: NICE TO HAVE -> allow selectors by testing on element type.
+    function Dropdown(element) {
+      classCallCheck$1(this, Dropdown);
+
+      // validating dependencies
+      if (typeof Popper === 'undefined') {
+        throw new Error('TUIK requires Popper.js (https://popper.js.org)');
+      }
+
+      this._element = element;
+      this._menuElement = element.querySelector('.' + ClassNames.MENU);
+      this._toggleElement = element.querySelector('.' + ClassNames.TOGGLE);
+      this._popper = null;
+
+      this._addEventListeners();
+      return this;
+    }
+
+    /* public */
+
+    Dropdown.prototype.toggle = function toggle() {
+      if (this._toggleElement.getAttribute('disabled') || this._toggleElement.getAttribute('disabled') === '') {
+        return;
+      }
+
+      var isOpening = !this._element.classList.contains(ClassNames.ISOPEN);
+
+      if (isOpening) {
+        Dropdown.closeAllOpenDropdowns();
+
+        this._bindHandlers();
+        this._popper = new Popper(this._element, this._menuElement, {
+          placement: 'bottom-start',
+          modifiers: {
+            flip: {
+              enabled: true
+            }
+          }
+        });
+        this._element.classList.add(ClassNames.ISOPEN);
+        this._toggleElement.focus();
+      } else {
+        Dropdown.close(this._element);
+      }
+    };
+
+    /* static */
+
+    Dropdown.close = function close(dropdownElement) {
+      dropdownElement.classList.remove(ClassNames.ISOPEN);
+
+      if (dropdownElement.tuikDropdownCloseBinded) {
+        Utils.Events.triggerCustom(dropdownElement, 'tuikDropdownClose');
+      }
+    };
+
+    Dropdown.closeAllOpenDropdowns = function closeAllOpenDropdowns() {
+      var dropdownElements = document.querySelectorAll('.' + ClassNames.ISOPEN);
+
+      // <ie11>
+      // dropdownElements.forEach(function(dropdownElement) {
+      //     Dropdown.close(dropdownElement);
+      // });
+      for (var i = 0, len = dropdownElements.length; i < len; i += 1) {
+        Dropdown.close(dropdownElements[i]);
+      }
+      // </ie11>
+    };
+
+    Dropdown.handleClose = function handleClose(e) {
+      if (!e) {
+        return;
+      }
+
+      var dropdownElement = e.currentTarget;
+      var dropdownToggleElement = e.currentTarget.querySelector('.' + ClassNames.TOGGLE);
+      var dropdownMenuElement = e.currentTarget.querySelector('.' + ClassNames.MENU);
+
+      dropdownElement.tuikDropdownCloseBinded = false;
+      dropdownElement.removeEventListener('tuikDropdownClose', Dropdown.handleClose);
+      dropdownToggleElement.removeEventListener('keydown', Dropdown.handleKeydown);
+      dropdownMenuElement.removeEventListener('keydown', Dropdown.handleKeydown);
+      dropdownMenuElement.removeEventListener('click', Dropdown.handleClick);
+      document.removeEventListener('click', Dropdown.handleDocumentAction);
+      document.removeEventListener('keydown', Dropdown.handleDocumentAction);
+    };
+
+    Dropdown.handleDocumentAction = function handleDocumentAction(e) {
+      if (!e) {
+        return;
+      }
+
+      // do not close if Right mouse click or Tab
+      if (e && (e.which === Utils.KEYCODES.RIGHT_MOUSE_BUTTON_WHICH || e.type === 'keydown' && e.which === Utils.KEYCODES.TAB)) {
+        return;
+      }
+
+      Dropdown.closeAllOpenDropdowns();
+    };
+
+    Dropdown.handleClick = function handleClick(e) {
+      var calledFromMenuItem = e.target.classList.contains(ClassNames.MENUITEM);
+      var calledFromDisabledMenuItem = e.target.classList.contains(ClassNames.DISABLEDMENUITEM);
+
+      if (!calledFromMenuItem || calledFromDisabledMenuItem) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    };
+
+    Dropdown.handleKeydown = function handleKeydown(e) {
+      if (!e) {
+        return;
+      }
+
+      var handleKeyRegExp = new RegExp(Utils.KEYCODES.ARROW_UP + '|' + Utils.KEYCODES.ARROW_DOWN + '|' + Utils.KEYCODES.ESCAPE);
+
+      if (!handleKeyRegExp.test(e.which)) {
+        return;
+      }
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      var dropdownElement = e.currentTarget.parentNode;
+
+      if (e.which === Utils.KEYCODES.ESCAPE) {
+        Dropdown.close(dropdownElement);
+        dropdownElement.querySelector('.' + ClassNames.TOGGLE).focus();
+        return;
+      }
+
+      if (e.which === Utils.KEYCODES.ARROW_DOWN || e.which === Utils.KEYCODES.ARROW_UP) {
+        var currentlyFocusedElement = document.activeElement;
+
+        // underlying elements might get focus (e.g.: checkboxes)
+        if (!currentlyFocusedElement.classList.contains(ClassNames.MENUITEM)) {
+          currentlyFocusedElement = currentlyFocusedElement.parentNode;
+        }
+
+        var selectables = dropdownElement.querySelectorAll('.' + ClassNames.MENUITEM + ':not(.' + ClassNames.DISABLEDMENUITEM + '):not([disabled])');
+        if (!selectables.length) {
+          return;
+        }
+
+        var selectableElements = Object.keys(selectables).map(function (key) {
+          return selectables[key];
+        });
+
+        var index = selectableElements.indexOf(currentlyFocusedElement);
+        if (e.which === Utils.KEYCODES.ARROW_UP && index > 0) {
+          // up
+          index--;
+        }
+
+        if (e.which === Utils.KEYCODES.ARROW_DOWN && index < selectableElements.length - 1) {
+          // down
+          index++;
+        }
+
+        if (index < 0) {
+          index = 0;
+        }
+
+        selectableElements[index].focus();
+      }
+    };
+
+    /* private */
+
+    Dropdown.prototype._bindHandlers = function _bindHandlers() {
+      this._element.tuikDropdownCloseBinded = true;
+      this._element.addEventListener('tuikDropdownClose', Dropdown.handleClose);
+
+      this._toggleElement.addEventListener('keydown', Dropdown.handleKeydown);
+      this._menuElement.addEventListener('keydown', Dropdown.handleKeydown);
+      this._menuElement.addEventListener('click', Dropdown.handleClick);
+      document.addEventListener('click', Dropdown.handleDocumentAction);
+      document.addEventListener('keydown', Dropdown.handleDocumentAction);
+    };
+
+    Dropdown.prototype._addEventListeners = function _addEventListeners() {
+      if (!this._toggleElement) {
+        return;
+      }
+      var self = this;
+
+      this._toggleElement.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        self.toggle();
+      });
+
+      this._toggleElement.addEventListener('keydown', function (e) {
+        if (e && e.which === Utils.KEYCODES.ARROW_DOWN) {
+          if (!e.currentTarget.parentNode.classList.contains(ClassNames.ISOPEN)) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            self.toggle();
+          }
+        }
+      });
+    };
+
+    return Dropdown;
+  }();
+
+  return Dropdown;
+}(Popper);
+
+exports.Dropdown = Dropdown;
+exports.Utils = Utils;
+
+return exports;
+
+}({}));

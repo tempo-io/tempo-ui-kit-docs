@@ -3,8 +3,11 @@
   * Copyright 2017 Tempo ehf.
   */
  
-var tuik = (function (exports,Popper) {
-'use strict';
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('popper.js')) :
+	typeof define === 'function' && define.amd ? define(['exports', 'popper.js'], factory) :
+	(factory((global.tuik = {}),global.Popper));
+}(this, (function (exports,Popper) { 'use strict';
 
 Popper = Popper && Popper.hasOwnProperty('default') ? Popper['default'] : Popper;
 
@@ -272,6 +275,6 @@ var Dropdown = function () {
 exports.Dropdown = Dropdown;
 exports.Utils = Utils;
 
-return exports;
+Object.defineProperty(exports, '__esModule', { value: true });
 
-}({},Popper));
+})));
