@@ -5,10 +5,10 @@
     <base href="/"></base>
     <title>
         
-            Icons - Tempo UI Kit and Guidelines
+            Text Fields (icons) - Tempo UI Kit and Guidelines
         
     </title>
-    <meta name="description" content="Icons" />
+    <meta name="description" content="Text Fields with Icons" />
 
     <!-- TUIK -->
     <link rel="stylesheet" href="dist/css/tuik-typography.css" type="text/css">
@@ -406,7 +406,7 @@
                 <h2 class="sg-nav__title">Foundations</h2>
                 <ol class="sg-nav__links">
                     
-                      <li class="sg-nav__links__element sg-nav__links__element-is-active ">
+                      <li class="sg-nav__links__element ">
                           <a href="foundations/icons">Icons</a>
                           
                       </li>
@@ -497,7 +497,7 @@
                           
                       </li>
                     
-                      <li class="sg-nav__links__element ">
+                      <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                           <a href="components/textfieldswicons">Text Fields (icons)</a>
                           
                               <em class="sg-draft-notification">Draft</em>
@@ -520,119 +520,56 @@
         
     
 
-    Icons
+    Text Fields (icons)
+    
+        <em class="sg-draft-notification">Draft</em>
+
     
 </h1>
 
-<p class="sg-p">An icon is not just a pretty graphic. It is a visual representation of an object, action or idea, and its purpose must be immediately clear to the user to add value to the user experience.</p>
-<p>The TUIK icons are commonly used and recognizable. See <a href="foundations/icons-reference#tocquickreference">all TUIK icons</a>.</p>
 
-<h2 class="sg-h2">Resources</h2>
-<p class="sg-p">In the TUIK we provide two methods for serving icons. We provide SVG source files (or a single store/sprites file) and the more common icon font. The following shows where you can find the resources required to consume our icons.</p>
-<article class="sg-example">
-    <section class="sg-example__source">
-        <pre><code class="language-plaintext">
-    tuik/
-    ├── svg/
-    │   ├── store.svg
-    │   └── source/
-    │       ├── arrow-down.svg
-    │       └── ...
-    └── fonts/
-        ├── tuiIcons.svg
-        ├── tuiIcons.ttf
-        └── tuiIcons.woff
-        </code></pre>
-    </section>
-</article>
+<p class="sg-p">It is possible to add an icon to textFields by wrapping the component with a <em>tuiWithIcon</em> element and placing an <a href="/foundations/icons-reference">icon</a> along side the <em>tuiTextField</em> element.</p>
 
-<h3 class="sg-h3" id="tocconsumingsvg">Consuming icons as SVG</h3>
-<p class="sg-p">SVG related resources are found under the <em>svg/</em> directory. The <em>store.svg</em> is a sprites file that contains all SVG icons. The individual icon source files are found under the <em>svg/source</em> directory.</p>
-
-<h4 class="sg-h4">Using store.svg sprites</h4>
-<p class="sg-p">Start by injecting the store into the document. Note that in most cases <em>style="display:none"</em> should be added to the <em>svg</em> element to avoid creating a large area of whitespace.</p>
+<h2 class="sg-h2">Default</h2>
+<h3 class="sg-h3">Using font icons</h3>
 
 
 
-<article class="sg-example" id="inconsInjectSvgStoreExample">
-    
-
-    
-    <section class="sg-example__source">
-        
-        <pre><code class="html">&lt;!DOCTYPE html&gt;
-&lt;html lang=&#34;en&#34;&gt;
-&lt;head&gt;
-   ...
-&lt;/head&gt;
-&lt;body&gt;
-    &lt;svg xmlns=&#34;http://www.w3.org/2000/svg&#34; style=&#34;display:none&#34;&gt;
-    &lt;symbol id=&#34;arrow-down&#34; viewBox=&#34;0 0 12 14&#34;&gt;
-        &lt;title&gt;Arrow Down&lt;/title&gt;
-        &lt;desc&gt;Created with Sketch.&lt;/desc&gt;
-        &lt;defs/&gt;
-        &lt;g id=&#34;Symbols&#34;&gt;
-            &lt;g id=&#34;Buttons-/-Icons-/-Arrow-/-Down-Arrow&#34; transform=&#34;translate(-2.000000, -1.000000)&#34;&gt;
-                &lt;path d=&#34;M9,2.00651625 C9,1.45063267 8.55613518,1 8,1 L8,1 C7.44771525,1 7,1.44131439 7,2.00348755 L7,11.2705895 L4.21196136,8.67766825 C3.809532,8.30340241 3.15410653,8.30899151 2.75903027,8.67982435 L2.72426828,8.7124532 C2.32426596,9.08790982 2.32418306,9.69377306 2.73936004,10.0798944 L7.29034372,14.3123832 C7.69868099,14.6921435 8.35069281,14.6983074 8.76177927,14.3119336 L13.2679245,10.0766774 C13.6722386,9.69666877 13.6690672,9.0812469 13.2719019,8.71236727 L13.2369561,8.67991028 C12.8348385,8.30643121 12.1850424,8.30801579 11.7818203,8.68699803 L9,11.3015879 L9,2.00651625 Z&#34; id=&#34;Arrow-Down&#34;/&gt;
-            &lt;/g&gt;
-        &lt;/g&gt;
-    &lt;/symbol&gt;
-    ...
-   &lt;/svg&gt;
-   ...
-&lt;/body&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-<p class="sg-p" id="tocsvgstorerefexample">Now icons can be rendered in the document by referencing it's <em>id</em>.</p>
-
-
-
-<article class="sg-example sg-icon-display" id="inconsInjectSvgStoreRefExample">
+<article class="sg-example" id="textFieldsWithIcons">
     
     <section class="sg-example__render">
-        <svg class="tuiIcon">
-  <use xlink:href="#arrow-down"/>
-</svg>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        
-        <pre><code class="html">&lt;svg class=&#34;tuiIcon&#34;&gt;
-  &lt;use xlink:href=&#34;#arrow-down&#34; /&gt;
-&lt;/svg&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-<p class="sg-p">You can embed the link to the sprite file with the <a href="foundations/icons-reference#tocquickreference">reference id</a>. Note that Internet Explorer (IE) does not support this.</p>
-<div class="sg-callout sg-callout--warning">
-    <h4 class="sg-callout__title">Internet Explorer</h4>
-    <p class="sg-callout__p">The following is NOT supported in Internet Explorer.</p>
+        <div class="tuiWithIcon">
+   <input class="tuiTextField" type="text">
+   <i class="tuiIcon-action-search tuiWithIcon__icon"></i>
+</div>
+<div class="tuiWithIcon">
+   <input class="tuiTextField" type="text" value="With some text...">
+   <i class="tuiIcon-action-search tuiWithIcon__icon"></i>
+</div>
+<div class="tuiWithIcon">
+   <input class="tuiTextField" type="text" placeholder="With placeholder">
+   <i class="tuiIcon-action-search tuiWithIcon__icon"></i>
 </div>
 
-
-
-<article class="sg-example" id="inconsSvgStoreRefWithNoInjectionExample">
+    </section>
+    
     
 
     
     <section class="sg-example__source">
-        
-        <pre><code class="html">&lt;svg viewBox=&#34;0 0 12 14&#34; class=&#34;tuiIcon&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34;&gt;
-  &lt;use xlink:href=&#34;dist/svg/store.svg#arrow-down&#34;&gt;&lt;/use&gt;
-&lt;/svg&gt;
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;div class=&#34;tuiWithIcon&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; /&gt;
+   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiWithIcon&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; /&gt;
+   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiWithIcon&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;With placeholder&#34; /&gt;
+   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+&lt;/div&gt;
 </code></pre>
     </section>
     
@@ -640,501 +577,26 @@
 </article>
 
 
-<h4 class="sg-h4">Using the SVG sources</h4>
-<p class="sg-p">You can also use the SVG icon inline. All icons source are available in the <em>svg/source</em> directory. To use an icon inline, open the file, copy its contents into your document and add the <em>tuiIcon</em> class.</p>
+<h4 class="sg-h4">Disabled</h4>
+<p class="sg-p">When disabled, the <em>disabled</em> attribute must be set on both the input and <em>tuiWithIcon__icon</em> element.</p>
 
 
 
-<article class="sg-example sg-icon-display" id="iconsInlineSvgExample">
+<article class="sg-example" id="textFieldsWithIconsDisabled">
     
     <section class="sg-example__render">
-        <svg class="tuiIcon" width="12px" height="14px" viewBox="0 0 12 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Arrow Down</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="Symbols">
-        <g id="Buttons-/-Icons-/-Arrow-/-Down-Arrow" transform="translate(-2.000000, -1.000000)">
-            <path d="M9,2.00651625 C9,1.45063267 8.55613518,1 8,1 L8,1 C7.44771525,1 7,1.44131439 7,2.00348755 L7,11.2705895 L4.21196136,8.67766825 C3.809532,8.30340241 3.15410653,8.30899151 2.75903027,8.67982435 L2.72426828,8.7124532 C2.32426596,9.08790982 2.32418306,9.69377306 2.73936004,10.0798944 L7.29034372,14.3123832 C7.69868099,14.6921435 8.35069281,14.6983074 8.76177927,14.3119336 L13.2679245,10.0766774 C13.6722386,9.69666877 13.6690672,9.0812469 13.2719019,8.71236727 L13.2369561,8.67991028 C12.8348385,8.30643121 12.1850424,8.30801579 11.7818203,8.68699803 L9,11.3015879 L9,2.00651625 Z" id="Arrow-Down"></path>
-        </g>
-    </g>
-</svg>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        
-        <pre><code class="html">&lt;svg class=&#34;tuiIcon&#34; width=&#34;12px&#34; height=&#34;14px&#34; viewBox=&#34;0 0 12 14&#34; version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;&gt;
-    &lt;title&gt;Arrow Down&lt;/title&gt;
-    &lt;desc&gt;Created with Sketch.&lt;/desc&gt;
-    &lt;defs&gt;&lt;/defs&gt;
-    &lt;g id=&#34;Symbols&#34;&gt;
-        &lt;g id=&#34;Buttons-/-Icons-/-Arrow-/-Down-Arrow&#34; transform=&#34;translate(-2.000000, -1.000000)&#34;&gt;
-            &lt;path d=&#34;M9,2.00651625 C9,1.45063267 8.55613518,1 8,1 L8,1 C7.44771525,1 7,1.44131439 7,2.00348755 L7,11.2705895 L4.21196136,8.67766825 C3.809532,8.30340241 3.15410653,8.30899151 2.75903027,8.67982435 L2.72426828,8.7124532 C2.32426596,9.08790982 2.32418306,9.69377306 2.73936004,10.0798944 L7.29034372,14.3123832 C7.69868099,14.6921435 8.35069281,14.6983074 8.76177927,14.3119336 L13.2679245,10.0766774 C13.6722386,9.69666877 13.6690672,9.0812469 13.2719019,8.71236727 L13.2369561,8.67991028 C12.8348385,8.30643121 12.1850424,8.30801579 11.7818203,8.68699803 L9,11.3015879 L9,2.00651625 Z&#34; id=&#34;Arrow-Down&#34;&gt;&lt;/path&gt;
-        &lt;/g&gt;
-    &lt;/g&gt;
-&lt;/svg&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-<h3 class="sg-h3" id="tocconsumingfont">Consuming icons as Font</h3>
-<p class="sg-p">If you wish to use fonts, all required files are found under the <em>fonts/</em> directory.</p>
-<p class="sg-p">Start by copying the fonts to your project and add an <em>@font-face</em> definition to your CSS.</p>
-
-
-
-<article class="sg-example" id="inconsFontFaceCssExample">
-    
-
-    
-    <section class="sg-example__source">
-        
-        <pre><code class="css">@font-face {
-  font-family: &#39;tuiIcons&#39;;
-  src:  url(&#39;/dist/fonts/tuiIcons.eot?zdeulf&#39;);
-  src:  url(&#39;/dist/fonts/tuiIcons.eot?zdeulf#iefix&#39;) format(&#39;embedded-opentype&#39;),
-    url(&#39;/dist/fonts/tuiIcons.ttf?zdeulf&#39;) format(&#39;truetype&#39;),
-    url(&#39;/dist/fonts/tuiIcons.woff?zdeulf&#39;) format(&#39;woff&#39;),
-    url(&#39;/dist/fonts/tuiIcons.svg?zdeulf#tuiIcons&#39;) format(&#39;svg&#39;);
-  font-weight: normal;
-  font-style: normal;
-}
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-<p class="sg-p" id="tocfontfaceexample">Then you can render icons by using the <a href="foundations/icons-reference#tocquickreference">CSS class</a>.</p>
-
-
-
-<article class="sg-example sg-icon-display" id="inconsFontFaceExample">
-    
-    <section class="sg-example__render">
-        <i class="tuiIcon-arrow-down"></i>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        
-        <pre><code class="html">&lt;i class=&#34;tuiIcon-arrow-down&#34;&gt;&lt;/i&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="sg-h2">Color and Size</h2>
-<p class="sg-p">Although similar, the style properties used to change the size and color of a font icon are not the same as those used to update an SVG icon.</p>
-<h3 class="sg-h3">Modifying an SVG icon</h3>
-<p class="sg-p">You can modify the icon color by applying a new <em>fill</em> color, and change the icon size by setting it's <em>height</em> and <em>width</em> as shown below.</p>
-
-
-
-
-<article class="sg-example" id="iconsSvgModifiersCss">
-    
-    <section class="sg-example__render">
-        <style>
-   .largeArrowDown { height: 2.5em; width: 2.5em; } 
-   .redArrowLeft { fill: red; } 
-   .smallTransparentArrowRight { fill: rgba(0, 0, 0, 0.5); height: 0.6em; width: 0.6em; } 
-</style>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        
-        <pre><code class="html">&lt;style&gt;
-   .largeArrowDown { height: 2.5em; width: 2.5em; } 
-   .redArrowLeft { fill: red; } 
-   .smallTransparentArrowRight { fill: rgba(0, 0, 0, 0.5); height: 0.6em; width: 0.6em; } 
-&lt;/style&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-
-
-
-<article class="sg-example sg-icon-display" id="iconsSvgModifiersExample">
-    
-    <section class="sg-example__render">
-        <svg class="tuiIcon largeArrowDown">
-  <use xlink:href="#arrow-down"/>
-</svg>
-<svg class="tuiIcon redArrowLeft">
-  <use xlink:href="#arrow-left"/>
-</svg>
-<svg class="tuiIcon smallTransparentArrowRight">
-  <use xlink:href="#arrow-right"/>
-</svg>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        
-        <pre><code class="html">&lt;svg class=&#34;tuiIcon largeArrowDown&#34;&gt;
-  &lt;use xlink:href=&#34;#arrow-down&#34; /&gt;
-&lt;/svg&gt;
-&lt;svg class=&#34;tuiIcon redArrowLeft&#34;&gt;
-  &lt;use xlink:href=&#34;#arrow-left&#34; /&gt;
-&lt;/svg&gt;
-&lt;svg class=&#34;tuiIcon smallTransparentArrowRight&#34;&gt;
-  &lt;use xlink:href=&#34;#arrow-right&#34; /&gt;
-&lt;/svg&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-
-<h3 class="sg-h3">Modifying a font icon</h3>
-<p class="sg-p">When using font icons, you can modify the color of the icon by applying a new <em>color</em> and you can change the icon size by setting the <em>font-size</em> as shown below.</p>
-
-
-
-
-
-<article class="sg-example" id="iconsFontFaceModifiersCss">
-    
-    <section class="sg-example__render">
-        <style>
-   .largeFontArrowDown { font-size:2.5em; } 
-   .redFontArrowLeft { color: red; } 
-   .smallFontTransparentArrowRight { color: rgba(0, 0, 0, 0.5); font-size: 0.6em; } 
-</style>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        
-        <pre><code class="html">&lt;style&gt;
-   .largeFontArrowDown { font-size:2.5em; } 
-   .redFontArrowLeft { color: red; } 
-   .smallFontTransparentArrowRight { color: rgba(0, 0, 0, 0.5); font-size: 0.6em; } 
-&lt;/style&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-
-
-
-<article class="sg-example sg-icon-display" id="iconsFontFaceModifiersExample">
-    
-    <section class="sg-example__render">
-        <i class="tuiIcon-arrow-down largeFontArrowDown"></i>
-<i class="tuiIcon-arrow-left redFontArrowLeft"></i>
-<i class="tuiIcon-arrow-right smallFontTransparentArrowRight"></i>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        
-        <pre><code class="html">&lt;i class=&#34;tuiIcon-arrow-down largeFontArrowDown&#34;&gt;&lt;/i&gt;
-&lt;i class=&#34;tuiIcon-arrow-left redFontArrowLeft&#34;&gt;&lt;/i&gt;
-&lt;i class=&#34;tuiIcon-arrow-right smallFontTransparentArrowRight&#34;&gt;&lt;/i&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-
-
-
-
-
-<h2 class="sg-h2">Animation</h2>
-<p class="sg-p">Animations can be defined and applied in the same way for both font and SVG icons.</p>
-
-
-
-
-
-<article class="sg-example" id="iconsAnimationCss">
-    
-    <section class="sg-example__render">
-        <style>
-   .rotatingIcon:hover {
-       animation-name: rotate;
-       animation-duration: 2s;
-       animation-iteration-count: infinite;
-       animation-timing-function: linear;
-   }
-
-   @keyframes rotate {
-       from {transform: rotate(0deg);}
-       to {transform: rotate(360deg);}
-   }
-</style>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        
-        <pre><code class="html">&lt;style&gt;
-   .rotatingIcon:hover {
-       animation-name: rotate;
-       animation-duration: 2s;
-       animation-iteration-count: infinite;
-       animation-timing-function: linear;
-   }
-
-   @keyframes rotate {
-       from {transform: rotate(0deg);}
-       to {transform: rotate(360deg);}
-   }
-&lt;/style&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-<h3 class="sg-h3">Animating an SVG icon</h3>
-<p class="sg-p">Hover over the icon to trigger the animation.</p>
-
-
-
-
-<article class="sg-example sg-icon-display" id="iconsSvgAnimateExample">
-    
-    <section class="sg-example__render">
-        <svg class="tuiIcon rotatingIcon">
-  <use xlink:href="#arrow-down"/>
-</svg>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        
-        <pre><code class="html">&lt;svg class=&#34;tuiIcon rotatingIcon&#34;&gt;
-  &lt;use xlink:href=&#34;#arrow-down&#34; /&gt;
-&lt;/svg&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-<h3 class="sg-h3">Animating a font icon</h3>
-<p class="sg-p">Hover over the icon to trigger the animation.</p>
-
-
-
-
-<article class="sg-example sg-icon-display" id="iconsFontAnimateExample">
-    
-    <section class="sg-example__render">
-        <i class="tuiIcon-arrow-down rotatingIcon"></i>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        
-        <pre><code class="html">&lt;i class=&#34;tuiIcon-arrow-down rotatingIcon&#34;&gt;&lt;/i&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2 class="sg-h2">Icons in buttons</h2>
-<h3 class="sg-h3">SVG reference</h3>
-
-
-
-<article class="sg-example" id="iconsSvgInButtons">
-    
-    <section class="sg-example__render">
-        <button class="tuiButton">Arrow right <svg class="tuiIcon"><use xlink:href="#arrow-right"/></svg></button>
-<button class="tuiButton tuiButton--caution">Pointer right <svg class="tuiIcon"><use xlink:href="#pointer-right"/></svg></button>
-<button class="tuiButton tuiButton--primary">Chevron right <svg class="tuiIcon"><use xlink:href="#chevron-right"/></svg></button>
-<button class="tuiButton tuiButton--subtle">Arrow right <svg class="tuiIcon"><use xlink:href="#arrow-right"/></svg></button>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        
-        <pre><code class="html">&lt;button class=&#34;tuiButton&#34;&gt;Arrow right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#arrow-right&#34; /&gt;&lt;/svg&gt;&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--caution&#34;&gt;Pointer right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#pointer-right&#34; /&gt;&lt;/svg&gt;&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Chevron right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#chevron-right&#34; /&gt;&lt;/svg&gt;&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--subtle&#34;&gt;Arrow right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#arrow-right&#34; /&gt;&lt;/svg&gt;&lt;/button&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-
-
-
-<article class="sg-example" id="iconsSvgInDisabledButtons">
-    
-    <section class="sg-example__render">
-        <button class="tuiButton" disabled="disabled">Disabled arrow right <svg class="tuiIcon"><use xlink:href="#arrow-right"/></svg></button>
-<button class="tuiButton tuiButton--caution" disabled="disabled">Disabled pointer right <svg class="tuiIcon"><use xlink:href="#pointer-right"/></svg></button>
-<button class="tuiButton tuiButton--primary" disabled="disabled">Disabled chevron right <svg class="tuiIcon"><use xlink:href="#chevron-right"/></svg></button>
-<button class="tuiButton tuiButton--subtle" disabled="disabled">Disabled arrow right <svg class="tuiIcon"><use xlink:href="#arrow-right"/></svg></button>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        
-        <pre><code class="html">&lt;button class=&#34;tuiButton&#34; disabled=&#34;disabled&#34;&gt;Disabled arrow right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#arrow-right&#34; /&gt;&lt;/svg&gt;&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--caution&#34; disabled=&#34;disabled&#34;&gt;Disabled pointer right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#pointer-right&#34; /&gt;&lt;/svg&gt;&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled chevron right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#chevron-right&#34; /&gt;&lt;/svg&gt;&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--subtle&#34; disabled=&#34;disabled&#34;&gt;Disabled arrow right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#arrow-right&#34; /&gt;&lt;/svg&gt;&lt;/button&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-
-
-
-<article class="sg-example" id="iconsSvgInAnchorButtons">
-    
-    <section class="sg-example__render">
-        <a class="tuiButton">Link arrow right <svg class="tuiIcon"><use xlink:href="#arrow-right"/></svg></a>
-<a class="tuiButton tuiButton--caution">Link pointer right <svg class="tuiIcon"><use xlink:href="#pointer-right"/></svg></a>
-<a class="tuiButton tuiButton--primary">Link chevron right <svg class="tuiIcon"><use xlink:href="#chevron-right"/></svg></a>
-<a class="tuiButton tuiButton--subtle">Link arrow right <svg class="tuiIcon"><use xlink:href="#arrow-right"/></svg></a>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        
-        <pre><code class="html">&lt;a class=&#34;tuiButton&#34;&gt;Link arrow right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#arrow-right&#34; /&gt;&lt;/svg&gt;&lt;/a&gt;
-&lt;a class=&#34;tuiButton tuiButton--caution&#34;&gt;Link pointer right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#pointer-right&#34; /&gt;&lt;/svg&gt;&lt;/a&gt;
-&lt;a class=&#34;tuiButton tuiButton--primary&#34;&gt;Link chevron right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#chevron-right&#34; /&gt;&lt;/svg&gt;&lt;/a&gt;
-&lt;a class=&#34;tuiButton tuiButton--subtle&#34;&gt;Link arrow right &lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#arrow-right&#34; /&gt;&lt;/svg&gt;&lt;/a&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-<h3 class="sg-h3">SVG inline</h3>
-
-
-
-<article class="sg-example" id="iconsInlineSvgInButtons">
-    
-    <section class="sg-example__render">
-        <button class="tuiButton">Arrow right <svg class="tuiIcon" viewBox="0 0 14 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <title>Arrow Right</title>
-    <desc>Created with Sketch.</desc>
-    <g id="Symbols">
-        <g id="Buttons-/-Icons-/-Arrow-/-Right-Arrow" transform="translate(-1.000000, -2.000000)">
-            <path d="M4.29787523,7 L13.5969898,7 C14.1506405,7 14.5994631,7.44386482 14.5994631,8 C14.5994631,8.55228475 14.1437021,9 13.5969898,9 L4.32887361,9 L6.92129747,11.7875038 C7.29590413,12.1902997 7.29509537,12.8409674 6.91963875,13.2409697 L6.8870099,13.2757317 C6.51617706,13.670808 5.899329,13.6689772 5.5195687,13.26064 L1.28707994,8.70965628 C0.900958611,8.29447931 0.907520937,7.64253487 1.28752954,7.23822073 L5.52278572,2.73207551 C5.90915951,2.32098906 6.51361676,2.32598065 6.88709583,2.72809815 L6.91955282,2.76304395 C7.28843245,3.16020934 7.28823293,3.81837757 6.90883405,4.22204298 L4.29787523,7 Z" id="Arrow-Right" transform="translate(7.799732, 7.997317) scale(-1, 1) translate(-7.799732, -7.997317) "></path>
-        </g>
-    </g>
-</svg></button>
+        <div class="tuiWithIcon">
+   <input class="tuiTextField" type="text" disabled="disabled">
+   <i class="tuiIcon-action-search tuiWithIcon__icon" disabled="disabled"></i>
+</div>
+<div class="tuiWithIcon">
+   <input class="tuiTextField" type="text" value="With some text..." disabled="disabled">
+   <i class="tuiIcon-action-search tuiWithIcon__icon" disabled="disabled"></i>
+</div>
+<div class="tuiWithIcon">
+   <input class="tuiTextField" type="text" placeholder="With placeholder" disabled="disabled">
+   <i class="tuiIcon-action-search tuiWithIcon__icon" disabled="disabled"></i>
+</div>
 
     </section>
     
@@ -1143,15 +605,18 @@
     
     <section class="sg-example__source">
         <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;button class=&#34;tuiButton&#34;&gt;Arrow right &lt;svg class=&#34;tuiIcon&#34; viewBox=&#34;0 0 14 12&#34; version=&#34;1.1&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; xmlns:xlink=&#34;http://www.w3.org/1999/xlink&#34;&gt;
-    &lt;title&gt;Arrow Right&lt;/title&gt;
-    &lt;desc&gt;Created with Sketch.&lt;/desc&gt;
-    &lt;g id=&#34;Symbols&#34;&gt;
-        &lt;g id=&#34;Buttons-/-Icons-/-Arrow-/-Right-Arrow&#34; transform=&#34;translate(-1.000000, -2.000000)&#34;&gt;
-            &lt;path d=&#34;M4.29787523,7 L13.5969898,7 C14.1506405,7 14.5994631,7.44386482 14.5994631,8 C14.5994631,8.55228475 14.1437021,9 13.5969898,9 L4.32887361,9 L6.92129747,11.7875038 C7.29590413,12.1902997 7.29509537,12.8409674 6.91963875,13.2409697 L6.8870099,13.2757317 C6.51617706,13.670808 5.899329,13.6689772 5.5195687,13.26064 L1.28707994,8.70965628 C0.900958611,8.29447931 0.907520937,7.64253487 1.28752954,7.23822073 L5.52278572,2.73207551 C5.90915951,2.32098906 6.51361676,2.32598065 6.88709583,2.72809815 L6.91955282,2.76304395 C7.28843245,3.16020934 7.28823293,3.81837757 6.90883405,4.22204298 L4.29787523,7 Z&#34; id=&#34;Arrow-Right&#34; transform=&#34;translate(7.799732, 7.997317) scale(-1, 1) translate(-7.799732, -7.997317) &#34;&gt;&lt;/path&gt;
-        &lt;/g&gt;
-    &lt;/g&gt;
-&lt;/svg&gt;&lt;/button&gt;
+        <pre><code class="html">&lt;div class=&#34;tuiWithIcon&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; disabled=&#34;disabled&#34; /&gt;
+   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34; disabled=&#34;disabled&#34;&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiWithIcon&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; disabled=&#34;disabled&#34; /&gt;
+   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34; disabled=&#34;disabled&#34;&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiWithIcon&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;With placeholder&#34; disabled=&#34;disabled&#34; /&gt;
+   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34; disabled=&#34;disabled&#34;&gt;&lt;/i&gt;
+&lt;/div&gt;
 </code></pre>
     </section>
     
@@ -1159,17 +624,122 @@
 </article>
 
 
-<h3 class="sg-h3">Font</h3>
+<h3 class="sg-h3">Using SVG icons</h3>
 
 
 
-<article class="sg-example" id="iconsFontFaceInButtons">
+<article class="sg-example" id="textFieldsWithIconsSvg">
     
     <section class="sg-example__render">
-        <button class="tuiButton">Arrow right <i class="tuiIcon tuiIcon-arrow-right"></i></button>
-<button class="tuiButton tuiButton--caution">Pointer right <i class="tuiIcon tuiIcon-pointer-right"></i></button>
-<button class="tuiButton tuiButton--primary">Chevron right <i class="tuiIcon tuiIcon-chevron-right"></i></button>
-<button class="tuiButton tuiButton--subtle">Arrow right <i class="tuiIcon tuiIcon-arrow-right"></i></button>
+        <div class="tuiWithIcon">
+   <input class="tuiTextField" type="text">
+   <svg class="tuiIcon tuiWithIcon__icon"><use xlink:href="#action-edit"/></svg>
+</div>
+<div class="tuiWithIcon">
+   <input class="tuiTextField" type="text" value="With some text...">
+   <svg class="tuiIcon tuiWithIcon__icon"><use xlink:href="#action-edit"/></svg>
+</div>
+<div class="tuiWithIcon">
+   <input class="tuiTextField" type="text" placeholder="With placeholder">
+   <svg class="tuiIcon tuiWithIcon__icon"><use xlink:href="#action-edit"/></svg>
+</div>
+
+    </section>
+    
+    
+
+    
+    <section class="sg-example__source">
+        
+        <pre><code class="html">&lt;div class=&#34;tuiWithIcon&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; /&gt;
+   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34;&gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiWithIcon&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; /&gt;
+   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34;&gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiWithIcon&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;With placeholder&#34; /&gt;
+   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34;&gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+    
+</article>
+
+
+<h4 class="sg-h4">Disabled</h4>
+<p class="sg-p">When disabled, the <em>disabled</em> attribute must be set on both the input and <em>tuiWithIcon__icon</em> element.</p>
+
+
+
+<article class="sg-example" id="textFieldsWithIconsSvgDisabled">
+    
+    <section class="sg-example__render">
+        <div class="tuiWithIcon">
+   <input class="tuiTextField" type="text" disabled="disabled">
+   <svg class="tuiIcon tuiWithIcon__icon" disabled="disabled"><use xlink:href="#action-edit"/></svg>
+</div>
+<div class="tuiWithIcon">
+   <input class="tuiTextField" type="text" value="With some text..." disabled="disabled">
+   <svg class="tuiIcon tuiWithIcon__icon" disabled="disabled"><use xlink:href="#action-edit"/></svg>
+</div>
+<div class="tuiWithIcon">
+   <input class="tuiTextField" type="text" placeholder="With placeholder" disabled="disabled">
+   <svg class="tuiIcon tuiWithIcon__icon" disabled="disabled"><use xlink:href="#action-edit"/></svg>
+</div>
+
+    </section>
+    
+    
+
+    
+    <section class="sg-example__source">
+        
+        <pre><code class="html">&lt;div class=&#34;tuiWithIcon&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; disabled=&#34;disabled&#34; /&gt;
+   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34; disabled=&#34;disabled&#34; &gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiWithIcon&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; disabled=&#34;disabled&#34; /&gt;
+   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34; disabled=&#34;disabled&#34; &gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiWithIcon&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;With placeholder&#34; disabled=&#34;disabled&#34; /&gt;
+   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34; disabled=&#34;disabled&#34;&gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+    
+</article>
+
+
+
+<h2 class="sg-h2">Aligned to the Right</h2>
+<p class="sg-p">Use the <em>tuiWithIcon--right</em> to align the icon to the right instead of the default left.</p>
+
+<h3 class="sg-h3">Using font icons</h3>
+
+
+
+<article class="sg-example" id="textFieldsWithIconsRight">
+    
+    <section class="sg-example__render">
+        <div class="tuiWithIcon tuiWithIcon--right">
+   <input class="tuiTextField" type="text">
+   <i class="tuiIcon-action-search tuiWithIcon__icon"></i>
+</div>
+<div class="tuiWithIcon tuiWithIcon--right">
+   <input class="tuiTextField" type="text" value="With some text...">
+   <i class="tuiIcon-action-search tuiWithIcon__icon"></i>
+</div>
+<div class="tuiWithIcon tuiWithIcon--right">
+   <input class="tuiTextField" type="text" placeholder="With placeholder">
+   <i class="tuiIcon-action-search tuiWithIcon__icon"></i>
+</div>
 
     </section>
     
@@ -1178,10 +748,18 @@
     
     <section class="sg-example__source">
         <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;button class=&#34;tuiButton&#34;&gt;Arrow right &lt;i class=&#34;tuiIcon tuiIcon-arrow-right&#34;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--caution&#34;&gt;Pointer right &lt;i class=&#34;tuiIcon tuiIcon-pointer-right&#34;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Chevron right &lt;i class=&#34;tuiIcon tuiIcon-chevron-right&#34;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;button class=&#34;tuiButton tuiButton--subtle&#34;&gt;Arrow right &lt;i class=&#34;tuiIcon tuiIcon-arrow-right&#34;&gt;&lt;/i&gt;&lt;/button&gt;
+        <pre><code class="html">&lt;div class=&#34;tuiWithIcon tuiWithIcon--right&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; /&gt;
+   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiWithIcon tuiWithIcon--right&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; /&gt;
+   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiWithIcon tuiWithIcon--right&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;With placeholder&#34; /&gt;
+   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+&lt;/div&gt;
 </code></pre>
     </section>
     
@@ -1189,16 +767,64 @@
 </article>
 
 
+<h3 class="sg-h3">Using SVG icons</h3>
 
 
 
-<article class="sg-example" id="iconsFontFaceInAnchorButtons">
+<article class="sg-example" id="textFieldsWithIconsRightSVG">
     
     <section class="sg-example__render">
-        <a class="tuiButton">Arrow right <i class="tuiIcon tuiIcon-arrow-right"></i></a>
-<a class="tuiButton tuiButton--caution">Pointer right <i class="tuiIcon tuiIcon-pointer-right"></i></a>
-<a class="tuiButton tuiButton--primary">Chevron right <i class="tuiIcon tuiIcon-chevron-right"></i></a>
-<a class="tuiButton tuiButton--subtle">Arrow right <i class="tuiIcon tuiIcon-arrow-right"></i></a>
+        <div class="tuiWithIcon tuiWithIcon--right">
+   <input class="tuiTextField" type="text">
+   <svg class="tuiIcon tuiWithIcon__icon"><use xlink:href="#action-edit"/></svg>
+</div>
+<div class="tuiWithIcon tuiWithIcon--right">
+   <input class="tuiTextField" type="text" value="With some text...">
+   <svg class="tuiIcon tuiWithIcon__icon"><use xlink:href="#action-edit"/></svg>
+</div>
+<div class="tuiWithIcon tuiWithIcon--right">
+   <input class="tuiTextField" type="text" placeholder="With placeholder">
+   <svg class="tuiIcon tuiWithIcon__icon"><use xlink:href="#action-edit"/></svg>
+</div>
+
+    </section>
+    
+    
+
+    
+    <section class="sg-example__source">
+        
+        <pre><code class="html">&lt;div class=&#34;tuiWithIcon tuiWithIcon--right&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; /&gt;
+   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34;&gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiWithIcon tuiWithIcon--right&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; /&gt;
+   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34;&gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiWithIcon tuiWithIcon--right&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;With placeholder&#34; /&gt;
+   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34;&gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+    
+</article>
+
+
+<h2 class="sg-h2">Other semantics</h2>
+<p>It is possible to use other elements than an input...</p>
+
+
+
+<article class="sg-example" id="textFieldsWithIconsSemantics">
+    
+    <section class="sg-example__render">
+        <div class="tuiWithIcon tuiWithIcon--right">
+   <div class="tuiTextField">Aug 20 - Sep 19, 2017</div>
+   <i class="tuiIcon-datetime-calendar tuiWithIcon__icon"></i>
+</div>
 
     </section>
     
@@ -1207,10 +833,10 @@
     
     <section class="sg-example__source">
         <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;a class=&#34;tuiButton&#34;&gt;Arrow right &lt;i class=&#34;tuiIcon tuiIcon-arrow-right&#34;&gt;&lt;/i&gt;&lt;/a&gt;
-&lt;a class=&#34;tuiButton tuiButton--caution&#34;&gt;Pointer right &lt;i class=&#34;tuiIcon tuiIcon-pointer-right&#34;&gt;&lt;/i&gt;&lt;/a&gt;
-&lt;a class=&#34;tuiButton tuiButton--primary&#34;&gt;Chevron right &lt;i class=&#34;tuiIcon tuiIcon-chevron-right&#34;&gt;&lt;/i&gt;&lt;/a&gt;
-&lt;a class=&#34;tuiButton tuiButton--subtle&#34;&gt;Arrow right &lt;i class=&#34;tuiIcon tuiIcon-arrow-right&#34;&gt;&lt;/i&gt;&lt;/a&gt;
+        <pre><code class="html">&lt;div class=&#34;tuiWithIcon tuiWithIcon--right&#34;&gt;
+   &lt;div class=&#34;tuiTextField&#34;&gt;Aug 20 - Sep 19, 2017&lt;/div&gt;
+   &lt;i class=&#34;tuiIcon-datetime-calendar tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+&lt;/div&gt;
 </code></pre>
     </section>
     

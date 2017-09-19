@@ -317,6 +317,45 @@
   min-width: 3.5714286em;
 }
 /*------------------------------------*\
+  #WITHICON (here until we handle another component)
+\*------------------------------------*/
+.tuiWithIcon {
+  display: inline-block;
+  position: relative;
+}
+.tuiWithIcon .tuiTextField {
+  padding-left: 2em;
+}
+.tuiWithIcon .tuiWithIcon__icon {
+  font-size: 1em;
+  height: 1em;
+  width: 1em;
+  color: #999999;
+  fill: #999999;
+}
+.tuiWithIcon__icon {
+  color: #999999;
+  fill: #999999;
+  position: absolute;
+  left: 0.5em;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+       -o-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.tuiWithIcon--right .tuiTextField {
+  padding-left: 0.71428571em;
+  padding-right: 2em;
+}
+.tuiWithIcon--right .tuiWithIcon__icon {
+  left: auto;
+  right: 0.5em;
+}
+.tuiWithIcon .tuiWithIcon__icon[disabled] {
+  color: #c8c8c8;
+  fill: #c8c8c8;
+}
+/*------------------------------------*\
   #VARIABLES
 \*------------------------------------*/
 /*------------------------------------*\
@@ -596,6 +635,12 @@
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+.tuiIcon-action-search:before {
+  content: "\e919";
+}
+.tuiIcon-datetime-calendar:before {
+  content: "\e91a";
 }
 .tuiIcon-information-questionmark:before {
   content: "\e918";
@@ -1194,13 +1239,13 @@
   background-color: rgba(217, 217, 217, 0.1);
   border: 1px solid #d9d9d9;
   color: #555555;
+  font-size: 0.78571429em;
   border-radius: 0.14285714em;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: inline-flex;
   padding: 0 0.4em;
-  font-size: 0.78571429em;
-  line-height: 1.3571429em;
+  line-height: 1.2727273em;
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
@@ -1209,6 +1254,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  font-size: 1em;
   text-decoration: none;
   max-width: 9.0909091em;
 }
@@ -1279,12 +1325,12 @@
 .tuiDropdown .tuiIcon {
   margin-right: 0.71428571em;
 }
-.tuiDropdown--icon .tuiIcon {
-  margin-left: 0.42857143em;
-}
 /*------------------------------------*\
   #SPLITDROPDOWNS
 \*------------------------------------*/
+.tuiDropdown--split {
+  white-space: nowrap;
+}
 .tuiDropdown--split .tuiButton.tuiButton--dropdown {
   position: relative;
   border-left: 1px solid transparent;
@@ -1300,6 +1346,8 @@
 }
 .tuiDropdown--split .tuiButton--dropdown::after {
   margin-left: 0;
+  display: inline;
+  top: 0.75em;
 }
 .tuiDropdown--split .tuiButton:focus::before {
   /* stylelint-disable-line */
@@ -1350,12 +1398,10 @@
   outline: 0;
   background-color: rgba(0, 115, 236, 0.15);
 }
-.tuiDropdown__list__item-is-disabled,
 .tuiDropdown__list__item[disabled] {
   cursor: not-allowed;
   color: #c5c5c5;
 }
-.tuiDropdown__list__item-is-disabled:hover,
 .tuiDropdown__list__item[disabled]:hover {
   background-color: transparent;
 }
@@ -1411,8 +1457,6 @@
 .tuiDropdown__list__item [class*=" tuiIcon-"] {
   font-size: 1em;
 }
-.tuiDropdown__list__item-is-disabled [class^="tuiIcon-"],
-.tuiDropdown__list__item-is-disabled [class*=" tuiIcon-"],
 .tuiDropdown__list__item[disabled] [class^="tuiIcon-"],
 .tuiDropdown__list__item[disabled] [class*=" tuiIcon-"] {
   color: #c5c5c5;
