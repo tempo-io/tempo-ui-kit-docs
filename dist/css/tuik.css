@@ -31,6 +31,9 @@
   #GRID
 \*------------------------------------*/
 /*------------------------------------*\
+  #POINTERS (Container, Arrow, (Arrow)Positioning)
+\*------------------------------------*/
+/*------------------------------------*\
   #footer
 \*------------------------------------*/
 .o_icon_button {
@@ -898,72 +901,87 @@
   #TOOLTIPS
 \*------------------------------------*/
 .tuiTooltip {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   position: absolute;
   z-index: 6000;
   display: block;
   margin: 0;
-  padding: 0.35714286em 0 0 0;
+  background-color: #12485a;
+  border-radius: 0.21428571em;
+  padding: 0.21428571em 0.57142857em;
+  margin: 0.35714286em 0 0 0;
 }
 .tuiTooltip--top {
-  padding: 0 0 0.35714286em 0;
+  margin: 0 0 0.35714286em 0;
 }
 .tuiTooltip--right {
-  padding: 0 0 0 0.35714286em;
+  margin: 0 0 0 0.35714286em;
 }
 .tuiTooltip--bottom {
-  padding: 0.35714286em 0 0 0;
+  margin: 0.35714286em 0 0 0;
 }
 .tuiTooltip--left {
-  padding: 0 0.35714286em 0 0;
+  margin: 0 0.35714286em 0 0;
 }
 .tuiTooltip__content {
   font-weight: 100;
   line-height: 1.7142857em;
   max-width: 30.000000em;
-  padding: 0.21428571em 0.57142857em;
   color: #ffffff;
-  border-radius: 0.21428571em;
-  background-color: #12485a;
 }
 .tuiTooltip__pointer {
-  position: absolute;
   width: 0;
   height: 0;
-  border-color: transparent;
-  border-style: solid;
-  top: 0;
+  border-left: 0.35714286em solid transparent;
+  border-right: 0.35714286em solid transparent;
+  border-bottom: 0.35714286em solid #12485a;
+  border-top: 0 solid transparent;
+  position: absolute;
   left: 50%;
-  margin-left: -0.35714286em;
-  border-width: 0 0.35714286em 0.35714286em;
-  border-bottom-color: #12485a;
+  top: -0.35714286em;
+  margin-left: -0.17857143em;
 }
 .tuiTooltip--top .tuiTooltip__pointer {
-  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 0.35714286em solid transparent;
+  border-right: 0.35714286em solid transparent;
+  border-top: 0.35714286em solid #12485a;
+  border-bottom: 0 solid transparent;
+  position: absolute;
   left: 50%;
   margin-left: -0.35714286em;
-  border-width: 0.35714286em 0.35714286em 0;
-  border-top-color: #12485a;
-  top: inherit;
-  border-bottom-color: transparent;
+  top: 100%;
+  bottom: -0.35714286em;
+  margin-left: -0.17857143em;
 }
 .tuiTooltip--right .tuiTooltip__pointer {
+  width: 0;
+  height: 0;
+  border-top: 0.35714286em solid transparent;
+  border-bottom: 0.35714286em solid transparent;
+  border-right: 0.35714286em solid #12485a;
+  border-left: 0 solid transparent;
+  position: absolute;
   top: 50%;
-  left: 0;
   margin-top: -0.35714286em;
-  border-width: 0.35714286em 0.35714286em 0.35714286em 0;
-  border-right-color: #12485a;
   margin-left: 0;
-  border-bottom-color: transparent;
+  left: -0.35714286em;
 }
 .tuiTooltip--left .tuiTooltip__pointer {
+  width: 0;
+  height: 0;
+  border-top: 0.35714286em solid transparent;
+  border-bottom: 0.35714286em solid transparent;
+  border-left: 0.35714286em solid #12485a;
+  border-right: 0 solid transparent;
+  position: absolute;
   top: 50%;
-  right: 0;
   margin-top: -0.35714286em;
-  border-width: 0.35714286em 0 0.35714286em 0.35714286em;
-  border-left-color: #12485a;
   left: auto;
   margin-left: 0;
-  border-bottom-color: transparent;
+  right: -0.35714286em;
 }
 /*------------------------------------*\
   #ANIMATIONS
@@ -1636,4 +1654,266 @@
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
+}
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+/*------------------------------------*\
+  #TABS
+\*------------------------------------*/
+.tuiTabs {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  border-bottom: 0.14285714em solid #d9d9d9;
+  border-radius: 0.071428571em;
+}
+.tuiTabs__item {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.tuiTabs__item__link {
+  line-height: 1.5000000em;
+  margin: 0;
+  padding: 0.35714286em 1.0714286em;
+  margin-bottom: -0.14285714em;
+  font-size: 1em;
+  color: #333333;
+  white-space: nowrap;
+  border: 0.071428571em solid transparent;
+  border-bottom: 0.14285714em solid transparent;
+  background-color: transparent;
+}
+.tuiTabs__item__link:hover {
+  cursor: pointer;
+  color: #0058E1;
+}
+.tuiTabs__item__link:focus {
+  outline: 0 !important;
+  border: 0.07142857em solid #4C9AFF !important;
+  -webkit-box-shadow: inset 0 0 0 0.07142857em #4C9AFF !important;
+          box-shadow: inset 0 0 0 0.07142857em #4C9AFF !important;
+  border-radius: 0.21428571em;
+  line-height: 1.5714286em;
+}
+.tuiTabs__item__link-is-active {
+  color: #0058E1;
+  border-bottom-color: #0058E1;
+}
+.tuiTabs__item__link[disabled],
+.tuiTabs__item__link[disabled]:hover {
+  color: #999999;
+  cursor: not-allowed;
+}
+.tuiTabs--reversed {
+  -webkit-box-pack: end;
+  -webkit-justify-content: flex-end;
+          justify-content: flex-end;
+}
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+/*------------------------------------*\
+  #MIXINS
+\*------------------------------------*/
+/*------------------------------------*\
+  #POPOVERS
+\*------------------------------------*/
+.tuiPopover {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  position: absolute;
+  z-index: 4000;
+  display: block;
+  margin: 0;
+  background-color: white;
+  border-radius: 0.21428571em;
+  padding: 0.21428571em 0.57142857em;
+  margin: 1.14285714em 0 0 0;
+  -webkit-box-shadow: 0 0.14285714em 0.71428571em rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0.14285714em 0.71428571em rgba(0, 0, 0, 0.1);
+  border: 1px solid #d9d9d9;
+  padding: 0;
+  display: none;
+}
+.tuiPopover:focus {
+  outline: none;
+}
+.tuiPopover__content {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0.71428571em;
+  font-weight: 100;
+  min-height: 10.714286em;
+}
+.tuiPopover__pointer {
+  width: 0;
+  height: 0;
+  border-left: 1.14285714em solid transparent;
+  border-right: 1.14285714em solid transparent;
+  border-bottom: 1.14285714em solid #d9d9d9;
+  border-top: 0 solid transparent;
+  position: absolute;
+  left: 50%;
+  top: -1.14285714em;
+  margin-left: -0.57142857em;
+}
+.tuiPopover__pointer::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 1.07142857em solid transparent;
+  border-right: 1.07142857em solid transparent;
+  border-bottom: 1.07142857em solid white;
+  border-top: 0 solid transparent;
+  position: absolute;
+  left: 50%;
+  top: -1.07142857em;
+  margin-left: -0.53571429em;
+  bottom: -1.14285714em;
+  top: auto;
+  margin-left: -1.07142857em;
+}
+.tuiPopover__header {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0.71428571em;
+  border-bottom: 1px solid #d9d9d9;
+}
+.tuiPopover__header__title {
+  font-size: 0.85714286em;
+  margin: 0;
+  font-weight: bold;
+  text-align: center;
+}
+.tuiPopover__footer {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0.71428571em;
+  border-top: 1px solid #d9d9d9;
+}
+.tuiPopover-is-visible {
+  display: block;
+}
+.tuiPopover--top {
+  margin: 0 0 1.14285714em 0;
+}
+.tuiPopover--right {
+  margin: 0 0 0 1.14285714em;
+}
+.tuiPopover--bottom {
+  margin: 1.14285714em 0 0 0;
+}
+.tuiPopover--left {
+  margin: 0 1.14285714em 0 0;
+}
+.tuiPopover--top .tuiPopover__pointer {
+  width: 0;
+  height: 0;
+  border-left: 1.14285714em solid transparent;
+  border-right: 1.14285714em solid transparent;
+  border-top: 1.14285714em solid #d9d9d9;
+  border-bottom: 0 solid transparent;
+  position: absolute;
+  left: 50%;
+  margin-left: -1.14285714em;
+  top: 100%;
+  bottom: -1.14285714em;
+  margin-left: -0.57142857em;
+}
+.tuiPopover--top .tuiPopover__pointer::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 1.07142857em solid transparent;
+  border-right: 1.07142857em solid transparent;
+  border-top: 1.07142857em solid white;
+  border-bottom: 0 solid transparent;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  bottom: -1.07142857em;
+  margin-left: -0.53571429em;
+  bottom: 0;
+  top: -1.14285714em;
+  margin-left: -1.07142857em;
+}
+.tuiPopover--right .tuiPopover__pointer {
+  width: 0;
+  height: 0;
+  border-top: 1.14285714em solid transparent;
+  border-bottom: 1.14285714em solid transparent;
+  border-right: 1.14285714em solid #d9d9d9;
+  border-left: 0 solid transparent;
+  position: absolute;
+  top: 50%;
+  margin-top: -1.14285714em;
+  margin-left: 0;
+  left: -1.14285714em;
+}
+.tuiPopover--right .tuiPopover__pointer::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 1.07142857em solid transparent;
+  border-bottom: 1.07142857em solid transparent;
+  border-right: 1.07142857em solid white;
+  border-left: 0 solid transparent;
+  position: absolute;
+  top: 50%;
+  margin-top: -1.07142857em;
+  margin-left: 0;
+  left: -1.07142857em;
+  left: auto;
+  right: -1.14285714em;
+}
+.tuiPopover--left .tuiPopover__pointer {
+  width: 0;
+  height: 0;
+  border-top: 1.14285714em solid transparent;
+  border-bottom: 1.14285714em solid transparent;
+  border-left: 1.14285714em solid #d9d9d9;
+  border-right: 0 solid transparent;
+  position: absolute;
+  top: 50%;
+  margin-top: -1.14285714em;
+  left: auto;
+  margin-left: 0;
+  right: -1.14285714em;
+}
+.tuiPopover--left .tuiPopover__pointer::after {
+  content: "";
+  width: 0;
+  height: 0;
+  border-top: 1.07142857em solid transparent;
+  border-bottom: 1.07142857em solid transparent;
+  border-left: 1.07142857em solid white;
+  border-right: 0 solid transparent;
+  position: absolute;
+  top: 50%;
+  margin-top: -1.07142857em;
+  left: auto;
+  margin-left: 0;
+  right: -1.07142857em;
+  right: auto;
+  left: -1.14285714em;
+}
+/*------------------------------------*\
+  #COMPOSITION
+\*------------------------------------*/
+.tuiPopover .tuiForm {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.tuiPopover .tuiForm__row {
+  padding-left: 0;
+  padding-right: 0;
+}
+.tuiPopover .tuiForm__footer {
+  padding-left: 0;
+  padding-right: 0;
 }

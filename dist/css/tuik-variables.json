@@ -1,6 +1,7 @@
 {
     "fontSize": "14px",
     "fontFamilySansSerif": "-apple-system, system-ui, BlinkMacSystemFont, \"Segoe UI\", \"Roboto\", \"Helvetica Neue\", Arial, sans-serif",
+    "popoverZindex": "4000",
     "blanketZindex": "5000",
     "drowdownZindex": "5500",
     "tooltipZindex": "6000",
@@ -110,5 +111,15 @@
     "cardHeaderHeight": "3.2857143em",
     "cardHeaderTitleColor": "#333333",
     "cardHeaderSubTitleColor": "#999999",
-    "cardPrimaryBackgroundColor": "#366175"
+    "cardPrimaryBackgroundColor": "#366175",
+    "tabActiveColor": "#0058E1",
+    "tabHoverColor": "#0058E1",
+    "tabBottomBorderColor": "#d9d9d9",
+    "tabDisabledColor": "#999999",
+    "popoverArrowWidth": "1.14285714em",
+    "popoverInnerArrowWidth": "1.07142857em",
+    "popoverBorderRadius": "0.21428571em",
+    "popoverBorderColor": "#d9d9d9",
+    "popoverBackgroundColor": "white",
+    "popoverPadding": "0.71428571em"
 }

@@ -2545,7 +2545,7 @@ var Utils = function () {
 }();
 
 var Dropdown = function () {
-  var eventHandlers = new Utils.EventHandlers('tuikDropdown');
+  var eventHandlers = new Utils.EventHandlers('tuiDropdown');
 
   var ClassNames = {
     DROPDOWN: 'tuiDropdown',
@@ -2642,6 +2642,9 @@ var Dropdown = function () {
       eventHandlers.remove(document, 'click', Dropdown.handleDocumentAction, 'handlers');
       eventHandlers.remove(document, 'keydown', Dropdown.handleDocumentAction, 'handlers');
     };
+
+    // DUPE - SEE POPOVER
+
 
     Dropdown.handleDocumentAction = function handleDocumentAction(e) {
       if (!e) {
@@ -2767,8 +2770,284 @@ var Dropdown = function () {
   return Dropdown;
 }(Popper);
 
-exports.Dropdown = Dropdown;
+var Polyfills = function () {
+  // OBJECT ASSIGN
+  if (typeof Object.assign != 'function') {
+    // Must be writable: true, enumerable: false, configurable: true
+    Object.defineProperty(Object, "assign", {
+      value: function assign(target, varArgs) {
+        // .length of function is 2
+        'use strict';
+
+        if (target == null) {
+          // TypeError if undefined or null
+          throw new TypeError('Cannot convert undefined or null to object');
+        }
+
+        var to = Object(target);
+
+        for (var index = 1; index < arguments.length; index++) {
+          var nextSource = arguments[index];
+
+          if (nextSource != null) {
+            // Skip over if undefined or null
+            for (var nextKey in nextSource) {
+              // Avoid bugs when hasOwnProperty is shadowed
+              if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+                to[nextKey] = nextSource[nextKey];
+              }
+            }
+          }
+        }
+        return to;
+      },
+      writable: true,
+      configurable: true
+    });
+  }
+}();
+
+var Popover = function () {
+  var eventHandlers = new Utils.EventHandlers('tuiPopover');
+
+  var ClassNames = {
+    POPOVER: 'tuiPopover',
+    ISOPEN: 'tuiPopover-is-visible',
+    PLACEMENTLEFT: 'tuiPopover--left',
+    PLACEMENTRIGHT: 'tuiPopover--right',
+    PLACEMENTTOP: 'tuiPopover--top',
+    PLACEMENTBOTTOM: 'tuiPopover--bottom'
+  };
+
+  var defaultOptions = {
+    placement: 'bottom',
+    closeOnRoot: true,
+    trigger: 'click',
+    popper: {
+      modifiers: {
+        flip: {
+          enabled: true
+        }
+      }
+    }
+  };
+
+  var Popover = function () {
+    // TODO: NICE TO HAVE -> allow selectors by testing on element type.
+    function Popover(targetElement, popoverElement, options) {
+      classCallCheck$1(this, Popover);
+
+      // validating dependencies
+      if (typeof Popper === 'undefined') {
+        throw new Error('TUIK requires Popper.js (https://popper.js.org)');
+      }
+
+      this._popper = null;
+      this._targetElement = targetElement;
+      this._popoverElement = popoverElement;
+      this._options = Object.assign({}, defaultOptions, options);
+
+      // keeping refs
+      this._targetElement.tuiRefPopoverElement = popoverElement;
+      this._popoverElement.tuiRefTargetElement = targetElement;
+
+      // to allow keydown listener to be added on the popover element
+      this._popoverElement.setAttribute('tabindex', '1');
+
+      this._addEventListeners();
+
+      return this;
+    }
+
+    /* public */
+
+    Popover.prototype.toggle = function toggle() {
+      var _this = this;
+
+      if (this._targetElement.getAttribute('disabled') || this._targetElement.getAttribute('disabled') === '') {
+        return;
+      }
+
+      var onPopperUpdate = function onPopperUpdate(data) {
+        Popover.place(data.instance.popper, data.placement);
+      };
+
+      var initializePopper = function initializePopper() {
+        Popover.place(_this._popoverElement, _this._options.placement);
+
+        _this._popper = new Popper(_this._targetElement, _this._popoverElement, {
+          placement: _this._options.placement,
+          modifiers: _this._options.popper.modifiers,
+          onUpdate: onPopperUpdate,
+          onCreate: onPopperUpdate
+        });
+
+        _this._targetElement.tuiRefPopoverElement = _this._popoverElement;
+        _this._popoverElement.tuiRefTargetElement = _this._targetElement;
+      };
+
+      var isOpen = this._popoverElement.classList.contains(ClassNames.ISOPEN);
+
+      if (isOpen) {
+        if (this._popoverElement.tuiRefTargetElement === this._targetElement) {
+          Popover.close(this._popoverElement);
+        } else {
+          initializePopper();
+        }
+      } else {
+        Popover.closeAllOpenPopovers();
+        initializePopper();
+
+        this._bindHandlers();
+        this._popoverElement.classList.add(ClassNames.ISOPEN);
+      }
+    };
+
+    Popover.prototype.close = function close() {
+      this._popoverElement.tuiRefTargetElement.focus();
+      Popover.close(this._popoverElement);
+    };
+
+    /* static */
+
+
+    Popover.close = function close(popoverElement) {
+      popoverElement.classList.remove(ClassNames.ISOPEN);
+
+      if (eventHandlers.isBound(popoverElement, 'tuikPopoverClose', 'handlers')) {
+        eventHandlers.triggerCustom(popoverElement, 'tuikPopoverClose');
+      }
+    };
+
+    // DUPE - SEE DROPDOWN
+
+
+    Popover.handleDocumentAction = function handleDocumentAction(e) {
+      if (!e) {
+        return;
+      }
+
+      // do not close if Right mouse click or Tab
+      if (e && (e.which === Utils.KEYCODES.RIGHT_MOUSE_BUTTON_WHICH || e.type === 'keydown' && e.which === Utils.KEYCODES.TAB)) {
+        return;
+      }
+
+      Popover.closeAllOpenPopovers();
+    };
+
+    Popover.handleClose = function handleClose(e) {
+      if (!e) {
+        return;
+      }
+
+      var popoverElement = e.currentTarget;
+
+      eventHandlers.remove(popoverElement, 'tuikPopoverClose', Popover.handleClose, 'handlers');
+
+      eventHandlers.remove(popoverElement, 'click', Popover.handleClick, 'handlers');
+      eventHandlers.remove(popoverElement, 'keydown', Popover.handleKeydown, 'handlers');
+      eventHandlers.remove(popoverElement.tuiRefTargetElement, 'keydown', Popover.handleKeydown, 'handlers');
+      eventHandlers.remove(document, 'click', Popover.handleDocumentAction, 'handlers');
+      eventHandlers.remove(document, 'keydown', Popover.handleDocumentAction, 'handlers');
+    };
+
+    Popover.handleKeydown = function handleKeydown(e) {
+      if (!e) {
+        return;
+      }
+
+      if (e.which === Utils.KEYCODES.ESCAPE) {
+        var element = e.currentTarget;
+
+        if (element.classList.contains('tuiPopover')) {
+          element.tuiRefTargetElement.focus();
+        } else {
+          element.focus();
+        }
+
+        Popover.closeAllOpenPopovers();
+        return;
+      }
+
+      e.stopPropagation();
+    };
+
+    Popover.handleClick = function handleClick(e) {
+      if (!e) {
+        return;
+      }
+
+      e.preventDefault();
+      e.stopPropagation();
+    };
+
+    Popover.closeAllOpenPopovers = function closeAllOpenPopovers() {
+      var popoverElements = document.querySelectorAll('.' + ClassNames.ISOPEN);
+
+      for (var i = 0, len = popoverElements.length; i < len; i++) {
+        Popover.close(popoverElements[i]);
+      }
+    };
+
+    Popover.place = function place(popoverElement, placement) {
+      popoverElement.classList.remove(ClassNames.PLACEMENTLEFT);
+      popoverElement.classList.remove(ClassNames.PLACEMENTRIGHT);
+      popoverElement.classList.remove(ClassNames.PLACEMENTTOP);
+      popoverElement.classList.remove(ClassNames.PLACEMENTBOTTOM);
+
+      switch (placement) {
+        case 'left':
+          popoverElement.classList.add(ClassNames.PLACEMENTLEFT);
+          break;
+        case 'right':
+          popoverElement.classList.add(ClassNames.PLACEMENTRIGHT);
+          break;
+        case 'top':
+          popoverElement.classList.add(ClassNames.PLACEMENTTOP);
+          break;
+        default:
+          popoverElement.classList.add(ClassNames.PLACEMENTBOTTOM);
+      }
+    };
+
+    /* private */
+
+    Popover.prototype._bindHandlers = function _bindHandlers() {
+      eventHandlers.add(this._popoverElement, 'tuikPopoverClose', Popover.handleClose, 'handlers');
+      eventHandlers.add(this._popoverElement, 'click', Popover.handleClick, 'handlers');
+      eventHandlers.add(this._popoverElement, 'keydown', Popover.handleKeydown, 'handlers');
+      eventHandlers.add(this._targetElement, 'keydown', Popover.handleKeydown, 'handlers');
+
+      if (this._options.closeOnRoot) {
+        eventHandlers.add(document, 'click', Popover.handleDocumentAction, 'handlers');
+        eventHandlers.add(document, 'keydown', Popover.handleDocumentAction, 'handlers');
+      }
+    };
+
+    Popover.prototype._addEventListeners = function _addEventListeners() {
+      if (!this._targetElement || !this._popoverElement) {
+        return;
+      }
+      var self = this;
+
+      eventHandlers.add(this._targetElement, 'click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        self.toggle();
+      });
+    };
+
+    return Popover;
+  }(); // class
+
+  return Popover;
+}(Popper);
+
+exports.Polyfills = Polyfills;
 exports.Utils = Utils;
+exports.Dropdown = Dropdown;
+exports.Popover = Popover;
 
 return exports;
 

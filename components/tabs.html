@@ -5,10 +5,10 @@
     <base href="/"></base>
     <title>
         
-            Notifications - Tempo UI Kit and Guidelines
+            Tabs - Tempo UI Kit and Guidelines
         
     </title>
-    <meta name="description" content="Notifications" />
+    <meta name="description" content="Tabs" />
 
     <!-- TUIK -->
     <link rel="stylesheet" href="dist/css/tuik-typography.css" type="text/css">
@@ -476,12 +476,12 @@
                           
                       </li>
                     
-                      <li class="sg-nav__links__element sg-nav__links__element-is-active ">
+                      <li class="sg-nav__links__element ">
                           <a href="components/notifications">Notifications</a>
                           
                       </li>
                     
-                      <li class="sg-nav__links__element ">
+                      <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                           <a href="components/tabs">Tabs</a>
                           
                               <em class="sg-draft-notification">Draft</em>
@@ -530,24 +530,39 @@
         
     
 
-    Notifications
+    Tabs
+    
+        <em class="sg-draft-notification">Draft</em>
+
     
 </h1>
 
-<p class="sg-p">Use messages to provide feedback or communicate important information to the user related to their current actions. They are typically used to deliver relevant or useful information such as a confirmation message, or warnings and error messages to alert them to something they need to pay attention to. Be sure to choose the <a href="foundations/icons-reference">icon</a> and color that corresponds to the content of your message.</p>
 
-<h2 class="sg-h2">Default</h2>
-<p class="sg-p">The default information message includes the content and Close button.</p>
+<p class="sg-p">Tabs are a navigation element that allow users to easily access different areas of a site or different parts of an individual page. Users can easily locate a page containing related content.</p>
+
+<h3 class="sg-h2">Default</h3>
+<p class="sg-p">An element with a <em>tuiTabs</em> class. An item <em>tuiTabs__item__link-is-active</em> can be set as active by adding an additional <em>tuiTabs__item__link-is-active</em> class. The attribute <em>disabled="disabled"</em> can be added to the button element.</p>
 
 
 
-<article class="sg-example" id="notificationDefault">
+
+<article class="sg-example" id="tabsDefaultButtons">
     
     <section class="sg-example__render">
-        <div class="tuiNotification">
-   <div class="tuiNotification__content">You can't keep boogieing like this. You'll come down with a fever of some sort.</div>
-   <button class="tuiNotification__close-button"><i class="tuiIcon-action-delete"></i></button>
-</div>
+        <ul class="tuiTabs">
+   <li class="tuiTabs__item">
+      <button class="tuiTabs__item__link">Normal Tab</button>
+   </li>
+   <li class="tuiTabs__item">
+      <button class="tuiTabs__item__link tuiTabs__item__link-is-active">Active Tab</button>
+   </li>
+   <li class="tuiTabs__item">
+      <button class="tuiTabs__item__link">Normal Tab</button>
+   </li>
+   <li class="tuiTabs__item">
+      <button class="tuiTabs__item__link" disabled="disabled">Disabled Tab</button>
+   </li>
+</ul>
 
     </section>
     
@@ -556,10 +571,20 @@
     
     <section class="sg-example__source">
         <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiNotification&#34;&gt;
-   &lt;div class=&#34;tuiNotification__content&#34;&gt;You can&#39;t keep boogieing like this. You&#39;ll come down with a fever of some sort.&lt;/div&gt;
-   &lt;button class=&#34;tuiNotification__close-button &#34;&gt;&lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;/div&gt;
+        <pre><code class="html">&lt;ul class=&#34;tuiTabs&#34;&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link&#34;&gt;Normal Tab&lt;/button&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link tuiTabs__item__link-is-active&#34;&gt;Active Tab&lt;/button&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link&#34;&gt;Normal Tab&lt;/button&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link&#34; disabled=&#34;disabled&#34;&gt;Disabled Tab&lt;/button&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
 </code></pre>
     </section>
     
@@ -567,20 +592,34 @@
 </article>
 
 
-<h2 class="sg-h2">Modifiers (icons)</h2>
-<h3 class="sg-h3">Success</h3>
-<p class="sg-p">Use when an action was performed successfully. By default the notification displays a green success indicator.</p>
+<h3 class="sg-h3">Anchors</h3>
+<p class="sg-p">Anchors can also be used as element links. </p>
+
+<div class="sg-callout">
+    <h4 class="sg-callout__title">Use of anchors</h4>
+    <p class="sg-callout__p">Altho it is possible to use anchors as link items we strongly recommend using buttons to ease handling of the tab disabled state.</p>
+</div>
 
 
 
-<article class="sg-example" id="notificationModifierSuccess">
+
+<article class="sg-example" id="tabsDefaultAnchors">
     
     <section class="sg-example__render">
-        <div class="tuiNotification">
-   <div class="tuiNotification__icon"></div>
-   <div class="tuiNotification__content">You can't keep boogieing like this. You'll come down with a fever of some sort.</div>
-   <button class="tuiNotification__close-button"><i class="tuiIcon-action-delete"></i></button>
-</div>
+        <ul class="tuiTabs">
+   <li class="tuiTabs__item">
+      <a href="/components/tabs" class="tuiTabs__item__link">Normal Tab</a>
+   </li>
+   <li class="tuiTabs__item">
+      <a href="/components/tabs" class="tuiTabs__item__link tuiTabs__item__link-is-active">Active Tab</a>
+   </li>
+   <li class="tuiTabs__item">
+      <a href="/components/tabs" class="tuiTabs__item__link">Normal Tab</a>
+   </li>
+   <li class="tuiTabs__item">
+      <a href="/components/tabs" class="tuiTabs__item__link" disabled="disabled">Disabled Tab</a>
+   </li>
+</ul>
 
     </section>
     
@@ -589,11 +628,20 @@
     
     <section class="sg-example__source">
         <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiNotification&#34;&gt;
-   &lt;div class=&#34;tuiNotification__icon&#34;&gt;&lt;/div&gt;
-   &lt;div class=&#34;tuiNotification__content&#34;&gt;You can&#39;t keep boogieing like this. You&#39;ll come down with a fever of some sort.&lt;/div&gt;
-   &lt;button class=&#34;tuiNotification__close-button &#34;&gt;&lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;/div&gt;
+        <pre><code class="html">&lt;ul class=&#34;tuiTabs&#34;&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a href=&#34;/components/tabs&#34; class=&#34;tuiTabs__item__link&#34;&gt;Normal Tab&lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a href=&#34;/components/tabs&#34; class=&#34;tuiTabs__item__link tuiTabs__item__link-is-active&#34;&gt;Active Tab&lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a href=&#34;/components/tabs&#34; class=&#34;tuiTabs__item__link&#34;&gt;Normal Tab&lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a href=&#34;/components/tabs&#34; class=&#34;tuiTabs__item__link&#34; disabled=&#34;disabled&#34;&gt;Disabled Tab&lt;/a&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
 </code></pre>
     </section>
     
@@ -601,19 +649,29 @@
 </article>
 
 
-<h3 class="sg-h3">Warning</h3>
-<p class="sg-p">To use the notification to display a warning message apply the <em>tuiNotification--warning</em> modifier.</p>
+<h3 class="sg-h3">Right aligned</h3>
+<p class="sg-p">Tabs can be right aligned by adding the modifier class <em>tuiTabs--reversed</em> to the container element.</p>
 
 
 
-<article class="sg-example" id="notificationModifierWarning">
+
+<article class="sg-example" id="tabsDefaultRight">
     
     <section class="sg-example__render">
-        <div class="tuiNotification tuiNotification--warning">
-   <div class="tuiNotification__icon"></div>
-   <div class="tuiNotification__content">You can't keep boogieing like this. You'll come down with a fever of some sort.</div>
-   <button class="tuiNotification__close-button"><i class="tuiIcon-action-delete"></i></button>
-</div>
+        <ul class="tuiTabs tuiTabs--reversed">
+   <li class="tuiTabs__item">
+      <button class="tuiTabs__item__link">Normal Tab</button>
+   </li>
+   <li class="tuiTabs__item">
+      <button class="tuiTabs__item__link tuiTabs__item__link-is-active">Active Tab</button>
+   </li>
+   <li class="tuiTabs__item">
+      <button class="tuiTabs__item__link">Normal Tab</button>
+   </li>
+   <li class="tuiTabs__item">
+      <button class="tuiTabs__item__link" disabled="disabled">Disabled Tab</button>
+   </li>
+</ul>
 
     </section>
     
@@ -622,11 +680,20 @@
     
     <section class="sg-example__source">
         <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiNotification tuiNotification--warning&#34;&gt;
-   &lt;div class=&#34;tuiNotification__icon&#34;&gt;&lt;/div&gt;
-   &lt;div class=&#34;tuiNotification__content&#34;&gt;You can&#39;t keep boogieing like this. You&#39;ll come down with a fever of some sort.&lt;/div&gt;
-   &lt;button class=&#34;tuiNotification__close-button &#34;&gt;&lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;/div&gt;
+        <pre><code class="html">&lt;ul class=&#34;tuiTabs tuiTabs--reversed&#34;&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link&#34;&gt;Normal Tab&lt;/button&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link tuiTabs__item__link-is-active&#34;&gt;Active Tab&lt;/button&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link&#34;&gt;Normal Tab&lt;/button&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link&#34; disabled=&#34;disabled&#34;&gt;Disabled Tab&lt;/button&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
 </code></pre>
     </section>
     
@@ -634,19 +701,28 @@
 </article>
 
 
-<h3 class="sg-h3">Error</h3>
-<p class="sg-p">To use the notification to display an error message apply the <em>tuiNotification--error</em> modifier.</p>
+<!-- <h3 class="sg-h3">Classic</h3>
+<p class="sg-p">By adding the class <em>tuiTabs__classic</em> to the container element the classic view tabs are displayed. Works with anchors as well.</p>
 
 
 
-<article class="sg-example" id="notificationModifierError">
+<article class="sg-example " id="tabsClassic">
     
     <section class="sg-example__render">
-        <div class="tuiNotification tuiNotification--error">
-   <div class="tuiNotification__icon"></div>
-   <div class="tuiNotification__content">You can't keep boogieing like this. You'll come down with a fever of some sort.</div>
-   <button class="tuiNotification__close-button"><i class="tuiIcon-action-delete"></i></button>
-</div>
+        <ul class="tuiTabs tuiTabs__classic">
+   <li class="tuiTabs__item">
+      <button class="tuiTabs__item__link">Normal Tab</button>
+   </li>
+   <li class="tuiTabs__item">
+      <button class="tuiTabs__item__link tuiTabs__item__link-is-active">Active Tab</button>
+   </li>
+   <li class="tuiTabs__item">
+      <button class="tuiTabs__item__link">Normal Tab</button>
+   </li>
+   <li class="tuiTabs__item">
+      <button class="tuiTabs__item__link" disabled="disabled">Disabled Tab</button>
+   </li>
+</ul>
 
     </section>
     
@@ -655,148 +731,26 @@
     
     <section class="sg-example__source">
         <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiNotification tuiNotification--error&#34;&gt;
-   &lt;div class=&#34;tuiNotification__icon&#34;&gt;&lt;/div&gt;
-   &lt;div class=&#34;tuiNotification__content&#34;&gt;You can&#39;t keep boogieing like this. You&#39;ll come down with a fever of some sort.&lt;/div&gt;
-   &lt;button class=&#34;tuiNotification__close-button &#34;&gt;&lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;/div&gt;
+        <pre><code class="html">&lt;ul class=&#34;tuiTabs tuiTabs__classic&#34;&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link&#34;&gt;Normal Tab&lt;/button&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link tuiTabs__item__link-is-active&#34;&gt;Active Tab&lt;/button&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link&#34;&gt;Normal Tab&lt;/button&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link&#34; disabled=&#34;disabled&#34;&gt;Disabled Tab&lt;/button&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
 </code></pre>
     </section>
     
     
 </article>
-
-
-<h2 class="sg-h2">Icons</h2>
-<h3 class="sg-h3">Font</h3>
-
-
-
-<article class="sg-example" id="notificationIconFont">
-    
-    <section class="sg-example__render">
-        <div class="tuiNotification tuiNotification--error">
-   <div class="tuiNotification__icon"><i class="tuiIcon-information-warning"></i></div>
-   <div class="tuiNotification__content">You can't keep boogieing like this. You'll come down with a fever of some sort.</div>
-   <button class="tuiNotification__close-button"><i class="tuiIcon-action-delete"></i></button>
-</div>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiNotification tuiNotification--error&#34;&gt;
-   &lt;div class=&#34;tuiNotification__icon&#34;&gt;&lt;i class=&#34;tuiIcon-information-warning&#34;&gt;&lt;/i&gt;&lt;/div&gt;
-   &lt;div class=&#34;tuiNotification__content&#34;&gt;You can&#39;t keep boogieing like this. You&#39;ll come down with a fever of some sort.&lt;/div&gt;
-   &lt;button class=&#34;tuiNotification__close-button &#34;&gt;&lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;/div&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-<h3 class="sg-h3">SVG</h3>
-
-
-
-<article class="sg-example" id="notificationIconSVG">
-    
-    <section class="sg-example__render">
-        <div class="tuiNotification">
-   <div class="tuiNotification__icon"><svg class="tuiIcon"><use xlink:href="#action-check"/></svg></div>
-   <div class="tuiNotification__content">You can't keep boogieing like this. You'll come down with a fever of some sort.</div>
-   <button class="tuiNotification__close-button"><i class="tuiIcon-action-delete"></i></button>
-</div>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiNotification&#34;&gt;
-   &lt;div class=&#34;tuiNotification__icon&#34;&gt;&lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#action-check&#34; /&gt;&lt;/svg&gt;&lt;/div&gt;
-   &lt;div class=&#34;tuiNotification__content&#34;&gt;You can&#39;t keep boogieing like this. You&#39;ll come down with a fever of some sort.&lt;/div&gt;
-   &lt;button class=&#34;tuiNotification__close-button &#34;&gt;&lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;/div&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-
-<h3 class="sg-h3">Display animation</h3>
-<p class="sg-p">To animate the notification simply add the <em>tuiSlide</em> class to the element, then, to make it appear (slide in from the top-right corner) add the <em>in</em> class to the element. To dismiss the notification, replace the <em>in</em> class with the <em>out</em> class.
-
-
-
-
-<article class="sg-example" id="notificationAnimation">
-    
-    <section class="sg-example__render">
-        <script>
-    var showNotification = function() {
-        var notificationElement = document.querySelector('#animatedNotification');
-        notificationElement.classList.remove('out');
-        notificationElement.classList.add('in');
-    }
-
-    var hideNotification = function() {
-        var notificationElement = document.querySelector('#animatedNotification');
-        notificationElement.classList.remove('in');
-        notificationElement.classList.add('out');
-    }
-</script>
-
-<button class="tuiButton" onclick="showNotification()">Show notification!</button>
-
-<div id="animatedNotification" class="tuiNotification tuiSlide">
-   <div class="tuiNotification__icon"></div>
-   <div class="tuiNotification__content">Wow, what a successful process.</div>
-   <button class="tuiNotification__close-button" onclick="hideNotification()"><i class="tuiIcon-action-delete"></i></button>
-</div>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;script&gt;
-    var showNotification = function() {
-        var notificationElement = document.querySelector(&#39;#animatedNotification&#39;);
-        notificationElement.classList.remove(&#39;out&#39;);
-        notificationElement.classList.add(&#39;in&#39;);
-    }
-
-    var hideNotification = function() {
-        var notificationElement = document.querySelector(&#39;#animatedNotification&#39;);
-        notificationElement.classList.remove(&#39;in&#39;);
-        notificationElement.classList.add(&#39;out&#39;);
-    }
-&lt;/script&gt;
-
-&lt;button class=&#34;tuiButton&#34; onClick=&#34;showNotification()&#34;&gt;Show notification!&lt;/button&gt;
-
-&lt;div id=&#34;animatedNotification&#34; class=&#34;tuiNotification tuiSlide&#34;&gt;
-   &lt;div class=&#34;tuiNotification__icon&#34;&gt;&lt;/div&gt;
-   &lt;div class=&#34;tuiNotification__content&#34;&gt;Wow, what a successful process.&lt;/div&gt;
-   &lt;button class=&#34;tuiNotification__close-button&#34; onClick=&#34;hideNotification()&#34;&gt;&lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;/div&gt;
-</code></pre>
-    </section>
-    
-    
-</article></p>
+ -->
 
                 <form id="sg-try-example" method="post" action="http://jsfiddle.net/api/post/library/pure/" target="sgtryexample" style="display:none;">
     <input type="submit">

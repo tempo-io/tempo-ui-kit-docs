@@ -5,10 +5,10 @@
     <base href="/"></base>
     <title>
         
-            Notifications - Tempo UI Kit and Guidelines
+            Popovers - Tempo UI Kit and Guidelines
         
     </title>
-    <meta name="description" content="Notifications" />
+    <meta name="description" content="Popovers" />
 
     <!-- TUIK -->
     <link rel="stylesheet" href="dist/css/tuik-typography.css" type="text/css">
@@ -476,7 +476,7 @@
                           
                       </li>
                     
-                      <li class="sg-nav__links__element sg-nav__links__element-is-active ">
+                      <li class="sg-nav__links__element ">
                           <a href="components/notifications">Notifications</a>
                           
                       </li>
@@ -489,7 +489,7 @@
                           
                       </li>
                     
-                      <li class="sg-nav__links__element ">
+                      <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                           <a href="components/popovers">Popovers</a>
                           
                               <em class="sg-draft-notification">Draft</em>
@@ -530,23 +530,27 @@
         
     
 
-    Notifications
+    Popovers
+    
+        <em class="sg-draft-notification">Draft</em>
+
     
 </h1>
 
-<p class="sg-p">Use messages to provide feedback or communicate important information to the user related to their current actions. They are typically used to deliver relevant or useful information such as a confirmation message, or warnings and error messages to alert them to something they need to pay attention to. Be sure to choose the <a href="foundations/icons-reference">icon</a> and color that corresponds to the content of your message.</p>
 
 <h2 class="sg-h2">Default</h2>
-<p class="sg-p">The default information message includes the content and Close button.</p>
+<p class="sg-p">The default popover is rendered as <em>tuiPopover--bottom</em> meaning it is placed below the element. The popover will be sized according to its content.</p>
 
 
 
-<article class="sg-example" id="notificationDefault">
+<article class="sg-example sg-popover-display" id="popoverDefault">
     
     <section class="sg-example__render">
-        <div class="tuiNotification">
-   <div class="tuiNotification__content">You can't keep boogieing like this. You'll come down with a fever of some sort.</div>
-   <button class="tuiNotification__close-button"><i class="tuiIcon-action-delete"></i></button>
+        <div class="tuiPopover">
+   <div class="tuiPopover__content">
+     <div>[CONTENT]</div>
+   </div>
+   <div class="tuiPopover__pointer"></div>
 </div>
 
     </section>
@@ -556,9 +560,11 @@
     
     <section class="sg-example__source">
         <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiNotification&#34;&gt;
-   &lt;div class=&#34;tuiNotification__content&#34;&gt;You can&#39;t keep boogieing like this. You&#39;ll come down with a fever of some sort.&lt;/div&gt;
-   &lt;button class=&#34;tuiNotification__close-button &#34;&gt;&lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;&lt;/button&gt;
+        <pre><code class="html">&lt;div class=&#34;tuiPopover&#34;&gt;
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+     &lt;div&gt;[CONTENT]&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
     </section>
@@ -567,19 +573,40 @@
 </article>
 
 
-<h2 class="sg-h2">Modifiers (icons)</h2>
-<h3 class="sg-h3">Success</h3>
-<p class="sg-p">Use when an action was performed successfully. By default the notification displays a green success indicator.</p>
+<h3 class="sg-h3">Positioning</h3>
+<p class="sg-p">You can place the popover in different position using the following modifiers; <em>tuiPopover--top</em>, <em>tuiPopover--bottom</em>, <em>tuiPopover--left</em> and <em>tuiPopover--right</em>.</p>
 
 
 
-<article class="sg-example" id="notificationModifierSuccess">
+<article class="sg-example sg-popover-display" id="popoverPositioning">
     
     <section class="sg-example__render">
-        <div class="tuiNotification">
-   <div class="tuiNotification__icon"></div>
-   <div class="tuiNotification__content">You can't keep boogieing like this. You'll come down with a fever of some sort.</div>
-   <button class="tuiNotification__close-button"><i class="tuiIcon-action-delete"></i></button>
+        <div class="tuiPopover tuiPopover--top">
+   <div class="tuiPopover__content">
+     <div>[CONTENT]</div>
+   </div>
+   <div class="tuiPopover__pointer"></div>
+</div>
+
+<div class="tuiPopover tuiPopover--right">
+   <div class="tuiPopover__content">
+     <div>[CONTENT]</div>
+   </div>
+   <div class="tuiPopover__pointer"></div>
+</div>
+
+<div class="tuiPopover tuiPopover--left">
+   <div class="tuiPopover__content">
+     <div>[CONTENT]</div>
+   </div>
+   <div class="tuiPopover__pointer"></div>
+</div>
+
+<div class="tuiPopover tuiPopover--bottom">
+   <div class="tuiPopover__content">
+     <div>[CONTENT]</div>
+   </div>
+   <div class="tuiPopover__pointer"></div>
 </div>
 
     </section>
@@ -589,10 +616,32 @@
     
     <section class="sg-example__source">
         <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiNotification&#34;&gt;
-   &lt;div class=&#34;tuiNotification__icon&#34;&gt;&lt;/div&gt;
-   &lt;div class=&#34;tuiNotification__content&#34;&gt;You can&#39;t keep boogieing like this. You&#39;ll come down with a fever of some sort.&lt;/div&gt;
-   &lt;button class=&#34;tuiNotification__close-button &#34;&gt;&lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;&lt;/button&gt;
+        <pre><code class="html">&lt;div class=&#34;tuiPopover tuiPopover--top&#34;&gt;
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+     &lt;div&gt;[CONTENT]&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;tuiPopover tuiPopover--right&#34;&gt;
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+     &lt;div&gt;[CONTENT]&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;tuiPopover tuiPopover--left&#34;&gt;
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+     &lt;div&gt;[CONTENT]&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;tuiPopover tuiPopover--bottom&#34;&gt;
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+     &lt;div&gt;[CONTENT]&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
     </section>
@@ -601,18 +650,27 @@
 </article>
 
 
-<h3 class="sg-h3">Warning</h3>
-<p class="sg-p">To use the notification to display a warning message apply the <em>tuiNotification--warning</em> modifier.</p>
+<h2 class="sg-h2">Header and footer</h2>
+<p class="sg-p">Dedicated header and footer sections are available by adding a <em>tuiPopover__header</em> and/or a <em>tuiPopover__footer</em> element. Note that a <em>tuiPopover__header__title</em> element is also available for titles.</p>
 
 
 
-<article class="sg-example" id="notificationModifierWarning">
+<article class="sg-example sg-popover-display" id="popoverHeaderAndFooter">
     
     <section class="sg-example__render">
-        <div class="tuiNotification tuiNotification--warning">
-   <div class="tuiNotification__icon"></div>
-   <div class="tuiNotification__content">You can't keep boogieing like this. You'll come down with a fever of some sort.</div>
-   <button class="tuiNotification__close-button"><i class="tuiIcon-action-delete"></i></button>
+        <div class="tuiPopover">
+   <header class="tuiPopover__header">
+     <h1 class="tuiPopover__header__title">Title</h1>
+   </header>
+
+   <div class="tuiPopover__content">
+     <div>[CONTENT]</div>
+   </div>
+   <div class="tuiPopover__pointer"></div>
+
+   <footer class="tuiPopover__footer">
+     Footer
+   </footer>
 </div>
 
     </section>
@@ -622,10 +680,19 @@
     
     <section class="sg-example__source">
         <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiNotification tuiNotification--warning&#34;&gt;
-   &lt;div class=&#34;tuiNotification__icon&#34;&gt;&lt;/div&gt;
-   &lt;div class=&#34;tuiNotification__content&#34;&gt;You can&#39;t keep boogieing like this. You&#39;ll come down with a fever of some sort.&lt;/div&gt;
-   &lt;button class=&#34;tuiNotification__close-button &#34;&gt;&lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;&lt;/button&gt;
+        <pre><code class="html">&lt;div class=&#34;tuiPopover&#34;&gt;
+   &lt;header class=&#34;tuiPopover__header&#34;&gt;
+     &lt;h1 class=&#34;tuiPopover__header__title&#34;&gt;Title&lt;/h1&gt;
+   &lt;/header&gt;
+
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+     &lt;div&gt;[CONTENT]&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
+
+   &lt;footer class=&#34;tuiPopover__footer&#34;&gt;
+     Footer
+   &lt;/footer&gt;
 &lt;/div&gt;
 </code></pre>
     </section>
@@ -634,18 +701,73 @@
 </article>
 
 
-<h3 class="sg-h3">Error</h3>
-<p class="sg-p">To use the notification to display an error message apply the <em>tuiNotification--error</em> modifier.</p>
+<h2 class="sg-h2">With a form</h2>
+<p class="sg-p">It is possible to add <a href="/components/forms">forms</a> to the popover. No changes are required to the <a href="/components/forms">documented markup</a>.</p>
 
 
 
-<article class="sg-example" id="notificationModifierError">
+<article class="sg-example sg-popover-display" id="popoverForm">
     
     <section class="sg-example__render">
-        <div class="tuiNotification tuiNotification--error">
-   <div class="tuiNotification__icon"></div>
-   <div class="tuiNotification__content">You can't keep boogieing like this. You'll come down with a fever of some sort.</div>
-   <button class="tuiNotification__close-button"><i class="tuiIcon-action-delete"></i></button>
+        <div class="tuiPopover">
+   <div class="tuiPopover__content">
+         <form class="tuiForm">
+            <div class="tuiForm__row">
+                <div class="tuiForm__col">
+                    <textarea class="tuiTextField" id="fdF1" rows="7" placeholder="Description"></textarea>
+                </div>
+            </div>
+            <div class="tuiForm__row tuiForm__row--checkbox">
+                <div class="tuiForm__col tuiForm__col--label">
+                    <label class="tuiLabel" for="fdF2">Option 1</label>
+                </div>
+                <div class="tuiForm__col">
+                    <input class="tuiCheckbox" type="checkbox" id="fdF2">
+                    <label class="tuiLabel" for="fdF3"> Option 2 <input class="tuiCheckbox" type="checkbox" id="fdF3"></label>
+                </div>
+            </div>
+            <div class="tuiForm__row tuiForm__row--no-input">
+                <div class="tuiForm__col tuiForm__col--label">
+                    <label class="tuiLabel" for="fdF0">User</label>
+                </div>
+              <div class="tuiForm__col">
+                    <span>User name</span>
+                </div>
+            </div>
+            <div class="tuiForm__row">
+                <div class="tuiForm__col tuiForm__col--label">
+                    <label class="tuiLabel tuiLabel-is-required" for="fdF4">Name</label>
+                </div>
+                <div class="tuiForm__col">
+                    <input class="tuiTextField" type="text" id="fdF4">
+                </div>
+            </div>
+            <div class="tuiForm__row">
+                <div class="tuiForm__col tuiForm__col--label">
+                    <label class="tuiLabel" for="fdF5">Date</label>
+                </div>
+                <div class="tuiForm__col">
+                    <input class="tuiTextField tuiTextField--date" type="text" id="fdF5">
+                    <label class="tuiLabel" for="fdF6">to</label>
+                    <input class="tuiTextField tuiTextField--date" type="text" id="fdF6">
+                </div>
+            </div>
+            <div class="tuiForm__row">
+                <div class="tuiForm__col tuiForm__col--label"><label class="tuiLabel" for="f6">Comment</label></div>
+                <div class="tuiForm__col"><textarea class="tuiTextField" id="f6"></textarea></div>
+            </div>
+            <footer class="tuiForm__footer">
+                <div class="tuiForm__footer__secondary">
+                    <label class="tuiLabel" for="fdF7">Log Another <input class="tuiCheckbox" type="checkbox" id="fdF7"></label>
+                </div>
+                <div class="tuiForm__footer__actions">
+                    <button class="tuiButton tuiButton--primary">Submit</button>
+                    <button class="tuiButton tuiButton--subtle">Cancel</button>
+                </div>
+            </footer>
+         </form>
+   </div>
+   <div class="tuiPopover__pointer"></div>
 </div>
 
     </section>
@@ -655,10 +777,65 @@
     
     <section class="sg-example__source">
         <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiNotification tuiNotification--error&#34;&gt;
-   &lt;div class=&#34;tuiNotification__icon&#34;&gt;&lt;/div&gt;
-   &lt;div class=&#34;tuiNotification__content&#34;&gt;You can&#39;t keep boogieing like this. You&#39;ll come down with a fever of some sort.&lt;/div&gt;
-   &lt;button class=&#34;tuiNotification__close-button &#34;&gt;&lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;&lt;/button&gt;
+        <pre><code class="html">&lt;div class=&#34;tuiPopover&#34;&gt;
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+         &lt;form class=&#34;tuiForm&#34;&gt;
+            &lt;div class=&#34;tuiForm__row&#34;&gt;
+                &lt;div class=&#34;tuiForm__col&#34;&gt;
+                    &lt;textarea class=&#34;tuiTextField&#34; id=&#34;fdF1&#34; rows=&#34;7&#34; placeholder=&#34;Description&#34;&gt;&lt;/textarea&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;tuiForm__row tuiForm__row--checkbox&#34;&gt;
+                &lt;div class=&#34;tuiForm__col tuiForm__col--label&#34;&gt;
+                    &lt;label class=&#34;tuiLabel&#34; for=&#34;fdF2&#34;&gt;Option 1&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&#34;tuiForm__col&#34;&gt;
+                    &lt;input class=&#34;tuiCheckbox&#34; type=&#34;checkbox&#34; id=&#34;fdF2&#34; /&gt;
+                    &lt;label class=&#34;tuiLabel&#34; for=&#34;fdF3&#34;&gt; Option 2 &lt;input class=&#34;tuiCheckbox&#34; type=&#34;checkbox&#34; id=&#34;fdF3&#34; /&gt;&lt;/label&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;tuiForm__row tuiForm__row--no-input&#34;&gt;
+                &lt;div class=&#34;tuiForm__col tuiForm__col--label&#34;&gt;
+                    &lt;label class=&#34;tuiLabel&#34; for=&#34;fdF0&#34;&gt;User&lt;/label&gt;
+                &lt;/div&gt;
+              &lt;div class=&#34;tuiForm__col&#34;&gt;
+                    &lt;span&gt;User name&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;tuiForm__row&#34;&gt;
+                &lt;div class=&#34;tuiForm__col tuiForm__col--label&#34;&gt;
+                    &lt;label class=&#34;tuiLabel tuiLabel-is-required&#34; for=&#34;fdF4&#34;&gt;Name&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&#34;tuiForm__col&#34;&gt;
+                    &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;fdF4&#34; /&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;tuiForm__row&#34;&gt;
+                &lt;div class=&#34;tuiForm__col tuiForm__col--label&#34;&gt;
+                    &lt;label class=&#34;tuiLabel&#34; for=&#34;fdF5&#34;&gt;Date&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&#34;tuiForm__col&#34;&gt;
+                    &lt;input class=&#34;tuiTextField tuiTextField--date&#34; type=&#34;text&#34; id=&#34;fdF5&#34; /&gt;
+                    &lt;label class=&#34;tuiLabel&#34; for=&#34;fdF6&#34;&gt;to&lt;/label&gt;
+                    &lt;input class=&#34;tuiTextField tuiTextField--date&#34; type=&#34;text&#34; id=&#34;fdF6&#34; /&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            &lt;div class=&#34;tuiForm__row&#34;&gt;
+                &lt;div class=&#34;tuiForm__col tuiForm__col--label&#34;&gt;&lt;label class=&#34;tuiLabel&#34; for=&#34;f6&#34;&gt;Comment&lt;/label&gt;&lt;/div&gt;
+                &lt;div class=&#34;tuiForm__col&#34;&gt;&lt;textarea class=&#34;tuiTextField&#34; id=&#34;f6&#34;&gt;&lt;/textarea&gt;&lt;/div&gt;
+            &lt;/div&gt;
+            &lt;footer class=&#34;tuiForm__footer&#34;&gt;
+                &lt;div class=&#34;tuiForm__footer__secondary&#34;&gt;
+                    &lt;label class=&#34;tuiLabel&#34; for=&#34;fdF7&#34;&gt;Log Another &lt;input class=&#34;tuiCheckbox&#34; type=&#34;checkbox&#34; id=&#34;fdF7&#34; /&gt;&lt;/label&gt;
+                &lt;/div&gt;
+                &lt;div class=&#34;tuiForm__footer__actions&#34;&gt;
+                    &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Submit&lt;/button&gt;
+                    &lt;button class=&#34;tuiButton tuiButton--subtle&#34;&gt;Cancel&lt;/button&gt;
+                &lt;/div&gt;
+            &lt;/footer&gt;
+         &lt;/form&gt;
+   &lt;/div&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
     </section>
@@ -667,136 +844,211 @@
 </article>
 
 
-<h2 class="sg-h2">Icons</h2>
-<h3 class="sg-h3">Font</h3>
+<h2 class="sg-h2">Script</h2>
+<p class="sg-p">The following is an example of how to initialize a Popover at different positions. Note that, by default, the popover will close when an action occurs outside of the popover. It is also possible to use the same popover container for different triggers.</p>
 
 
 
-<article class="sg-example" id="notificationIconFont">
+<article class="sg-example sg-popover-display-wbutton" id="popoverScript">
     
     <section class="sg-example__render">
-        <div class="tuiNotification tuiNotification--error">
-   <div class="tuiNotification__icon"><i class="tuiIcon-information-warning"></i></div>
-   <div class="tuiNotification__content">You can't keep boogieing like this. You'll come down with a fever of some sort.</div>
-   <button class="tuiNotification__close-button"><i class="tuiIcon-action-delete"></i></button>
+        <button class="js-target tuiButton">Default!</button>
+<div class="js-popover tuiPopover">
+   <div class="tuiPopover__content">
+     <div>[DEFAULT]</div>
+   </div>
+   <div class="tuiPopover__pointer"></div>
+</div>
+
+<button class="js-target-left tuiButton">Left!</button>
+<div class="js-popover-left tuiPopover">
+   <div class="tuiPopover__content">
+     <div>[LEFT]</div>
+   </div>
+   <div class="tuiPopover__pointer"></div>
+</div>
+
+<button class="js-target-top tuiButton">Top!</button>
+<div class="js-popover-top tuiPopover">
+   <div class="tuiPopover__content">
+     <div>[TOP]</div>
+   </div>
+   <div class="tuiPopover__pointer"></div>
+</div>
+
+<button class="js-target-right tuiButton">Right!</button>
+<div class="js-popover-right tuiPopover">
+   <div class="tuiPopover__content">
+     <div>[RIGHT]</div>
+   </div>
+   <div class="tuiPopover__pointer"></div>
 </div>
 
     </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiNotification tuiNotification--error&#34;&gt;
-   &lt;div class=&#34;tuiNotification__icon&#34;&gt;&lt;i class=&#34;tuiIcon-information-warning&#34;&gt;&lt;/i&gt;&lt;/div&gt;
-   &lt;div class=&#34;tuiNotification__content&#34;&gt;You can&#39;t keep boogieing like this. You&#39;ll come down with a fever of some sort.&lt;/div&gt;
-   &lt;button class=&#34;tuiNotification__close-button &#34;&gt;&lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;/div&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-<h3 class="sg-h3">SVG</h3>
-
-
-
-<article class="sg-example" id="notificationIconSVG">
-    
-    <section class="sg-example__render">
-        <div class="tuiNotification">
-   <div class="tuiNotification__icon"><svg class="tuiIcon"><use xlink:href="#action-check"/></svg></div>
-   <div class="tuiNotification__content">You can't keep boogieing like this. You'll come down with a fever of some sort.</div>
-   <button class="tuiNotification__close-button"><i class="tuiIcon-action-delete"></i></button>
-</div>
-
-    </section>
-    
-    
-
-    
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiNotification&#34;&gt;
-   &lt;div class=&#34;tuiNotification__icon&#34;&gt;&lt;svg class=&#34;tuiIcon&#34;&gt;&lt;use xlink:href=&#34;#action-check&#34; /&gt;&lt;/svg&gt;&lt;/div&gt;
-   &lt;div class=&#34;tuiNotification__content&#34;&gt;You can&#39;t keep boogieing like this. You&#39;ll come down with a fever of some sort.&lt;/div&gt;
-   &lt;button class=&#34;tuiNotification__close-button &#34;&gt;&lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;&lt;/button&gt;
-&lt;/div&gt;
-</code></pre>
-    </section>
-    
-    
-</article>
-
-
-
-<h3 class="sg-h3">Display animation</h3>
-<p class="sg-p">To animate the notification simply add the <em>tuiSlide</em> class to the element, then, to make it appear (slide in from the top-right corner) add the <em>in</em> class to the element. To dismiss the notification, replace the <em>in</em> class with the <em>out</em> class.
-
-
-
-
-<article class="sg-example" id="notificationAnimation">
-    
-    <section class="sg-example__render">
-        <script>
-    var showNotification = function() {
-        var notificationElement = document.querySelector('#animatedNotification');
-        notificationElement.classList.remove('out');
-        notificationElement.classList.add('in');
-    }
-
-    var hideNotification = function() {
-        var notificationElement = document.querySelector('#animatedNotification');
-        notificationElement.classList.remove('in');
-        notificationElement.classList.add('out');
-    }
+    <script class="js-rendered-script">new tuik.Popover(document.querySelector('.js-target'), document.querySelector('.js-popover'));
+new tuik.Popover(document.querySelector('.js-target-left'), document.querySelector('.js-popover-left'), { placement: 'left' } );
+new tuik.Popover(document.querySelector('.js-target-top'), document.querySelector('.js-popover-top'), { placement: 'top' } );
+new tuik.Popover(document.querySelector('.js-target-right'), document.querySelector('.js-popover-right'), { placement: 'right' } );
 </script>
-
-<button class="tuiButton" onclick="showNotification()">Show notification!</button>
-
-<div id="animatedNotification" class="tuiNotification tuiSlide">
-   <div class="tuiNotification__icon"></div>
-   <div class="tuiNotification__content">Wow, what a successful process.</div>
-   <button class="tuiNotification__close-button" onclick="hideNotification()"><i class="tuiIcon-action-delete"></i></button>
-</div>
-
-    </section>
-    
     
 
     
     <section class="sg-example__source">
         <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;script&gt;
-    var showNotification = function() {
-        var notificationElement = document.querySelector(&#39;#animatedNotification&#39;);
-        notificationElement.classList.remove(&#39;out&#39;);
-        notificationElement.classList.add(&#39;in&#39;);
-    }
+        <pre><code class="html">&lt;button class=&#34;js-target tuiButton&#34;&gt;Default!&lt;/button&gt;
+&lt;div class=&#34;js-popover tuiPopover&#34;&gt;
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+     &lt;div&gt;[DEFAULT]&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
 
-    var hideNotification = function() {
-        var notificationElement = document.querySelector(&#39;#animatedNotification&#39;);
-        notificationElement.classList.remove(&#39;in&#39;);
-        notificationElement.classList.add(&#39;out&#39;);
-    }
-&lt;/script&gt;
+&lt;button class=&#34;js-target-left tuiButton&#34;&gt;Left!&lt;/button&gt;
+&lt;div class=&#34;js-popover-left tuiPopover&#34;&gt;
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+     &lt;div&gt;[LEFT]&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
 
-&lt;button class=&#34;tuiButton&#34; onClick=&#34;showNotification()&#34;&gt;Show notification!&lt;/button&gt;
+&lt;button class=&#34;js-target-top tuiButton&#34;&gt;Top!&lt;/button&gt;
+&lt;div class=&#34;js-popover-top tuiPopover&#34;&gt;
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+     &lt;div&gt;[TOP]&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
 
-&lt;div id=&#34;animatedNotification&#34; class=&#34;tuiNotification tuiSlide&#34;&gt;
-   &lt;div class=&#34;tuiNotification__icon&#34;&gt;&lt;/div&gt;
-   &lt;div class=&#34;tuiNotification__content&#34;&gt;Wow, what a successful process.&lt;/div&gt;
-   &lt;button class=&#34;tuiNotification__close-button&#34; onClick=&#34;hideNotification()&#34;&gt;&lt;i class=&#34;tuiIcon-action-delete&#34;&gt;&lt;/i&gt;&lt;/button&gt;
+&lt;button class=&#34;js-target-right tuiButton&#34;&gt;Right!&lt;/button&gt;
+&lt;div class=&#34;js-popover-right tuiPopover&#34;&gt;
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+     &lt;div&gt;[RIGHT]&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
     </section>
     
+    <section class="sg-example__source sg-example__source--script">
+        <pre><code class="js">new tuik.Popover(document.querySelector(&#39;.js-target&#39;), document.querySelector(&#39;.js-popover&#39;));
+new tuik.Popover(document.querySelector(&#39;.js-target-left&#39;), document.querySelector(&#39;.js-popover-left&#39;), { placement: &#39;left&#39; } );
+new tuik.Popover(document.querySelector(&#39;.js-target-top&#39;), document.querySelector(&#39;.js-popover-top&#39;), { placement: &#39;top&#39; } );
+new tuik.Popover(document.querySelector(&#39;.js-target-right&#39;), document.querySelector(&#39;.js-popover-right&#39;), { placement: &#39;right&#39; } );
+</code></pre>
+    </section>
     
-</article></p>
+    
+</article>
+
+
+<p class="sg-p">It is also possible to use the same popover container (<em>tuiPopover</em>) for different triggers.</p>
+
+
+
+<article class="sg-example sg-popover-display-wbutton" id="popoverScriptSameContainer">
+    
+    <section class="sg-example__render">
+        <button class="js-starget tuiButton">Default!</button>
+<button class="js-starget-left tuiButton">Left!</button>
+<button class="js-starget-top tuiButton">Top!</button>
+<button class="js-starget-right tuiButton">Right!</button>
+
+<div class="js-spopover tuiPopover">
+   <div class="tuiPopover__content">
+     <div>[CONTENT]</div>
+   </div>
+   <div class="tuiPopover__pointer"></div>
+</div>
+
+    </section>
+    <script class="js-rendered-script">new tuik.Popover(document.querySelector('.js-starget'), document.querySelector('.js-spopover'));
+new tuik.Popover(document.querySelector('.js-starget-left'), document.querySelector('.js-spopover'), { placement: 'left' } );
+new tuik.Popover(document.querySelector('.js-starget-top'), document.querySelector('.js-spopover'), { placement: 'top' } );
+new tuik.Popover(document.querySelector('.js-starget-right'), document.querySelector('.js-spopover'), { placement: 'right' } );
+</script>
+    
+
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;button class=&#34;js-starget tuiButton&#34;&gt;Default!&lt;/button&gt;
+&lt;button class=&#34;js-starget-left tuiButton&#34;&gt;Left!&lt;/button&gt;
+&lt;button class=&#34;js-starget-top tuiButton&#34;&gt;Top!&lt;/button&gt;
+&lt;button class=&#34;js-starget-right tuiButton&#34;&gt;Right!&lt;/button&gt;
+
+&lt;div class=&#34;js-spopover tuiPopover&#34;&gt;
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+     &lt;div&gt;[CONTENT]&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+    <section class="sg-example__source sg-example__source--script">
+        <pre><code class="js">new tuik.Popover(document.querySelector(&#39;.js-starget&#39;), document.querySelector(&#39;.js-spopover&#39;));
+new tuik.Popover(document.querySelector(&#39;.js-starget-left&#39;), document.querySelector(&#39;.js-spopover&#39;), { placement: &#39;left&#39; } );
+new tuik.Popover(document.querySelector(&#39;.js-starget-top&#39;), document.querySelector(&#39;.js-spopover&#39;), { placement: &#39;top&#39; } );
+new tuik.Popover(document.querySelector(&#39;.js-starget-right&#39;), document.querySelector(&#39;.js-spopover&#39;), { placement: &#39;right&#39; } );
+</code></pre>
+    </section>
+    
+    
+</article>
+
+
+
+
+<p class="sg-p">It is also possible to force the popover to be dismissed (not closed on document click) by setting the <em>closeOnRoot</em> option to <em>false</em>.</p>
+
+
+
+<article class="sg-example sg-popover-display-wbutton" id="popoverScriptNoRoot">
+    
+    <section class="sg-example__render">
+        <button class="js-target-no-root tuiButton">Will not close on document click</button>
+
+<div class="js-popover-no-root tuiPopover">
+   <div class="tuiPopover__content">
+     <div>[CONTENT]</div>
+   </div>
+   <footer class="tuiPopover__footer">
+     <button class="tuiButton" onclick="closePopover()">Close</button>
+   </footer>
+   <div class="tuiPopover__pointer"></div>
+</div>
+
+    </section>
+    <script class="js-rendered-script">var popover = new tuik.Popover(document.querySelector('.js-target-no-root'), document.querySelector('.js-popover-no-root'), { closeOnRoot: false } );
+var closePopover = function(e) { popover.close(); }
+</script>
+    
+
+    
+    <section class="sg-example__source">
+        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+        <pre><code class="html">&lt;button class=&#34;js-target-no-root tuiButton&#34;&gt;Will not close on document click&lt;/button&gt;
+
+&lt;div class=&#34;js-popover-no-root tuiPopover&#34;&gt;
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+     &lt;div&gt;[CONTENT]&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;footer class=&#34;tuiPopover__footer&#34;&gt;
+     &lt;button class=&#34;tuiButton&#34; onclick=&#34;closePopover()&#34;&gt;Close&lt;/button&gt;
+   &lt;/footer&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+    </section>
+    
+    <section class="sg-example__source sg-example__source--script">
+        <pre><code class="js">var popover = new tuik.Popover(document.querySelector(&#39;.js-target-no-root&#39;), document.querySelector(&#39;.js-popover-no-root&#39;), { closeOnRoot: false } );
+var closePopover = function(e) { popover.close(); }
+</code></pre>
+    </section>
+    
+    
+</article>
 
                 <form id="sg-try-example" method="post" action="http://jsfiddle.net/api/post/library/pure/" target="sgtryexample" style="display:none;">
     <input type="submit">

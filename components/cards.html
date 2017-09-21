@@ -441,9 +441,6 @@
                       <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                           <a href="components/cards">Cards</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
@@ -481,6 +478,19 @@
                     
                       <li class="sg-nav__links__element ">
                           <a href="components/notifications">Notifications</a>
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/tabs">Tabs</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/popovers">Popovers</a>
                           
                               <em class="sg-draft-notification">Draft</em>
 
@@ -522,20 +532,17 @@
 
     Cards
     
-        <em class="sg-draft-notification">Draft</em>
-
-    
 </h1>
 
 
-<p class="sg-p">The card component is a preview of more detailed content a user sees when actioned. The card is a user interface component that acts as an entry point to more detailed information. Varying sources of information are pooled together and presented in a digestible way.</p>
+<p class="sg-p">A card component provides context and a preview of the more detailed information that a user sees when it is actioned. It allows you to aggregate related content and present it in a digestible way.</p>
 
 <h2 class="sg-h2">Default</h2>
-<p class="sg-p">A default card, <em>tuiCard</em>, is a content container whitch works as a link to more detailed information. It includes content area <em>tuiCard__content</em> and an optional header <em>tuiCard__header</em> area that can include a title <em>tuiCard__header__title</em>, subtitle <em>tuiCard__header__subtitle</em> and an action link <em>tuiCard__header__action</em>.</p>
+<p class="sg-p">The default card, <em>tuiCard</em>, is a content container that acts as a link to more detailed information. It includes a content area <em>tuiCard__content</em> and an optional header <em>tuiCard__header</em> area that may include a title <em>tuiCard__header__title</em>, subtitle <em>tuiCard__header__subtitle</em> and an action link <em>tuiCard__header__action</em>.</p>
 
 <div class="sg-callout">
     <h4 class="sg-callout__title">Mix and match</h4>
-    <p class="sg-callout__p">If you're displaying a list of cards that may or may not contain a header or where some might be reversed (see below), make sure the container is set a flex.</p>
+    <p class="sg-callout__p">If you are displaying a list of cards that are formatted differently, where they may or may not contain a header, or where the header might be reversed (see below), make sure the container is set as flex.</p>
 </div>
 
 
@@ -612,11 +619,11 @@
 
 
 <h3 class="sg-h3">Long titles</h3>
-<p class="sg-p">Both title and subtitle will be truncated if to long.</p>
+<p class="sg-p">Both titles and subtitles are truncated if too long.</p>
 
 <div class="sg-callout">
     <h4 class="sg-callout__title">Title attribute</h4>
-    <p class="sg-callout__p">It is essential that you use the title attribute to ensure the user can read the full title and subtile when it is being truncated.</p>
+    <p class="sg-callout__p">It is essential that you use the title attribute to ensure that the user can read the full title and subtitle if it is truncated.</p>
 </div>
 
 
@@ -684,10 +691,10 @@
 </article>
 
 
-<h2 class="sg-h2">Modifier</h2>
+<h2 class="sg-h2">Modifiers</h2>
 
 <h3 class="sg-h3">Fluid modifier</h3>
-<p class="sg-p">If you need the card to stretch to it's content width, use the <em>tuiCard--fluid</em> modifier.</p>
+<p class="sg-p">If you want the card to expand to it's content width, use the <em>tuiCard--fluid</em> modifier.</p>
 
 
 
@@ -750,7 +757,7 @@
 
 
 <h3 class="sg-h3">Primary modifier</h3>
-<p class="sg-p">A <em>tuiCard--primary</em> modifier is available if you wish to provide more contrast to a given card.</p>
+<p class="sg-p">You can apply a tuiCard--primary modifier if you want to provide greater contrast to a given card.</p>
 
 
 
@@ -813,7 +820,7 @@
 
 
 <h3 class="sg-h3">Reversed modifier</h3>
-<p class="sg-p">It is possible to render the header at the top of the card, simply use the <em>tuiCard--reversed</em> modifier to do so.</p>
+<p class="sg-p">To render the title at the top of the card instead of below the content area, simply use the <em>tuiCard--reversed</em> modifier to do so.</p>
 
 
 
@@ -900,7 +907,7 @@
 
 
 <h2 class="sg-h2">Hover animation</h2>
-<p class="sg-p">If you wish to provide a hover animation, just add the <em>tuiPop</em> class to the card.</p>
+<p class="sg-p">If you want to apply a hover animation, just add the <em>tuiPop</em> class to the card.</p>
 
 
 

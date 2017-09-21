@@ -441,9 +441,6 @@
                       <li class="sg-nav__links__element ">
                           <a href="components/cards">Cards</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
@@ -481,6 +478,19 @@
                     
                       <li class="sg-nav__links__element ">
                           <a href="components/notifications">Notifications</a>
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/tabs">Tabs</a>
+                          
+                              <em class="sg-draft-notification">Draft</em>
+
+                          
+                      </li>
+                    
+                      <li class="sg-nav__links__element ">
+                          <a href="components/popovers">Popovers</a>
                           
                               <em class="sg-draft-notification">Draft</em>
 
@@ -527,19 +537,18 @@
     
 </h1>
 
-<p class="sg-p">Use drop menus to let users select an action or option from a set of choices. Typically, drop menus are used when you have 5-15 options.</p>
+<p class="sg-p">Dropdown menus let users select an action or option from a set of choices. They are typically used when you have 5-15 choices.</p>
 
-<h2 class="sg-h2">Best practices</h2>
-<p class="sg-p">There are many different components that can be used to give users the ability to select options. Here are some best practices around making the decision on which route is best for your user's journey.</p>
+<h2 class="sg-h2">Best Practices</h2>
+<p class="sg-p">When implementing dropdown menus, be sure to:</p>
 <ul class="sg-ul">
-    <li class="sg-li">Sort the list in a logical order. For instance, put the most selected option at the top.</li>
-    <li class="sg-li">Simplify. Does an option rarely get selected? Re-evaluate if you really need that option.</li>
-    <li class="sg-li">Need an option to turn something on or off? Use a checkbox.</li>
-    <li class="sg-li">Need to select a single option from a set of options that are all visible on the page? Use radio buttons.</li>
+    <li class="sg-li">Sort the list in logical order; in a long list put the option selected most often at the top.</li>
+    <li class="sg-li">Simplify. If an option is rarely selected, consider if you need that option.</li>
+    <li class="sg-li">Grey out any unavailable options.</li>
 </ul>
 
 <h2 class="sg-h2">Default dropdown button</h2>
-<p class="sg-p">A single <em>tuiButton</em>, can be turned into a dropdown by adding a class <em>tuiButton--dropdown</em> on the button element and when placed within a <em>tuiDropdown</em>element.</p>
+<p class="sg-p">You can turn a single <em>tuiButton</em> into a dropdown by adding a class <em>tuiButton--dropdown</em> to the button element and when placed within a <em>tuiDropdown</em> element.</p>
 
 
 
@@ -595,11 +604,11 @@
 
 
 <h3 class="sg-h3">Disabled dropdown button</h3>
-<p class="sg-p">Dropdown buttons can be disabled in the same way buttons are by defining the <em>disabled</em> attribute.</p>
+<p class="sg-p">You can disable Dropdown buttons in the same way as buttons by defining the <em>disabled</em> attribute.</p>
 
 <div class="sg-callout">
     <h4 class="sg-callout__title">Use of anchors</h4>
-    <p class="sg-callout__p">Altho it is possible to use anchors for the toggle element of the dropdown we strongly recommend using buttons to ease handling of the dropdown disabled state.</p>
+    <p class="sg-callout__p">Although it is possible to use anchors for the toggle element of the dropdown, we strongly recommend using buttons to ease handling of the dropdown disabled state.</p>
 </div>
 
 
@@ -657,7 +666,7 @@
 
 
 <h3 class="sg-h3">Button modifiers</h3>
-<p class="sg-p">Dropdown can use any available button modifiers</p>
+<p class="sg-p">Dropdown buttons can use any available <a href="/components/buttons">button modifiers</a>.</p>
 
 
 
@@ -793,7 +802,7 @@ new tuik.Dropdown(document.querySelector(&#39;.js-caution-dropdown&#39;));
 
 
 <h3 class="sg-h3">Disabled split dropdown button</h3>
-<p class="sg-p">Split dropdown buttons can be disabled in the same way buttons are by defining the <em>disabled</em> attribute. The action button and the dropdown button can both be disabled and enabled individualy.</p>
+<p class="sg-p">You can disable split dropdown buttons in the same way as buttons by defining the <em>disabled</em> attribute. The action button and the dropdown button can both be disabled or enabled individually.</p>
 
 
 
@@ -906,7 +915,7 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
 
 
 <h2 class="sg-h2">Icons</h2>
-<p class="sg-p">An icon can be included in a dropdown item by adding <em>tuiIcon</em> within the button element. Can also be used with other types of buttons like split buttons.</p>
+<p class="sg-p">You can add an icon to any dropdown button or menu item by adding a <em>tuiIcon</em> element to the button element.
 
 
 
@@ -935,12 +944,12 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
 </article>
 
 
-<h2 class="sg-h2">Menu</h2>
-<p class="sg-p">Both anchors (<em>&lt;a&gt;</em>) and buttons (<em>&lt;button&gt;</em>) can be used as menu items. Long text will be truncated.</p>
+<h2 class="sg-h2">Menu items</h2>
+</p><p class="sg-p">Both anchors (<em>&lt;a&gt;</em>) and buttons (<em>&lt;button&gt;</em>) can be used as menu items. Long text labels will be truncated.</p>
 
 <div class="sg-callout">
     <h4 class="sg-callout__title">Title attribute</h4>
-    <p class="sg-callout__p">It is essential that you use the title attribute to ensure the user can read the full label of the menu element when it is being truncated.</p>
+    <p class="sg-callout__p">It is essential that you use the title attribute to ensure that the user can read the complete label of the menu item when it is truncated.</p>
 </div>
 
 
@@ -1061,7 +1070,7 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
 
 <div class="sg-callout">
     <h4 class="sg-callout__title">Disabling anchors</h4>
-    <p class="sg-callout__p">If an item needs can be disabled we strongly recommend that you use a button to render it because anchors cannot be disabled without handling it manually. This causes issues with focus and active state of the "disabled" anchor. If you really need to use an anchor, you can still add a disabled attribute to it.</p>
+    <p class="sg-callout__p">We strongly recommend that for items that may be disabled in a given context that you use a button to render it. You can apply a disabled attribute to an anchor but it must be handled manually. This causes issues with focus and the active state of the "disabled" anchor. </p>
 </div>
 
 
@@ -1102,7 +1111,7 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
 
 
 <h3 class="sg-h3">Icons</h3>
-<p class="sg-p">It is possible to use <a href="foundations/icons-reference">icons</a> within the menu items.</p>
+<p class="sg-p">You can use <a href="foundations/icons-reference">icons</a> within the menu items.</p>
 
 
 
