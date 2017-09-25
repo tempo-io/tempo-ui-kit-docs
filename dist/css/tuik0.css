@@ -346,11 +346,11 @@
        -o-transform: translateY(-50%);
           transform: translateY(-50%);
 }
-.tuiWithIcon--reversed .tuiTextField {
+.tuiWithIcon--right .tuiTextField {
   padding-left: 0.71428571em;
   padding-right: 2em;
 }
-.tuiWithIcon--reversed .tuiWithIcon__icon {
+.tuiWithIcon--right .tuiWithIcon__icon {
   left: auto;
   right: 0.5em;
 }

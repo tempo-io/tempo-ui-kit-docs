@@ -1,0 +1,70 @@
+/*------------------------------------*\
+  #TYPOGRAPHY
+\*------------------------------------*/
+/* stylelint-disable-line */
+/* why: baseline must be set in px */
+/*------------------------------------*\
+  #ZINDEXES
+\*------------------------------------*/
+/*------------------------------------*\
+  #COLORS
+\*------------------------------------*/
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+/*------------------------------------*\
+  #TYPOGRAPHY
+\*------------------------------------*/
+body {
+  font-size: 14px;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
+}
+.tuiTypo-h1,
+h1 {
+  font-size: 2.2857143em;
+  color: #333333;
+  font-weight: normal;
+}
+.tuiTypo-h2,
+h2 {
+  font-size: 1.7142857em;
+  color: #333333;
+  font-weight: normal;
+}
+.tuiTypo-h3,
+h3 {
+  font-size: 1.4285714em;
+  color: #333333;
+  font-weight: normal;
+}
+.tuiTypo-h4,
+h4 {
+  font-size: 1.1428571em;
+  font-weight: bold;
+  color: #333333;
+}
+.tuiTypo-h5,
+h5 {
+  font-size: 1.0000000em;
+  font-weight: bold;
+  color: #333333;
+}
+.tuiTypo-h6,
+h6 {
+  font-size: 0.85714286em;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #333333;
+}
+.tuiTypo-p,
+p {
+  font-size: 1em;
+  line-height: 1.4285714em;
+  color: #333333;
+  font-weight: normal;
+}
+a {
+  font-size: 1em;
+  color: #0073EC;
+  text-decoration: none;
+}

@@ -11,9 +11,9 @@
     <meta name="description" content="Dropdowns" />
 
     <!-- TUIK -->
-    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=6d8dc6d2-0a8a-41f0-3b3f-09aaa9a7c490" type="text/css">
-    <link rel="stylesheet" href="dist/css/tuik.css?v=6d8dc6d2-0a8a-41f0-3b3f-09aaa9a7c490" type="text/css">
-    <script src="dist/js/tuik.bundle.js?v=6d8dc6d2-0a8a-41f0-3b3f-09aaa9a7c490"></script>
+    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=b1753301-b286-3548-f838-5efe5236a7a8" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css?v=b1753301-b286-3548-f838-5efe5236a7a8" type="text/css">
+    <script src="dist/js/tuik.bundle.js?v=b1753301-b286-3548-f838-5efe5236a7a8"></script>
 
     <!-- SG VENDRORS -->
     <link rel="stylesheet" href="vendors/tippy/tippy.css">
@@ -23,8 +23,8 @@
 
     <!-- SG -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=6d8dc6d2-0a8a-41f0-3b3f-09aaa9a7c490" type="text/css">
-    <script src="tuikdocs.js?v=6d8dc6d2-0a8a-41f0-3b3f-09aaa9a7c490"></script>
+    <link rel="stylesheet" href="css/main.css?v=b1753301-b286-3548-f838-5efe5236a7a8" type="text/css">
+    <script src="tuikdocs.js?v=b1753301-b286-3548-f838-5efe5236a7a8"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -570,9 +570,9 @@
     
 
     
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiDropdown js-default-dropdown&#34;&gt;
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiDropdown js-default-dropdown&#34;&gt;
    &lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;
        Default dropdown
    &lt;/button&gt;
@@ -586,13 +586,32 @@
    &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-    </section>
-    
-    <section class="sg-example__source sg-example__source--script">
-        <pre><code class="js">new tuik.Dropdown(document.querySelector(&#39;.js-default-dropdown&#39;));
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Dropdown(document.querySelector(&#39;.js-default-dropdown&#39;));
 </code></pre>
-    </section>
-    
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiDropdown js-default-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;
+       Default dropdown
+   &lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+       &lt;hr class=&#34;tuiDropdown__list__divider&#34;&gt;&lt;/hr&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34;&gt;Button menu item&lt;/button&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
     
 </article>
 
@@ -631,9 +650,9 @@
     
 
     
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiDropdown js-disabled-dropdown&#34;&gt;
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiDropdown js-disabled-dropdown&#34;&gt;
    &lt;button class=&#34;tuiButton tuiButton--dropdown&#34; disabled=&#34;disabled&#34;&gt;
        Disabled dropdown
    &lt;/button&gt;
@@ -647,13 +666,32 @@
    &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-    </section>
-    
-    <section class="sg-example__source sg-example__source--script">
-        <pre><code class="js">new tuik.Dropdown(document.querySelector(&#39;.js-disabled-dropdown&#39;));
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Dropdown(document.querySelector(&#39;.js-disabled-dropdown&#39;));
 </code></pre>
-    </section>
-    
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiDropdown js-disabled-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown&#34; disabled=&#34;disabled&#34;&gt;
+       Disabled dropdown
+   &lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+       &lt;hr class=&#34;tuiDropdown__list__divider&#34;&gt;&lt;/hr&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34;&gt;Button menu item&lt;/button&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
     
 </article>
 
@@ -701,9 +739,9 @@ new tuik.Dropdown(document.querySelector('.js-caution-dropdown'));
     
 
     
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiDropdown js-primary-dropdown&#34;&gt;
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiDropdown js-primary-dropdown&#34;&gt;
    &lt;button class=&#34;tuiButton tuiButton--dropdown tuiButton--primary&#34;&gt;
        Primary dropdown
    &lt;/button&gt;
@@ -728,15 +766,45 @@ new tuik.Dropdown(document.querySelector('.js-caution-dropdown'));
    &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-    </section>
-    
-    <section class="sg-example__source sg-example__source--script">
-        <pre><code class="js">new tuik.Dropdown(document.querySelector(&#39;.js-primary-dropdown&#39;));
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Dropdown(document.querySelector(&#39;.js-primary-dropdown&#39;));
 new tuik.Dropdown(document.querySelector(&#39;.js-subtle-dropdown&#39;));
 new tuik.Dropdown(document.querySelector(&#39;.js-caution-dropdown&#39;));
 </code></pre>
-    </section>
-    
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiDropdown js-primary-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown tuiButton--primary&#34;&gt;
+       Primary dropdown
+   &lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is a menu item&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiDropdown js-subtle-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown tuiButton--subtle&#34;&gt;
+       Subtle dropdown
+   &lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is a menu item&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiDropdown js-caution-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown tuiButton--caution&#34;&gt;
+       Caution dropdown
+   &lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is a menu item&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
     
 </article>
 
@@ -770,9 +838,9 @@ new tuik.Dropdown(document.querySelector(&#39;.js-caution-dropdown&#39;));
     
 
     
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split js-split-dropdown&#34;&gt;
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split js-split-dropdown&#34;&gt;
    &lt;button class=&#34;tuiButton&#34;&gt;Dropdown split&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;&lt;/button&gt;
    &lt;div class=&#34;tuiDropdown__list&#34;&gt;
        &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
@@ -784,13 +852,30 @@ new tuik.Dropdown(document.querySelector(&#39;.js-caution-dropdown&#39;));
    &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-    </section>
-    
-    <section class="sg-example__source sg-example__source--script">
-        <pre><code class="js">new tuik.Dropdown(document.querySelector(&#39;.js-split-dropdown&#39;));
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Dropdown(document.querySelector(&#39;.js-split-dropdown&#39;));
 </code></pre>
-    </section>
-    
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split js-split-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;Dropdown split&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;&lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+       &lt;hr class=&#34;tuiDropdown__list__divider&#34;&gt;&lt;/hr&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34;&gt;Button menu item&lt;/button&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
     
 </article>
 
@@ -833,9 +918,9 @@ new tuik.Dropdown(document.querySelector('.js-split-disabled-dropdown'));
     
 
     
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split js-split-toggle-disabled-dropdown&#34;&gt;
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split js-split-toggle-disabled-dropdown&#34;&gt;
    &lt;button class=&#34;tuiButton&#34;&gt;Disabled toggle&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--dropdown&#34; disabled=&#34;disabled&#34;&gt;&lt;/button&gt;
    &lt;div class=&#34;tuiDropdown__list&#34;&gt;
        &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is a menu item&lt;/a&gt;
@@ -856,15 +941,41 @@ new tuik.Dropdown(document.querySelector('.js-split-disabled-dropdown'));
    &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-    </section>
-    
-    <section class="sg-example__source sg-example__source--script">
-        <pre><code class="js">new tuik.Dropdown(document.querySelector(&#39;.js-split-toggle-disabled-dropdown&#39;));
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Dropdown(document.querySelector(&#39;.js-split-toggle-disabled-dropdown&#39;));
 new tuik.Dropdown(document.querySelector(&#39;.js-split-action-disabled-dropdown&#39;));
 new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;));
 </code></pre>
-    </section>
-    
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split js-split-toggle-disabled-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;Disabled toggle&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--dropdown&#34; disabled=&#34;disabled&#34;&gt;&lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is a menu item&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split js-split-action-disabled-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34; disabled=&#34;disabled&#34;&gt;Disabled action&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;&lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is a menu item&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split js-split-disabled-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34; disabled=&#34;disabled&#34;&gt;Fully action&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--dropdown&#34; disabled=&#34;disabled&#34;&gt;&lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is a menu item&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
     
 </article>
 
@@ -891,9 +1002,9 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
     
 
     
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div style=&#34;width:150px&#34;&gt;
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div style=&#34;width:150px&#34;&gt;
  &lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split&#34;&gt;
      &lt;button class=&#34;tuiButton&#34;&gt;Larger than container&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;&lt;/button&gt;
      &lt;div class=&#34;tuiDropdown__list&#34;&gt;
@@ -902,8 +1013,22 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
  &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-    </section>
-    
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div style=&#34;width:150px&#34;&gt;
+ &lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split&#34;&gt;
+     &lt;button class=&#34;tuiButton&#34;&gt;Larger than container&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;&lt;/button&gt;
+     &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+         &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is a menu item&lt;/a&gt;
+     &lt;/div&gt;
+ &lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
     
 </article>
 
@@ -926,14 +1051,23 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
     
 
     
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiButtonGroup tuiDropdown&#34;&gt;
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup tuiDropdown&#34;&gt;
    &lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;&lt;i class=&#34;tuiIcon tuiIcon-option-gear-full&#34;&gt;&lt;/i&gt;Dropdown with icon&lt;/button&gt;&lt;/button&gt;
 &lt;/div&gt;
 </code></pre>
-    </section>
-    
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup tuiDropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;&lt;i class=&#34;tuiIcon tuiIcon-option-gear-full&#34;&gt;&lt;/i&gt;Dropdown with icon&lt;/button&gt;&lt;/button&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
     
 </article>
 
@@ -965,9 +1099,9 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
     
 
     
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiDropdown&#34;&gt;
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiDropdown&#34;&gt;
    &lt;div class=&#34;tuiDropdown__list&#34;&gt;
        &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;Anchor element&lt;/a&gt;
        &lt;button class=&#34;tuiDropdown__list__item&#34;&gt;Button element&lt;/button&gt;
@@ -975,8 +1109,21 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
    &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-    </section>
-    
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiDropdown&#34;&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;Anchor element&lt;/a&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34;&gt;Button element&lt;/button&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34; title=&#34;Super long text to show that long labels will eventually be truncated&#34;&gt;Super long text to show that long labels will eventually be truncated&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
     
 </article>
 
@@ -1003,9 +1150,9 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
     
 
     
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiDropdown&#34;&gt;
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiDropdown&#34;&gt;
    &lt;div class=&#34;tuiDropdown__list&#34;&gt;
        &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
        &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
@@ -1013,8 +1160,21 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
    &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-    </section>
-    
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiDropdown&#34;&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
     
 </article>
 
@@ -1042,9 +1202,9 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
     
 
     
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiDropdown&#34;&gt;
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiDropdown&#34;&gt;
    &lt;div class=&#34;tuiDropdown__list&#34;&gt;
      &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
      &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
@@ -1053,8 +1213,22 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
    &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-    </section>
-    
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiDropdown&#34;&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+     &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+     &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+     &lt;hr class=&#34;tuiDropdown__list__divider&#34;&gt;&lt;/hr&gt;
+     &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;Another menu item&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
     
 </article>
 
@@ -1087,9 +1261,9 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
     
 
     
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiDropdown&#34;&gt;
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiDropdown&#34;&gt;
    &lt;div class=&#34;tuiDropdown__list&#34;&gt;
      &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;Menu item&lt;/a&gt;
      &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34; disabled=&#34;disabled&#34;&gt;Disabled menu item&lt;/a&gt;
@@ -1098,8 +1272,22 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
    &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-    </section>
-    
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiDropdown&#34;&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+     &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;Menu item&lt;/a&gt;
+     &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34; disabled=&#34;disabled&#34;&gt;Disabled menu item&lt;/a&gt;
+     &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;Another menu item&lt;/a&gt;
+     &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
     
 </article>
 
@@ -1127,9 +1315,9 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
     
 
     
-    <section class="sg-example__source">
-        <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-        <pre><code class="html">&lt;div class=&#34;tuiDropdown&#34;&gt;
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiDropdown&#34;&gt;
    &lt;div class=&#34;tuiDropdown__list&#34;&gt;
      &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;&lt;i class=&#34;tuiIcon-information-info&#34;&gt;&lt;/i&gt; Menu item&lt;/a&gt;
      &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34; disabled=&#34;disabled&#34;&gt;&lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt; Disabled menu item&lt;/a&gt;
@@ -1138,8 +1326,22 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
    &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
-    </section>
-    
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiDropdown&#34;&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+     &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;&lt;i class=&#34;tuiIcon-information-info&#34;&gt;&lt;/i&gt; Menu item&lt;/a&gt;
+     &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34; disabled=&#34;disabled&#34;&gt;&lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt; Disabled menu item&lt;/a&gt;
+     &lt;button class=&#34;tuiDropdown__list__item&#34;&gt;&lt;i class=&#34;tuiIcon-option-gear-full&#34;&gt;&lt;/i&gt; Button item&lt;/a&gt;
+     &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;&lt;i class=&#34;tuiIcon-information-warning&#34;&gt;&lt;/i&gt; Disabled button&lt;/a&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
     
 </article>
 

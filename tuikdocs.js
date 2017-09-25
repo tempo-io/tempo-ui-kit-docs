@@ -100,12 +100,12 @@ var sgIconQuickReference = function(iconIds, containerSelector) {
 */
 
 var sgTryExample = function(caller) {
-    var renderedContainerElement = caller.parentNode.parentNode.querySelector('.sg-example__render');
+    var rawSourceContainerElement = caller.parentNode.parentNode.querySelector('.sg-example__source__raw');
     var renderedScriptElement = caller.parentNode.parentNode.querySelector('.js-rendered-script');
 
     var formElement = document.querySelector('#sg-try-example');
 
-    formElement.querySelector('textarea[name=html]').value = renderedContainerElement.innerHTML;
+    formElement.querySelector('textarea[name=html]').value = rawSourceContainerElement.value;
     if(renderedScriptElement) {
       formElement.querySelector('textarea[name=js]').value = renderedScriptElement.innerHTML;
     }
