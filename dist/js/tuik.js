@@ -16,6 +16,27 @@ var classCallCheck = function (instance, Constructor) {
 
 var Utils = function () {
   var Utils = {
+    DOM: {
+      hasParentWithClass: function hasParentWithClass(childNode, parentClass) {
+        if (!parentClass || !childNode) {
+          return false;
+        }
+
+        var node = childNode;
+        var maxSearch = 50;
+
+        while (node !== null && maxSearch) {
+          if (node.classList && node.classList.contains(parentClass)) {
+            return true;
+          }
+          node = node.parentNode;
+          maxSearch--;
+        }
+
+        return false;
+      }
+    },
+
     EventHandlers: function () {
       function EventHandlers(namespace) {
         classCallCheck(this, EventHandlers);
@@ -119,9 +140,20 @@ var Dropdown = function () {
     MENUITEM: 'tuiDropdown__list__item'
   };
 
+  var defaultOptions = {
+    placement: 'bottom-start',
+    popper: {
+      modifiers: {
+        flip: {
+          enabled: true
+        }
+      }
+    }
+  };
+
   var Dropdown = function () {
     // TODO: NICE TO HAVE -> allow selectors by testing on element type.
-    function Dropdown(element) {
+    function Dropdown(element, options) {
       classCallCheck(this, Dropdown);
 
       // validating dependencies
@@ -133,6 +165,7 @@ var Dropdown = function () {
       this._menuElement = element.querySelector('.' + ClassNames.MENU);
       this._toggleElement = element.querySelector('.' + ClassNames.TOGGLE);
       this._popper = null;
+      this._options = Object.assign({}, defaultOptions, options);
 
       this._addEventListeners();
       return this;
@@ -152,13 +185,10 @@ var Dropdown = function () {
 
         this._bindHandlers();
         this._popper = new Popper(this._element, this._menuElement, {
-          placement: 'bottom-start',
-          modifiers: {
-            flip: {
-              enabled: true
-            }
-          }
+          placement: this._options.placement,
+          modifiers: this._options.popper.modifiers
         });
+
         this._element.classList.add(ClassNames.ISOPEN);
         this._toggleElement.focus();
       } else {
@@ -202,7 +232,6 @@ var Dropdown = function () {
       eventHandlers.remove(dropdownElement, 'tuikDropdownClose', Dropdown.handleClose, 'handlers');
       eventHandlers.remove(dropdownToggleElement, 'keydown', Dropdown.handleKeydown, 'handlers');
       eventHandlers.remove(dropdownMenuElement, 'keydown', Dropdown.handleKeydown, 'handlers');
-      eventHandlers.remove(dropdownMenuElement, 'click', Dropdown.handleClick, 'handlers');
       eventHandlers.remove(document, 'click', Dropdown.handleDocumentAction, 'handlers');
       eventHandlers.remove(document, 'keydown', Dropdown.handleDocumentAction, 'handlers');
     };
@@ -220,17 +249,16 @@ var Dropdown = function () {
         return;
       }
 
-      Dropdown.closeAllOpenDropdowns();
-    };
+      if (e.type !== 'keydown' && Utils.DOM.hasParentWithClass(e.target, ClassNames.DROPDOWN)) {
+        var calledFromMenuItem = e.target.classList.contains(ClassNames.MENUITEM);
+        var calledFromDisabledMenuItem = e.target.getAttribute('disabled');
 
-    Dropdown.handleClick = function handleClick(e) {
-      var calledFromMenuItem = e.target.classList.contains(ClassNames.MENUITEM);
-      var calledFromDisabledMenuItem = e.target.getAttribute('disabled');
-
-      if (!calledFromMenuItem || calledFromDisabledMenuItem) {
-        e.preventDefault();
-        e.stopPropagation();
+        if (!calledFromMenuItem || calledFromDisabledMenuItem) {
+          return;
+        }
       }
+
+      Dropdown.closeAllOpenDropdowns();
     };
 
     Dropdown.handleKeydown = function handleKeydown(e) {
@@ -297,7 +325,6 @@ var Dropdown = function () {
       eventHandlers.add(this._element, 'tuikDropdownClose', Dropdown.handleClose, 'handlers');
       eventHandlers.add(this._toggleElement, 'keydown', Dropdown.handleKeydown, 'handlers');
       eventHandlers.add(this._menuElement, 'keydown', Dropdown.handleKeydown, 'handlers');
-      eventHandlers.add(this._menuElement, 'click', Dropdown.handleClick, 'handlers');
       eventHandlers.add(document, 'click', Dropdown.handleDocumentAction, 'handlers');
       eventHandlers.add(document, 'keydown', Dropdown.handleDocumentAction, 'handlers');
     };

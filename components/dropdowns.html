@@ -11,9 +11,9 @@
     <meta name="description" content="Dropdowns" />
 
     <!-- TUIK -->
-    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=ebfbd5dd-1cf0-da7a-ab88-96497d99f663" type="text/css">
-    <link rel="stylesheet" href="dist/css/tuik.css?v=ebfbd5dd-1cf0-da7a-ab88-96497d99f663" type="text/css">
-    <script src="dist/js/tuik.bundle.js?v=ebfbd5dd-1cf0-da7a-ab88-96497d99f663"></script>
+    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=10c3db72-81e5-3003-1915-87c2207cec2d" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css?v=10c3db72-81e5-3003-1915-87c2207cec2d" type="text/css">
+    <script src="dist/js/tuik.bundle.js?v=10c3db72-81e5-3003-1915-87c2207cec2d"></script>
 
     <!-- SG VENDRORS -->
     <link rel="stylesheet" href="vendors/tippy/tippy.css">
@@ -23,8 +23,8 @@
 
     <!-- SG -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=ebfbd5dd-1cf0-da7a-ab88-96497d99f663" type="text/css">
-    <script src="tuikdocs.js?v=ebfbd5dd-1cf0-da7a-ab88-96497d99f663"></script>
+    <link rel="stylesheet" href="css/main.css?v=10c3db72-81e5-3003-1915-87c2207cec2d" type="text/css">
+    <script src="tuikdocs.js?v=10c3db72-81e5-3003-1915-87c2207cec2d"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -451,6 +451,9 @@
                       <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                           <a href="components/dropdowns">Dropdowns</a>
                           
+                              <em class="sg-draft-notification">Draft</em>
+
+                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
@@ -529,6 +532,9 @@
 
     Dropdowns
     
+        <em class="sg-draft-notification">Draft</em>
+
+    
 </h1>
 
 <p class="sg-p">Dropdown menus let users select an action or option from a set of choices. They are typically used when you have 5-15 choices.</p>
@@ -599,6 +605,125 @@
           &lt;div class=&#34;tuiDropdown js-default-dropdown&#34;&gt;
    &lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;
        Default dropdown
+   &lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+       &lt;hr class=&#34;tuiDropdown__list__divider&#34;&gt;&lt;/hr&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34;&gt;Button menu item&lt;/button&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+<h3 class="sg-h3">Positioning</h3>
+<p class="sg-p">By default the dropdown is placed <em>bottom-start</em>. Other options are; <em>bottom-end</em> and <em>bottom</em>.</p>
+
+
+
+
+<article class="sg-example" id="dropdownsPositioning">
+    
+    <section class="sg-example__render">
+        <div class="tuiDropdown js-bottomend-dropdown">
+   <button class="tuiButton tuiButton--dropdown">
+       bottom-end
+   </button>
+   <div class="tuiDropdown__list">
+       <h3 class="tuiDropdown__list__header">Header</h3>
+       <a class="tuiDropdown__list__item" href="#">This is menu item 1</a>
+       <a class="tuiDropdown__list__item" href="#">This is menu item 2</a>
+       <hr class="tuiDropdown__list__divider">
+       <button class="tuiDropdown__list__item">Button menu item</button>
+       <button class="tuiDropdown__list__item" disabled="disabled">Disabled button</button>
+   </div>
+</div>
+
+<div class="tuiDropdown js-bottom-dropdown">
+   <button class="tuiButton tuiButton--dropdown">
+       bottom
+   </button>
+   <div class="tuiDropdown__list">
+       <h3 class="tuiDropdown__list__header">Header</h3>
+       <a class="tuiDropdown__list__item" href="#">This is menu item 1</a>
+       <a class="tuiDropdown__list__item" href="#">This is menu item 2</a>
+       <hr class="tuiDropdown__list__divider">
+       <button class="tuiDropdown__list__item">Button menu item</button>
+       <button class="tuiDropdown__list__item" disabled="disabled">Disabled button</button>
+   </div>
+</div>
+
+    </section>
+    <script class="js-rendered-script">new tuik.Dropdown(document.querySelector('.js-bottomend-dropdown'), { placement: 'bottom-end'});
+new tuik.Dropdown(document.querySelector('.js-bottom-dropdown'), { placement: 'bottom'});
+</script>
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiDropdown js-bottomend-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;
+       bottom-end
+   &lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+       &lt;hr class=&#34;tuiDropdown__list__divider&#34;&gt;&lt;/hr&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34;&gt;Button menu item&lt;/button&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;tuiDropdown js-bottom-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;
+       bottom
+   &lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+       &lt;hr class=&#34;tuiDropdown__list__divider&#34;&gt;&lt;/hr&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34;&gt;Button menu item&lt;/button&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Dropdown(document.querySelector(&#39;.js-bottomend-dropdown&#39;), { placement: &#39;bottom-end&#39;});
+new tuik.Dropdown(document.querySelector(&#39;.js-bottom-dropdown&#39;), { placement: &#39;bottom&#39;});
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiDropdown js-bottomend-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;
+       bottom-end
+   &lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+       &lt;hr class=&#34;tuiDropdown__list__divider&#34;&gt;&lt;/hr&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34;&gt;Button menu item&lt;/button&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&#34;tuiDropdown js-bottom-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;
+       bottom
    &lt;/button&gt;
    &lt;div class=&#34;tuiDropdown__list&#34;&gt;
        &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
@@ -864,6 +989,75 @@ new tuik.Dropdown(document.querySelector(&#39;.js-caution-dropdown&#39;));
         <textarea class="sg-example__source__raw" style="display:none">
           &lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split js-split-dropdown&#34;&gt;
    &lt;button class=&#34;tuiButton&#34;&gt;Dropdown split&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;&lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+       &lt;hr class=&#34;tuiDropdown__list__divider&#34;&gt;&lt;/hr&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34;&gt;Button menu item&lt;/button&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+<h3 class="sg-h3">Positioning</h3>
+<p class="sg-p">By default the dropdown is placed <em>bottom-start</em>. Other options are; <em>bottom-end</em> and <em>bottom</em>.</p>
+
+
+
+
+<article class="sg-example" id="dropdownsSplitPositioning">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup tuiDropdown tuiDropdown--split js-bottomend-split-dropdown">
+   <button class="tuiButton">bottom-end dropdown split</button><button class="tuiButton tuiButton--dropdown"></button>
+   <div class="tuiDropdown__list">
+       <h3 class="tuiDropdown__list__header">Header</h3>
+       <a class="tuiDropdown__list__item" href="#">This is menu item 1</a>
+       <a class="tuiDropdown__list__item" href="#">This is menu item 2</a>
+       <hr class="tuiDropdown__list__divider">
+       <button class="tuiDropdown__list__item">Button menu item</button>
+       <button class="tuiDropdown__list__item" disabled="disabled">Disabled button</button>
+   </div>
+</div>
+
+    </section>
+    <script class="js-rendered-script">new tuik.Dropdown(document.querySelector('.js-bottomend-split-dropdown'), { placement: 'bottom-end'});
+</script>
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split js-bottomend-split-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;bottom-end dropdown split&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;&lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+       &lt;hr class=&#34;tuiDropdown__list__divider&#34;&gt;&lt;/hr&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34;&gt;Button menu item&lt;/button&gt;
+       &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Dropdown(document.querySelector(&#39;.js-bottomend-split-dropdown&#39;), { placement: &#39;bottom-end&#39;});
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup tuiDropdown tuiDropdown--split js-bottomend-split-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;bottom-end dropdown split&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;&lt;/button&gt;
    &lt;div class=&#34;tuiDropdown__list&#34;&gt;
        &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
        &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
