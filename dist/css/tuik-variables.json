@@ -35,6 +35,7 @@
     "outlineWidthHalf": "0.07142857em",
     "buttonBorderRadius": "0.21428571em",
     "buttonBoxShadow": "0 0.071428571em 0.071428571em rgba(0, 0, 0, 0.05)",
+    "buttonHOuterSpacing": "0.35714286em",
     "buttonColor": "#555555",
     "buttonDisabledColor": "#BABABA",
     "buttonSubtleDisabledColor": "#999999",

@@ -75,7 +75,7 @@
   font-weight: 400;
   color: #555555;
   font-size: 1em;
-  margin: 0em 0.35714286em 0em 0;
+  margin: 0 0.35714286em 0 0;
   padding: 0.50000000em 0.71428571em;
   line-height: normal;
 }
@@ -234,6 +234,7 @@
 \*------------------------------------*/
 .tuiButtonGroup {
   display: inline-block;
+  margin: 0 0.35714286em 0 0;
 }
 .tuiButtonGroup .tuiButton {
   margin: 0;
@@ -1349,6 +1350,7 @@
 .tuiDropdown {
   position: relative;
   display: inline-block;
+  margin: 0 0.35714286em 0 0;
 }
 .tuiDropdown .tuiButton {
   margin: 0 0 0.14285714em 0;

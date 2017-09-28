@@ -2959,6 +2959,10 @@ var Popover = function () {
         return;
       }
 
+      if (e.type !== 'keydown' && Utils.DOM.hasParentWithClass(e.target, ClassNames.POPOVER)) {
+        return;
+      }
+
       Popover.closeAllOpenPopovers();
     };
 
@@ -2971,7 +2975,6 @@ var Popover = function () {
 
       eventHandlers.remove(popoverElement, 'tuikPopoverClose', Popover.handleClose, 'handlers');
 
-      eventHandlers.remove(popoverElement, 'click', Popover.handleClick, 'handlers');
       eventHandlers.remove(popoverElement, 'keydown', Popover.handleKeydown, 'handlers');
       eventHandlers.remove(popoverElement.tuiRefTargetElement, 'keydown', Popover.handleKeydown, 'handlers');
       eventHandlers.remove(document, 'click', Popover.handleDocumentAction, 'handlers');
@@ -2996,15 +2999,6 @@ var Popover = function () {
         return;
       }
 
-      e.stopPropagation();
-    };
-
-    Popover.handleClick = function handleClick(e) {
-      if (!e) {
-        return;
-      }
-
-      e.preventDefault();
       e.stopPropagation();
     };
 
@@ -3041,7 +3035,6 @@ var Popover = function () {
 
     Popover.prototype._bindHandlers = function _bindHandlers() {
       eventHandlers.add(this._popoverElement, 'tuikPopoverClose', Popover.handleClose, 'handlers');
-      eventHandlers.add(this._popoverElement, 'click', Popover.handleClick, 'handlers');
       eventHandlers.add(this._popoverElement, 'keydown', Popover.handleKeydown, 'handlers');
       eventHandlers.add(this._targetElement, 'keydown', Popover.handleKeydown, 'handlers');
 
