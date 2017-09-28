@@ -11,9 +11,9 @@
     <meta name="description" content="Button groups" />
 
     <!-- TUIK -->
-    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=10c3db72-81e5-3003-1915-87c2207cec2d" type="text/css">
-    <link rel="stylesheet" href="dist/css/tuik.css?v=10c3db72-81e5-3003-1915-87c2207cec2d" type="text/css">
-    <script src="dist/js/tuik.bundle.js?v=10c3db72-81e5-3003-1915-87c2207cec2d"></script>
+    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=7ea573cb-cedd-faba-a654-bdd6c0336bfa" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css?v=7ea573cb-cedd-faba-a654-bdd6c0336bfa" type="text/css">
+    <script src="dist/js/tuik.bundle.js?v=7ea573cb-cedd-faba-a654-bdd6c0336bfa"></script>
 
     <!-- SG VENDRORS -->
     <link rel="stylesheet" href="vendors/tippy/tippy.css">
@@ -23,8 +23,8 @@
 
     <!-- SG -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=10c3db72-81e5-3003-1915-87c2207cec2d" type="text/css">
-    <script src="tuikdocs.js?v=10c3db72-81e5-3003-1915-87c2207cec2d"></script>
+    <link rel="stylesheet" href="css/main.css?v=7ea573cb-cedd-faba-a654-bdd6c0336bfa" type="text/css">
+    <script src="tuikdocs.js?v=7ea573cb-cedd-faba-a654-bdd6c0336bfa"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -577,6 +577,40 @@
 
 
 
+<article class="sg-example" id="buttonGroupPrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <button class="tuiButton tuiButton--primary">First button</button><button class="tuiButton tuiButton--primary">Mid button</button><button class="tuiButton tuiButton--primary">Last button</button>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
 <h3 class="sg-h3">Disabled</h3>
 
 
@@ -606,6 +640,42 @@
         <textarea class="sg-example__source__raw" style="display:none">
           &lt;div class=&#34;tuiButtonGroup&#34;&gt;
    &lt;button class=&#34;tuiButton&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+
+
+<article class="sg-example" id="buttonGroupDisabledFirstPrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <button class="tuiButton tuiButton--primary" disabled="disabled">Disabled button</button><button class="tuiButton">Mid button</button><button class="tuiButton">Last button</button>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
 &lt;/div&gt;
 
         </textarea>
@@ -653,6 +723,42 @@
 
 
 
+<article class="sg-example" id="buttonGroupDisabledMidPrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <button class="tuiButton">First button</button><button class="tuiButton tuiButton--primary" disabled="disabled">Disabled button</button><button class="tuiButton">Last button</button>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+
+
 <article class="sg-example" id="buttonGroupDisabledLastDefault">
     
     <section class="sg-example__render">
@@ -686,6 +792,40 @@
 </article>
 
 
+
+
+
+<article class="sg-example" id="buttonGroupDisabledLastPrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <button class="tuiButton">First button</button><button class="tuiButton">Mid button</button><button class="tuiButton tuiButton--primary" disabled="disabled">Disabled button</button>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
 
 
 <h2 class="sg-h2">Active state</h2>
@@ -727,6 +867,43 @@
 
 
 
+
+<article class="sg-example" id="buttonGroupFirstActivePrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <button class="tuiButton tuiButton--primary tuiButton-is-active">First button</button><button class="tuiButton">Mid button</button><button class="tuiButton">Last button</button>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+
+
 <article class="sg-example" id="buttonGroupMidActive">
     
     <section class="sg-example__render">
@@ -762,6 +939,43 @@
 
 
 
+
+<article class="sg-example" id="buttonGroupMidActivePrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <button class="tuiButton">First button</button><button class="tuiButton tuiButton--primary tuiButton-is-active">Mid button</button><button class="tuiButton">Last button</button>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+
+
 <article class="sg-example" id="buttonGroupLastActive">
     
     <section class="sg-example__render">
@@ -787,6 +1001,42 @@
         <textarea class="sg-example__source__raw" style="display:none">
           &lt;div class=&#34;tuiButtonGroup&#34;&gt;
    &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton-is-active&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+
+
+<article class="sg-example" id="buttonGroupLastActivePrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <button class="tuiButton">First button</button><button class="tuiButton">Mid button</button><button class="tuiButton tuiButton--primary tuiButton-is-active">Last button</button>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;Last button&lt;/button&gt;
 &lt;/div&gt;
 
         </textarea>
@@ -835,6 +1085,42 @@
 
 
 
+<article class="sg-example" id="buttonGroupSemanticsAnchorsFirstActivePrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <a class="tuiButton tuiButton--primary tuiButton-is-active" href="#">First anchor</a><a class="tuiButton" href="#">Mid anchor</a><a class="tuiButton" href="#">Last anchor</a>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+
+
 <article class="sg-example" id="buttonGroupSemanticsAnchorsMidActive">
     
     <section class="sg-example__render">
@@ -871,6 +1157,42 @@
 
 
 
+<article class="sg-example" id="buttonGroupSemanticsAnchorsMidActivePrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <a class="tuiButton" href="#">First anchor</a><a class="tuiButton tuiButton--primary tuiButton-is-active" href="#">Mid anchor</a><a class="tuiButton" href="#">Last anchor</a>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;a class=&#34;tuiButton&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;a class=&#34;tuiButton&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+
+
 <article class="sg-example" id="buttonGroupSemanticsAnchorsLastActive">
     
     <section class="sg-example__render">
@@ -896,6 +1218,42 @@
         <textarea class="sg-example__source__raw" style="display:none">
           &lt;div class=&#34;tuiButtonGroup&#34;&gt;
    &lt;a class=&#34;tuiButton&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton tuiButton-is-active&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+
+
+<article class="sg-example" id="buttonGroupSemanticsAnchorsLastActivePrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <a class="tuiButton" href="#">First anchor</a><a class="tuiButton" href="#">Mid anchor</a><a class="tuiButton tuiButton--primary tuiButton-is-active" href="#">Last anchor</a>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;a class=&#34;tuiButton&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;a class=&#34;tuiButton&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
 &lt;/div&gt;
 
         </textarea>

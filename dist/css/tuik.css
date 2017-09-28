@@ -246,6 +246,15 @@
   -webkit-box-shadow: inset 0 0 0 0.07142857em #4C9AFF !important;
           box-shadow: inset 0 0 0 0.07142857em #4C9AFF !important;
 }
+.tuiButtonGroup .tuiButton--primary:focus {
+  border: 0.07142857em solid buttonDark !important;
+  -webkit-box-shadow: inset 0 0 0 0.07142857em buttonDark !important;
+          box-shadow: inset 0 0 0 0.07142857em buttonDark !important;
+  outline: 0 !important;
+  border: 0.07142857em solid #4C9AFF !important;
+  -webkit-box-shadow: inset 0 0 0 0.07142857em white, 0 0 0 0.07142857em #4C9AFF !important;
+          box-shadow: inset 0 0 0 0.07142857em white, 0 0 0 0.07142857em #4C9AFF !important;
+}
 .tuiButtonGroup .tuiButton:first-of-type {
   border-top-left-radius: 0.21428571em;
   border-bottom-left-radius: 0.21428571em;
@@ -254,6 +263,9 @@
   border-top-right-radius: 0.21428571em;
   border-bottom-right-radius: 0.21428571em;
   border-right-color: #d9d9d9;
+}
+.tuiButtonGroup .tuiButton--primary:last-of-type {
+  border-right-color: transparent;
 }
 .tuiButtonGroup .tuiButton[disabled] {
   border-right-color: transparent;
