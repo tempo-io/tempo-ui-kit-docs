@@ -2573,7 +2573,9 @@ var Dropdown = function () {
     ISOPEN: 'tuiDropdown-is-open',
     TOGGLE: 'tuiButton--dropdown',
     MENU: 'tuiDropdown__list',
-    MENUITEM: 'tuiDropdown__list__item'
+    MENUITEM: 'tuiDropdown__list__item',
+    MENUITEMHEADER: 'tuiDropdown__list__header',
+    MENUITEMDIVIDER: 'tuiDropdown__list__divider'
   };
 
   var defaultOptions = {
@@ -2686,10 +2688,10 @@ var Dropdown = function () {
       }
 
       if (e.type !== 'keydown' && Utils.DOM.hasParentWithClass(e.target, ClassNames.DROPDOWN)) {
-        var calledFromMenuItem = e.target.classList.contains(ClassNames.MENUITEM);
+        var calledFromKnownUnselectableMenuItem = e.target.classList.contains(ClassNames.MENUITEMHEADER) || e.target.classList.contains(ClassNames.MENUITEMDIVIDER);
         var calledFromDisabledMenuItem = e.target.getAttribute('disabled');
 
-        if (!calledFromMenuItem || calledFromDisabledMenuItem) {
+        if (calledFromKnownUnselectableMenuItem || calledFromDisabledMenuItem) {
           return;
         }
       }
