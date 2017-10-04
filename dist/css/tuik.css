@@ -293,6 +293,7 @@
   min-width: 5.3571429em;
   max-width: 35.714286em;
   width: 17.857143em;
+  line-height: normal;
 }
 .tuiTextField::-webkit-input-placeholder {
   color: #999999;
@@ -332,6 +333,10 @@
 .tuiTextField--hundreds {
   width: 3.5714286em;
   min-width: 3.5714286em;
+}
+.tuiTextField--full-width {
+  width: 100%;
+  max-width: none;
 }
 /*------------------------------------*\
   #WITHICON (here until we handle another component)
@@ -1482,6 +1487,21 @@
   margin-bottom: 0.42857143em;
   border: none;
   border-bottom: 1px solid #d9d9d9;
+}
+.tuiDropdown--full-width {
+  width: 100%;
+}
+.tuiDropdown--full-width .tuiButton {
+  width: 100%;
+  text-align: left;
+}
+.tuiDropdown--full-width .tuiDropdown__list {
+  max-width: none;
+  width: 100%;
+}
+.tuiDropdown--full-width .tuiButton--dropdown::after {
+  margin-top: 0.71428571em;
+  float: right;
 }
 /*------------------------------------*\
   #COMPOSITION
