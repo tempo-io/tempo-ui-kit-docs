@@ -419,6 +419,7 @@ var Popover = function () {
     placement: 'bottom',
     closeOnRoot: true,
     trigger: 'click',
+    onClosed: null,
     popper: {
       modifiers: {
         flip: {
@@ -446,6 +447,7 @@ var Popover = function () {
       // keeping refs
       this._targetElement.tuiRefPopoverElement = popoverElement;
       this._popoverElement.tuiRefTargetElement = targetElement;
+      this._popoverElement.onClosed = this._options.onClosed;
 
       // to allow keydown listener to be added on the popover element
       this._popoverElement.setAttribute('tabindex', '1');
@@ -512,6 +514,10 @@ var Popover = function () {
 
       if (eventHandlers.isBound(popoverElement, 'tuikPopoverClose', 'handlers')) {
         eventHandlers.triggerCustom(popoverElement, 'tuikPopoverClose');
+      }
+
+      if (popoverElement.onClosed) {
+        popoverElement.onClosed.call();
       }
     };
 

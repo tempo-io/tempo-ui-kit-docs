@@ -11,9 +11,9 @@
     <meta name="description" content="Popovers" />
 
     <!-- TUIK -->
-    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=84719245-6acb-20b2-b492-5cc7eeefc5a6" type="text/css">
-    <link rel="stylesheet" href="dist/css/tuik.css?v=84719245-6acb-20b2-b492-5cc7eeefc5a6" type="text/css">
-    <script src="dist/js/tuik.bundle.js?v=84719245-6acb-20b2-b492-5cc7eeefc5a6"></script>
+    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=75373c72-04a7-e3b7-44b3-23da49ff32b2" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css?v=75373c72-04a7-e3b7-44b3-23da49ff32b2" type="text/css">
+    <script src="dist/js/tuik.bundle.js?v=75373c72-04a7-e3b7-44b3-23da49ff32b2"></script>
 
     <!-- SG VENDRORS -->
     <link rel="stylesheet" href="vendors/tippy/tippy.css">
@@ -23,8 +23,8 @@
 
     <!-- SG -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=84719245-6acb-20b2-b492-5cc7eeefc5a6" type="text/css">
-    <script src="tuikdocs.js?v=84719245-6acb-20b2-b492-5cc7eeefc5a6"></script>
+    <link rel="stylesheet" href="css/main.css?v=75373c72-04a7-e3b7-44b3-23da49ff32b2" type="text/css">
+    <script src="tuikdocs.js?v=75373c72-04a7-e3b7-44b3-23da49ff32b2"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -484,16 +484,10 @@
                       <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                           <a href="components/popovers">Popovers</a>
                           
-                              <em class="sg-draft-notification">Draft</em>
-
-                          
                       </li>
                     
                       <li class="sg-nav__links__element ">
                           <a href="components/tabs">Tabs</a>
-                          
-                              <em class="sg-draft-notification">Draft</em>
-
                           
                       </li>
                     
@@ -509,9 +503,6 @@
                     
                       <li class="sg-nav__links__element ">
                           <a href="components/textfieldswicons">Text Fields (icons)</a>
-                          
-                              <em class="sg-draft-notification">Draft</em>
-
                           
                       </li>
                     
@@ -532,14 +523,12 @@
 
     Popovers
     
-        <em class="sg-draft-notification">Draft</em>
-
-    
 </h1>
 
+<p class="sg-p">Popovers are often used to deliver simple instructions or additional information to users in context, and may include forms for quick entries.</p>
 
 <h2 class="sg-h2">Default</h2>
-<p class="sg-p">The default popover is rendered as <em>tuiPopover--bottom</em> meaning it is placed below the element. The popover will be sized according to its content.</p>
+<p class="sg-p">By default a popover is rendered as <em>tuiPopover--bottom</em> meaning that it is positioned below the element. The popover is sized according to its content, and closes when an action occurs outside of the popover. </p>
 
 
 
@@ -586,7 +575,8 @@
 
 
 <h3 class="sg-h3">Positioning</h3>
-<p class="sg-p">You can place the popover in different position using the following modifiers; <em>tuiPopover--top</em>, <em>tuiPopover--bottom</em>, <em>tuiPopover--left</em> and <em>tuiPopover--right</em>.</p>
+<p class="sg-p">You can choose where to position the popover by using the following modifiers; <em>tuiPopover--top</em>, <em>tuiPopover--bottom</em>, <em>tuiPopover--left</em> and <em>tuiPopover--right</em>.</p>
+
 
 
 
@@ -696,7 +686,7 @@
 
 
 <h2 class="sg-h2">Header and footer</h2>
-<p class="sg-p">Dedicated header and footer sections are available by adding a <em>tuiPopover__header</em> and/or a <em>tuiPopover__footer</em> element. Note that a <em>tuiPopover__header__title</em> element is also available for titles.</p>
+<p class="sg-p">You can add a header and a footer space to a popover by adding a <em>tuiPopover__header</em> and/or a <em>tuiPopover__footer</em> element. You can also include a title in a header by using a <em>tuiPopover__header__title</em> element.</p>
 
 
 
@@ -766,8 +756,9 @@
 </article>
 
 
-<h2 class="sg-h2">With a form</h2>
-<p class="sg-p">It is possible to add <a href="/components/forms">forms</a> to the popover. No changes are required to the <a href="/components/forms">documented markup</a>.</p>
+<h2 class="sg-h2">Including a form</h2>
+<p class="sg-p">You can add <a href="/components/forms">forms</a> to popovers. No changes are required to the <a href="/components/forms">documented markup</a>.</p>
+
 
 
 
@@ -976,7 +967,7 @@
 
 
 <h2 class="sg-h2">Script</h2>
-<p class="sg-p">The following is an example of how to initialize a Popover at different positions. Note that, by default, the popover will close when an action occurs outside of the popover. It is also possible to use the same popover container for different triggers.</p>
+<p class="sg-p">The following example shows how to initialize a popover at different positions. You can use the same popover container for different triggers.</p>
 
 
 
@@ -1109,7 +1100,7 @@ new tuik.Popover(document.querySelector(&#39;.js-target-right&#39;), document.qu
 </article>
 
 
-<p class="sg-p">It is also possible to use the same popover container (<em>tuiPopover</em>) for different triggers.</p>
+<p class="sg-p">You can use the same popover container (<em>tuiPopover</em>) for different triggers.</p>
 
 
 
@@ -1184,7 +1175,7 @@ new tuik.Popover(document.querySelector(&#39;.js-starget-right&#39;), document.q
 
 
 
-<p class="sg-p">It is also possible to force the popover to be dismissed (not closed on document click) by setting the <em>closeOnRoot</em> option to <em>false</em>.</p>
+<p class="sg-p">You can force that a popover be actively dismissed (not closed on document click) by setting the <em>closeOnRoot</em> option to <em>false</em>.</p>
 
 
 
@@ -1240,6 +1231,74 @@ var closePopover = function(e) { popover.close(); }
 &lt;div class=&#34;js-popover-no-root tuiPopover&#34;&gt;
    &lt;div class=&#34;tuiPopover__content&#34;&gt;
      &lt;div&gt;[CONTENT]&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;footer class=&#34;tuiPopover__footer&#34;&gt;
+     &lt;button class=&#34;tuiButton&#34; onclick=&#34;closePopover()&#34;&gt;Close&lt;/button&gt;
+   &lt;/footer&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+<p class="sg-p">You can specify an <em>onClose</em> handler to be notified when the popover was closed.</p>
+
+
+
+<article class="sg-example sg-popover-display-wbutton" id="popoverOnClose">
+    
+    <section class="sg-example__render">
+        <button class="js-target-on-close tuiButton">On Close</button>
+
+<div class="js-popover-on-close tuiPopover">
+   <div class="tuiPopover__content">
+     <div>[LOOK IN YOUR CONSOLE]</div>
+   </div>
+   <footer class="tuiPopover__footer">
+     <button class="tuiButton" onclick="closePopover()">Close</button>
+   </footer>
+   <div class="tuiPopover__pointer"></div>
+</div>
+
+    </section>
+    <script class="js-rendered-script">var popover = new tuik.Popover(document.querySelector('.js-target-on-close'), document.querySelector('.js-popover-on-close'), { onClose: function() { console.log('closed!'); } } );
+</script>
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;button class=&#34;js-target-on-close tuiButton&#34;&gt;On Close&lt;/button&gt;
+
+&lt;div class=&#34;js-popover-on-close tuiPopover&#34;&gt;
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+     &lt;div&gt;[LOOK IN YOUR CONSOLE]&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;footer class=&#34;tuiPopover__footer&#34;&gt;
+     &lt;button class=&#34;tuiButton&#34; onclick=&#34;closePopover()&#34;&gt;Close&lt;/button&gt;
+   &lt;/footer&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">var popover = new tuik.Popover(document.querySelector(&#39;.js-target-on-close&#39;), document.querySelector(&#39;.js-popover-on-close&#39;), { onClose: function() { console.log(&#39;closed!&#39;); } } );
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;button class=&#34;js-target-on-close tuiButton&#34;&gt;On Close&lt;/button&gt;
+
+&lt;div class=&#34;js-popover-on-close tuiPopover&#34;&gt;
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+     &lt;div&gt;[LOOK IN YOUR CONSOLE]&lt;/div&gt;
    &lt;/div&gt;
    &lt;footer class=&#34;tuiPopover__footer&#34;&gt;
      &lt;button class=&#34;tuiButton&#34; onclick=&#34;closePopover()&#34;&gt;Close&lt;/button&gt;
