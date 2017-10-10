@@ -1349,6 +1349,18 @@
   border-right: 0.28571429em solid transparent;
   border-left: 0.28571429em solid transparent;
 }
+.tuiDropdown--nocaret .tuiButton--dropdown::after {
+  position: relative;
+  top: 0;
+  display: none;
+  width: 0;
+  height: 0;
+  margin-left: 0;
+  content: "";
+  border-top: none;
+  border-right: none;
+  border-left: none;
+}
 /*------------------------------------*\
   #DROPDOWNS
 \*------------------------------------*/
@@ -1750,6 +1762,12 @@
           justify-content: flex-end;
 }
 /*------------------------------------*\
+  #TABSCONTENT
+\*------------------------------------*/
+.tuiTabsContent {
+  margin-top: 1em;
+}
+/*------------------------------------*\
   #VARIABLES
 \*------------------------------------*/
 /*------------------------------------*\
@@ -1951,4 +1969,102 @@
 .tuiPopover .tuiForm__footer {
   padding-left: 0;
   padding-right: 0;
+}
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+/*------------------------------------*\
+  #AVATARS
+\*------------------------------------*/
+.tuiAvatar {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  color: #ffffff;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #336177;
+  border: 0;
+  padding: 0;
+}
+.tuiAvatar__glyph {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  outline: 0;
+  color: #ffffff;
+}
+.tuiAvatar--square {
+  border-radius: 0.21428571em;
+}
+.tuiAvatar img {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+}
+/*------------------------------------*\
+  #AVATAR SIZES (Default 24x24 pixels)
+\*------------------------------------*/
+.tuiAvatar,
+.tuiAvatar .tuiAvatar__glyph {
+  width: 2.0000000em;
+  height: 2.0000000em;
+}
+.tuiAvatar {
+  font-size: 0.85714286em;
+}
+.tuiAvatar--xsmall,
+.tuiAvatar--xsmall .tuiAvatar__glyph {
+  width: 2.0000000em;
+  height: 2.0000000em;
+}
+.tuiAvatar--xsmall {
+  font-size: 0.57142857em;
+}
+.tuiAvatar--small,
+.tuiAvatar--small .tuiAvatar__glyph {
+  width: 2.0000000em;
+  height: 2.0000000em;
+}
+.tuiAvatar--small {
+  font-size: 1.1428571em;
+}
+.tuiAvatar--medium,
+.tuiAvatar--medium .tuiAvatar__glyph {
+  width: 2.0000000em;
+  height: 2.0000000em;
+}
+.tuiAvatar--medium {
+  font-size: 1.7142857em;
+}
+.tuiAvatar--large,
+.tuiAvatar--large .tuiAvatar__glyph {
+  width: 2.0000000em;
+  height: 2.0000000em;
+}
+.tuiAvatar--large {
+  font-size: 2.2857143em;
+}
+.tuiAvatar--xlarge,
+.tuiAvatar--xlarge .tuiAvatar__glyph {
+  width: 2.0000000em;
+  height: 2.0000000em;
+}
+.tuiAvatar--xlarge {
+  font-size: 3.4285714em;
+}
+/*------------------------------------*\
+  #COMPOSITION ICONS
+\*------------------------------------*/
+.tuiAvatar [class^="tuiIcon-"] {
+  font-size: 1em;
 }

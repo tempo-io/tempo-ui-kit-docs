@@ -5,10 +5,10 @@
     <base href="/"></base>
     <title>
         
-            Tags - Tempo UI Kit and Guidelines
+            Avatars - Tempo UI Kit and Guidelines
         
     </title>
-    <meta name="description" content="Tags" />
+    <meta name="description" content="Avatars" />
 
     <!-- TUIK -->
     <link rel="stylesheet" href="dist/css/tuik-typography.css?v=f5ea46dc-8473-031c-d9aa-c20730d03358" type="text/css">
@@ -435,7 +435,7 @@
                 <ol class="sg-nav__links">
                     
                       
-                        <li class="sg-nav__links__element ">
+                        <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                             <a href="components/avatars">Avatars</a>
                             
                                 <em class="sg-draft-notification">Draft</em>
@@ -534,7 +534,7 @@
                       
                     
                       
-                        <li class="sg-nav__links__element sg-nav__links__element-is-active ">
+                        <li class="sg-nav__links__element ">
                             <a href="components/tags">Tags</a>
                             
                         </li>
@@ -571,25 +571,72 @@
         
     
 
-    Tags
+    Avatars
+    
+        <em class="sg-draft-notification">Draft</em>
+
     
 
     
 </h1>
 
 
-<p class="sg-p">Tags are used to describe content with related keywords, and optionally to describe a link to resources providing more information related to that keyword. Tags can be dissmissed.</p>
+<p class="sg-p">Avatars can be used to represent people or objects. It supports both images and icons. Avatars are available in 6 sizes and are displayed inside a borderless, circular mask with preset background color by default.</p>
 
-<h3 class="sg-h3">Default</h3>
-<p class="sg-p">An element with base class <em>tuiTag</em>.</p>
+<h2 class="sg-h2">Default</h2>
+<p class="sg-p">The default avatar, <em>tuiAvatar</em>, includes content container, <em>tuiAvatar__content</em>, where images or icons can be added. The default size, when no modifier added, is set to <strong>24x24</strong> pixels. To change avatar size simply add modifier class to the tuiAvatar element.</p>
+
+<h3 class="sg-h3">Size modifiers</h3>
+<ul>
+    <li><p class="sg-p"><em>tuiAvatar--xsmall</em> - <strong>16x16</strong> pixels</p></li>
+    <li><p class="sg-p"><em>tuiAvatar--small</em> - <strong>32x32</strong> pixels</p></li>
+    <li><p class="sg-p"><em>tuiAvatar--medium</em> - <strong>48x48</strong> pixels</p></li>
+    <li><p class="sg-p"><em>tuiAvatar--large</em> - <strong>64x64</strong> pixels</p></li>
+    <li><p class="sg-p"><em>tuiAvatar--xlarge</em> - <strong>96x96</strong> pixels</p></li>
+</ul>
+
+<h2 class="sg-h2">Images</h2>
+<p class="sg-p">It is possible to use an image <em>&lt;img&gt;</em> element as an avatar.</p>
 
 
 
-<article class="sg-example" id="tagDefault">
+<article class="sg-example sg-avatar-display" id="avatarsImage">
     
     <section class="sg-example__render">
-        <span class="tuiTag">
-   <span class="tuiTag__label" title="Default tag">Default tag</span>
+        <span class="tuiAvatar tuiAvatar--xsmall">
+   <span class="tuiAvatar__glyph">
+       <img src="assets/images/avatar-face-default.jpeg">
+   </span>
+</span>
+
+<span class="tuiAvatar">
+   <span class="tuiAvatar__glyph">
+       <img src="assets/images/avatar-face-default.jpeg">
+   </span>
+</span>
+
+<span class="tuiAvatar tuiAvatar--small">
+   <span class="tuiAvatar__glyph">
+       <img src="assets/images/avatar-face-default.jpeg">
+   </span>
+</span>
+
+<span class="tuiAvatar tuiAvatar--medium">
+   <span class="tuiAvatar__glyph">
+       <img src="assets/images/avatar-face-default.jpeg">
+   </span>
+</span>
+
+<span class="tuiAvatar tuiAvatar--large">
+   <span class="tuiAvatar__glyph">
+       <img src="assets/images/avatar-face-default.jpeg">
+   </span>
+</span>
+
+<span class="tuiAvatar tuiAvatar--xlarge">
+   <span class="tuiAvatar__glyph">
+       <img src="assets/images/avatar-face-default.jpeg">
+   </span>
 </span>
 
     </section>
@@ -599,8 +646,40 @@
     
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Default tag&lt;/span&gt;
+          <pre><code class="html">&lt;span class=&#34;tuiAvatar tuiAvatar--xsmall&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--small&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--medium&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--large&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--xlarge&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
 &lt;/span&gt;
 </code></pre>
       </section>
@@ -608,8 +687,40 @@
 
       
         <textarea class="sg-example__source__raw" style="display:none">
-          &lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Default tag&lt;/span&gt;
+          &lt;span class=&#34;tuiAvatar tuiAvatar--xsmall&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--small&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--medium&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--large&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--xlarge&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
 &lt;/span&gt;
 
         </textarea>
@@ -618,21 +729,48 @@
 </article>
 
 
-<h3 class="sg-h3">Dismissable (Font Icon)</h3>
-<p class="sg-p">If the tag can be dismissed, add a <em>tuiIcon-action-delete</em> class to a <em>button</em> or <em>anchor</em> element.</p>
+<h2 class="sg-h2">Text</h2>
+<p class="sg-p">Text can also be set as avatar content.</p>
 
 
 
-<article class="sg-example" id="tagDismissable">
+<article class="sg-example sg-avatar-display" id="avatarsText">
     
     <section class="sg-example__render">
-        <span class="tuiTag">
-   <span class="tuiTag__label" title="Default tag">Dismiss button</span>
-   <button class="tuiIcon-action-delete" href="#"></button>
+        <span class="tuiAvatar tuiAvatar--xsmall">
+   <span class="tuiAvatar__glyph">
+       <abbr>PA</abbr>
+   </span>
 </span>
-<span class="tuiTag">
-   <span class="tuiTag__label" title="Default tag">Dismiss anchor</span>
-   <a class="tuiIcon-action-delete" href="#"></a>
+
+<span class="tuiAvatar">
+   <span class="tuiAvatar__glyph">
+       <abbr>PA</abbr>
+   </span>
+</span>
+
+<span class="tuiAvatar tuiAvatar--small">
+   <span class="tuiAvatar__glyph">
+       <abbr>PA</abbr>
+   </span>
+</span>
+
+<span class="tuiAvatar tuiAvatar--medium">
+   <span class="tuiAvatar__glyph">
+       <abbr>PA</abbr>
+   </span>
+</span>
+
+<span class="tuiAvatar tuiAvatar--large">
+   <span class="tuiAvatar__glyph">
+       <abbr>PA</abbr>
+   </span>
+</span>
+
+<span class="tuiAvatar tuiAvatar--xlarge">
+   <span class="tuiAvatar__glyph">
+       <abbr>PA</abbr>
+   </span>
 </span>
 
     </section>
@@ -642,13 +780,40 @@
     
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Dismiss button&lt;/span&gt;
-   &lt;button class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/button&gt;
+          <pre><code class="html">&lt;span class=&#34;tuiAvatar tuiAvatar--xsmall&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;abbr&gt;PA&lt;/abbr&gt;
+   &lt;/span&gt;
 &lt;/span&gt;
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Dismiss anchor&lt;/span&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
+
+&lt;span class=&#34;tuiAvatar&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;abbr&gt;PA&lt;/abbr&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--small&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;abbr&gt;PA&lt;/abbr&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--medium&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;abbr&gt;PA&lt;/abbr&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--large&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;abbr&gt;PA&lt;/abbr&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--xlarge&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;abbr&gt;PA&lt;/abbr&gt;
+   &lt;/span&gt;
 &lt;/span&gt;
 </code></pre>
       </section>
@@ -656,13 +821,40 @@
 
       
         <textarea class="sg-example__source__raw" style="display:none">
-          &lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Dismiss button&lt;/span&gt;
-   &lt;button class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/button&gt;
+          &lt;span class=&#34;tuiAvatar tuiAvatar--xsmall&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;abbr&gt;PA&lt;/abbr&gt;
+   &lt;/span&gt;
 &lt;/span&gt;
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Dismiss anchor&lt;/span&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
+
+&lt;span class=&#34;tuiAvatar&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;abbr&gt;PA&lt;/abbr&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--small&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;abbr&gt;PA&lt;/abbr&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--medium&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;abbr&gt;PA&lt;/abbr&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--large&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;abbr&gt;PA&lt;/abbr&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--xlarge&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;abbr&gt;PA&lt;/abbr&gt;
+   &lt;/span&gt;
 &lt;/span&gt;
 
         </textarea>
@@ -671,19 +863,48 @@
 </article>
 
 
-<h3 class="sg-h3">Dismissable (SVG Icon)</h3>
-<p class="sg-p">You can also use an <a href="foundations/icons#tocsvgstorerefexample">SVG</a> icon for the dismiss button, but we strongly recommend using the <em>tuiIcon-action-delete</em> font icon as described previously.</p>
+<h2 class="sg-h2">Icons</h2>
+<p class="sg-p"><a href="foundations/icons-reference">Icons</a> can also be used as content.</p>
 
 
 
-<article class="sg-example" id="tagSvgIcon">
+<article class="sg-example sg-avatar-display" id="avatarsIcon">
     
     <section class="sg-example__render">
-        <span class="tuiTag">
-   <span class="tuiTag__label" title="Default tag">Default tag</span>
-   <svg class="tuiIcon">
-       <use xlink:href="#action-delete"/>
-   </svg>
+        <span class="tuiAvatar tuiAvatar--xsmall">
+   <span class="tuiAvatar__glyph">
+       <i class="tuiIcon-action-add"></i>
+   </span>
+</span>
+
+<span class="tuiAvatar">
+   <span class="tuiAvatar__glyph">
+       <i class="tuiIcon-action-add"></i>
+   </span>
+</span>
+
+<span class="tuiAvatar tuiAvatar--small">
+   <span class="tuiAvatar__glyph">
+       <i class="tuiIcon-action-add"></i>
+   </span>
+</span>
+
+<span class="tuiAvatar tuiAvatar--medium">
+   <span class="tuiAvatar__glyph">
+       <i class="tuiIcon-action-add"></i>
+   </span>
+</span>
+
+<span class="tuiAvatar tuiAvatar--large">
+   <span class="tuiAvatar__glyph">
+       <i class="tuiIcon-action-add"></i>
+   </span>
+</span>
+
+<span class="tuiAvatar tuiAvatar--xlarge">
+   <span class="tuiAvatar__glyph">
+       <i class="tuiIcon-action-add"></i>
+   </span>
 </span>
 
     </section>
@@ -693,11 +914,40 @@
     
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Default tag&lt;/span&gt;
-   &lt;svg class=&#34;tuiIcon&#34;&gt;
-       &lt;use xlink:href=&#34;#action-delete&#34; /&gt;
-   &lt;/svg&gt;
+          <pre><code class="html">&lt;span class=&#34;tuiAvatar tuiAvatar--xsmall&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--small&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--medium&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--large&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--xlarge&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt;
+   &lt;/span&gt;
 &lt;/span&gt;
 </code></pre>
       </section>
@@ -705,11 +955,40 @@
 
       
         <textarea class="sg-example__source__raw" style="display:none">
-          &lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Default tag&lt;/span&gt;
-   &lt;svg class=&#34;tuiIcon&#34;&gt;
-       &lt;use xlink:href=&#34;#action-delete&#34; /&gt;
-   &lt;/svg&gt;
+          &lt;span class=&#34;tuiAvatar tuiAvatar--xsmall&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--small&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--medium&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--large&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--xlarge&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt;
+   &lt;/span&gt;
 &lt;/span&gt;
 
         </textarea>
@@ -718,24 +997,49 @@
 </article>
 
 
-<h3 class="sg-h3">Links</h3>
-<p class="sg-p">A tag label can also be used as an anchor.</p>
+<h2 class="sg-h2">Square</h2>
+<p class="sg-p">By adding the class <em>tuiAvatar--square</em> to the tuiAvatar element the avatars gets a square shape instead of circular.</p>
 
 
 
-<article class="sg-example" id="tagLink">
+
+<article class="sg-example sg-avatar-display" id="avatarsSquare">
     
     <section class="sg-example__render">
-        <span class="tuiTag">
-   <a class="tuiTag__label" title="Default tag" href="#">Default link</a>
+        <span class="tuiAvatar tuiAvatar--square tuiAvatar--xsmall">
+   <span class="tuiAvatar__glyph">
+       <img src="assets/images/avatar-face-default.jpeg">
+   </span>
 </span>
-<span class="tuiTag">
-   <a class="tuiTag__label" title="Default tag" href="#">Link dismiss button</a>
-   <button class="tuiIcon-action-delete" href="#"></button>
+
+<span class="tuiAvatar tuiAvatar--square">
+   <span class="tuiAvatar__glyph">
+       <i class="tuiIcon-action-add"></i>
+   </span>
 </span>
-<span class="tuiTag">
-   <a class="tuiTag__label" title="Default tag" href="#">Link dismiss anchor</a>
-   <a class="tuiIcon-action-delete" href="#"></a>
+
+<span class="tuiAvatar tuiAvatar--square tuiAvatar--small">
+   <span class="tuiAvatar__glyph">
+       <img src="assets/images/avatar-face-default.jpeg">
+   </span>
+</span>
+
+<span class="tuiAvatar tuiAvatar--square tuiAvatar--medium">
+   <span class="tuiAvatar__glyph">
+       <abbr>PA</abbr>
+   </span>
+</span>
+
+<span class="tuiAvatar tuiAvatar--square tuiAvatar--large">
+   <span class="tuiAvatar__glyph">
+       <img src="assets/images/avatar-face-default.jpeg">
+   </span>
+</span>
+
+<span class="tuiAvatar tuiAvatar--square tuiAvatar--xlarge">
+   <span class="tuiAvatar__glyph">
+       <img src="assets/images/avatar-face-default.jpeg">
+   </span>
 </span>
 
     </section>
@@ -745,16 +1049,40 @@
     
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34; href=&#34;#&#34;&gt;Default link&lt;/a&gt;
+          <pre><code class="html">&lt;span class=&#34;tuiAvatar tuiAvatar--square tuiAvatar--xsmall&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
 &lt;/span&gt;
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34; href=&#34;#&#34;&gt;Link dismiss button&lt;/a&gt;
-   &lt;button class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/button&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--square&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt;
+   &lt;/span&gt;
 &lt;/span&gt;
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34; href=&#34;#&#34;&gt;Link dismiss anchor&lt;/a&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--square tuiAvatar--small&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--square tuiAvatar--medium&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;abbr&gt;PA&lt;/abbr&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--square tuiAvatar--large&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--square tuiAvatar--xlarge&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
 &lt;/span&gt;
 </code></pre>
       </section>
@@ -762,16 +1090,40 @@
 
       
         <textarea class="sg-example__source__raw" style="display:none">
-          &lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34; href=&#34;#&#34;&gt;Default link&lt;/a&gt;
+          &lt;span class=&#34;tuiAvatar tuiAvatar--square tuiAvatar--xsmall&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
 &lt;/span&gt;
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34; href=&#34;#&#34;&gt;Link dismiss button&lt;/a&gt;
-   &lt;button class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/button&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--square&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;i class=&#34;tuiIcon-action-add&#34;&gt;&lt;/i&gt;
+   &lt;/span&gt;
 &lt;/span&gt;
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34; href=&#34;#&#34;&gt;Link dismiss anchor&lt;/a&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--square tuiAvatar--small&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--square tuiAvatar--medium&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;abbr&gt;PA&lt;/abbr&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--square tuiAvatar--large&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
+&lt;/span&gt;
+
+&lt;span class=&#34;tuiAvatar tuiAvatar--square tuiAvatar--xlarge&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
 &lt;/span&gt;
 
         </textarea>
@@ -780,26 +1132,27 @@
 </article>
 
 
-<h3 class="sg-h3">Long label</h3>
-<p class="sg-p">Tags with long label text receive the ellipsis property with a maximum width of 100px.</p>
-<div class="sg-callout">
-    <h4 class="sg-callout__title">Title attribute</h4>
-    <p class="sg-callout__p">It is essential that you use the title attribute to ensure the user can read the full label of the tag when it is being truncated.</p>
-</div>
+
+<h2 class="sg-h2">Semantics</h2>
+<p class="sg-p">Anchors and buttons can also be used as <em>tuiAvatar</em>.</p>
 
 
 
-<article class="sg-example" id="tagLongLabel">
+
+<article class="sg-example sg-avatar-display" id="avatarsSemantics">
     
     <section class="sg-example__render">
-        <span class="tuiTag">
-   <span class="tuiTag__label" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.</span>
-   <a class="tuiIcon-action-delete" href="#"></a>
-</span>
-<span class="tuiTag">
-   <a class="tuiTag__label" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare." href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.</a>
-   <a class="tuiIcon-action-delete" href="#"></a>
-</span>
+        <a href="#" class="tuiAvatar tuiAvatar--square tuiAvatar--large">
+   <span class="tuiAvatar__glyph">
+       <abbr>PA</abbr>
+   </span>
+</a>
+
+<button class="tuiAvatar tuiAvatar--square tuiAvatar--large">
+   <span class="tuiAvatar__glyph">
+       <img src="assets/images/avatar-face-default.jpeg">
+   </span>
+</button>
 
     </section>
     
@@ -808,28 +1161,34 @@
     
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&lt;/span&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
-&lt;/span&gt;
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&#34; href=&#34;#&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&lt;/a&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
-&lt;/span&gt;
+          <pre><code class="html">&lt;a href=&#34;#&#34;  class=&#34;tuiAvatar tuiAvatar--square tuiAvatar--large&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;abbr&gt;PA&lt;/abbr&gt;
+   &lt;/span&gt;
+&lt;/a&gt;
+
+&lt;button  class=&#34;tuiAvatar tuiAvatar--square tuiAvatar--large&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
+&lt;/button&gt;
 </code></pre>
       </section>
       
 
       
         <textarea class="sg-example__source__raw" style="display:none">
-          &lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&lt;/span&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
-&lt;/span&gt;
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&#34; href=&#34;#&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&lt;/a&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
-&lt;/span&gt;
+          &lt;a href=&#34;#&#34;  class=&#34;tuiAvatar tuiAvatar--square tuiAvatar--large&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;abbr&gt;PA&lt;/abbr&gt;
+   &lt;/span&gt;
+&lt;/a&gt;
+
+&lt;button  class=&#34;tuiAvatar tuiAvatar--square tuiAvatar--large&#34;&gt;
+   &lt;span class=&#34;tuiAvatar__glyph&#34;&gt;
+       &lt;img src=&#34;assets/images/avatar-face-default.jpeg&#34; /&gt;
+   &lt;/span&gt;
+&lt;/button&gt;
 
         </textarea>
       

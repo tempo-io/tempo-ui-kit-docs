@@ -122,5 +122,17 @@
     "popoverBorderRadius": "0.21428571em",
     "popoverBorderColor": "#d9d9d9",
     "popoverBackgroundColor": "white",
-    "popoverPadding": "0.71428571em"
+    "popoverPadding": "0.71428571em",
+    "avatarDefaultSize": "2.0000000em",
+    "avatarXsmallSize": "2.0000000em",
+    "avatarSmallSize": "2.0000000em",
+    "avatarMediumSize": "2.0000000em",
+    "avatarLargeSize": "2.0000000em",
+    "avatarXlargeSize": "2.0000000em",
+    "avatarIconDefaultSize": "0.85714286em",
+    "avatarIconXsmallSize": "0.57142857em",
+    "avatarIconSmallSize": "1.1428571em",
+    "avatarIconMediumSize": "1.7142857em",
+    "avatarIconLargeSize": "2.2857143em",
+    "avatarIconXlargeSize": "3.4285714em"
 }

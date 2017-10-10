@@ -5,10 +5,10 @@
     <base href="/"></base>
     <title>
         
-            Tags - Tempo UI Kit and Guidelines
+            Button Groups Primary - Tempo UI Kit and Guidelines
         
     </title>
-    <meta name="description" content="Tags" />
+    <meta name="description" content="Button groups primary" />
 
     <!-- TUIK -->
     <link rel="stylesheet" href="dist/css/tuik-typography.css?v=f5ea46dc-8473-031c-d9aa-c20730d03358" type="text/css">
@@ -534,7 +534,7 @@
                       
                     
                       
-                        <li class="sg-nav__links__element sg-nav__links__element-is-active ">
+                        <li class="sg-nav__links__element ">
                             <a href="components/tags">Tags</a>
                             
                         </li>
@@ -571,235 +571,64 @@
         
     
 
-    Tags
+    Button Groups Primary
     
+
+    
+        <em class="sg-eperimental-notification">This page is hidden</em>
 
     
 </h1>
 
 
-<p class="sg-p">Tags are used to describe content with related keywords, and optionally to describe a link to resources providing more information related to that keyword. Tags can be dissmissed.</p>
-
-<h3 class="sg-h3">Default</h3>
-<p class="sg-p">An element with base class <em>tuiTag</em>.</p>
+<h2 class="sg-h2">Default button</h2>
 
 
 
-<article class="sg-example" id="tagDefault">
+<article class="sg-example" id="buttonGroupPrimary">
     
     <section class="sg-example__render">
-        <span class="tuiTag">
-   <span class="tuiTag__label" title="Default tag">Default tag</span>
-</span>
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Default tag&lt;/span&gt;
-&lt;/span&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Default tag&lt;/span&gt;
-&lt;/span&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-<h3 class="sg-h3">Dismissable (Font Icon)</h3>
-<p class="sg-p">If the tag can be dismissed, add a <em>tuiIcon-action-delete</em> class to a <em>button</em> or <em>anchor</em> element.</p>
-
-
-
-<article class="sg-example" id="tagDismissable">
-    
-    <section class="sg-example__render">
-        <span class="tuiTag">
-   <span class="tuiTag__label" title="Default tag">Dismiss button</span>
-   <button class="tuiIcon-action-delete" href="#"></button>
-</span>
-<span class="tuiTag">
-   <span class="tuiTag__label" title="Default tag">Dismiss anchor</span>
-   <a class="tuiIcon-action-delete" href="#"></a>
-</span>
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Dismiss button&lt;/span&gt;
-   &lt;button class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/button&gt;
-&lt;/span&gt;
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Dismiss anchor&lt;/span&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
-&lt;/span&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Dismiss button&lt;/span&gt;
-   &lt;button class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/button&gt;
-&lt;/span&gt;
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Dismiss anchor&lt;/span&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
-&lt;/span&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-<h3 class="sg-h3">Dismissable (SVG Icon)</h3>
-<p class="sg-p">You can also use an <a href="foundations/icons#tocsvgstorerefexample">SVG</a> icon for the dismiss button, but we strongly recommend using the <em>tuiIcon-action-delete</em> font icon as described previously.</p>
-
-
-
-<article class="sg-example" id="tagSvgIcon">
-    
-    <section class="sg-example__render">
-        <span class="tuiTag">
-   <span class="tuiTag__label" title="Default tag">Default tag</span>
-   <svg class="tuiIcon">
-       <use xlink:href="#action-delete"/>
-   </svg>
-</span>
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Default tag&lt;/span&gt;
-   &lt;svg class=&#34;tuiIcon&#34;&gt;
-       &lt;use xlink:href=&#34;#action-delete&#34; /&gt;
-   &lt;/svg&gt;
-&lt;/span&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34;&gt;Default tag&lt;/span&gt;
-   &lt;svg class=&#34;tuiIcon&#34;&gt;
-       &lt;use xlink:href=&#34;#action-delete&#34; /&gt;
-   &lt;/svg&gt;
-&lt;/span&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-<h3 class="sg-h3">Links</h3>
-<p class="sg-p">A tag label can also be used as an anchor.</p>
-
-
-
-<article class="sg-example" id="tagLink">
-    
-    <section class="sg-example__render">
-        <span class="tuiTag">
-   <a class="tuiTag__label" title="Default tag" href="#">Default link</a>
-</span>
-<span class="tuiTag">
-   <a class="tuiTag__label" title="Default tag" href="#">Link dismiss button</a>
-   <button class="tuiIcon-action-delete" href="#"></button>
-</span>
-<span class="tuiTag">
-   <a class="tuiTag__label" title="Default tag" href="#">Link dismiss anchor</a>
-   <a class="tuiIcon-action-delete" href="#"></a>
-</span>
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34; href=&#34;#&#34;&gt;Default link&lt;/a&gt;
-&lt;/span&gt;
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34; href=&#34;#&#34;&gt;Link dismiss button&lt;/a&gt;
-   &lt;button class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/button&gt;
-&lt;/span&gt;
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34; href=&#34;#&#34;&gt;Link dismiss anchor&lt;/a&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
-&lt;/span&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34; href=&#34;#&#34;&gt;Default link&lt;/a&gt;
-&lt;/span&gt;
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34; href=&#34;#&#34;&gt;Link dismiss button&lt;/a&gt;
-   &lt;button class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/button&gt;
-&lt;/span&gt;
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Default tag&#34; href=&#34;#&#34;&gt;Link dismiss anchor&lt;/a&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
-&lt;/span&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-<h3 class="sg-h3">Long label</h3>
-<p class="sg-p">Tags with long label text receive the ellipsis property with a maximum width of 100px.</p>
-<div class="sg-callout">
-    <h4 class="sg-callout__title">Title attribute</h4>
-    <p class="sg-callout__p">It is essential that you use the title attribute to ensure the user can read the full label of the tag when it is being truncated.</p>
+        <div class="tuiButtonGroup">
+   <button class="tuiButton tuiButton--primary">First button</button><button class="tuiButton tuiButton--primary">Mid button</button><button class="tuiButton tuiButton--primary">Last button</button>
 </div>
 
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
 
 
-<article class="sg-example" id="tagLongLabel">
+
+<h3 class="sg-h3">Disabled</h3>
+
+
+
+<article class="sg-example" id="buttonGroupDisabledFirstPrimary">
     
     <section class="sg-example__render">
-        <span class="tuiTag">
-   <span class="tuiTag__label" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.</span>
-   <a class="tuiIcon-action-delete" href="#"></a>
-</span>
-<span class="tuiTag">
-   <a class="tuiTag__label" title="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare." href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.</a>
-   <a class="tuiIcon-action-delete" href="#"></a>
-</span>
+        <div class="tuiButtonGroup">
+   <button class="tuiButton tuiButton--primary" disabled="disabled">Disabled button</button><button class="tuiButton">Mid button</button><button class="tuiButton">Last button</button>
+</div>
 
     </section>
     
@@ -808,28 +637,309 @@
     
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&lt;/span&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
-&lt;/span&gt;
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&#34; href=&#34;#&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&lt;/a&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
-&lt;/span&gt;
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
 </code></pre>
       </section>
       
 
       
         <textarea class="sg-example__source__raw" style="display:none">
-          &lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;span class=&#34;tuiTag__label&#34; title=&#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&lt;/span&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
-&lt;/span&gt;
-&lt;span class=&#34;tuiTag&#34;&gt;
-   &lt;a class=&#34;tuiTag__label&#34; title=&#34;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&#34; href=&#34;#&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras tempor quam non ligula consequat ornare.&lt;/a&gt;
-   &lt;a class=&#34;tuiIcon-action-delete&#34; href=&#34;#&#34;&gt;&lt;/a&gt;
-&lt;/span&gt;
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+
+
+<article class="sg-example" id="buttonGroupDisabledMidPrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <button class="tuiButton">First button</button><button class="tuiButton tuiButton--primary" disabled="disabled">Disabled button</button><button class="tuiButton">Last button</button>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+
+
+<article class="sg-example" id="buttonGroupDisabledLastPrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <button class="tuiButton">First button</button><button class="tuiButton">Mid button</button><button class="tuiButton tuiButton--primary" disabled="disabled">Disabled button</button>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+<h2 class="sg-h2">Active state</h2>
+
+
+
+
+<article class="sg-example" id="buttonGroupFirstActivePrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <button class="tuiButton tuiButton--primary tuiButton-is-active">First button</button><button class="tuiButton">Mid button</button><button class="tuiButton">Last button</button>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+
+
+<article class="sg-example" id="buttonGroupMidActivePrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <button class="tuiButton">First button</button><button class="tuiButton tuiButton--primary tuiButton-is-active">Mid button</button><button class="tuiButton">Last button</button>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+
+
+<article class="sg-example" id="buttonGroupLastActivePrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <button class="tuiButton">First button</button><button class="tuiButton">Mid button</button><button class="tuiButton tuiButton--primary tuiButton-is-active">Last button</button>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;Last button&lt;/button&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+<h2 class="sg-h2">Using anchors</h2>
+
+
+
+<article class="sg-example" id="buttonGroupSemanticsAnchorsFirstActivePrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <a class="tuiButton tuiButton--primary tuiButton-is-active" href="#">First anchor</a><a class="tuiButton" href="#">Mid anchor</a><a class="tuiButton" href="#">Last anchor</a>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+
+
+<article class="sg-example" id="buttonGroupSemanticsAnchorsMidActivePrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <a class="tuiButton" href="#">First anchor</a><a class="tuiButton tuiButton--primary tuiButton-is-active" href="#">Mid anchor</a><a class="tuiButton" href="#">Last anchor</a>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;a class=&#34;tuiButton&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;a class=&#34;tuiButton&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+
+
+<article class="sg-example" id="buttonGroupSemanticsAnchorsLastActivePrimary">
+    
+    <section class="sg-example__render">
+        <div class="tuiButtonGroup">
+   <a class="tuiButton" href="#">First anchor</a><a class="tuiButton" href="#">Mid anchor</a><a class="tuiButton tuiButton--primary tuiButton-is-active" href="#">Last anchor</a>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;a class=&#34;tuiButton&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
+   &lt;a class=&#34;tuiButton&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
+&lt;/div&gt;
 
         </textarea>
       
