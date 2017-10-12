@@ -11,9 +11,9 @@
     <meta name="description" content="Dropdowns" />
 
     <!-- TUIK -->
-    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=f5ea46dc-8473-031c-d9aa-c20730d03358" type="text/css">
-    <link rel="stylesheet" href="dist/css/tuik.css?v=f5ea46dc-8473-031c-d9aa-c20730d03358" type="text/css">
-    <script src="dist/js/tuik.bundle.js?v=f5ea46dc-8473-031c-d9aa-c20730d03358"></script>
+    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=f03d957f-a086-363e-1cdc-5d7b3ee5c199" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css?v=f03d957f-a086-363e-1cdc-5d7b3ee5c199" type="text/css">
+    <script src="dist/js/tuik.bundle.js?v=f03d957f-a086-363e-1cdc-5d7b3ee5c199"></script>
 
     <!-- SG VENDRORS -->
     <link rel="stylesheet" href="vendors/tippy/tippy.css">
@@ -23,8 +23,8 @@
 
     <!-- SG -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=f5ea46dc-8473-031c-d9aa-c20730d03358" type="text/css">
-    <script src="tuikdocs.js?v=f5ea46dc-8473-031c-d9aa-c20730d03358"></script>
+    <link rel="stylesheet" href="css/main.css?v=f03d957f-a086-363e-1cdc-5d7b3ee5c199" type="text/css">
+    <script src="tuikdocs.js?v=f03d957f-a086-363e-1cdc-5d7b3ee5c199"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -937,6 +937,70 @@ new tuik.Dropdown(document.querySelector(&#39;.js-bottom-dropdown&#39;), { place
     
 </article>
 
+
+<h3 class="sg-h3">Silent menu items</h3>
+<p class="sg-p">Silent menu items are items that will not close the menu when clicked. Use <em>tuiDropdown__list__item--silent</em> modifier to make an item silent.</p>
+
+
+
+<article class="sg-example" id="dropdownssilent">
+    
+    <section class="sg-example__render">
+        <div class="tuiDropdown js-silent-dropdown">
+   <button class="tuiButton tuiButton--dropdown">
+     Silent menu item
+   </button>
+   <div class="tuiDropdown__list">
+       <h3 class="tuiDropdown__list__header">Header</h3>
+       <a class="tuiDropdown__list__item" href="#">This is menu item 1</a>
+       <button class="tuiDropdown__list__item tuiDropdown__list__item--silent">This will not close when clicked</button>
+   </div>
+</div>
+
+    </section>
+    <script class="js-rendered-script">new tuik.Dropdown(document.querySelector('.js-silent-dropdown'));
+</script>
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiDropdown js-silent-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;
+     Silent menu item
+   &lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+       &lt;button class=&#34;tuiDropdown__list__item tuiDropdown__list__item--silent&#34;&gt;This will not close when clicked&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Dropdown(document.querySelector(&#39;.js-silent-dropdown&#39;));
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiDropdown js-silent-dropdown&#34;&gt;
+   &lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;
+     Silent menu item
+   &lt;/button&gt;
+   &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+       &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+       &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+       &lt;button class=&#34;tuiDropdown__list__item tuiDropdown__list__item--silent&#34;&gt;This will not close when clicked&lt;/button&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
 
 
 <h3 class="sg-h3">Full width dropdown button <em class="sg-eperimental-notification">Experimental</em></h3>

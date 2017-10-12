@@ -138,6 +138,7 @@ var Dropdown = function () {
     TOGGLE: 'tuiButton--dropdown',
     MENU: 'tuiDropdown__list',
     MENUITEM: 'tuiDropdown__list__item',
+    MENUITEMSILENT: 'tuiDropdown__list__item--silent',
     MENUITEMHEADER: 'tuiDropdown__list__header',
     MENUITEMDIVIDER: 'tuiDropdown__list__divider'
   };
@@ -252,7 +253,7 @@ var Dropdown = function () {
       }
 
       if (e.type !== 'keydown' && Utils.DOM.hasParentWithClass(e.target, ClassNames.DROPDOWN)) {
-        var calledFromKnownUnselectableMenuItem = e.target.classList.contains(ClassNames.MENUITEMHEADER) || e.target.classList.contains(ClassNames.MENUITEMDIVIDER);
+        var calledFromKnownUnselectableMenuItem = e.target.classList.contains(ClassNames.MENUITEMHEADER) || e.target.classList.contains(ClassNames.MENUITEMDIVIDER) || e.target.classList.contains(ClassNames.MENUITEMSILENT);
         var calledFromDisabledMenuItem = e.target.getAttribute('disabled');
 
         if (calledFromKnownUnselectableMenuItem || calledFromDisabledMenuItem) {
