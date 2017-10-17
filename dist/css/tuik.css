@@ -658,6 +658,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.tuiIcon-option-ellipse:before {
+  content: "\e91b";
+}
 .tuiIcon-action-search:before {
   content: "\e919";
 }
@@ -666,7 +669,6 @@
 }
 .tuiIcon-information-questionmark:before {
   content: "\e918";
-  color: #555;
 }
 .tuiIcon-information-warning:before {
   content: "\e915";
@@ -1545,11 +1547,12 @@
   -webkit-box-align: start;
   -webkit-align-items: flex-start;
           align-items: flex-start;
+  position: relative;
   margin: 0 1.0714286em 1.0714286em 0;
-  -webkit-box-shadow: 0 0.14285714em 0.14285714em 0 rgba(0, 0, 0, 0.05);
-          box-shadow: 0 0.14285714em 0.14285714em 0 rgba(0, 0, 0, 0.05);
-  border: 1px solid #d9d9d9;
-  border-radius: 0.21428571em;
+  -webkit-box-shadow: 0 0.071428571em 0.14285714em 0 rgba(0, 0, 0, 0.06);
+          box-shadow: 0 0.071428571em 0.14285714em 0 rgba(0, 0, 0, 0.06);
+  border: 1px solid #d4dee1;
+  border-radius: 0.14285714em;
   background-color: #ffffff;
   width: 12.142857em;
   height: 16.071429em;
@@ -1581,11 +1584,10 @@
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0 0.71428571em;
-  position: relative;
   width: 100%;
-  height: 3.2857143em;
-  min-height: 3.2857143em;
-  border-top: 1px solid #d9d9d9;
+  height: 4.2142857em;
+  min-height: 4.2142857em;
+  border-top: 1px solid #d4dee1;
   overflow: hidden;
   -webkit-box-ordinal-group: 3;
   -webkit-order: 2;
@@ -1612,10 +1614,9 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 0.71428571em;
+  font-size: 1.0000000em;
   margin: 0;
-  width: calc(80%);
-  /* stylelint-disable-line */
+  width: 100%;
 }
 .tuiCard__header__title {
   color: #333333;
@@ -1624,21 +1625,29 @@
 .tuiCard__header__subtitle {
   color: #999999;
 }
-.tuiCard__header__action,
-.tuiCard__header__actions {
+.tuiCard__header__action {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+          justify-content: center;
+  width: 3.1428571em;
+  height: 1.7142857em;
   text-decoration: none;
-  text-align: center;
   position: absolute;
-  top: calc(30%);
-  /* stylelint-disable-line */
-  right: 0.71428571em;
-  width: 1.4285714em;
-  height: 1.1428571em;
-  font-size: 1.1428571em;
-  color: #555555;
+  top: 0.35714286em;
+  right: 0.35714286em;
 }
-.tuiCard__header__action::after {
-  content: "⁝";
+.tuiCard__header__action.tuiButton {
+  margin-right: 0;
+}
+.tuiCard__header__action [class^="tuiIcon-"],
+.tuiCard__header__action [class*=" tuiIcon-"] {
+  font-size: 1.5em;
 }
 .tuiCard--fluid {
   width: auto;
@@ -1662,11 +1671,12 @@
 .tuiCard--primary .tuiCard__header__title {
   text-align: center;
   font-size: 1.0000000em;
+  margin-top: 0.85714286em;
 }
 .tuiCard--primary .tuiCard__header__title,
 .tuiCard--primary .tuiCard__header__subtitle {
   width: 100%;
-  color: white;
+  color: #ffffff;
 }
 .tuiCard--reversed {
   -webkit-box-orient: vertical;
@@ -1676,13 +1686,53 @@
 }
 .tuiCard--reversed .tuiCard__header {
   border-top: none;
-  border-bottom: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d4dee1;
+}
+.tuiCard--reversed .tuiCard__header__action {
+  top: unset;
+  bottom: 0.35714286em;
 }
 .tuiCard--reversed.tuiCard--primary .tuiCard__header {
   border-bottom: none;
   -webkit-box-pack: end;
   -webkit-justify-content: flex-end;
           justify-content: flex-end;
+}
+.tuiCard--reversed.tuiCard--primary .tuiCard__header__title,
+.tuiCard--reversed.tuiCard--primary .tuiCard__header__subtitle {
+  width: 100%;
+}
+.tuiCard--wrap::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.71428571em;
+  content: "";
+  background-color: #ffffff;
+}
+.tuiCard--wrap .tuiCard__header {
+  padding: 0.85714286em 0.71428571em 0;
+  display: block;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: inherit;
+          flex-direction: inherit;
+  -webkit-box-align: inherit;
+  -webkit-align-items: inherit;
+          align-items: inherit;
+  -webkit-box-pack: inherit;
+  -webkit-justify-content: inherit;
+          justify-content: inherit;
+}
+.tuiCard--wrap .tuiCard__header__title,
+.tuiCard--wrap .tuiCard__header__subtitle {
+  text-overflow: inherit;
+  white-space: inherit;
+}
+.tuiCard--wrap .tuiCard__header__title {
+  max-height: 2.4285714em;
+  overflow: hidden;
 }
 /*------------------------------------*\
   #ANIMATIONS
@@ -1696,8 +1746,8 @@
   -webkit-transform: translateY(-0.14285714em);
        -o-transform: translateY(-0.14285714em);
           transform: translateY(-0.14285714em);
-  -webkit-box-shadow: 0 0.28571429em 0.57142857em 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0.28571429em 0.57142857em 0 rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0 0.071428571em 1.0714286em 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.071428571em 1.0714286em 0 rgba(0, 0, 0, 0.2);
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
