@@ -11,9 +11,9 @@
     <meta name="description" content="Cards" />
 
     <!-- TUIK -->
-    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=282b9639-1b26-24ef-1605-63ff6ce54f71" type="text/css">
-    <link rel="stylesheet" href="dist/css/tuik.css?v=282b9639-1b26-24ef-1605-63ff6ce54f71" type="text/css">
-    <script src="dist/js/tuik.bundle.js?v=282b9639-1b26-24ef-1605-63ff6ce54f71"></script>
+    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=15d86b29-e426-a98c-bb8c-20e6ab47f853" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css?v=15d86b29-e426-a98c-bb8c-20e6ab47f853" type="text/css">
+    <script src="dist/js/tuik.bundle.js?v=15d86b29-e426-a98c-bb8c-20e6ab47f853"></script>
 
     <!-- SG VENDRORS -->
     <link rel="stylesheet" href="vendors/tippy/tippy.css">
@@ -23,8 +23,8 @@
 
     <!-- SG -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=282b9639-1b26-24ef-1605-63ff6ce54f71" type="text/css">
-    <script src="tuikdocs.js?v=282b9639-1b26-24ef-1605-63ff6ce54f71"></script>
+    <link rel="stylesheet" href="css/main.css?v=15d86b29-e426-a98c-bb8c-20e6ab47f853" type="text/css">
+    <script src="tuikdocs.js?v=15d86b29-e426-a98c-bb8c-20e6ab47f853"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -817,6 +817,105 @@
                &lt;/g&gt;
            &lt;/g&gt;
        &lt;/svg&gt;
+   &lt;/section&gt;
+&lt;/article&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+<h3 class="sg-h3">Dropdown as action</h3>
+<p class="sg-p">It is possible to use a dropdown instead of a button for the action.</p>
+
+
+
+
+<article class="sg-example sg-card-display" id="cardsDropdown">
+    
+    <section class="sg-example__render">
+        <article class="tuiCard">
+   <header class="tuiCard__header">
+     <h1 class="tuiCard__header__title" title="Long title...">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices lacus vel leo consectetur pretium. </h1>
+     <h2 class="tuiCard__header__subtitle" title="Long title...">Phasellus enim ante, euismod eu accumsan id, ullamcorper ac lacus.</h2>
+     <div class="tuiCard__header__action tuiDropdown tuiDropdown--nocaret js-dropdown">
+       <button class="tuiButton tuiButton--dropdown tuiButton--subtle">
+         <i class="tuiIcon-option-ellipse"></i>
+       </button>
+       <div class="tuiDropdown__list">
+         <h3 class="tuiDropdown__list__header">Header</h3>
+         <a class="tuiDropdown__list__item" href="#">This is menu item 1</a>
+         <a class="tuiDropdown__list__item" href="#">This is menu item 2</a>
+         <hr class="tuiDropdown__list__divider">
+         <button class="tuiDropdown__list__item tuiDropdown__list__item--silent">Button menu item</button>
+         <button class="tuiDropdown__list__item" disabled="disabled">Disabled button</button>
+       </div>
+   </div></header>
+   <section class="tuiCard__content">
+       Click the ellipse!
+   </section>
+</article>
+
+    </section>
+    <script class="js-rendered-script">new tuik.Dropdown(document.querySelector('.js-dropdown'));
+</script>
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;article class=&#34;tuiCard&#34;&gt;
+   &lt;header class=&#34;tuiCard__header&#34;&gt;
+     &lt;h1 class=&#34;tuiCard__header__title&#34; title=&#34;Long title...&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices lacus vel leo consectetur pretium. &lt;/h1&gt;
+     &lt;h2 class=&#34;tuiCard__header__subtitle&#34; title=&#34;Long title...&#34;&gt;Phasellus enim ante, euismod eu accumsan id, ullamcorper ac lacus.&lt;/h2&gt;
+     &lt;div class=&#34;tuiCard__header__action tuiDropdown tuiDropdown--nocaret js-dropdown&#34;&gt;
+       &lt;button class=&#34;tuiButton tuiButton--dropdown tuiButton--subtle&#34;&gt;
+         &lt;i class=&#34;tuiIcon-option-ellipse&#34;&gt;&lt;/i&gt;
+       &lt;/button&gt;
+       &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+         &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+         &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+         &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+         &lt;hr class=&#34;tuiDropdown__list__divider&#34;&gt;&lt;/hr&gt;
+         &lt;button class=&#34;tuiDropdown__list__item tuiDropdown__list__item--silent&#34;&gt;Button menu item&lt;/button&gt;
+         &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+       &lt;/div&gt;
+   &lt;/header&gt;
+   &lt;section class=&#34;tuiCard__content&#34;&gt;
+       Click the ellipse!
+   &lt;/section&gt;
+&lt;/article&gt;
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Dropdown(document.querySelector(&#39;.js-dropdown&#39;));
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;article class=&#34;tuiCard&#34;&gt;
+   &lt;header class=&#34;tuiCard__header&#34;&gt;
+     &lt;h1 class=&#34;tuiCard__header__title&#34; title=&#34;Long title...&#34;&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ultrices lacus vel leo consectetur pretium. &lt;/h1&gt;
+     &lt;h2 class=&#34;tuiCard__header__subtitle&#34; title=&#34;Long title...&#34;&gt;Phasellus enim ante, euismod eu accumsan id, ullamcorper ac lacus.&lt;/h2&gt;
+     &lt;div class=&#34;tuiCard__header__action tuiDropdown tuiDropdown--nocaret js-dropdown&#34;&gt;
+       &lt;button class=&#34;tuiButton tuiButton--dropdown tuiButton--subtle&#34;&gt;
+         &lt;i class=&#34;tuiIcon-option-ellipse&#34;&gt;&lt;/i&gt;
+       &lt;/button&gt;
+       &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+         &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
+         &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+         &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+         &lt;hr class=&#34;tuiDropdown__list__divider&#34;&gt;&lt;/hr&gt;
+         &lt;button class=&#34;tuiDropdown__list__item tuiDropdown__list__item--silent&#34;&gt;Button menu item&lt;/button&gt;
+         &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
+       &lt;/div&gt;
+   &lt;/header&gt;
+   &lt;section class=&#34;tuiCard__content&#34;&gt;
+       Click the ellipse!
    &lt;/section&gt;
 &lt;/article&gt;
 

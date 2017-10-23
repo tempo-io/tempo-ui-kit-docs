@@ -1642,8 +1642,15 @@
   top: 0.35714286em;
   right: 0.35714286em;
 }
-.tuiCard__header__action.tuiButton {
+.tuiCard__header__action.tuiButton,
+.tuiCard__header__action.tuiDropdown {
   margin-right: 0;
+}
+.tuiCard__header__action.tuiButton,
+.tuiCard__header__action.tuiDropdown .tuiButton {
+  height: 1.7142857em;
+  width: 3.1428571em;
+  padding: unset;
 }
 .tuiCard__header__action [class^="tuiIcon-"],
 .tuiCard__header__action [class*=" tuiIcon-"] {
