@@ -235,6 +235,7 @@
 .tuiButtonGroup {
   display: inline-block;
   margin: 0 0.35714286em 0 0;
+  white-space: nowrap;
 }
 .tuiButtonGroup .tuiButton {
   margin: 0;
@@ -1436,7 +1437,7 @@
   display: block;
   padding: 0.42857143em 1.4285714em;
   margin: 0;
-  cursor: pointer;
+  cursor: default;
   border: none;
   background-color: transparent;
   color: #333333;
@@ -1465,7 +1466,7 @@
           box-sizing: border-box;
   display: block;
   padding: 0.42857143em 1.4285714em;
-  cursor: pointer;
+  cursor: default;
   border: none;
   background-color: transparent;
   color: #333333;
@@ -1489,7 +1490,7 @@
   display: block;
   padding: 0.42857143em 1.4285714em;
   margin: 0;
-  cursor: pointer;
+  cursor: default;
   background-color: transparent;
   color: #333333;
   width: 100%;
@@ -1741,6 +1742,9 @@
   max-height: 2.4285714em;
   overflow: hidden;
 }
+.tuiCard--dropdown-open {
+  z-index: 5000;
+}
 /*------------------------------------*\
   #ANIMATIONS
 \*------------------------------------*/
@@ -1748,6 +1752,7 @@
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  position: relative;
 }
 .tuiCard.tuiPop:hover {
   -webkit-transform: translateY(-0.14285714em);
@@ -1758,6 +1763,7 @@
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
+  z-index: 1;
 }
 /*------------------------------------*\
   #VARIABLES
@@ -1823,6 +1829,9 @@
 \*------------------------------------*/
 .tuiTabsContent {
   margin-top: 1em;
+}
+.tuiTabsContent__panel--hidden {
+  display: none;
 }
 /*------------------------------------*\
   #VARIABLES

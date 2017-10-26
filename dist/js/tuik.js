@@ -145,6 +145,8 @@ var Dropdown = function () {
 
   var defaultOptions = {
     placement: 'bottom-start',
+    onOpened: null,
+    onClosed: null,
     popper: {
       modifiers: {
         flip: {
@@ -170,6 +172,10 @@ var Dropdown = function () {
       this._popper = null;
       this._options = Object.assign({}, defaultOptions, options);
 
+      // keeping refs
+      this._element.onOpened = this._options.onOpened;
+      this._element.onClosed = this._options.onClosed;
+
       this._addEventListeners();
       return this;
     }
@@ -194,6 +200,10 @@ var Dropdown = function () {
 
         this._element.classList.add(ClassNames.ISOPEN);
         this._toggleElement.focus();
+
+        if (this._element.onOpened) {
+          this._element.onOpened.call();
+        }
       } else {
         Dropdown.close(this._element);
       }
@@ -205,8 +215,11 @@ var Dropdown = function () {
       dropdownElement.classList.remove(ClassNames.ISOPEN);
 
       if (eventHandlers.isBound(dropdownElement, 'tuikDropdownClose', 'handlers')) {
-        // console.log('bound');
         eventHandlers.triggerCustom(dropdownElement, 'tuikDropdownClose');
+      }
+
+      if (dropdownElement.onClosed) {
+        dropdownElement.onClosed.call();
       }
     };
 
@@ -637,9 +650,157 @@ var Popover = function () {
   return Popover;
 }(Popper);
 
+var Tab = function () {
+  var eventHandlers = new Utils.EventHandlers('tuiTab');
+  var DATA_ATTR_TARGET = 'data-tui-tab-target';
+  var classNames = {
+    ACTIVE_TAB_LINK: 'tuiTabs__item__link-is-active',
+    TAB_CONTENT_PANEL: 'tuiTabsContent__panel',
+    HIDDEN_TAB_CONTENT_PANEL: 'tuiTabsContent__panel--hidden'
+  };
+
+  var Tab = function () {
+    // TODO: NICE TO HAVE -> allow selectors by testing on element type.
+    function Tab(tabsElement, tabsContentElement) {
+      classCallCheck(this, Tab);
+
+
+      this._tabsElement = tabsElement;
+      this._tabsContentElement = tabsContentElement;
+      this._tabs = this._getTabs();
+
+      this._initialize();
+
+      return this;
+    }
+
+    /* public */
+    /* static */
+
+    Tab.handleTabClick = function handleTabClick(e) {
+      if (!e) {
+        return;
+      }
+
+      e.preventDefault();
+      e.currentTarget.showTabContent();
+    };
+
+    /* private */
+
+    Tab.prototype._getTabs = function _getTabs() {
+      var _this = this;
+
+      var tabs = [];
+      var linkElements = this._tabsElement.querySelectorAll('.tuiTabs__item__link');
+
+      var tabContentId = void 0;
+      var contentElement = void 0;
+
+      linkElements.forEach(function (linkElement) {
+        tabContentId = _this._getTabContentId(linkElement);
+        if (!tabContentId) {
+          return;
+        }
+
+        contentElement = _this._tabsContentElement.querySelector('#' + tabContentId);
+        if (!contentElement) {
+          return;
+        }
+
+        tabs.push({
+          contentId: tabContentId,
+          linkElement: linkElement,
+          contentElement: contentElement
+        });
+      });
+
+      return tabs;
+    };
+
+    Tab.prototype._getTabContentId = function _getTabContentId(tabElement) {
+      var id = null;
+
+      if (tabElement.getAttribute('href')) {
+        id = tabElement.getAttribute('href');
+      } else if (tabElement.getAttribute(DATA_ATTR_TARGET)) {
+        id = tabElement.getAttribute(DATA_ATTR_TARGET);
+      }
+
+      if (id && id[0] === '#') {
+        id = id.substring(1);
+      }
+
+      return id;
+    };
+
+    Tab.prototype._updateTabState = function _updateTabState(tab, clicked) {
+      var isActive = tab.linkElement.classList.contains(classNames.ACTIVE_TAB_LINK);
+
+      if (isActive || clicked) {
+        tab.linkElement.classList.add(classNames.ACTIVE_TAB_LINK);
+        tab.contentElement.classList.remove(classNames.HIDDEN_TAB_CONTENT_PANEL);
+      } else {
+        tab.linkElement.classList.remove(classNames.ACTIVE_TAB_LINK);
+        tab.contentElement.classList.add(classNames.HIDDEN_TAB_CONTENT_PANEL);
+      }
+
+      return isActive;
+    };
+
+    Tab.prototype._initialize = function _initialize() {
+      var _this2 = this;
+
+      var oneActive = false;
+
+      this._tabs.forEach(function (tab) {
+        if (_this2._updateTabState(tab)) {
+          oneActive = true;
+        }
+        _this2._injectTabHandler(tab);
+        _this2._addEventListener(tab);
+      });
+
+      if (!oneActive) {
+        this._tabs[0].showTabContent();
+      }
+    };
+
+    Tab.prototype._injectTabHandler = function _injectTabHandler(tab) {
+      var self = this;
+
+      var showTabContent = function showTabContent() {
+        var activeTab = self._tabsElement.querySelector('.' + classNames.ACTIVE_TAB_LINK);
+        if (activeTab) {
+          activeTab.classList.remove(classNames.ACTIVE_TAB_LINK);
+        }
+
+        var visibleContent = self._tabsContentElement.querySelector('.' + classNames.TAB_CONTENT_PANEL + ':not(.' + classNames.HIDDEN_TAB_CONTENT_PANEL + ')');
+        if (visibleContent) {
+          visibleContent.classList.add(classNames.HIDDEN_TAB_CONTENT_PANEL);
+        }
+
+        self._updateTabState(tab, true);
+      };
+
+      tab.showTabContent = showTabContent;
+      tab.linkElement.showTabContent = showTabContent;
+    };
+
+    Tab.prototype._addEventListener = function _addEventListener(tab) {
+      eventHandlers.add(tab.linkElement, 'click', Tab.handleTabClick, 'handlers');
+    };
+
+    return Tab;
+  }();
+
+  return Tab;
+}();
+
 exports.Polyfills = Polyfills;
 exports.Utils = Utils;
 exports.Dropdown = Dropdown;
+exports.Tab = Tab;
 exports.Popover = Popover;
 
 return exports;

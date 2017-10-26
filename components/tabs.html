@@ -11,9 +11,9 @@
     <meta name="description" content="Tabs" />
 
     <!-- TUIK -->
-    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=15d86b29-e426-a98c-bb8c-20e6ab47f853" type="text/css">
-    <link rel="stylesheet" href="dist/css/tuik.css?v=15d86b29-e426-a98c-bb8c-20e6ab47f853" type="text/css">
-    <script src="dist/js/tuik.bundle.js?v=15d86b29-e426-a98c-bb8c-20e6ab47f853"></script>
+    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=f8abd5e5-3748-0361-98ed-83bc3bf7a9b4" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css?v=f8abd5e5-3748-0361-98ed-83bc3bf7a9b4" type="text/css">
+    <script src="dist/js/tuik.bundle.js?v=f8abd5e5-3748-0361-98ed-83bc3bf7a9b4"></script>
 
     <!-- SG VENDRORS -->
     <link rel="stylesheet" href="vendors/tippy/tippy.css">
@@ -23,8 +23,8 @@
 
     <!-- SG -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=15d86b29-e426-a98c-bb8c-20e6ab47f853" type="text/css">
-    <script src="tuikdocs.js?v=15d86b29-e426-a98c-bb8c-20e6ab47f853"></script>
+    <link rel="stylesheet" href="css/main.css?v=f8abd5e5-3748-0361-98ed-83bc3bf7a9b4" type="text/css">
+    <script src="tuikdocs.js?v=f8abd5e5-3748-0361-98ed-83bc3bf7a9b4"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -860,6 +860,317 @@
 &lt;/ul&gt;
 &lt;div class=&#34;tuiTabsContent&#34;&gt;
  &lt;span&gt;[CONTENT]&lt;/span&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+<h2 class="sg-h2">Script</h2>
+<p class="sg-p">Tab should have an <em>href</em> targeting a container node in the DOM. Use <em>tuiTabs__item__link-is-active</em> to default the active tab.</p>
+
+
+
+<article class="sg-example" id="tabsScript">
+    
+    <section class="sg-example__render">
+        <ul class="tuiTabs js-tab">
+   <li class="tuiTabs__item">
+      <a class="tuiTabs__item__link" href="#js-tab-content-1">Tab1</a>
+   </li>
+   <li class="tuiTabs__item">
+      <a class="tuiTabs__item__link tuiTabs__item__link-is-active" href="#js-tab-content-2">Tab2</a>
+   </li>
+</ul>
+<div class="tuiTabsContent js-tab-content">
+ <span class="tuiTabsContent__panel" id="js-tab-content-1">[CONTENT 1]</span>
+ <span class="tuiTabsContent__panel" id="js-tab-content-2">[CONTENT 2]</span>
+</div>
+
+    </section>
+    <script class="js-rendered-script">new tuik.Tab(document.querySelector('.js-tab'), document.querySelector('.js-tab-content'));
+</script>
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;ul class=&#34;tuiTabs js-tab&#34;&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a class=&#34;tuiTabs__item__link&#34; href=&#34;#js-tab-content-1&#34;&gt;Tab1&lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a class=&#34;tuiTabs__item__link tuiTabs__item__link-is-active&#34; href=&#34;#js-tab-content-2&#34;&gt;Tab2&lt;/a&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;tuiTabsContent js-tab-content&#34;&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-1&#34;&gt;[CONTENT 1]&lt;/span&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-2&#34;&gt;[CONTENT 2]&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Tab(document.querySelector(&#39;.js-tab&#39;), document.querySelector(&#39;.js-tab-content&#39;));
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;ul class=&#34;tuiTabs js-tab&#34;&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a class=&#34;tuiTabs__item__link&#34; href=&#34;#js-tab-content-1&#34;&gt;Tab1&lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a class=&#34;tuiTabs__item__link tuiTabs__item__link-is-active&#34; href=&#34;#js-tab-content-2&#34;&gt;Tab2&lt;/a&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;tuiTabsContent js-tab-content&#34;&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-1&#34;&gt;[CONTENT 1]&lt;/span&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-2&#34;&gt;[CONTENT 2]&lt;/span&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+<h3 class="sg-h3">Using buttons</h3>
+<p class="sg-p">Buttons can be used as <em>tuiTabs__item__link</em>. When using buttons, the <em>data-tui-tab-target</em> is used instead of the <em>href</em>.</p>
+
+
+
+
+<article class="sg-example" id="tabsScriptButtons">
+    
+    <section class="sg-example__render">
+        <ul class="tuiTabs js-tab-buttons">
+   <li class="tuiTabs__item">
+      <button class="tuiTabs__item__link tuiTabs__item__link-is-active" data-tui-tab-target="js-tab-content-1">Tab1</button>
+   </li>
+   <li class="tuiTabs__item">
+      <button class="tuiTabs__item__link" data-tui-tab-target="js-tab-content-2">Tab2</button>
+   </li>
+   <li class="tuiTabs__item">
+      <button class="tuiTabs__item__link" data-tui-tab-target="js-tab-content-3" disabled="disabled">Disabled tab</button>
+   </li>
+</ul>
+<div class="tuiTabsContent js-tab-content-buttons">
+ <span class="tuiTabsContent__panel" id="js-tab-content-1">[CONTENT 1]</span>
+ <span class="tuiTabsContent__panel" id="js-tab-content-2">[CONTENT 2]</span>
+ <span class="tuiTabsContent__panel" id="js-tab-content-3">[CONTENT 3]</span>
+</div>
+
+    </section>
+    <script class="js-rendered-script">new tuik.Tab(document.querySelector('.js-tab-buttons'), document.querySelector('.js-tab-content-buttons'));
+</script>
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;ul class=&#34;tuiTabs js-tab-buttons&#34;&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link tuiTabs__item__link-is-active&#34; data-tui-tab-target=&#34;js-tab-content-1&#34;&gt;Tab1&lt;/button&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link&#34; data-tui-tab-target=&#34;js-tab-content-2&#34;&gt;Tab2&lt;/button&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link&#34; data-tui-tab-target=&#34;js-tab-content-3&#34; disabled=&#34;disabled&#34;&gt;Disabled tab&lt;/button&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;tuiTabsContent js-tab-content-buttons&#34;&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-1&#34;&gt;[CONTENT 1]&lt;/span&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-2&#34;&gt;[CONTENT 2]&lt;/span&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-3&#34;&gt;[CONTENT 3]&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Tab(document.querySelector(&#39;.js-tab-buttons&#39;), document.querySelector(&#39;.js-tab-content-buttons&#39;));
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;ul class=&#34;tuiTabs js-tab-buttons&#34;&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link tuiTabs__item__link-is-active&#34; data-tui-tab-target=&#34;js-tab-content-1&#34;&gt;Tab1&lt;/button&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link&#34; data-tui-tab-target=&#34;js-tab-content-2&#34;&gt;Tab2&lt;/button&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;button class=&#34;tuiTabs__item__link&#34; data-tui-tab-target=&#34;js-tab-content-3&#34; disabled=&#34;disabled&#34;&gt;Disabled tab&lt;/button&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;tuiTabsContent js-tab-content-buttons&#34;&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-1&#34;&gt;[CONTENT 1]&lt;/span&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-2&#34;&gt;[CONTENT 2]&lt;/span&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-3&#34;&gt;[CONTENT 3]&lt;/span&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+<h3 class="sg-h3">No active tab</h3>
+<p class="sg-p">If no <em>tuiTabs__item__link-is-active</em> is found, the first tab is set as active.</p>
+
+
+
+<article class="sg-example" id="tabsScriptNoActive">
+    
+    <section class="sg-example__render">
+        <ul class="tuiTabs js-tab-no-active">
+   <li class="tuiTabs__item">
+      <a class="tuiTabs__item__link" href="#js-tab-content-1">Tab1</a>
+   </li>
+   <li class="tuiTabs__item">
+      <a class="tuiTabs__item__link" href="#js-tab-content-2">Tab2</a>
+   </li>
+</ul>
+<div class="tuiTabsContent js-tab-content-no-active">
+ <span class="tuiTabsContent__panel" id="js-tab-content-1">[CONTENT 1]</span>
+ <span class="tuiTabsContent__panel" id="js-tab-content-2">[CONTENT 2]</span>
+</div>
+
+    </section>
+    <script class="js-rendered-script">new tuik.Tab(document.querySelector('.js-tab-no-active'), document.querySelector('.js-tab-content-no-active'));
+</script>
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;ul class=&#34;tuiTabs js-tab-no-active&#34;&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a class=&#34;tuiTabs__item__link&#34; href=&#34;#js-tab-content-1&#34;&gt;Tab1&lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a class=&#34;tuiTabs__item__link&#34; href=&#34;#js-tab-content-2&#34;&gt;Tab2&lt;/a&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;tuiTabsContent js-tab-content-no-active&#34;&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-1&#34;&gt;[CONTENT 1]&lt;/span&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-2&#34;&gt;[CONTENT 2]&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Tab(document.querySelector(&#39;.js-tab-no-active&#39;), document.querySelector(&#39;.js-tab-content-no-active&#39;));
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;ul class=&#34;tuiTabs js-tab-no-active&#34;&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a class=&#34;tuiTabs__item__link&#34; href=&#34;#js-tab-content-1&#34;&gt;Tab1&lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a class=&#34;tuiTabs__item__link&#34; href=&#34;#js-tab-content-2&#34;&gt;Tab2&lt;/a&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;tuiTabsContent js-tab-content-no-active&#34;&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-1&#34;&gt;[CONTENT 1]&lt;/span&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-2&#34;&gt;[CONTENT 2]&lt;/span&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+<h3 class="sg-h3">Programatically</h3>
+<p class="sg-p">It is possible to programatically set a tab as active by calling <em>showTabContent()</em>.</p>
+
+
+
+<article class="sg-example" id="tabsScriptProg">
+    
+    <section class="sg-example__render">
+        <ul class="tuiTabs js-tab-prog">
+   <li class="tuiTabs__item">
+      <a class="tuiTabs__item__link" href="#js-tab-content-1">Tab1</a>
+   </li>
+   <li class="tuiTabs__item">
+      <a class="tuiTabs__item__link" href="#js-tab-content-2">Tab2</a>
+   </li>
+   <li class="tuiTabs__item">
+      <a class="tuiTabs__item__link" href="#js-tab-content-3">Tab3</a>
+   </li>
+</ul>
+<div class="tuiTabsContent js-tab-content-prog">
+ <span class="tuiTabsContent__panel" id="js-tab-content-1">[CONTENT 1]</span>
+ <span class="tuiTabsContent__panel" id="js-tab-content-2">[CONTENT 2]</span>
+ <span class="tuiTabsContent__panel" id="js-tab-content-3">[CONTENT 3]</span>
+</div>
+
+    </section>
+    <script class="js-rendered-script">var tabs = new tuik.Tab(document.querySelector('.js-tab-prog'), document.querySelector('.js-tab-content-prog'));
+tabs._tabs[2].showTabContent();
+</script>
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;ul class=&#34;tuiTabs js-tab-prog&#34;&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a class=&#34;tuiTabs__item__link&#34; href=&#34;#js-tab-content-1&#34;&gt;Tab1&lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a class=&#34;tuiTabs__item__link&#34; href=&#34;#js-tab-content-2&#34;&gt;Tab2&lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a class=&#34;tuiTabs__item__link&#34; href=&#34;#js-tab-content-3&#34;&gt;Tab3&lt;/a&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;tuiTabsContent js-tab-content-prog&#34;&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-1&#34;&gt;[CONTENT 1]&lt;/span&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-2&#34;&gt;[CONTENT 2]&lt;/span&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-3&#34;&gt;[CONTENT 3]&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">var tabs = new tuik.Tab(document.querySelector(&#39;.js-tab-prog&#39;), document.querySelector(&#39;.js-tab-content-prog&#39;));
+tabs._tabs[2].showTabContent();
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;ul class=&#34;tuiTabs js-tab-prog&#34;&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a class=&#34;tuiTabs__item__link&#34; href=&#34;#js-tab-content-1&#34;&gt;Tab1&lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a class=&#34;tuiTabs__item__link&#34; href=&#34;#js-tab-content-2&#34;&gt;Tab2&lt;/a&gt;
+   &lt;/li&gt;
+   &lt;li class=&#34;tuiTabs__item&#34;&gt;
+      &lt;a class=&#34;tuiTabs__item__link&#34; href=&#34;#js-tab-content-3&#34;&gt;Tab3&lt;/a&gt;
+   &lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;tuiTabsContent js-tab-content-prog&#34;&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-1&#34;&gt;[CONTENT 1]&lt;/span&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-2&#34;&gt;[CONTENT 2]&lt;/span&gt;
+ &lt;span class=&#34;tuiTabsContent__panel&#34; id=&#34;js-tab-content-3&#34;&gt;[CONTENT 3]&lt;/span&gt;
 &lt;/div&gt;
 
         </textarea>

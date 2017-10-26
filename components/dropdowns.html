@@ -11,9 +11,9 @@
     <meta name="description" content="Dropdowns" />
 
     <!-- TUIK -->
-    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=15d86b29-e426-a98c-bb8c-20e6ab47f853" type="text/css">
-    <link rel="stylesheet" href="dist/css/tuik.css?v=15d86b29-e426-a98c-bb8c-20e6ab47f853" type="text/css">
-    <script src="dist/js/tuik.bundle.js?v=15d86b29-e426-a98c-bb8c-20e6ab47f853"></script>
+    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=f8abd5e5-3748-0361-98ed-83bc3bf7a9b4" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css?v=f8abd5e5-3748-0361-98ed-83bc3bf7a9b4" type="text/css">
+    <script src="dist/js/tuik.bundle.js?v=f8abd5e5-3748-0361-98ed-83bc3bf7a9b4"></script>
 
     <!-- SG VENDRORS -->
     <link rel="stylesheet" href="vendors/tippy/tippy.css">
@@ -23,8 +23,8 @@
 
     <!-- SG -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=15d86b29-e426-a98c-bb8c-20e6ab47f853" type="text/css">
-    <script src="tuikdocs.js?v=15d86b29-e426-a98c-bb8c-20e6ab47f853"></script>
+    <link rel="stylesheet" href="css/main.css?v=f8abd5e5-3748-0361-98ed-83bc3bf7a9b4" type="text/css">
+    <script src="tuikdocs.js?v=f8abd5e5-3748-0361-98ed-83bc3bf7a9b4"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -954,6 +954,10 @@ new tuik.Dropdown(document.querySelector(&#39;.js-bottom-dropdown&#39;), { place
 
 <h3 class="sg-h3">Silent menu items</h3>
 <p class="sg-p">Silent menu items are items that will not close the menu when clicked. Use <em>tuiDropdown__list__item--silent</em> modifier to make an item silent.</p>
+<div class="sg-callout">
+    <h4 class="sg-callout__title">Radio and Checkboxes</h4>
+    <p class="sg-callout__p">Since it's the input that will raise the click event you will need to set the tuiDropdown__list__item--silent class on both the label and input element. This is something that will be fixed in the near future.</p>
+</div>
 
 
 
@@ -968,6 +972,9 @@ new tuik.Dropdown(document.querySelector(&#39;.js-bottom-dropdown&#39;), { place
        <h3 class="tuiDropdown__list__header">Header</h3>
        <a class="tuiDropdown__list__item" href="#">This is menu item 1</a>
        <button class="tuiDropdown__list__item tuiDropdown__list__item--silent">This will not close when clicked</button>
+       <hr class="tuiDropdown__list__divider">
+       <label class="tuiDropdown__list__item tuiDropdown__list__item--silent"><input class="tuiDropdown__list__item--silent" type="radio" name="opt" checked="checked"> Option 1</label>
+       <label class="tuiDropdown__list__item tuiDropdown__list__item--silent"><input class="tuiDropdown__list__item--silent" type="radio" name="opt"> Option 2</label>
    </div>
 </div>
 
@@ -987,6 +994,9 @@ new tuik.Dropdown(document.querySelector(&#39;.js-bottom-dropdown&#39;), { place
        &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
        &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
        &lt;button class=&#34;tuiDropdown__list__item tuiDropdown__list__item--silent&#34;&gt;This will not close when clicked&lt;/button&gt;
+       &lt;hr class=&#34;tuiDropdown__list__divider&#34; /&gt;
+       &lt;label class=&#34;tuiDropdown__list__item tuiDropdown__list__item--silent&#34;&gt;&lt;input class=&#34;tuiDropdown__list__item--silent&#34; type=&#34;radio&#34; name=&#34;opt&#34; checked=&#34;checked&#34; /&gt; Option 1&lt;/label&gt;
+       &lt;label class=&#34;tuiDropdown__list__item tuiDropdown__list__item--silent&#34;&gt;&lt;input class=&#34;tuiDropdown__list__item--silent&#34; type=&#34;radio&#34; name=&#34;opt&#34; /&gt; Option 2&lt;/label&gt;
    &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
@@ -1008,6 +1018,9 @@ new tuik.Dropdown(document.querySelector(&#39;.js-bottom-dropdown&#39;), { place
        &lt;h3 class=&#34;tuiDropdown__list__header&#34;&gt;Header&lt;/h3&gt;
        &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
        &lt;button class=&#34;tuiDropdown__list__item tuiDropdown__list__item--silent&#34;&gt;This will not close when clicked&lt;/button&gt;
+       &lt;hr class=&#34;tuiDropdown__list__divider&#34; /&gt;
+       &lt;label class=&#34;tuiDropdown__list__item tuiDropdown__list__item--silent&#34;&gt;&lt;input class=&#34;tuiDropdown__list__item--silent&#34; type=&#34;radio&#34; name=&#34;opt&#34; checked=&#34;checked&#34; /&gt; Option 1&lt;/label&gt;
+       &lt;label class=&#34;tuiDropdown__list__item tuiDropdown__list__item--silent&#34;&gt;&lt;input class=&#34;tuiDropdown__list__item--silent&#34; type=&#34;radio&#34; name=&#34;opt&#34; /&gt; Option 2&lt;/label&gt;
    &lt;/div&gt;
 &lt;/div&gt;
 
