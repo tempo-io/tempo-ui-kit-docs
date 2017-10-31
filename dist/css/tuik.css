@@ -94,9 +94,9 @@
   -webkit-box-shadow: inset 0 0 0 0.07142857em button !important;
           box-shadow: inset 0 0 0 0.07142857em button !important;
   outline: 0 !important;
-  border: 0.07142857em solid #4C9AFF !important;
-  -webkit-box-shadow: 0 0 0 0.07142857em #4C9AFF !important;
-          box-shadow: 0 0 0 0.07142857em #4C9AFF !important;
+  border: 0.07142857em solid #4c9aff !important;
+  -webkit-box-shadow: 0 0 0 0.07142857em #4c9aff !important;
+          box-shadow: 0 0 0 0.07142857em #4c9aff !important;
 }
 .tuiButton:hover,
 .tuiButton:active,
@@ -105,9 +105,9 @@
   text-decoration: none;
 }
 .tuiButton[disabled] {
-  background-color: #F1F2F4;
-  border-color: #F1F2F4;
-  color: #BABABA;
+  background-color: #f1f2f4;
+  border-color: #f1f2f4;
+  color: #bababa;
   cursor: not-allowed;
 }
 /*------------------------------------*\
@@ -134,18 +134,18 @@
 }
 .tuiButton--primary {
   -webkit-font-smoothing: antialiased !important;
-  background-color: #0073EC;
-  border-color: #0073EC;
+  background-color: #0073ec;
+  border-color: #0073ec;
   color: white;
   font-weight: 700;
 }
 .tuiButton--primary:hover {
-  background-color: #0099F2;
-  border-color: #0099F2;
+  background-color: #0099f2;
+  border-color: #0099f2;
 }
 .tuiButton--primary:active {
-  background-color: #0058E1;
-  border-color: #0058E1;
+  background-color: #0058e1;
+  border-color: #0058e1;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -154,9 +154,9 @@
   -webkit-box-shadow: inset 0 0 0 0.07142857em buttonDark !important;
           box-shadow: inset 0 0 0 0.07142857em buttonDark !important;
   outline: 0 !important;
-  border: 0.07142857em solid #4C9AFF !important;
-  -webkit-box-shadow: inset 0 0 0 0.07142857em white, 0 0 0 0.07142857em #4C9AFF !important;
-          box-shadow: inset 0 0 0 0.07142857em white, 0 0 0 0.07142857em #4C9AFF !important;
+  border: 0.07142857em solid #4c9aff !important;
+  -webkit-box-shadow: inset 0 0 0 0.07142857em white, 0 0 0 0.07142857em #4c9aff !important;
+          box-shadow: inset 0 0 0 0.07142857em white, 0 0 0 0.07142857em #4c9aff !important;
 }
 .tuiButton--primary:hover,
 .tuiButton--primary:active,
@@ -164,24 +164,24 @@
   color: white;
 }
 .tuiButton--primary[disabled] {
-  background-color: #0043D8;
-  border-color: #0043D8;
+  background-color: #0043d8;
+  border-color: #0043d8;
   color: rgba(255, 255, 255, 0.5);
 }
 .tuiButton--caution {
   -webkit-font-smoothing: antialiased !important;
-  background-color: #D53131;
-  border-color: #D53131;
+  background-color: #d53131;
+  border-color: #d53131;
   color: white;
   font-weight: 700;
 }
 .tuiButton--caution:hover {
-  background-color: #E54446;
-  border-color: #E54446;
+  background-color: #e54446;
+  border-color: #e54446;
 }
 .tuiButton--caution:active {
-  background-color: #C01C1E;
-  border-color: #C01C1E;
+  background-color: #c01c1e;
+  border-color: #c01c1e;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -190,9 +190,9 @@
   -webkit-box-shadow: inset 0 0 0 0.07142857em buttonDark !important;
           box-shadow: inset 0 0 0 0.07142857em buttonDark !important;
   outline: 0 !important;
-  border: 0.07142857em solid #4C9AFF !important;
-  -webkit-box-shadow: inset 0 0 0 0.07142857em white, 0 0 0 0.07142857em #4C9AFF !important;
-          box-shadow: inset 0 0 0 0.07142857em white, 0 0 0 0.07142857em #4C9AFF !important;
+  border: 0.07142857em solid #4c9aff !important;
+  -webkit-box-shadow: inset 0 0 0 0.07142857em white, 0 0 0 0.07142857em #4c9aff !important;
+          box-shadow: inset 0 0 0 0.07142857em white, 0 0 0 0.07142857em #4c9aff !important;
 }
 .tuiButton--caution:hover,
 .tuiButton--caution:active,
@@ -200,8 +200,8 @@
   color: white;
 }
 .tuiButton--caution[disabled] {
-  background-color: #AF1012;
-  border-color: #AF1012;
+  background-color: #af1012;
+  border-color: #af1012;
   color: rgba(255, 255, 255, 0.5);
 }
 /*------------------------------------*\
@@ -218,14 +218,14 @@
   border-color: #d9d9d9;
 }
 .tuiButton--primary.tuiButton-is-active {
-  background-color: #0058E1;
-  border-color: #0058E1;
+  background-color: #0058e1;
+  border-color: #0058e1;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 .tuiButton--caution.tuiButton-is-active {
-  background-color: #C01C1E;
-  border-color: #C01C1E;
+  background-color: #c01c1e;
+  border-color: #c01c1e;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -244,18 +244,18 @@
 }
 .tuiButtonGroup .tuiButton:focus {
   outline: 0 !important;
-  border: 0.07142857em solid #4C9AFF !important;
-  -webkit-box-shadow: inset 0 0 0 0.07142857em #4C9AFF !important;
-          box-shadow: inset 0 0 0 0.07142857em #4C9AFF !important;
+  border: 0.07142857em solid #4c9aff !important;
+  -webkit-box-shadow: inset 0 0 0 0.07142857em #4c9aff !important;
+          box-shadow: inset 0 0 0 0.07142857em #4c9aff !important;
 }
 .tuiButtonGroup .tuiButton--primary:focus {
   border: 0.07142857em solid buttonDark !important;
   -webkit-box-shadow: inset 0 0 0 0.07142857em buttonDark !important;
           box-shadow: inset 0 0 0 0.07142857em buttonDark !important;
   outline: 0 !important;
-  border: 0.07142857em solid #4C9AFF !important;
-  -webkit-box-shadow: inset 0 0 0 0.07142857em white, 0 0 0 0.07142857em #4C9AFF !important;
-          box-shadow: inset 0 0 0 0.07142857em white, 0 0 0 0.07142857em #4C9AFF !important;
+  border: 0.07142857em solid #4c9aff !important;
+  -webkit-box-shadow: inset 0 0 0 0.07142857em white, 0 0 0 0.07142857em #4c9aff !important;
+          box-shadow: inset 0 0 0 0.07142857em white, 0 0 0 0.07142857em #4c9aff !important;
 }
 .tuiButtonGroup .tuiButton:first-of-type {
   border-top-left-radius: 0.21428571em;
@@ -313,9 +313,9 @@
 }
 .tuiTextField:focus {
   outline: 0 !important;
-  border: 0.07142857em solid #4C9AFF !important;
-  -webkit-box-shadow: inset 0 0 0 0.07142857em #4C9AFF !important;
-          box-shadow: inset 0 0 0 0.07142857em #4C9AFF !important;
+  border: 0.07142857em solid #4c9aff !important;
+  -webkit-box-shadow: inset 0 0 0 0.07142857em #4c9aff !important;
+          box-shadow: inset 0 0 0 0.07142857em #4c9aff !important;
 }
 .tuiTextField[disabled] {
   cursor: not-allowed;
@@ -517,8 +517,8 @@
   #LOZENGE
 \*------------------------------------*/
 .tuiLozenge {
-  background-color: #0073EC;
-  border: 1px solid #0073EC;
+  background-color: #0073ec;
+  border: 1px solid #0073ec;
   color: #ffffff;
   border-radius: 0.14285714em;
   display: inline-block;
@@ -531,8 +531,8 @@
 }
 .tuiLozenge--subtle {
   background-color: rgba(0, 115, 236, 0.1);
-  border: 1px solid #0073EC;
-  color: #0093F2;
+  border: 1px solid #0073ec;
+  color: #0093f2;
 }
 .tuiLozenge--blue-navy {
   background-color: #12485a;
@@ -595,14 +595,14 @@
   color: #ff9200;
 }
 .tuiLozenge--red {
-  background-color: #D53131;
-  border: 1px solid #D53131;
+  background-color: #d53131;
+  border: 1px solid #d53131;
   color: #ffffff;
 }
 .tuiLozenge--red.tuiLozenge--subtle {
   background-color: rgba(213, 49, 49, 0.1);
-  border: 1px solid #D53131;
-  color: #D53131;
+  border: 1px solid #d53131;
+  color: #d53131;
 }
 .tuiLozenge--pink {
   background-color: #e45dbf;
@@ -634,8 +634,8 @@
 /*------------------------------------*\
   #ICONFONTS
 \*------------------------------------*/
-[class^="tuiIcon-"],
-[class*=" tuiIcon-"] {
+[class^='tuiIcon-'],
+[class*=' tuiIcon-'] {
   font-style: normal;
   font-size: 1.4285714em;
   width: auto;
@@ -645,8 +645,8 @@
 /*------------------------------------*\
   #ICONFONTS-ICOMOON (basically what is provided by icomoon)
 \*------------------------------------*/
-[class^="tuiIcon-"],
-[class*=" tuiIcon-"] {
+[class^='tuiIcon-'],
+[class*=' tuiIcon-'] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'tuiIcons' !important;
   speak: none;
@@ -660,88 +660,88 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .tuiIcon-option-ellipse:before {
-  content: "\e91b";
+  content: '\e91b';
 }
 .tuiIcon-action-search:before {
-  content: "\e919";
+  content: '\e919';
 }
 .tuiIcon-datetime-calendar:before {
-  content: "\e91a";
+  content: '\e91a';
 }
 .tuiIcon-information-questionmark:before {
-  content: "\e918";
+  content: '\e918';
 }
 .tuiIcon-information-warning:before {
-  content: "\e915";
+  content: '\e915';
 }
 .tuiIcon-information-light-bulb:before {
-  content: "\e916";
+  content: '\e916';
 }
 .tuiIcon-information-info:before {
-  content: "\e917";
+  content: '\e917';
 }
 .tuiIcon-misc-pause:before {
-  content: "\e910";
+  content: '\e910';
 }
 .tuiIcon-option-gear-full:before {
-  content: "\e912";
+  content: '\e912';
 }
 .tuiIcon-option-menu:before {
-  content: "\e913";
+  content: '\e913';
 }
 .tuiIcon-option-wrench-full:before {
-  content: "\e914";
+  content: '\e914';
 }
 .tuiIcon-misc-play:before {
-  content: "\e911";
+  content: '\e911';
 }
 .tuiIcon-action-add:before {
-  content: "\e90c";
+  content: '\e90c';
 }
 .tuiIcon-action-check:before {
-  content: "\e90d";
+  content: '\e90d';
 }
 .tuiIcon-action-delete:before {
-  content: "\e90e";
+  content: '\e90e';
 }
 .tuiIcon-action-edit:before {
-  content: "\e90f";
+  content: '\e90f';
 }
 .tuiIcon-arrow-down:before {
-  content: "\e900";
+  content: '\e900';
 }
 .tuiIcon-arrow-left:before {
-  content: "\e901";
+  content: '\e901';
 }
 .tuiIcon-arrow-right:before {
-  content: "\e902";
+  content: '\e902';
 }
 .tuiIcon-arrow-up:before {
-  content: "\e903";
+  content: '\e903';
 }
 .tuiIcon-chevron-down:before {
-  content: "\e904";
+  content: '\e904';
 }
 .tuiIcon-chevron-left:before {
-  content: "\e905";
+  content: '\e905';
 }
 .tuiIcon-chevron-right:before {
-  content: "\e906";
+  content: '\e906';
 }
 .tuiIcon-chevron-up:before {
-  content: "\e907";
+  content: '\e907';
 }
 .tuiIcon-pointer-down:before {
-  content: "\e908";
+  content: '\e908';
 }
 .tuiIcon-pointer-left:before {
-  content: "\e909";
+  content: '\e909';
 }
 .tuiIcon-pointer-right:before {
-  content: "\e90a";
+  content: '\e90a';
 }
 .tuiIcon-pointer-up:before {
-  content: "\e90b";
+  content: '\e90b';
 }
 /*------------------------------------*\
   #BUTTONS
@@ -752,7 +752,7 @@
   fill: #555555;
 }
 .tuiButton[disabled] .tuiIcon {
-  fill: #BABABA;
+  fill: #bababa;
 }
 .tuiButton--primary .tuiIcon {
   fill: white;
@@ -766,8 +766,8 @@
 .tuiButton--caution[disabled] .tuiIcon {
   fill: rgba(255, 255, 255, 0.5);
 }
-.tuiButton [class^="tuiIcon-"],
-.tuiButton [class*=" tuiIcon-"] {
+.tuiButton [class^='tuiIcon-'],
+.tuiButton [class*=' tuiIcon-'] {
   font-size: 0.9em;
 }
 /*------------------------------------*\
@@ -1131,13 +1131,13 @@
   background-color: #ff9200;
 }
 .tuiNotification--error .tuiNotification__icon {
-  background-color: #EF5658;
+  background-color: #ef5658;
 }
 .tuiNotification__icon .tuiIcon {
   fill: white;
 }
-.tuiNotification__icon [class^="tuiIcon-"],
-.tuiNotification__icon [class*=" tuiIcon-"] {
+.tuiNotification__icon [class^='tuiIcon-'],
+.tuiNotification__icon [class*=' tuiIcon-'] {
   color: white;
 }
 .tuiNotification__content {
@@ -1347,7 +1347,7 @@
   width: 0;
   height: 0;
   margin-left: 0.35714286em;
-  content: "";
+  content: '';
   border-top: 0.28571429em solid;
   border-right: 0.28571429em solid transparent;
   border-left: 0.28571429em solid transparent;
@@ -1359,7 +1359,7 @@
   width: 0;
   height: 0;
   margin-left: 0;
-  content: "";
+  content: '';
   border-top: none;
   border-right: none;
   border-left: none;
@@ -1394,7 +1394,7 @@
   left: -0.071428571em;
   width: 0.071428571em;
   height: 1.4285714em;
-  content: "";
+  content: '';
   background-color: #d9d9d9;
 }
 .tuiDropdown--split .tuiButton--dropdown::after {
@@ -1521,12 +1521,12 @@
 /*------------------------------------*\
   #COMPOSITION
 \*------------------------------------*/
-.tuiDropdown__list__item [class^="tuiIcon-"],
-.tuiDropdown__list__item [class*=" tuiIcon-"] {
+.tuiDropdown__list__item [class^='tuiIcon-'],
+.tuiDropdown__list__item [class*=' tuiIcon-'] {
   font-size: 1em;
 }
-.tuiDropdown__list__item[disabled] [class^="tuiIcon-"],
-.tuiDropdown__list__item[disabled] [class*=" tuiIcon-"] {
+.tuiDropdown__list__item[disabled] [class^='tuiIcon-'],
+.tuiDropdown__list__item[disabled] [class*=' tuiIcon-'] {
   color: #c5c5c5;
 }
 /*------------------------------------*\
@@ -1653,8 +1653,8 @@
   width: 3.1428571em;
   padding: unset;
 }
-.tuiCard__header__action [class^="tuiIcon-"],
-.tuiCard__header__action [class*=" tuiIcon-"] {
+.tuiCard__header__action [class^='tuiIcon-'],
+.tuiCard__header__action [class*=' tuiIcon-'] {
   font-size: 1.5em;
 }
 .tuiCard--fluid {
@@ -1716,7 +1716,7 @@
   left: 0;
   width: 100%;
   height: 0.71428571em;
-  content: "";
+  content: '';
   background-color: #ffffff;
 }
 .tuiCard--wrap .tuiCard__header {
@@ -1800,19 +1800,19 @@
 }
 .tuiTabs__item__link:hover {
   cursor: pointer;
-  color: #0058E1;
+  color: #0058e1;
 }
 .tuiTabs__item__link:focus {
   outline: 0 !important;
-  border: 0.07142857em solid #4C9AFF !important;
-  -webkit-box-shadow: inset 0 0 0 0.07142857em #4C9AFF !important;
-          box-shadow: inset 0 0 0 0.07142857em #4C9AFF !important;
+  border: 0.07142857em solid #4c9aff !important;
+  -webkit-box-shadow: inset 0 0 0 0.07142857em #4c9aff !important;
+          box-shadow: inset 0 0 0 0.07142857em #4c9aff !important;
   border-radius: 0.21428571em;
   line-height: 1.5714286em;
 }
 .tuiTabs__item__link-is-active {
-  color: #0058E1;
-  border-bottom-color: #0058E1;
+  color: #0058e1;
+  border-bottom-color: #0058e1;
 }
 .tuiTabs__item__link[disabled],
 .tuiTabs__item__link[disabled]:hover {
@@ -1882,7 +1882,7 @@
   margin-left: -0.57142857em;
 }
 .tuiPopover__pointer::after {
-  content: "";
+  content: '';
   width: 0;
   height: 0;
   border-left: 1.07142857em solid transparent;
@@ -1945,7 +1945,7 @@
   margin-left: -0.57142857em;
 }
 .tuiPopover--top .tuiPopover__pointer::after {
-  content: "";
+  content: '';
   width: 0;
   height: 0;
   border-left: 1.07142857em solid transparent;
@@ -1975,7 +1975,7 @@
   left: -1.14285714em;
 }
 .tuiPopover--right .tuiPopover__pointer::after {
-  content: "";
+  content: '';
   width: 0;
   height: 0;
   border-top: 1.07142857em solid transparent;
@@ -2005,7 +2005,7 @@
   right: -1.14285714em;
 }
 .tuiPopover--left .tuiPopover__pointer::after {
-  content: "";
+  content: '';
   width: 0;
   height: 0;
   border-top: 1.07142857em solid transparent;
@@ -2131,6 +2131,6 @@
 /*------------------------------------*\
   #COMPOSITION ICONS
 \*------------------------------------*/
-.tuiAvatar [class^="tuiIcon-"] {
+.tuiAvatar [class^='tuiIcon-'] {
   font-size: 1em;
 }
