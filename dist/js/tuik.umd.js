@@ -445,6 +445,9 @@ var Popover = function () {
         onClosed: null,
         popper: {
             modifiers: {
+                arrow: {
+                    element: '.tuiPopover__pointer'
+                },
                 flip: {
                     enabled: true
                 }
@@ -466,6 +469,10 @@ var Popover = function () {
             this._targetElement = targetElement;
             this._popoverElement = popoverElement;
             this._options = Object.assign({}, defaultOptions, options);
+
+            var pointerElement = this._popoverElement.querySelector(this._options.popper.modifiers.arrow.element);
+
+            pointerElement.classList.add('tuiPopover__pointer--managed');
 
             // keeping refs
             this._targetElement.tuiRefPopoverElement = popoverElement;

@@ -2021,6 +2021,16 @@
   right: auto;
   left: -1.14285714em;
 }
+.tuiPopover__pointer--managed,
+.tuiPopover--top .tuiPopover__pointer--managed {
+  left: unset;
+  margin-left: unset;
+}
+.tuiPopover--right .tuiPopover__pointer--managed,
+.tuiPopover--left .tuiPopover__pointer--managed {
+  top: unset;
+  margin-top: unset;
+}
 /*------------------------------------*\
   #COMPOSITION
 \*------------------------------------*/
