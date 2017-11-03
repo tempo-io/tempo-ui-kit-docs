@@ -273,6 +273,7 @@
   border-right-color: transparent;
   border-left: 0.071428571em solid #d9d9d9;
 }
+/* stylelint-disable-next-line */
 .tuiButtonGroup .tuiButton[disabled]:first-of-type {
   border-left-color: transparent;
 }
@@ -303,6 +304,9 @@
   color: #999999;
 }
 .tuiTextField:-ms-input-placeholder {
+  color: #999999;
+}
+.tuiTextField::-ms-input-placeholder {
   color: #999999;
 }
 .tuiTextField::placeholder {
@@ -1372,9 +1376,6 @@
   display: inline-block;
   margin: 0 0.35714286em 0 0;
 }
-.tuiDropdown .tuiButton {
-  margin: 0 0 0.14285714em 0;
-}
 .tuiDropdown .tuiIcon {
   margin-right: 0.71428571em;
 }
@@ -1402,8 +1403,8 @@
   display: inline;
   top: 0.75em;
 }
+/* stylelint-disable-next-line */
 .tuiDropdown--split .tuiButton:focus::before {
-  /* stylelint-disable-line */
   background-color: transparent;
 }
 /*------------------------------------*\
@@ -1417,7 +1418,7 @@
   min-width: 14.285714em;
   max-width: 21.428571em;
   padding: 0.71428571em 0;
-  margin: 0;
+  margin: 0.14285714em 0;
   border: 1px solid #d9d9d9;
   border-bottom-left-radius: 0.21428571em;
   border-bottom-right-radius: 0.21428571em;
@@ -1445,6 +1446,18 @@
   text-align: left;
   font-size: 1em;
   text-decoration: none;
+}
+/*
+  Prevent repaint flickering of inputs in Safari
+  caused by :hover background-color change by forcing
+  hardware acceleration via translateZ.
+*/
+/* stylelint-disable */
+.tuiDropdown__list__item input[type='radio'],
+.tuiDropdown__list__item input[type='checkbox'] {
+  /* stylelint-enable */
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
 }
 .tuiDropdown__list__item:hover,
 .tuiDropdown__list__item:focus {
@@ -1722,8 +1735,8 @@
 .tuiCard--wrap .tuiCard__header {
   padding: 0.85714286em 0.71428571em 0;
   display: block;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
+  -webkit-box-orient: inherit;
+  -webkit-box-direction: inherit;
   -webkit-flex-direction: inherit;
           flex-direction: inherit;
   -webkit-box-align: inherit;
