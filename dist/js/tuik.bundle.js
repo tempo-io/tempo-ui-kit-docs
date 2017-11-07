@@ -2721,13 +2721,19 @@ var Dropdown = function () {
                 return;
             }
 
-            var handleKeyRegExp = new RegExp(Utils.KEYCODES.ARROW_UP + '|' + Utils.KEYCODES.ARROW_DOWN + '|' + Utils.KEYCODES.ESCAPE);
+            var element = e.target;
+            var elementIsInput = element.getAttribute && (element.getAttribute('type') === 'radio' || element.getAttribute('type') === 'checkbox');
+
+            var handleKeyRegExp = new RegExp(Utils.KEYCODES.ARROW_UP + '|' + Utils.KEYCODES.ARROW_DOWN + '|' + Utils.KEYCODES.ESCAPE + '|' + Utils.KEYCODES.SPACE);
 
             if (!handleKeyRegExp.test(e.which)) {
                 return;
             }
 
-            e.preventDefault();
+            if (e.which !== Utils.KEYCODES.SPACE || e.which === Utils.KEYCODES.SPACE && !elementIsInput) {
+                e.preventDefault();
+            }
+
             e.stopPropagation();
 
             var dropdownElement = e.currentTarget.parentNode;

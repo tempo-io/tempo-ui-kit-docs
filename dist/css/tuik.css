@@ -432,6 +432,7 @@
   padding-top: 0.50000000em;
   padding-right: 0.71428571em;
   text-align: right;
+  line-height: normal;
 }
 .tuiForm__row--checkbox,
 .tuiForm__row--no-input {
