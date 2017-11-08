@@ -51,6 +51,9 @@
   #footer
 \*------------------------------------*/
 /*------------------------------------*\
+  #header
+\*------------------------------------*/
+/*------------------------------------*\
   #VARIABLES
 \*------------------------------------*/
 /*------------------------------------*\
@@ -443,6 +446,25 @@
 .tuiForm__row--checkbox .tuiForm__col--label,
 .tuiForm__row--no-input .tuiForm__col--label {
   padding-top: 0;
+}
+.tuiForm__header {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
+  padding: 0 1.4285714em 1.5625em 1.4285714em;
+}
+.tuiForm__header__title {
+  font-size: 1.4285714em;
+  font-weight: 400;
+  margin: 0;
+}
+.tuiForm__header .tuiAvatar {
+  margin-right: 0.57142857em;
 }
 .tuiForm__divider {
   -webkit-box-sizing: border-box;
@@ -852,6 +874,9 @@
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+          align-items: center;
   box-pack: justify;
   -webkit-box-pack: justify;
   -webkit-justify-content: space-between;

@@ -78,6 +78,7 @@
     "labelColor": "#999999",
     "formBorderColor": "#d9d9d9",
     "formRowLabelWidth": "22.5%",
+    "formHPadding": "1.4285714em",
     "lozengeBorderRadius": "0.14285714em",
     "lozengeSubtleBkgOpacity": "10%",
     "modalBorderRadius": "0.35714286em",
