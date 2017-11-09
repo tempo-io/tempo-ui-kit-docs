@@ -3095,7 +3095,9 @@ var Popover = function () {
                 e.preventDefault();
                 e.stopPropagation();
 
-                self.toggle();
+                if (!Utils.DOM.hasParentWithClass(e.target, ClassNames.POPOVER)) {
+                    self.toggle();
+                }
             });
         };
 
