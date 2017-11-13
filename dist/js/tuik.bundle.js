@@ -3089,10 +3089,9 @@ var Popover = function () {
             var self = this;
 
             eventHandlers.add(this._targetElement, 'click', function (e) {
-                e.preventDefault();
-                e.stopPropagation();
-
                 if (!Utils.DOM.hasParentWithClass(e.target, ClassNames.POPOVER)) {
+                    e.preventDefault();
+                    e.stopPropagation();
                     self.toggle();
                 }
             });
