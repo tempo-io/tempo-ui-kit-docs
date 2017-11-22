@@ -11,9 +11,9 @@
     <meta name="description" content="Tooltips" />
 
     <!-- TUIK -->
-    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=da77d180-7c2d-073e-8d44-bad26b01f0a4" type="text/css">
-    <link rel="stylesheet" href="dist/css/tuik.css?v=da77d180-7c2d-073e-8d44-bad26b01f0a4" type="text/css">
-    <script src="dist/js/tuik.bundle.js?v=da77d180-7c2d-073e-8d44-bad26b01f0a4"></script>
+    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=b6bfcac7-fc5f-4e9f-5141-a45d2cfd644e" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css?v=b6bfcac7-fc5f-4e9f-5141-a45d2cfd644e" type="text/css">
+    <script src="dist/js/tuik.bundle.js?v=b6bfcac7-fc5f-4e9f-5141-a45d2cfd644e"></script>
 
     <!-- SG VENDRORS -->
     <link rel="stylesheet" href="vendors/tippy/tippy.css">
@@ -23,8 +23,8 @@
 
     <!-- SG -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=da77d180-7c2d-073e-8d44-bad26b01f0a4" type="text/css">
-    <script src="tuikdocs.js?v=da77d180-7c2d-073e-8d44-bad26b01f0a4"></script>
+    <link rel="stylesheet" href="css/main.css?v=b6bfcac7-fc5f-4e9f-5141-a45d2cfd644e" type="text/css">
+    <script src="tuikdocs.js?v=b6bfcac7-fc5f-4e9f-5141-a45d2cfd644e"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -1056,98 +1056,179 @@
 </article>
 
 
-<h3 class="sg-h3">Display animation</h3>
-<p class="sg-p">To apply an animated effect to the tooltip, simply add the <em>tuiFade</em> class to the element. A fade-in and -out effect is applied.</p>
-
-    
+<h2 class="sg-h2">Script</h2>
 
 
-<article class="sg-example" id="tooltipAnimation">
+
+<article class="sg-example" id="tooltipScript">
     
     <section class="sg-example__render">
-        <script>
-    var showTooltip = function(e) {
-        var topPosition = (e.offsetTop + e.offsetHeight) + 'px;';
-        var leftPosition = e.offsetLeft + 5 + 'px'; // example simplicity
-        var tooltipElement = document.querySelector('#animatedTooltip');
-        tooltipElement.setAttribute('style', 'top:' + topPosition + '; left:' +leftPosition + ';')
-        tooltipElement.classList.remove('out');
-        tooltipElement.classList.add('in');
-    }
-
-    var hideTooltip = function() {
-        var tooltipElement = document.querySelector('#animatedTooltip');
-        tooltipElement.classList.remove('in');
-        tooltipElement.classList.add('out');
-    }
-</script>
-<button class="tuiButton" onmouseover="showTooltip(this)" onmouseleave="hideTooltip()">Hover to show tooltip!</button>
-<div id="animatedTooltip" class="tuiTooltip tuiFade">
-   <div class="tuiTooltip__content">
-       Tooltip with animation
-   </div>
-   <div class="tuiTooltip__pointer"></div>
-</div>
+        <button class="tuiButton js-tooltip" title="Tooltip content of Trigger 1!">Hover 1</button> 
+<button class="tuiButton js-tooltip" title="Tooltip content of Trigger 2!">Hover 2</button> 
 
     </section>
-    
+    <script class="js-rendered-script">new tuik.Tooltip('.js-tooltip');
+</script>
     
 
     
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;script&gt;
-    var showTooltip = function(e) {
-        var topPosition = (e.offsetTop + e.offsetHeight) + &#39;px;&#39;;
-        var leftPosition = e.offsetLeft + 5 + &#39;px&#39;; // example simplicity
-        var tooltipElement = document.querySelector(&#39;#animatedTooltip&#39;);
-        tooltipElement.setAttribute(&#39;style&#39;, &#39;top:&#39; + topPosition + &#39;; left:&#39; +leftPosition + &#39;;&#39;)
-        tooltipElement.classList.remove(&#39;out&#39;);
-        tooltipElement.classList.add(&#39;in&#39;);
-    }
-
-    var hideTooltip = function() {
-        var tooltipElement = document.querySelector(&#39;#animatedTooltip&#39;);
-        tooltipElement.classList.remove(&#39;in&#39;);
-        tooltipElement.classList.add(&#39;out&#39;);
-    }
-&lt;/script&gt;
-&lt;button class=&#34;tuiButton&#34; onmouseover=&#34;showTooltip(this)&#34; onmouseleave=&#34;hideTooltip()&#34;&gt;Hover to show tooltip!&lt;/button&gt;
-&lt;div id=&#34;animatedTooltip&#34; class=&#34;tuiTooltip tuiFade&#34;&gt;
-   &lt;div class=&#34;tuiTooltip__content&#34;&gt;
-       Tooltip with animation
-   &lt;/div&gt;
-   &lt;div class=&#34;tuiTooltip__pointer&#34;&gt;&lt;/div&gt;
-&lt;/div&gt;
+          <pre><code class="html">&lt;button class=&#34;tuiButton js-tooltip&#34; title=&#34;Tooltip content of Trigger 1!&#34;&gt;Hover 1&lt;/button&gt; 
+&lt;button class=&#34;tuiButton js-tooltip&#34; title=&#34;Tooltip content of Trigger 2!&#34;&gt;Hover 2&lt;/button&gt; 
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Tooltip(&#39;.js-tooltip&#39;);
 </code></pre>
       </section>
       
 
       
         <textarea class="sg-example__source__raw" style="display:none">
-          &lt;script&gt;
-    var showTooltip = function(e) {
-        var topPosition = (e.offsetTop + e.offsetHeight) + &#39;px;&#39;;
-        var leftPosition = e.offsetLeft + 5 + &#39;px&#39;; // example simplicity
-        var tooltipElement = document.querySelector(&#39;#animatedTooltip&#39;);
-        tooltipElement.setAttribute(&#39;style&#39;, &#39;top:&#39; + topPosition + &#39;; left:&#39; +leftPosition + &#39;;&#39;)
-        tooltipElement.classList.remove(&#39;out&#39;);
-        tooltipElement.classList.add(&#39;in&#39;);
-    }
+          &lt;button class=&#34;tuiButton js-tooltip&#34; title=&#34;Tooltip content of Trigger 1!&#34;&gt;Hover 1&lt;/button&gt; 
+&lt;button class=&#34;tuiButton js-tooltip&#34; title=&#34;Tooltip content of Trigger 2!&#34;&gt;Hover 2&lt;/button&gt; 
 
-    var hideTooltip = function() {
-        var tooltipElement = document.querySelector(&#39;#animatedTooltip&#39;);
-        tooltipElement.classList.remove(&#39;in&#39;);
-        tooltipElement.classList.add(&#39;out&#39;);
-    }
-&lt;/script&gt;
-&lt;button class=&#34;tuiButton&#34; onmouseover=&#34;showTooltip(this)&#34; onmouseleave=&#34;hideTooltip()&#34;&gt;Hover to show tooltip!&lt;/button&gt;
-&lt;div id=&#34;animatedTooltip&#34; class=&#34;tuiTooltip tuiFade&#34;&gt;
-   &lt;div class=&#34;tuiTooltip__content&#34;&gt;
-       Tooltip with animation
-   &lt;/div&gt;
-   &lt;div class=&#34;tuiTooltip__pointer&#34;&gt;&lt;/div&gt;
-&lt;/div&gt;
+        </textarea>
+      
+    
+</article>
+
+
+<h3 class="sg-h3">Positioning</h3>
+<p class="sg-p">Positioning can be defined within the markup by defining the <em>data-tuiTooltip-placement</em> attribute.</p>
+
+
+
+<article class="sg-example" id="tooltipScriptPositioning">
+    
+    <section class="sg-example__render">
+        <button class="tuiButton js-tooltip-pos" data-tuitooltip-placement="top" title="Tooltip content top!">Top</button>
+<button class="tuiButton js-tooltip-pos" data-tuitooltip-placement="left" title="Tooltip content left!">Left</button>
+<button class="tuiButton js-tooltip-pos" data-tuitooltip-placement="bottom" title="Tooltip content bottom!">Bottom</button>
+<button class="tuiButton js-tooltip-pos" data-tuitooltip-placement="right" title="Tooltip content right!">Right</button>
+
+    </section>
+    <script class="js-rendered-script">new tuik.Tooltip('.js-tooltip-pos');
+</script>
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;button class=&#34;tuiButton js-tooltip-pos&#34; data-tuiTooltip-placement=&#34;top&#34; title=&#34;Tooltip content top!&#34;&gt;Top&lt;/button&gt;
+&lt;button class=&#34;tuiButton js-tooltip-pos&#34; data-tuiTooltip-placement=&#34;left&#34; title=&#34;Tooltip content left!&#34;&gt;Left&lt;/button&gt;
+&lt;button class=&#34;tuiButton js-tooltip-pos&#34; data-tuiTooltip-placement=&#34;bottom&#34; title=&#34;Tooltip content bottom!&#34;&gt;Bottom&lt;/button&gt;
+&lt;button class=&#34;tuiButton js-tooltip-pos&#34; data-tuiTooltip-placement=&#34;right&#34; title=&#34;Tooltip content right!&#34;&gt;Right&lt;/button&gt;
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Tooltip(&#39;.js-tooltip-pos&#39;);
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;button class=&#34;tuiButton js-tooltip-pos&#34; data-tuiTooltip-placement=&#34;top&#34; title=&#34;Tooltip content top!&#34;&gt;Top&lt;/button&gt;
+&lt;button class=&#34;tuiButton js-tooltip-pos&#34; data-tuiTooltip-placement=&#34;left&#34; title=&#34;Tooltip content left!&#34;&gt;Left&lt;/button&gt;
+&lt;button class=&#34;tuiButton js-tooltip-pos&#34; data-tuiTooltip-placement=&#34;bottom&#34; title=&#34;Tooltip content bottom!&#34;&gt;Bottom&lt;/button&gt;
+&lt;button class=&#34;tuiButton js-tooltip-pos&#34; data-tuiTooltip-placement=&#34;right&#34; title=&#34;Tooltip content right!&#34;&gt;Right&lt;/button&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+<p class="sg-p">Positioning can also be acheived by defining the <em>placement</em> option.</p>
+
+
+
+<article class="sg-example" id="tooltipScriptPositioning">
+    
+    <section class="sg-example__render">
+        <button class="tuiButton js-tooltip-pos-opts-top" title="Tooltip content top!">Top</button>
+<button class="tuiButton js-tooltip-pos-opts-left" title="Tooltip content left!">Left</button>
+<button class="tuiButton js-tooltip-pos-opts-bottom" title="Tooltip content bottom!">Bottom</button>
+<button class="tuiButton js-tooltip-pos-opts-right" title="Tooltip content right!">Right</button>
+
+    </section>
+    <script class="js-rendered-script">new tuik.Tooltip('.js-tooltip-pos-opts-top', { placement: 'top'});
+new tuik.Tooltip('.js-tooltip-pos-opts-left', { placement: 'left'});
+new tuik.Tooltip('.js-tooltip-pos-opts-bottom', { placement: 'bottom'});
+new tuik.Tooltip('.js-tooltip-pos-opts-right', { placement: 'right'});
+</script>
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;button class=&#34;tuiButton js-tooltip-pos-opts-top&#34; title=&#34;Tooltip content top!&#34;&gt;Top&lt;/button&gt;
+&lt;button class=&#34;tuiButton js-tooltip-pos-opts-left&#34; title=&#34;Tooltip content left!&#34;&gt;Left&lt;/button&gt;
+&lt;button class=&#34;tuiButton js-tooltip-pos-opts-bottom&#34; title=&#34;Tooltip content bottom!&#34;&gt;Bottom&lt;/button&gt;
+&lt;button class=&#34;tuiButton js-tooltip-pos-opts-right&#34; title=&#34;Tooltip content right!&#34;&gt;Right&lt;/button&gt;
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Tooltip(&#39;.js-tooltip-pos-opts-top&#39;, { placement: &#39;top&#39;});
+new tuik.Tooltip(&#39;.js-tooltip-pos-opts-left&#39;, { placement: &#39;left&#39;});
+new tuik.Tooltip(&#39;.js-tooltip-pos-opts-bottom&#39;, { placement: &#39;bottom&#39;});
+new tuik.Tooltip(&#39;.js-tooltip-pos-opts-right&#39;, { placement: &#39;right&#39;});
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;button class=&#34;tuiButton js-tooltip-pos-opts-top&#34; title=&#34;Tooltip content top!&#34;&gt;Top&lt;/button&gt;
+&lt;button class=&#34;tuiButton js-tooltip-pos-opts-left&#34; title=&#34;Tooltip content left!&#34;&gt;Left&lt;/button&gt;
+&lt;button class=&#34;tuiButton js-tooltip-pos-opts-bottom&#34; title=&#34;Tooltip content bottom!&#34;&gt;Bottom&lt;/button&gt;
+&lt;button class=&#34;tuiButton js-tooltip-pos-opts-right&#34; title=&#34;Tooltip content right!&#34;&gt;Right&lt;/button&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+
+<h3 class="sg-h3">Display animation</h3>
+<p class="sg-p">To apply an animated effect to the tooltip, simply set the <em>animate</em> option to <em>true</em>.</p>
+
+
+
+
+<article class="sg-example" id="tooltipAnimation">
+    
+    <section class="sg-example__render">
+        <button class="tuiButton js-animated-tooltip" title="Tip content fades in and out">Hover to show tooltip!</button>
+
+    </section>
+    <script class="js-rendered-script">new tuik.Tooltip('.js-animated-tooltip', {animate: true});
+</script>
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;button class=&#34;tuiButton js-animated-tooltip&#34; title=&#34;Tip content fades in and out&#34;&gt;Hover to show tooltip!&lt;/button&gt;
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Tooltip(&#39;.js-animated-tooltip&#39;, {animate: true});
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;button class=&#34;tuiButton js-animated-tooltip&#34; title=&#34;Tip content fades in and out&#34;&gt;Hover to show tooltip!&lt;/button&gt;
 
         </textarea>
       

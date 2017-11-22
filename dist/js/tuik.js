@@ -34,6 +34,12 @@ var Utils = function () {
                 }
 
                 return false;
+            },
+
+            createElement: function createElement(html) {
+                var div = document.createElement('div');
+                div.innerHTML = html;
+                return div.firstElementChild;
             }
         },
 
@@ -399,8 +405,6 @@ var Polyfills = function () {
     Object.defineProperty(Object, "assign", {
       value: function assign(target, varArgs) {
         // .length of function is 2
-        'use strict';
-
         if (target == null) {
           // TypeError if undefined or null
           throw new TypeError('Cannot convert undefined or null to object');
@@ -840,10 +844,228 @@ var Tab = function () {
     return Tab;
 }();
 
+var Tooltip = function () {
+  var eventHandlers = new Utils.EventHandlers('tuiTooltip');
+
+  var ClassNames = {
+    TOOLTIP: 'js-tuiTooltip-injected',
+    TOOLTIP_CONTENT: 'js-tuiTooltip-content',
+    TOOLTIP_MANAGED_POINTER: 'tuiTooltip__pointer--managed',
+    ISOPEN: 'tuiTooltip-is-visible',
+    ANIMATE: 'tuiFade',
+    ANIMATE_OPEN: 'in',
+    ANIMATE_CLOSE: 'out',
+    PLACEMENTLEFT: 'tuiTooltip--left',
+    PLACEMENTRIGHT: 'tuiTooltip--right',
+    PLACEMENTTOP: 'tuiTooltip--top',
+    PLACEMENTBOTTOM: 'tuiTooltip--bottom',
+    DATA_TITLE: 'data-tuiTooltip-title',
+    DATA_POSITION: 'data-tuiTooltip-placement'
+  };
+
+  var defaultOptions = {
+    animate: false,
+    placement: 'bottom',
+    popper: {
+      modifiers: {
+        arrow: {
+          element: '.tuiTooltip__pointer'
+        },
+        flip: {
+          enabled: true
+        }
+      }
+    }
+  };
+
+  var Tooltip = function () {
+    function Tooltip(selector, options) {
+      classCallCheck(this, Tooltip);
+
+      // validating dependencies
+      if (typeof Popper === 'undefined') {
+        throw new Error('TUIK requires Popper.js (https://popper.js.org)');
+      }
+
+      this._options = Object.assign({}, defaultOptions, options);
+      this.selectedElements = document.querySelectorAll(selector);
+      this.tooltipElement = null;
+
+      this._initialize();
+
+      return this;
+    }
+
+    // static
+
+    Tooltip.handleTipMouseOver = function handleTipMouseOver(e) {
+      if (!e) {
+        return;
+      }
+
+      e.currentTarget.showTooltip();
+    };
+
+    Tooltip.handleTipMouseOut = function handleTipMouseOut(e) {
+      if (!e) {
+        return;
+      }
+
+      e.currentTarget.hideTooltip();
+    };
+
+    Tooltip.create = function create(options) {
+      var tooltipElement = document.querySelector('.' + ClassNames.TOOLTIP);
+
+      // <fix> popper where the positioning is off when we reuse the same element
+      if (tooltipElement) {
+        tooltipElement.remove();
+      }
+
+      // if (!tooltipElement) {
+      tooltipElement = Utils.DOM.createElement('<div class="tuiTooltip ' + ClassNames.TOOLTIP + '">' + ('   <div class="tuiTooltip__content ' + ClassNames.TOOLTIP_CONTENT + '">') + '   </div>' + ('   <div class="tuiTooltip__pointer ' + ClassNames.TOOLTIP_MANAGED_POINTER + '"></div>') + '</div>');
+
+      document.querySelector('body').appendChild(tooltipElement);
+      // }
+      // </fix>
+
+      if (options.animate) {
+        tooltipElement.classList.add(ClassNames.ANIMATE);
+      } else {
+        tooltipElement.classList.remove(ClassNames.ANIMATE);
+        tooltipElement.classList.remove(ClassNames.ANIMATE_OPEN);
+        tooltipElement.classList.remove(ClassNames.ANIMATE_CLOSE);
+      }
+
+      return tooltipElement;
+    };
+
+    Tooltip.populate = function populate(targetElement, tooltipElement) {
+      var title = targetElement.getAttribute(ClassNames.DATA_TITLE);
+      tooltipElement.querySelector('.' + ClassNames.TOOLTIP_CONTENT).innerHTML = title;
+
+      return title;
+    };
+
+    Tooltip.place = function place(toolTipElement, placement) {
+      toolTipElement.classList.remove(ClassNames.PLACEMENTLEFT);
+      toolTipElement.classList.remove(ClassNames.PLACEMENTRIGHT);
+      toolTipElement.classList.remove(ClassNames.PLACEMENTTOP);
+      toolTipElement.classList.remove(ClassNames.PLACEMENTBOTTOM);
+
+      switch (placement) {
+        case 'left':
+          toolTipElement.classList.add(ClassNames.PLACEMENTLEFT);
+          break;
+        case 'right':
+          toolTipElement.classList.add(ClassNames.PLACEMENTRIGHT);
+          break;
+        case 'top':
+          toolTipElement.classList.add(ClassNames.PLACEMENTTOP);
+          break;
+        default:
+          toolTipElement.classList.add(ClassNames.PLACEMENTBOTTOM);
+      }
+    };
+
+    Tooltip.getInitialPosition = function getInitialPosition(targetElement, options) {
+      var placement = targetElement.getAttribute(ClassNames.DATA_POSITION);
+
+      if (!placement) {
+        placement = options.placement;
+      }
+
+      return placement;
+    };
+
+    // private
+
+    Tooltip.prototype._initialize = function _initialize() {
+      for (var i = 0, len = this.selectedElements.length; i < len; i++) {
+        this._bindTooltip(this.selectedElements[i]);
+      }
+    };
+
+    Tooltip.prototype._bindTooltip = function _bindTooltip(element) {
+      this._manageTitle(element);
+      this._injectHandlers(element);
+      this._addEventListeners(element);
+    };
+
+    Tooltip.prototype._manageTitle = function _manageTitle(element) {
+      var title = element.getAttribute('title');
+
+      if (title) {
+        element.setAttribute('title', '');
+        element.setAttribute(ClassNames.DATA_TITLE, title);
+      }
+    };
+
+    Tooltip.prototype._injectHandlers = function _injectHandlers(element) {
+      var _this = this;
+
+      var show = function show() {
+        var tooltipElement = Tooltip.create(_this._options);
+        var onPopperUpdate = function onPopperUpdate(data) {
+          Tooltip.place(data.instance.popper, data.placement);
+        };
+
+        if (!Tooltip.populate(element, tooltipElement)) {
+          return;
+        }
+
+        if (_this._options.animate) {
+          tooltipElement.classList.remove(ClassNames.ANIMATE_CLOSE);
+          tooltipElement.classList.add(ClassNames.ANIMATE_OPEN);
+        } else {
+          tooltipElement.classList.add(ClassNames.ISOPEN);
+        }
+
+        _this._popper = new Popper(element, tooltipElement, {
+          placement: Tooltip.getInitialPosition(element, _this._options),
+          modifiers: _this._options.popper.modifiers,
+          onUpdate: onPopperUpdate,
+          onCreate: onPopperUpdate
+        });
+
+        _this._popper.update();
+      };
+
+      var hide = function hide() {
+        var tooltipElement = document.querySelector('.' + ClassNames.TOOLTIP);
+
+        if (!tooltipElement) {
+          return;
+        }
+
+        if (_this._options.animate) {
+          tooltipElement.classList.remove(ClassNames.ANIMATE_OPEN);
+          tooltipElement.classList.add(ClassNames.ANIMATE_CLOSE);
+        } else {
+          tooltipElement.classList.remove(ClassNames.ISOPEN);
+        }
+      };
+
+      element.showTooltip = show;
+      element.hideTooltip = hide;
+    };
+
+    Tooltip.prototype._addEventListeners = function _addEventListeners(element) {
+      eventHandlers.add(element, 'mouseover', Tooltip.handleTipMouseOver);
+      eventHandlers.add(element, 'mouseout', Tooltip.handleTipMouseOut);
+    };
+
+    return Tooltip;
+  }(); // class
+
+  return Tooltip;
+}(Popper);
+
 exports.Polyfills = Polyfills;
 exports.Utils = Utils;
 exports.Dropdown = Dropdown;
 exports.Tab = Tab;
+exports.Tooltip = Tooltip;
 exports.Popover = Popover;
 
 return exports;

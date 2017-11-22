@@ -963,6 +963,7 @@
   border-radius: 0.21428571em;
   padding: 0.21428571em 0.57142857em;
   margin: 0.35714286em 0 0 0;
+  display: none;
 }
 .tuiTooltip--top {
   margin: 0 0 0.35714286em 0;
@@ -975,6 +976,9 @@
 }
 .tuiTooltip--left {
   margin: 0 0.35714286em 0 0;
+}
+.tuiTooltip-is-visible {
+  display: block;
 }
 .tuiTooltip__content {
   font-weight: 100;
@@ -1034,6 +1038,11 @@
   left: auto;
   margin-left: 0;
   right: -0.35714286em;
+}
+.tuiTooltip--right .tuiTooltip__pointer--managed,
+.tuiTooltip--left .tuiTooltip__pointer--managed {
+  top: unset;
+  margin-top: unset;
 }
 /*------------------------------------*\
   #ANIMATIONS
