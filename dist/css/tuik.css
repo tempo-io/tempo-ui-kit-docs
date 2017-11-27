@@ -1577,6 +1577,10 @@
 .tuiDropdown__list__item[disabled] [class*=' tuiIcon-'] {
   color: #c5c5c5;
 }
+.tuiDialog .tuiDropdown__list {
+  overflow-y: auto;
+  max-height: 35.714286em;
+}
 /*------------------------------------*\
   #VARIABLES
 \*------------------------------------*/

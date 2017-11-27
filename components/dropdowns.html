@@ -11,9 +11,9 @@
     <meta name="description" content="Dropdowns" />
 
     <!-- TUIK -->
-    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=b6bfcac7-fc5f-4e9f-5141-a45d2cfd644e" type="text/css">
-    <link rel="stylesheet" href="dist/css/tuik.css?v=b6bfcac7-fc5f-4e9f-5141-a45d2cfd644e" type="text/css">
-    <script src="dist/js/tuik.bundle.js?v=b6bfcac7-fc5f-4e9f-5141-a45d2cfd644e"></script>
+    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=9aea544c-a1d4-d618-0a99-f112bfe5cea8" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css?v=9aea544c-a1d4-d618-0a99-f112bfe5cea8" type="text/css">
+    <script src="dist/js/tuik.bundle.js?v=9aea544c-a1d4-d618-0a99-f112bfe5cea8"></script>
 
     <!-- SG VENDRORS -->
     <link rel="stylesheet" href="vendors/tippy/tippy.css">
@@ -23,8 +23,8 @@
 
     <!-- SG -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=b6bfcac7-fc5f-4e9f-5141-a45d2cfd644e" type="text/css">
-    <script src="tuikdocs.js?v=b6bfcac7-fc5f-4e9f-5141-a45d2cfd644e"></script>
+    <link rel="stylesheet" href="css/main.css?v=9aea544c-a1d4-d618-0a99-f112bfe5cea8" type="text/css">
+    <script src="tuikdocs.js?v=9aea544c-a1d4-d618-0a99-f112bfe5cea8"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -2015,6 +2015,153 @@ new tuik.Dropdown(document.querySelector(&#39;.js-split-disabled-dropdown&#39;))
      &lt;button class=&#34;tuiDropdown__list__item&#34; disabled=&#34;disabled&#34;&gt;&lt;i class=&#34;tuiIcon-information-warning&#34;&gt;&lt;/i&gt; Disabled button&lt;/a&gt;
    &lt;/div&gt;
 &lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+<h2 class="sg-h2">Dropdowns in modals</h2>
+<p class="sg-p">When dropdowns are placed in modals, <em>tuiDialog</em>, the <em>tuiDropdown__list</em> automatically gets a maximum height of 500 pixels and a vertical scrollbar when many items added to the list.</p>
+
+
+
+
+<article class="sg-example sg-dropdown-menu-display-in-modal" id="dropdownsDefaulIntModal">
+    
+    <section class="sg-example__render">
+        <article class="tuiDialog tuiDialog--small">
+    <header class="tuiDialog__header"><h1 class="tuiDialog__header__title">Dropdown placed in modal</h1></header>
+    <section class="tuiDialog__body">
+        <div class="tuiDropdown js-default-dropdown-in-modal">
+            <button class="tuiButton tuiButton--dropdown">
+                Default dropdown
+            </button>
+            <div class="tuiDropdown__list">
+                <a class="tuiDropdown__list__item" href="#">This is menu item 1</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 2</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 3</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 4</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 5</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 6</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 7</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 8</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 9</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 10</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 11</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 12</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 13</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 14</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 15</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 16</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 17</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 18</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 19</a>
+                <a class="tuiDropdown__list__item" href="#">This is menu item 20</a>
+            </div>
+        </div>
+    </section>
+    <footer class="tuiDialog__footer">
+        <div class="tuiDialog__footer__actions">
+            <button class="tuiButton tuiButton--primary">Primary</button>
+        </div>
+    </footer>
+</article>
+
+    </section>
+    <script class="js-rendered-script">new tuik.Dropdown(document.querySelector('.js-default-dropdown-in-modal'));
+</script>
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;article class=&#34;tuiDialog tuiDialog--small&#34;&gt;
+    &lt;header class=&#34;tuiDialog__header&#34;&gt;&lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Dropdown placed in modal&lt;/h1&gt;&lt;/header&gt;
+    &lt;section class=&#34;tuiDialog__body&#34;&gt;
+        &lt;div class=&#34;tuiDropdown js-default-dropdown-in-modal&#34;&gt;
+            &lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;
+                Default dropdown
+            &lt;/button&gt;
+            &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 3&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 4&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 5&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 6&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 7&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 8&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 9&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 10&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 11&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 12&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 13&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 14&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 15&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 16&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 17&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 18&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 19&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 20&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;footer class=&#34;tuiDialog__footer&#34;&gt;
+        &lt;div class=&#34;tuiDialog__footer__actions&#34;&gt;
+            &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Primary&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Dropdown(document.querySelector(&#39;.js-default-dropdown-in-modal&#39;));
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;article class=&#34;tuiDialog tuiDialog--small&#34;&gt;
+    &lt;header class=&#34;tuiDialog__header&#34;&gt;&lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Dropdown placed in modal&lt;/h1&gt;&lt;/header&gt;
+    &lt;section class=&#34;tuiDialog__body&#34;&gt;
+        &lt;div class=&#34;tuiDropdown js-default-dropdown-in-modal&#34;&gt;
+            &lt;button class=&#34;tuiButton tuiButton--dropdown&#34;&gt;
+                Default dropdown
+            &lt;/button&gt;
+            &lt;div class=&#34;tuiDropdown__list&#34;&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 1&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 2&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 3&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 4&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 5&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 6&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 7&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 8&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 9&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 10&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 11&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 12&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 13&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 14&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 15&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 16&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 17&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 18&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 19&lt;/a&gt;
+                &lt;a class=&#34;tuiDropdown__list__item&#34; href=&#34;#&#34;&gt;This is menu item 20&lt;/a&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/section&gt;
+    &lt;footer class=&#34;tuiDialog__footer&#34;&gt;
+        &lt;div class=&#34;tuiDialog__footer__actions&#34;&gt;
+            &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Primary&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/footer&gt;
+&lt;/article&gt;
 
         </textarea>
       
