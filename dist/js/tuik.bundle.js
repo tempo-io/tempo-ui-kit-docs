@@ -2875,7 +2875,8 @@ var Popover = function () {
         PLACEMENTLEFT: 'tuiPopover--left',
         PLACEMENTRIGHT: 'tuiPopover--right',
         PLACEMENTTOP: 'tuiPopover--top',
-        PLACEMENTBOTTOM: 'tuiPopover--bottom'
+        PLACEMENTBOTTOM: 'tuiPopover--bottom',
+        PLACEMENTPOINTERLESS: 'tuiPopover--pointerless'
     };
 
     var defaultOptions = {
@@ -2883,6 +2884,7 @@ var Popover = function () {
         closeOnRoot: true,
         trigger: 'click',
         onClosed: null,
+        pointerless: false,
         popper: {
             modifiers: {
                 arrow: {
@@ -2911,7 +2913,6 @@ var Popover = function () {
             this._options = Object.assign({}, defaultOptions, options);
 
             var pointerElement = this._popoverElement.querySelector(this._options.popper.modifiers.arrow.element);
-
             pointerElement.classList.add('tuiPopover__pointer--managed');
 
             // keeping refs
@@ -2937,14 +2938,16 @@ var Popover = function () {
             }
 
             var onPopperUpdate = function onPopperUpdate(data) {
-                Popover.place(data.instance.popper, data.placement);
+                Popover.place(data.instance.popper, data.placement, _this._options.pointerless);
             };
 
             var initializePopper = function initializePopper() {
-                Popover.place(_this._popoverElement, _this._options.placement);
+                var placement = _this._options.pointerless ? 'bottom-start' : _this._options.placement;
+
+                Popover.place(_this._popoverElement, placement, _this._options.pointerless);
 
                 _this._popper = new Popper(_this._targetElement, _this._popoverElement, {
-                    placement: _this._options.placement,
+                    placement: placement,
                     modifiers: _this._options.popper.modifiers,
                     onUpdate: onPopperUpdate,
                     onCreate: onPopperUpdate
@@ -3055,24 +3058,29 @@ var Popover = function () {
             }
         };
 
-        Popover.place = function place(popoverElement, placement) {
+        Popover.place = function place(popoverElement, placement, isPointerless) {
             popoverElement.classList.remove(ClassNames.PLACEMENTLEFT);
             popoverElement.classList.remove(ClassNames.PLACEMENTRIGHT);
             popoverElement.classList.remove(ClassNames.PLACEMENTTOP);
             popoverElement.classList.remove(ClassNames.PLACEMENTBOTTOM);
+            popoverElement.classList.remove(ClassNames.PLACEMENTPOINTERLESS);
 
-            switch (placement) {
-                case 'left':
-                    popoverElement.classList.add(ClassNames.PLACEMENTLEFT);
-                    break;
-                case 'right':
-                    popoverElement.classList.add(ClassNames.PLACEMENTRIGHT);
-                    break;
-                case 'top':
-                    popoverElement.classList.add(ClassNames.PLACEMENTTOP);
-                    break;
-                default:
-                    popoverElement.classList.add(ClassNames.PLACEMENTBOTTOM);
+            if (isPointerless) {
+                popoverElement.classList.add(ClassNames.PLACEMENTPOINTERLESS);
+            } else {
+                switch (placement) {
+                    case 'left':
+                        popoverElement.classList.add(ClassNames.PLACEMENTLEFT);
+                        break;
+                    case 'right':
+                        popoverElement.classList.add(ClassNames.PLACEMENTRIGHT);
+                        break;
+                    case 'top':
+                        popoverElement.classList.add(ClassNames.PLACEMENTTOP);
+                        break;
+                    default:
+                        popoverElement.classList.add(ClassNames.PLACEMENTBOTTOM);
+                }
             }
         };
 

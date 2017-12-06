@@ -81,16 +81,25 @@
   margin: 0 0.35714286em 0 0;
   padding: 0.50000000em 0.71428571em;
   line-height: normal;
+  -webkit-transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .tuiButton:hover {
   background-color: #fefefe;
   border-color: #d9d9d9;
+  -webkit-transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .tuiButton:active {
   background-color: #d9d9d9;
   border-color: #d9d9d9;
   -webkit-box-shadow: none;
           box-shadow: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  transition: none;
 }
 .tuiButton:focus {
   border: 0.07142857em solid button !important;
@@ -100,6 +109,9 @@
   border: 0.07142857em solid #4c9aff !important;
   -webkit-box-shadow: 0 0 0 0.07142857em #4c9aff !important;
           box-shadow: 0 0 0 0.07142857em #4c9aff !important;
+  -webkit-transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  -o-transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 200ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .tuiButton:hover,
 .tuiButton:active,
@@ -1865,6 +1877,7 @@
 .tuiTabs__item__link-is-active {
   color: #0058e1;
   border-bottom-color: #0058e1;
+  border-radius: 0;
 }
 .tuiTabs__item__link[disabled],
 .tuiTabs__item__link[disabled]:hover {
@@ -2082,6 +2095,13 @@
 .tuiPopover--left .tuiPopover__pointer--managed {
   top: unset;
   margin-top: unset;
+}
+.tuiPopover--pointerless {
+  margin: 0;
+  margin: 0.14285714em 0;
+}
+.tuiPopover--pointerless .tuiPopover__pointer {
+  display: none;
 }
 /*------------------------------------*\
   #COMPOSITION
