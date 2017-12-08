@@ -2883,6 +2883,7 @@ var Popover = function () {
         placement: 'bottom',
         closeOnRoot: true,
         trigger: 'click',
+        onOpened: null,
         onClosed: null,
         pointerless: false,
         popper: {
@@ -2918,7 +2919,8 @@ var Popover = function () {
             // keeping refs
             this._targetElement.tuiRefPopoverElement = popoverElement;
             this._popoverElement.tuiRefTargetElement = targetElement;
-            this._popoverElement.onClosed = this._options.onClosed;
+            this._targetElement.onClosed = this._options.onClosed;
+            this._targetElement.onOpened = this._options.onOpened;
 
             // to allow keydown listener to be added on the popover element
             this._popoverElement.setAttribute('tabindex', '1');
@@ -2964,6 +2966,10 @@ var Popover = function () {
                     Popover.close(this._popoverElement);
                 } else {
                     initializePopper();
+
+                    if (this._targetElement.onOpened) {
+                        this._targetElement.onOpened.call();
+                    }
                 }
             } else {
                 Popover.closeAllOpenPopovers();
@@ -2971,6 +2977,10 @@ var Popover = function () {
 
                 this._bindHandlers();
                 this._popoverElement.classList.add(ClassNames.ISOPEN);
+
+                if (this._targetElement.onOpened) {
+                    this._targetElement.onOpened.call();
+                }
             }
         };
 
@@ -2989,8 +2999,8 @@ var Popover = function () {
                 eventHandlers.triggerCustom(popoverElement, 'tuikPopoverClose');
             }
 
-            if (popoverElement.onClosed) {
-                popoverElement.onClosed.call();
+            if (popoverElement.tuiRefTargetElement.onClosed) {
+                popoverElement.tuiRefTargetElement.onClosed.call();
             }
         };
 

@@ -11,9 +11,9 @@
     <meta name="description" content="Popovers" />
 
     <!-- TUIK -->
-    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=204d35fb-3856-7776-cb3c-5aad771819c0" type="text/css">
-    <link rel="stylesheet" href="dist/css/tuik.css?v=204d35fb-3856-7776-cb3c-5aad771819c0" type="text/css">
-    <script src="dist/js/tuik.bundle.js?v=204d35fb-3856-7776-cb3c-5aad771819c0"></script>
+    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=0230c766-5198-86ab-078b-21c2aa03b97a" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css?v=0230c766-5198-86ab-078b-21c2aa03b97a" type="text/css">
+    <script src="dist/js/tuik.bundle.js?v=0230c766-5198-86ab-078b-21c2aa03b97a"></script>
 
     <!-- SG VENDRORS -->
     <link rel="stylesheet" href="vendors/tippy/tippy.css">
@@ -23,8 +23,8 @@
 
     <!-- SG -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=204d35fb-3856-7776-cb3c-5aad771819c0" type="text/css">
-    <script src="tuikdocs.js?v=204d35fb-3856-7776-cb3c-5aad771819c0"></script>
+    <link rel="stylesheet" href="css/main.css?v=0230c766-5198-86ab-078b-21c2aa03b97a" type="text/css">
+    <script src="tuikdocs.js?v=0230c766-5198-86ab-078b-21c2aa03b97a"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -1386,67 +1386,62 @@ var closePopover = function(e) { popover.close(); }
 </article>
 
 
+<p class="sg-p">You can provide a callback function that will be raised when the popover is opened or closed via the <em>onOpened</em> and <em>onClosed</em> options.</p>
 
-<p class="sg-p">You can specify an <em>onClose</em> handler to be notified when the popover was closed.</p>
 
 
 
 <article class="sg-example sg-popover-display-wbutton" id="popoverOnClose">
     
     <section class="sg-example__render">
-        <button class="js-target-on-close tuiButton">On Close</button>
+        <button class="js-target-on-close tuiButton">On Opened and Closed</button>
 
 <div class="js-popover-on-close tuiPopover">
    <div class="tuiPopover__content">
      <div>[LOOK IN YOUR CONSOLE]</div>
    </div>
-   <footer class="tuiPopover__footer">
-     <button class="tuiButton" onclick="closePopover2()">Close</button>
-   </footer>
    <div class="tuiPopover__pointer"></div>
 </div>
 
     </section>
-    <script class="js-rendered-script">var popover2 = new tuik.Popover(document.querySelector('.js-target-on-close'), document.querySelector('.js-popover-on-close'), { onClose: function() { console.log('closed!'); } } );
-var closePopover2 = function(e) { popover2.close(); }
+    <script class="js-rendered-script">var popover2 = new tuik.Popover(document.querySelector('.js-target-on-close'), document.querySelector('.js-popover-on-close'), { 
+   onOpened: function() {console.log('opened!');},
+   onClosed: function() { console.log('closed!'); }, 
+} );
 </script>
     
 
     
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;button class=&#34;js-target-on-close tuiButton&#34;&gt;On Close&lt;/button&gt;
+          <pre><code class="html">&lt;button class=&#34;js-target-on-close tuiButton&#34;&gt;On Opened and Closed&lt;/button&gt;
 
 &lt;div class=&#34;js-popover-on-close tuiPopover&#34;&gt;
    &lt;div class=&#34;tuiPopover__content&#34;&gt;
      &lt;div&gt;[LOOK IN YOUR CONSOLE]&lt;/div&gt;
    &lt;/div&gt;
-   &lt;footer class=&#34;tuiPopover__footer&#34;&gt;
-     &lt;button class=&#34;tuiButton&#34; onclick=&#34;closePopover2()&#34;&gt;Close&lt;/button&gt;
-   &lt;/footer&gt;
    &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
       </section>
       
       <section class="sg-example__source sg-example__source--script">
-          <pre><code class="js">var popover2 = new tuik.Popover(document.querySelector(&#39;.js-target-on-close&#39;), document.querySelector(&#39;.js-popover-on-close&#39;), { onClose: function() { console.log(&#39;closed!&#39;); } } );
-var closePopover2 = function(e) { popover2.close(); }
+          <pre><code class="js">var popover2 = new tuik.Popover(document.querySelector(&#39;.js-target-on-close&#39;), document.querySelector(&#39;.js-popover-on-close&#39;), { 
+   onOpened: function() {console.log(&#39;opened!&#39;);},
+   onClosed: function() { console.log(&#39;closed!&#39;); }, 
+} );
 </code></pre>
       </section>
       
 
       
         <textarea class="sg-example__source__raw" style="display:none">
-          &lt;button class=&#34;js-target-on-close tuiButton&#34;&gt;On Close&lt;/button&gt;
+          &lt;button class=&#34;js-target-on-close tuiButton&#34;&gt;On Opened and Closed&lt;/button&gt;
 
 &lt;div class=&#34;js-popover-on-close tuiPopover&#34;&gt;
    &lt;div class=&#34;tuiPopover__content&#34;&gt;
      &lt;div&gt;[LOOK IN YOUR CONSOLE]&lt;/div&gt;
    &lt;/div&gt;
-   &lt;footer class=&#34;tuiPopover__footer&#34;&gt;
-     &lt;button class=&#34;tuiButton&#34; onclick=&#34;closePopover2()&#34;&gt;Close&lt;/button&gt;
-   &lt;/footer&gt;
    &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
