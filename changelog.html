@@ -11,9 +11,9 @@
     <meta name="description" content="Tempo UI Kit and Guidelines" />
 
     <!-- TUIK -->
-    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=bbb44544-d5e1-065d-8759-6d8975707acc" type="text/css">
-    <link rel="stylesheet" href="dist/css/tuik.css?v=bbb44544-d5e1-065d-8759-6d8975707acc" type="text/css">
-    <script src="dist/js/tuik.bundle.js?v=bbb44544-d5e1-065d-8759-6d8975707acc"></script>
+    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=94f16a52-b313-0b58-6b61-02d970400500" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css?v=94f16a52-b313-0b58-6b61-02d970400500" type="text/css">
+    <script src="dist/js/tuik.bundle.js?v=94f16a52-b313-0b58-6b61-02d970400500"></script>
 
     <!-- SG VENDRORS -->
     <link rel="stylesheet" href="vendors/tippy/tippy.css">
@@ -23,8 +23,8 @@
 
     <!-- SG -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=bbb44544-d5e1-065d-8759-6d8975707acc" type="text/css">
-    <script src="tuikdocs.js?v=bbb44544-d5e1-065d-8759-6d8975707acc"></script>
+    <link rel="stylesheet" href="css/main.css?v=94f16a52-b313-0b58-6b61-02d970400500" type="text/css">
+    <script src="tuikdocs.js?v=94f16a52-b313-0b58-6b61-02d970400500"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -570,6 +570,16 @@
                     
                       
                         <li class="sg-nav__links__element ">
+                            <a href="components/textfieldswlabels">Text Fields (labels)</a>
+                            
+                                <em class="sg-draft-notification">Draft</em>
+
+                            
+                        </li>
+                      
+                    
+                      
+                        <li class="sg-nav__links__element ">
                             <a href="components/tooltips">Tooltips</a>
                             
                         </li>
@@ -583,7 +593,19 @@
                 <h1 class="sg-h1">Changelog</h1>
 
 <section class="sg-changelog">
-    <h2>[Unreleased]</h2><h2>[0.21.2] - 2017-12-08</h2><h3>Added</h3><ul>
+    <h2>[Unreleased]</h2><h2>[0.22.0] - 2017-12-28</h2><h3>Fixed</h3><ul>
+<li>Tabs label will be truncated (ellipsis) when content is larger than 150px (.tuiTabs)</li>
+</ul>
+<h3>Modified</h3><ul>
+<li>Modal footer height decreased (.tuiDialog)</li>
+</ul>
+<h3>Added</h3><ul>
+<li>Labels embedded in text fields (.tuiWithLabel)</li>
+<li>Animation for text fields focus state (.tuiTextField)</li>
+<li>Custom tooltip elements can be used (.tuiTooltip)</li>
+<li>Tooltip params can be passed as CSS selectors or DOM elements (.tuiTooltip)</li>
+</ul>
+<h2>[0.21.2] - 2017-12-08</h2><h3>Added</h3><ul>
 <li>onOpen event for Popovers</li>
 </ul>
 <h2>[0.21.0] - 2017-12-06</h2><h3>Added</h3><ul>

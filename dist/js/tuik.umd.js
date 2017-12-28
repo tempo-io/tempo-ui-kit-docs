@@ -11,6 +11,12 @@
 
 Popper = Popper && Popper.hasOwnProperty('default') ? Popper['default'] : Popper;
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
+  return typeof obj;
+} : function (obj) {
+  return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+};
+
 var classCallCheck = function (instance, Constructor) {
   if (!(instance instanceof Constructor)) {
     throw new TypeError("Cannot call a class as a function");
@@ -43,6 +49,33 @@ var Utils = function () {
                 var div = document.createElement('div');
                 div.innerHTML = html;
                 return div.firstElementChild;
+            },
+
+            refToElement: function refToElement(ref) {
+                if (typeof ref === 'string') {
+                    return document.querySelector(ref);
+                }
+
+                return ref;
+            },
+
+            refToElements: function refToElements(ref) {
+                if (typeof ref === 'string') {
+                    return document.querySelectorAll(ref);
+                }
+
+                return ref;
+            },
+
+            // eslint-disable-next-line
+            isNode: function isNode(object) {
+                return (typeof Node === 'undefined' ? 'undefined' : _typeof(Node)) === 'object' ? object instanceof Node : object && (typeof object === 'undefined' ? 'undefined' : _typeof(object)) === 'object' && typeof object.nodeType === 'number' && typeof object.nodeName === 'string';
+            },
+
+            // eslint-disable-next-line
+            isElement: function isElement(object) {
+                return (typeof HTMLElement === 'undefined' ? 'undefined' : _typeof(HTMLElement)) === 'object' ? object instanceof HTMLElement : // DOM2
+                object && (typeof o === 'undefined' ? 'undefined' : _typeof(o)) === 'object' && object !== null && object.nodeType === 1 && typeof object.nodeName === 'string';
             }
         },
 
@@ -866,220 +899,264 @@ var Tab = function () {
 }();
 
 var Tooltip = function () {
-  var eventHandlers = new Utils.EventHandlers('tuiTooltip');
+    var eventHandlers = new Utils.EventHandlers('tuiTooltip');
 
-  var ClassNames = {
-    TOOLTIP: 'js-tuiTooltip-injected',
-    TOOLTIP_CONTENT: 'js-tuiTooltip-content',
-    TOOLTIP_MANAGED_POINTER: 'tuiTooltip__pointer--managed',
-    ISOPEN: 'tuiTooltip-is-visible',
-    ANIMATE: 'tuiFade',
-    ANIMATE_OPEN: 'in',
-    ANIMATE_CLOSE: 'out',
-    PLACEMENTLEFT: 'tuiTooltip--left',
-    PLACEMENTRIGHT: 'tuiTooltip--right',
-    PLACEMENTTOP: 'tuiTooltip--top',
-    PLACEMENTBOTTOM: 'tuiTooltip--bottom',
-    DATA_TITLE: 'data-tuiTooltip-title',
-    DATA_POSITION: 'data-tuiTooltip-placement'
-  };
+    var ClassNames = {
+        TOOLTIP: 'js-tuiTooltip-injected',
+        TOOLTIP_CONTENT: 'js-tuiTooltip-content',
+        TOOLTIP_MANAGED_POINTER: 'tuiTooltip__pointer--managed',
+        ISOPEN: 'tuiTooltip-is-visible',
+        ANIMATE: 'tuiFade',
+        ANIMATE_OPEN: 'in',
+        ANIMATE_CLOSE: 'out',
+        PLACEMENTLEFT: 'tuiTooltip--left',
+        PLACEMENTRIGHT: 'tuiTooltip--right',
+        PLACEMENTTOP: 'tuiTooltip--top',
+        PLACEMENTBOTTOM: 'tuiTooltip--bottom',
+        DATA_TITLE: 'data-tuiTooltip-title',
+        DATA_POSITION: 'data-tuiTooltip-placement'
+    };
 
-  var defaultOptions = {
-    animate: false,
-    placement: 'bottom',
-    popper: {
-      modifiers: {
-        arrow: {
-          element: '.tuiTooltip__pointer'
-        },
-        flip: {
-          enabled: true
+    var defaultOptions = {
+        animate: false,
+        placement: 'bottom',
+        popper: {
+            modifiers: {
+                arrow: {
+                    element: '.tuiTooltip__pointer'
+                },
+                flip: {
+                    enabled: true
+                }
+            }
         }
-      }
-    }
-  };
-
-  var Tooltip = function () {
-    function Tooltip(selector, options) {
-      classCallCheck(this, Tooltip);
-
-      // validating dependencies
-      if (typeof Popper === 'undefined') {
-        throw new Error('TUIK requires Popper.js (https://popper.js.org)');
-      }
-
-      this._options = Object.assign({}, defaultOptions, options);
-      this.selectedElements = document.querySelectorAll(selector);
-      this.tooltipElement = null;
-
-      this._initialize();
-
-      return this;
-    }
-
-    // static
-
-    Tooltip.handleTipMouseOver = function handleTipMouseOver(e) {
-      if (!e) {
-        return;
-      }
-
-      e.currentTarget.showTooltip();
     };
 
-    Tooltip.handleTipMouseOut = function handleTipMouseOut(e) {
-      if (!e) {
-        return;
-      }
+    var Tooltip = function () {
+        // constructor(triggerRef) managed
+        // constructor(triggerRef, options) managed
+        // constructor(triggerRef, tooltipRef) unmanaged
+        // constructor(triggerRef, tooltipRef, options) unmanaged
+        function Tooltip(triggersRef, tooltipRef, options) {
+            classCallCheck(this, Tooltip);
 
-      e.currentTarget.hideTooltip();
-    };
+            // validating dependencies
+            if (typeof Popper === 'undefined') {
+                throw new Error('TUIK requires Popper.js (https://popper.js.org)');
+            }
 
-    Tooltip.create = function create(options) {
-      var tooltipElement = document.querySelector('.' + ClassNames.TOOLTIP);
+            var isManaged = this.isManaged(arguments); // eslint-disable-line
+            var triggerElements = Utils.DOM.refToElements(triggersRef);
+            var tooltipElement = Utils.DOM.refToElement(tooltipRef);
 
-      // <fix> popper where the positioning is off when we reuse the same element
-      if (tooltipElement) {
-        tooltipElement.remove();
-      }
+            defaultOptions.managedTooltip = isManaged;
+            if (isManaged) {
+                options = tooltipRef;
+            }
 
-      // if (!tooltipElement) {
-      tooltipElement = Utils.DOM.createElement('<div class="tuiTooltip ' + ClassNames.TOOLTIP + '">' + ('   <div class="tuiTooltip__content ' + ClassNames.TOOLTIP_CONTENT + '">') + '   </div>' + ('   <div class="tuiTooltip__pointer ' + ClassNames.TOOLTIP_MANAGED_POINTER + '"></div>') + '</div>');
+            this._options = Object.assign({}, defaultOptions, options);
+            this.triggerElements = triggerElements;
+            this.tooltipElement = tooltipElement;
 
-      document.querySelector('body').appendChild(tooltipElement);
-      // }
-      // </fix>
+            this._initialize();
 
-      if (options.animate) {
-        tooltipElement.classList.add(ClassNames.ANIMATE);
-      } else {
-        tooltipElement.classList.remove(ClassNames.ANIMATE);
-        tooltipElement.classList.remove(ClassNames.ANIMATE_OPEN);
-        tooltipElement.classList.remove(ClassNames.ANIMATE_CLOSE);
-      }
+            return this;
+        }
 
-      return tooltipElement;
-    };
+        Tooltip.prototype.isManaged = function isManaged(args) {
+            var isManaged = true;
 
-    Tooltip.populate = function populate(targetElement, tooltipElement) {
-      var title = targetElement.getAttribute(ClassNames.DATA_TITLE);
-      tooltipElement.querySelector('.' + ClassNames.TOOLTIP_CONTENT).innerHTML = title;
+            // eslint-disable-next-line
+            if (args.length === 3) {
+                isManaged = false;
+            }
 
-      return title;
-    };
+            // if the second arg is a DOM element or a CSS selector (string)
+            if (Utils.DOM.isNode(args[1]) || Utils.DOM.isElement(args[1]) || typeof args[1] === 'string') {
+                isManaged = false;
+            }
 
-    Tooltip.place = function place(toolTipElement, placement) {
-      toolTipElement.classList.remove(ClassNames.PLACEMENTLEFT);
-      toolTipElement.classList.remove(ClassNames.PLACEMENTRIGHT);
-      toolTipElement.classList.remove(ClassNames.PLACEMENTTOP);
-      toolTipElement.classList.remove(ClassNames.PLACEMENTBOTTOM);
-
-      switch (placement) {
-        case 'left':
-          toolTipElement.classList.add(ClassNames.PLACEMENTLEFT);
-          break;
-        case 'right':
-          toolTipElement.classList.add(ClassNames.PLACEMENTRIGHT);
-          break;
-        case 'top':
-          toolTipElement.classList.add(ClassNames.PLACEMENTTOP);
-          break;
-        default:
-          toolTipElement.classList.add(ClassNames.PLACEMENTBOTTOM);
-      }
-    };
-
-    Tooltip.getInitialPosition = function getInitialPosition(targetElement, options) {
-      var placement = targetElement.getAttribute(ClassNames.DATA_POSITION);
-
-      if (!placement) {
-        placement = options.placement;
-      }
-
-      return placement;
-    };
-
-    // private
-
-    Tooltip.prototype._initialize = function _initialize() {
-      for (var i = 0, len = this.selectedElements.length; i < len; i++) {
-        this._bindTooltip(this.selectedElements[i]);
-      }
-    };
-
-    Tooltip.prototype._bindTooltip = function _bindTooltip(element) {
-      this._manageTitle(element);
-      this._injectHandlers(element);
-      this._addEventListeners(element);
-    };
-
-    Tooltip.prototype._manageTitle = function _manageTitle(element) {
-      var title = element.getAttribute('title');
-
-      if (title) {
-        element.setAttribute('title', '');
-        element.setAttribute(ClassNames.DATA_TITLE, title);
-      }
-    };
-
-    Tooltip.prototype._injectHandlers = function _injectHandlers(element) {
-      var _this = this;
-
-      var show = function show() {
-        var tooltipElement = Tooltip.create(_this._options);
-        var onPopperUpdate = function onPopperUpdate(data) {
-          Tooltip.place(data.instance.popper, data.placement);
+            return isManaged;
         };
 
-        if (!Tooltip.populate(element, tooltipElement)) {
-          return;
-        }
+        // static
 
-        if (_this._options.animate) {
-          tooltipElement.classList.remove(ClassNames.ANIMATE_CLOSE);
-          tooltipElement.classList.add(ClassNames.ANIMATE_OPEN);
-        } else {
-          tooltipElement.classList.add(ClassNames.ISOPEN);
-        }
+        Tooltip.handleTipMouseOver = function handleTipMouseOver(e) {
+            if (!e) {
+                return;
+            }
 
-        _this._popper = new Popper(element, tooltipElement, {
-          placement: Tooltip.getInitialPosition(element, _this._options),
-          modifiers: _this._options.popper.modifiers,
-          onUpdate: onPopperUpdate,
-          onCreate: onPopperUpdate
-        });
+            e.currentTarget.showTooltip();
+        };
 
-        _this._popper.update();
-      };
+        Tooltip.handleTipMouseOut = function handleTipMouseOut(e) {
+            if (!e) {
+                return;
+            }
 
-      var hide = function hide() {
-        var tooltipElement = document.querySelector('.' + ClassNames.TOOLTIP);
+            e.currentTarget.hideTooltip();
+        };
 
-        if (!tooltipElement) {
-          return;
-        }
+        Tooltip.create = function create(options) {
+            var tooltipElement = document.querySelector('.' + ClassNames.TOOLTIP);
 
-        if (_this._options.animate) {
-          tooltipElement.classList.remove(ClassNames.ANIMATE_OPEN);
-          tooltipElement.classList.add(ClassNames.ANIMATE_CLOSE);
-        } else {
-          tooltipElement.classList.remove(ClassNames.ISOPEN);
-        }
-      };
+            // <fix> popper where the positioning is off when we reuse the same element
+            if (tooltipElement) {
+                tooltipElement.remove();
+            }
 
-      element.showTooltip = show;
-      element.hideTooltip = hide;
-    };
+            // if (!tooltipElement) {
+            tooltipElement = Utils.DOM.createElement('<div class="tuiTooltip ' + ClassNames.TOOLTIP + '">' + ('   <div class="tuiTooltip__content ' + ClassNames.TOOLTIP_CONTENT + '">') + '   </div>' + ('   <div class="tuiTooltip__pointer ' + ClassNames.TOOLTIP_MANAGED_POINTER + '"></div>') + '</div>');
 
-    Tooltip.prototype._addEventListeners = function _addEventListeners(element) {
-      eventHandlers.add(element, 'mouseover', Tooltip.handleTipMouseOver);
-      eventHandlers.add(element, 'mouseout', Tooltip.handleTipMouseOut);
-    };
+            document.querySelector('body').appendChild(tooltipElement);
+            // }
+            // </fix>
+
+            if (options.animate) {
+                tooltipElement.classList.add(ClassNames.ANIMATE);
+            } else {
+                tooltipElement.classList.remove(ClassNames.ANIMATE);
+                tooltipElement.classList.remove(ClassNames.ANIMATE_OPEN);
+                tooltipElement.classList.remove(ClassNames.ANIMATE_CLOSE);
+            }
+
+            return tooltipElement;
+        };
+
+        Tooltip.populate = function populate(targetElement, tooltipElement) {
+            var title = targetElement.getAttribute(ClassNames.DATA_TITLE) || tooltipElement.querySelector('.' + ClassNames.TOOLTIP_CONTENT).innerHTML.trim();
+
+            if (title) {
+                tooltipElement.querySelector('.' + ClassNames.TOOLTIP_CONTENT).innerHTML = title;
+            }
+
+            return title;
+        };
+
+        Tooltip.place = function place(toolTipElement, placement) {
+            toolTipElement.classList.remove(ClassNames.PLACEMENTLEFT);
+            toolTipElement.classList.remove(ClassNames.PLACEMENTRIGHT);
+            toolTipElement.classList.remove(ClassNames.PLACEMENTTOP);
+            toolTipElement.classList.remove(ClassNames.PLACEMENTBOTTOM);
+
+            switch (placement) {
+                case 'left':
+                    toolTipElement.classList.add(ClassNames.PLACEMENTLEFT);
+                    break;
+                case 'right':
+                    toolTipElement.classList.add(ClassNames.PLACEMENTRIGHT);
+                    break;
+                case 'top':
+                    toolTipElement.classList.add(ClassNames.PLACEMENTTOP);
+                    break;
+                default:
+                    toolTipElement.classList.add(ClassNames.PLACEMENTBOTTOM);
+            }
+        };
+
+        Tooltip.getInitialPosition = function getInitialPosition(targetElement, options) {
+            var placement = targetElement.getAttribute(ClassNames.DATA_POSITION);
+
+            if (!placement) {
+                placement = options.placement;
+            }
+
+            return placement;
+        };
+
+        // private
+
+        Tooltip.prototype._initialize = function _initialize() {
+            for (var i = 0, len = this.triggerElements.length; i < len; i++) {
+                this._bindTooltip(this.triggerElements[i]);
+            }
+        };
+
+        Tooltip.prototype._bindTooltip = function _bindTooltip(element) {
+            this._manageTitle(element);
+            this._injectHandlers(element);
+            this._addEventListeners(element);
+        };
+
+        Tooltip.prototype._manageTitle = function _manageTitle(element) {
+            var title = element.getAttribute('title');
+
+            if (title) {
+                element.setAttribute('title', '');
+                element.setAttribute(ClassNames.DATA_TITLE, title);
+            }
+        };
+
+        Tooltip.prototype._injectHandlers = function _injectHandlers(element) {
+            var _this = this;
+
+            var show = function show() {
+                var tooltipElement = void 0;
+
+                var onPopperUpdate = function onPopperUpdate(data) {
+                    Tooltip.place(data.instance.popper, data.placement);
+                };
+
+                if (_this._options.managedTooltip) {
+                    tooltipElement = Tooltip.create(_this._options);
+                    if (!Tooltip.populate(element, tooltipElement)) {
+                        return;
+                    }
+                } else {
+                    tooltipElement = _this.tooltipElement;
+                }
+
+                if (_this._options.animate) {
+                    tooltipElement.classList.remove(ClassNames.ANIMATE_CLOSE);
+                    tooltipElement.classList.add(ClassNames.ANIMATE_OPEN);
+                } else {
+                    tooltipElement.classList.add(ClassNames.ISOPEN);
+                }
+
+                _this._popper = new Popper(element, tooltipElement, {
+                    placement: Tooltip.getInitialPosition(element, _this._options),
+                    modifiers: _this._options.popper.modifiers,
+                    onUpdate: onPopperUpdate,
+                    onCreate: onPopperUpdate
+                });
+
+                _this._popper.update();
+            };
+
+            var hide = function hide() {
+                var tooltipElement = document.querySelector('.' + ClassNames.TOOLTIP);
+
+                if (_this._options.managedTooltip) {
+                    tooltipElement = document.querySelector('.' + ClassNames.TOOLTIP);
+                } else {
+                    tooltipElement = _this.tooltipElement;
+                }
+
+                if (!tooltipElement) {
+                    return;
+                }
+
+                if (_this._options.animate) {
+                    tooltipElement.classList.remove(ClassNames.ANIMATE_OPEN);
+                    tooltipElement.classList.add(ClassNames.ANIMATE_CLOSE);
+                } else {
+                    tooltipElement.classList.remove(ClassNames.ISOPEN);
+                }
+            };
+
+            element.showTooltip = show;
+            element.hideTooltip = hide;
+        };
+
+        Tooltip.prototype._addEventListeners = function _addEventListeners(element) {
+            eventHandlers.add(element, 'mouseover', Tooltip.handleTipMouseOver);
+            eventHandlers.add(element, 'mouseout', Tooltip.handleTipMouseOut);
+        };
+
+        return Tooltip;
+    }(); // class
 
     return Tooltip;
-  }(); // class
-
-  return Tooltip;
 }(Popper);
 
 exports.Polyfills = Polyfills;

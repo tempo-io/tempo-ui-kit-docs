@@ -5,10 +5,10 @@
     <base href="/"></base>
     <title>
         
-            Text Fields (icons) - Tempo UI Kit and Guidelines
+            Text Fields (labels) - Tempo UI Kit and Guidelines
         
     </title>
-    <meta name="description" content="Text Fields with Icons" />
+    <meta name="description" content="Text Fields with Labels" />
 
     <!-- TUIK -->
     <link rel="stylesheet" href="dist/css/tuik-typography.css?v=94f16a52-b313-0b58-6b61-02d970400500" type="text/css">
@@ -562,14 +562,14 @@
                       
                     
                       
-                        <li class="sg-nav__links__element sg-nav__links__element-is-active ">
+                        <li class="sg-nav__links__element ">
                             <a href="components/textfieldswicons">Text Fields (icons)</a>
                             
                         </li>
                       
                     
                       
-                        <li class="sg-nav__links__element ">
+                        <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                             <a href="components/textfieldswlabels">Text Fields (labels)</a>
                             
                                 <em class="sg-draft-notification">Draft</em>
@@ -595,35 +595,49 @@
         
     
 
-    Text Fields (icons)
+    Text Fields (labels)
+    
+        <em class="sg-draft-notification">Draft</em>
+
     
 
     
 </h1>
 
 
-<p class="sg-p">
-You can add an icon to a text field to tell the user what kind of data to enter or indicate what kind of action can be performed. To add an <a href="/foundations/icons-reference">icon</a> to text fields wrap the component with a <em>tuiWithIcon</em> element and place an icon alongside the <em>tuiTextField</em> element.</p>
+<p class="sg-p">You can add a label within a text field that tell users what the corresponding text fields mean. To add a label, <em>tuiLabel</em>, to text fields wrap the component with a <em>tuiWithLabel</em> element and place the label alongside the <em>tuiTextField</em> element.</p>
+
+<div class="sg-callout">
+    <h4 class="sg-callout__title">Elements placement</h4>
+    <p class="sg-callout__p">It´s very important that the label element are placed below the input element in the markup structure to get the focus state to work on both elements.</p>
+</div>
 
 <h2 class="sg-h2">Default</h2>
-<h3 class="sg-h3">Using font icons</h3>
 
 
 
-<article class="sg-example" id="textFieldsWithIcons">
+<article class="sg-example sg-textFieldWithLabel-display" id="textFieldsWithLabels">
     
     <section class="sg-example__render">
-        <div class="tuiWithIcon">
-   <input class="tuiTextField" type="text">
-   <i class="tuiIcon-action-search tuiWithIcon__icon"></i>
+        <div class="tuiWithLabel">
+   <input class="tuiTextField" type="text" id="textFieldWithLabel">
+   <div class="tuiTextFieldLabel">
+       <label for="textFieldWithLabel" class="tuiLabel tuiLabel-is-required" title="Label">Label</label>
+   </div>
 </div>
-<div class="tuiWithIcon">
-   <input class="tuiTextField" type="text" value="With some text...">
-   <i class="tuiIcon-action-search tuiWithIcon__icon"></i>
+
+<div class="tuiWithLabel">
+   <input class="tuiTextField" type="text" id="textFieldWithLabelText" value="With some text...">
+   <div class="tuiTextFieldLabel">
+       <label for="textFieldWithLabelText" class="tuiLabel" title="Label">Label</label>
+   </div>
 </div>
-<div class="tuiWithIcon">
-   <input class="tuiTextField" type="text" placeholder="With placeholder">
-   <i class="tuiIcon-action-search tuiWithIcon__icon"></i>
+
+<div class="tuiWithLabel">
+   <input class="tuiTextField" type="text" id="textFieldWithLabelPlaceholder" placeholder="With placeholder">
+   <div class="tuiTextFieldLabel">
+       <label for="textFieldWithLabelPlaceholder" class="tuiLabel" title="Label">Label</label>
+   </div>
 </div>
 
     </section>
@@ -633,17 +647,25 @@ You can add an icon to a text field to tell the user what kind of data to enter 
     
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;div class=&#34;tuiWithIcon&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+          <pre><code class="html">&lt;div class=&#34;tuiWithLabel&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;textFieldWithLabel&#34; /&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label for=&#34;textFieldWithLabel&#34; class=&#34;tuiLabel tuiLabel-is-required&#34; title=&#34;Label&#34;&gt;Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+
+&lt;div class=&#34;tuiWithLabel&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;textFieldWithLabelText&#34; value=&#34;With some text...&#34; /&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label for=&#34;textFieldWithLabelText&#34; class=&#34;tuiLabel&#34; title=&#34;Label&#34;&gt;Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;With placeholder&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+
+&lt;div class=&#34;tuiWithLabel&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;textFieldWithLabelPlaceholder&#34; placeholder=&#34;With placeholder&#34; /&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label for=&#34;textFieldWithLabelPlaceholder&#34; class=&#34;tuiLabel&#34; title=&#34;Label&#34;&gt;Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
       </section>
@@ -651,17 +673,25 @@ You can add an icon to a text field to tell the user what kind of data to enter 
 
       
         <textarea class="sg-example__source__raw" style="display:none">
-          &lt;div class=&#34;tuiWithIcon&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+          &lt;div class=&#34;tuiWithLabel&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;textFieldWithLabel&#34; /&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label for=&#34;textFieldWithLabel&#34; class=&#34;tuiLabel tuiLabel-is-required&#34; title=&#34;Label&#34;&gt;Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+
+&lt;div class=&#34;tuiWithLabel&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;textFieldWithLabelText&#34; value=&#34;With some text...&#34; /&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label for=&#34;textFieldWithLabelText&#34; class=&#34;tuiLabel&#34; title=&#34;Label&#34;&gt;Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;With placeholder&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+
+&lt;div class=&#34;tuiWithLabel&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;textFieldWithLabelPlaceholder&#34; placeholder=&#34;With placeholder&#34; /&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label for=&#34;textFieldWithLabelPlaceholder&#34; class=&#34;tuiLabel&#34; title=&#34;Label&#34;&gt;Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
 
         </textarea>
@@ -670,25 +700,32 @@ You can add an icon to a text field to tell the user what kind of data to enter 
 </article>
 
 
-<h4 class="sg-h4">Disabled</h4>
-<p class="sg-p">To disable the field, set the <em>disabled</em> attribute on both the input and the <em>tuiWithIcon__icon</em> element.</p>
+<h3 class="sg-h3">Disabled</h3>
 
 
 
-<article class="sg-example" id="textFieldsWithIconsDisabled">
+<article class="sg-example sg-textFieldWithLabel-display" id="textFieldsWithLabelsDisabled">
     
     <section class="sg-example__render">
-        <div class="tuiWithIcon">
+        <div class="tuiWithLabel">
    <input class="tuiTextField" type="text" disabled="disabled">
-   <i class="tuiIcon-action-search tuiWithIcon__icon" disabled="disabled"></i>
+   <div class="tuiTextFieldLabel">
+       <label class="tuiLabel" title="Label" disabled="disabled">Label</label>
+   </div>
 </div>
-<div class="tuiWithIcon">
+
+<div class="tuiWithLabel">
    <input class="tuiTextField" type="text" value="With some text..." disabled="disabled">
-   <i class="tuiIcon-action-search tuiWithIcon__icon" disabled="disabled"></i>
+   <div class="tuiTextFieldLabel">
+       <label class="tuiLabel" title="Label" disabled="disabled">Label</label>
+   </div>
 </div>
-<div class="tuiWithIcon">
+
+<div class="tuiWithLabel">
    <input class="tuiTextField" type="text" placeholder="With placeholder" disabled="disabled">
-   <i class="tuiIcon-action-search tuiWithIcon__icon" disabled="disabled"></i>
+   <div class="tuiTextFieldLabel">
+       <label class="tuiLabel" title="Label" disabled="disabled">Label</label>
+   </div>
 </div>
 
     </section>
@@ -698,17 +735,25 @@ You can add an icon to a text field to tell the user what kind of data to enter 
     
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;div class=&#34;tuiWithIcon&#34;&gt;
+          <pre><code class="html">&lt;div class=&#34;tuiWithLabel&#34;&gt;
    &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; disabled=&#34;disabled&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34; disabled=&#34;disabled&#34;&gt;&lt;/i&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label class=&#34;tuiLabel&#34; title=&#34;Label&#34; disabled=&#34;disabled&#34;&gt;Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon&#34;&gt;
+
+&lt;div class=&#34;tuiWithLabel&#34;&gt;
    &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; disabled=&#34;disabled&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34; disabled=&#34;disabled&#34;&gt;&lt;/i&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label class=&#34;tuiLabel&#34; title=&#34;Label&#34; disabled=&#34;disabled&#34;&gt;Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon&#34;&gt;
+
+&lt;div class=&#34;tuiWithLabel&#34;&gt;
    &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;With placeholder&#34; disabled=&#34;disabled&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34; disabled=&#34;disabled&#34;&gt;&lt;/i&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label class=&#34;tuiLabel&#34; title=&#34;Label&#34; disabled=&#34;disabled&#34;&gt;Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
       </section>
@@ -716,17 +761,25 @@ You can add an icon to a text field to tell the user what kind of data to enter 
 
       
         <textarea class="sg-example__source__raw" style="display:none">
-          &lt;div class=&#34;tuiWithIcon&#34;&gt;
+          &lt;div class=&#34;tuiWithLabel&#34;&gt;
    &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; disabled=&#34;disabled&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34; disabled=&#34;disabled&#34;&gt;&lt;/i&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label class=&#34;tuiLabel&#34; title=&#34;Label&#34; disabled=&#34;disabled&#34;&gt;Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon&#34;&gt;
+
+&lt;div class=&#34;tuiWithLabel&#34;&gt;
    &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; disabled=&#34;disabled&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34; disabled=&#34;disabled&#34;&gt;&lt;/i&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label class=&#34;tuiLabel&#34; title=&#34;Label&#34; disabled=&#34;disabled&#34;&gt;Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon&#34;&gt;
+
+&lt;div class=&#34;tuiWithLabel&#34;&gt;
    &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;With placeholder&#34; disabled=&#34;disabled&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34; disabled=&#34;disabled&#34;&gt;&lt;/i&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label class=&#34;tuiLabel&#34; title=&#34;Label&#34; disabled=&#34;disabled&#34;&gt;Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
 
         </textarea>
@@ -735,125 +788,33 @@ You can add an icon to a text field to tell the user what kind of data to enter 
 </article>
 
 
-<h3 class="sg-h3">Using SVG icons</h3>
+<h3 class="sg-h3">Long labels</h3>
+<p class="sg-p">The <em>tuiLabel</em> element is set to maximum width of 80 pixels. Long labels gets an ellipsis ("...") to represent clipped text. User can see the whole text by hovering the label.</p>
 
 
 
-<article class="sg-example" id="textFieldsWithIconsSvg">
+<article class="sg-example sg-textFieldWithLabel-display" id="textFieldsWithLabelsLong">
     
     <section class="sg-example__render">
-        <div class="tuiWithIcon">
-   <input class="tuiTextField" type="text">
-   <svg class="tuiIcon tuiWithIcon__icon"><use xlink:href="#action-edit"/></svg>
-</div>
-<div class="tuiWithIcon">
-   <input class="tuiTextField" type="text" value="With some text...">
-   <svg class="tuiIcon tuiWithIcon__icon"><use xlink:href="#action-edit"/></svg>
-</div>
-<div class="tuiWithIcon">
-   <input class="tuiTextField" type="text" placeholder="With placeholder">
-   <svg class="tuiIcon tuiWithIcon__icon"><use xlink:href="#action-edit"/></svg>
+        <div class="tuiWithLabel">
+   <input class="tuiTextField" type="text" id="textFieldWithLabelLong">
+   <div class="tuiTextFieldLabel">
+       <label for="textFieldWithLabelLong" class="tuiLabel" title="This is a very Long Label">This is a very Long Label</label>
+   </div>
 </div>
 
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          
-          <pre><code class="html">&lt;div class=&#34;tuiWithIcon&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; /&gt;
-   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34;&gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
-&lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; /&gt;
-   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34;&gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
-&lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;With placeholder&#34; /&gt;
-   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34;&gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
-&lt;/div&gt;
-</code></pre>
-      </section>
-      
-
-      
-    
-</article>
-
-
-<h4 class="sg-h4">Disabled</h4>
-<p class="sg-p">To disable the field, set the <em>disabled</em> attribute on both the input and the <em>tuiWithIcon__icon</em> element.</p>
-
-
-
-<article class="sg-example" id="textFieldsWithIconsSvgDisabled">
-    
-    <section class="sg-example__render">
-        <div class="tuiWithIcon">
-   <input class="tuiTextField" type="text" disabled="disabled">
-   <svg class="tuiIcon tuiWithIcon__icon" disabled="disabled"><use xlink:href="#action-edit"/></svg>
-</div>
-<div class="tuiWithIcon">
-   <input class="tuiTextField" type="text" value="With some text..." disabled="disabled">
-   <svg class="tuiIcon tuiWithIcon__icon" disabled="disabled"><use xlink:href="#action-edit"/></svg>
-</div>
-<div class="tuiWithIcon">
-   <input class="tuiTextField" type="text" placeholder="With placeholder" disabled="disabled">
-   <svg class="tuiIcon tuiWithIcon__icon" disabled="disabled"><use xlink:href="#action-edit"/></svg>
+<div class="tuiWithLabel">
+   <input class="tuiTextField" type="text" id="textFieldWithLabelTextLong" value="With some text...">
+   <div class="tuiTextFieldLabel">
+       <label for="textFieldWithLabelTextLong" class="tuiLabel" title="This is a very Long Label">This is a very Long Label</label>
+   </div>
 </div>
 
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          
-          <pre><code class="html">&lt;div class=&#34;tuiWithIcon&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; disabled=&#34;disabled&#34; /&gt;
-   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34; disabled=&#34;disabled&#34; &gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
-&lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; disabled=&#34;disabled&#34; /&gt;
-   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34; disabled=&#34;disabled&#34; &gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
-&lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;With placeholder&#34; disabled=&#34;disabled&#34; /&gt;
-   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34; disabled=&#34;disabled&#34;&gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
-&lt;/div&gt;
-</code></pre>
-      </section>
-      
-
-      
-    
-</article>
-
-
-
-<h2 class="sg-h2">Right-aligned</h2>
-<p class="sg-p">Use the <em>tuiWithIcon--right</em> to align the icon to the right instead of at the default left.</p>
-
-<h3 class="sg-h3">Using font icons</h3>
-
-
-
-<article class="sg-example" id="textFieldsWithIconsRight">
-    
-    <section class="sg-example__render">
-        <div class="tuiWithIcon tuiWithIcon--reversed">
-   <input class="tuiTextField" type="text">
-   <i class="tuiIcon-action-search tuiWithIcon__icon"></i>
-</div>
-<div class="tuiWithIcon tuiWithIcon--reversed">
-   <input class="tuiTextField" type="text" value="With some text...">
-   <i class="tuiIcon-action-search tuiWithIcon__icon"></i>
-</div>
-<div class="tuiWithIcon tuiWithIcon--reversed">
-   <input class="tuiTextField" type="text" placeholder="With placeholder">
-   <i class="tuiIcon-action-search tuiWithIcon__icon"></i>
+<div class="tuiWithLabel">
+   <input class="tuiTextField" type="text" id="textFieldWithLabelPlaceholderLong" placeholder="With placeholder">
+   <div class="tuiTextFieldLabel">
+       <label for="textFieldWithLabelPlaceholderLong" class="tuiLabel" title="This is a very Long Label">This is a very Long Label</label>
+   </div>
 </div>
 
     </section>
@@ -863,17 +824,25 @@ You can add an icon to a text field to tell the user what kind of data to enter 
     
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;div class=&#34;tuiWithIcon tuiWithIcon--reversed&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+          <pre><code class="html">&lt;div class=&#34;tuiWithLabel&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;textFieldWithLabelLong&#34; /&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label for=&#34;textFieldWithLabelLong&#34; class=&#34;tuiLabel&#34; title=&#34;This is a very Long Label&#34;&gt;This is a very Long Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon tuiWithIcon--reversed&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+
+&lt;div class=&#34;tuiWithLabel&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;textFieldWithLabelTextLong&#34; value=&#34;With some text...&#34; /&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label for=&#34;textFieldWithLabelTextLong&#34; class=&#34;tuiLabel&#34; title=&#34;This is a very Long Label&#34;&gt;This is a very Long Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon tuiWithIcon--reversed&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;With placeholder&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+
+&lt;div class=&#34;tuiWithLabel&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;textFieldWithLabelPlaceholderLong&#34; placeholder=&#34;With placeholder&#34; /&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label for=&#34;textFieldWithLabelPlaceholderLong&#34; class=&#34;tuiLabel&#34; title=&#34;This is a very Long Label&#34;&gt;This is a very Long Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
       </section>
@@ -881,17 +850,25 @@ You can add an icon to a text field to tell the user what kind of data to enter 
 
       
         <textarea class="sg-example__source__raw" style="display:none">
-          &lt;div class=&#34;tuiWithIcon tuiWithIcon--reversed&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+          &lt;div class=&#34;tuiWithLabel&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;textFieldWithLabelLong&#34; /&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label for=&#34;textFieldWithLabelLong&#34; class=&#34;tuiLabel&#34; title=&#34;This is a very Long Label&#34;&gt;This is a very Long Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon tuiWithIcon--reversed&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+
+&lt;div class=&#34;tuiWithLabel&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;textFieldWithLabelTextLong&#34; value=&#34;With some text...&#34; /&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label for=&#34;textFieldWithLabelTextLong&#34; class=&#34;tuiLabel&#34; title=&#34;This is a very Long Label&#34;&gt;This is a very Long Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon tuiWithIcon--reversed&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;With placeholder&#34; /&gt;
-   &lt;i class=&#34;tuiIcon-action-search tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+
+&lt;div class=&#34;tuiWithLabel&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;textFieldWithLabelPlaceholderLong&#34; placeholder=&#34;With placeholder&#34; /&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label for=&#34;textFieldWithLabelPlaceholderLong&#34; class=&#34;tuiLabel&#34; title=&#34;This is a very Long Label&#34;&gt;This is a very Long Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
 
         </textarea>
@@ -900,65 +877,19 @@ You can add an icon to a text field to tell the user what kind of data to enter 
 </article>
 
 
-<h3 class="sg-h3">Using SVG icons</h3>
+<h3 class="sg-h3">Full width</h3>
+<p class="sg-p">Text fields with label can be rendered with width of 100% by adding <em>tuiWithLabel--full-width</em> modifier to the wrapper element.</p>
 
 
 
-<article class="sg-example" id="textFieldsWithIconsRightSVG">
+<article class="sg-example" id="textFieldsWithLabelsFullWidth">
     
     <section class="sg-example__render">
-        <div class="tuiWithIcon tuiWithIcon--reversed">
-   <input class="tuiTextField" type="text">
-   <svg class="tuiIcon tuiWithIcon__icon"><use xlink:href="#action-edit"/></svg>
-</div>
-<div class="tuiWithIcon tuiWithIcon--reversed">
-   <input class="tuiTextField" type="text" value="With some text...">
-   <svg class="tuiIcon tuiWithIcon__icon"><use xlink:href="#action-edit"/></svg>
-</div>
-<div class="tuiWithIcon tuiWithIcon--reversed">
-   <input class="tuiTextField" type="text" placeholder="With placeholder">
-   <svg class="tuiIcon tuiWithIcon__icon"><use xlink:href="#action-edit"/></svg>
-</div>
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          
-          <pre><code class="html">&lt;div class=&#34;tuiWithIcon tuiWithIcon--reversed&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; /&gt;
-   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34;&gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
-&lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon tuiWithIcon--reversed&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; /&gt;
-   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34;&gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
-&lt;/div&gt;
-&lt;div class=&#34;tuiWithIcon tuiWithIcon--reversed&#34;&gt;
-   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;With placeholder&#34; /&gt;
-   &lt;svg class=&#34;tuiIcon tuiWithIcon__icon&#34;&gt;&lt;use xlink:href=&#34;#action-edit&#34; /&gt;&lt;/svg&gt;
-&lt;/div&gt;
-</code></pre>
-      </section>
-      
-
-      
-    
-</article>
-
-
-<h2 class="sg-h2">Other semantics</h2>
-<p>You can use other components in a text field to help the user complete their tasks, such as date-pickers. You are not limited to input elements.</p>
-
-
-
-<article class="sg-example" id="textFieldsWithIconsSemantics">
-    
-    <section class="sg-example__render">
-        <div class="tuiWithIcon tuiWithIcon--reversed">
-   <div class="tuiTextField">Aug 20 - Sep 19, 2017</div>
-   <i class="tuiIcon-datetime-calendar tuiWithIcon__icon"></i>
+        <div class="tuiWithLabel tuiWithLabel--full-width">
+   <input class="tuiTextField" type="text" id="textFieldWithLabelFullWidth">
+   <div class="tuiTextFieldLabel">
+       <label for="textFieldWithLabelFullWidth" class="tuiLabel" title="Label">Label</label>
+   </div>
 </div>
 
     </section>
@@ -968,9 +899,11 @@ You can add an icon to a text field to tell the user what kind of data to enter 
     
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;div class=&#34;tuiWithIcon tuiWithIcon--reversed&#34;&gt;
-   &lt;div class=&#34;tuiTextField&#34;&gt;Aug 20 - Sep 19, 2017&lt;/div&gt;
-   &lt;i class=&#34;tuiIcon-datetime-calendar tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+          <pre><code class="html">&lt;div class=&#34;tuiWithLabel tuiWithLabel--full-width&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;textFieldWithLabelFullWidth&#34; /&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label for=&#34;textFieldWithLabelFullWidth&#34; class=&#34;tuiLabel&#34; title=&#34;Label&#34;&gt;Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
 </code></pre>
       </section>
@@ -978,9 +911,11 @@ You can add an icon to a text field to tell the user what kind of data to enter 
 
       
         <textarea class="sg-example__source__raw" style="display:none">
-          &lt;div class=&#34;tuiWithIcon tuiWithIcon--reversed&#34;&gt;
-   &lt;div class=&#34;tuiTextField&#34;&gt;Aug 20 - Sep 19, 2017&lt;/div&gt;
-   &lt;i class=&#34;tuiIcon-datetime-calendar tuiWithIcon__icon&#34;&gt;&lt;/i&gt;
+          &lt;div class=&#34;tuiWithLabel tuiWithLabel--full-width&#34;&gt;
+   &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;textFieldWithLabelFullWidth&#34; /&gt;
+   &lt;div class=&#34;tuiTextFieldLabel&#34;&gt;
+       &lt;label for=&#34;textFieldWithLabelFullWidth&#34; class=&#34;tuiLabel&#34; title=&#34;Label&#34;&gt;Label&lt;/label&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
 
         </textarea>
