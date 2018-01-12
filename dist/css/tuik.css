@@ -1131,6 +1131,7 @@
   line-height: 1.7142857em;
   max-width: 30.000000em;
   color: #ffffff;
+  overflow-wrap: break-word;
 }
 .tuiTooltip__pointer {
   width: 0;

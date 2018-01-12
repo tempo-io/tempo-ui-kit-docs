@@ -1,6 +1,6 @@
 /*!
   * TUIK (http://ui-kit.tempo.io)
-  * Copyright 2017 Tempo ehf.
+  * Copyright 2018 Tempo ehf.
   */
  
 (function (global, factory) {
@@ -900,6 +900,7 @@ var Tab = function () {
 
 var Tooltip = function () {
     var eventHandlers = new Utils.EventHandlers('tuiTooltip');
+    var FADE_CSS_ANIMATION_DELAY_MS = 300; // refs to the .tuiTooltip.tuiFade.in and .tuiTooltip.tuiFade.out classes
 
     var ClassNames = {
         TOOLTIP: 'js-tuiTooltip-injected',
@@ -1002,7 +1003,10 @@ var Tooltip = function () {
 
             // <fix> popper where the positioning is off when we reuse the same element
             if (tooltipElement) {
-                tooltipElement.remove();
+                // <fix> IE
+                // tooltipElement.remove();
+                tooltipElement.parentElement.removeChild(tooltipElement);
+                // </fix>
             }
 
             // if (!tooltipElement) {
@@ -1014,10 +1018,6 @@ var Tooltip = function () {
 
             if (options.animate) {
                 tooltipElement.classList.add(ClassNames.ANIMATE);
-            } else {
-                tooltipElement.classList.remove(ClassNames.ANIMATE);
-                tooltipElement.classList.remove(ClassNames.ANIMATE_OPEN);
-                tooltipElement.classList.remove(ClassNames.ANIMATE_CLOSE);
             }
 
             return tooltipElement;
@@ -1091,6 +1091,7 @@ var Tooltip = function () {
             var _this = this;
 
             var show = function show() {
+                _this.isClosingWithAnimation = false;
                 var tooltipElement = void 0;
 
                 var onPopperUpdate = function onPopperUpdate(data) {
@@ -1107,7 +1108,6 @@ var Tooltip = function () {
                 }
 
                 if (_this._options.animate) {
-                    tooltipElement.classList.remove(ClassNames.ANIMATE_CLOSE);
                     tooltipElement.classList.add(ClassNames.ANIMATE_OPEN);
                 } else {
                     tooltipElement.classList.add(ClassNames.ISOPEN);
@@ -1124,6 +1124,7 @@ var Tooltip = function () {
             };
 
             var hide = function hide() {
+                _this.isClosingWithAnimation = _this._options.animate;
                 var tooltipElement = document.querySelector('.' + ClassNames.TOOLTIP);
 
                 if (_this._options.managedTooltip) {
@@ -1139,6 +1140,13 @@ var Tooltip = function () {
                 if (_this._options.animate) {
                     tooltipElement.classList.remove(ClassNames.ANIMATE_OPEN);
                     tooltipElement.classList.add(ClassNames.ANIMATE_CLOSE);
+
+                    setTimeout(function () {
+                        if (_this.isClosingWithAnimation) {
+                            tooltipElement.classList.remove(ClassNames.ANIMATE);
+                            tooltipElement.classList.remove(ClassNames.ANIMATE_CLOSE);
+                        }
+                    }, FADE_CSS_ANIMATION_DELAY_MS);
                 } else {
                     tooltipElement.classList.remove(ClassNames.ISOPEN);
                 }
