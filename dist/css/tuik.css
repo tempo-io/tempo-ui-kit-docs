@@ -571,6 +571,7 @@
   -webkit-flex-grow: 1;
           flex-grow: 1;
   max-width: 100%;
+  line-height: normal;
 }
 .tuiForm__col--label {
   -webkit-box-flex: 0;
