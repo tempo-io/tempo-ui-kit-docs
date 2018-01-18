@@ -11,9 +11,9 @@
     <meta name="description" content="Tooltips" />
 
     <!-- TUIK -->
-    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=b0963b8d-daa0-ef34-4c38-1325b45d05b9" type="text/css">
-    <link rel="stylesheet" href="dist/css/tuik.css?v=b0963b8d-daa0-ef34-4c38-1325b45d05b9" type="text/css">
-    <script src="dist/js/tuik.bundle.js?v=b0963b8d-daa0-ef34-4c38-1325b45d05b9"></script>
+    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=09551e6f-47ba-e080-60a6-b3f203a4d8a6" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css?v=09551e6f-47ba-e080-60a6-b3f203a4d8a6" type="text/css">
+    <script src="dist/js/tuik.bundle.js?v=09551e6f-47ba-e080-60a6-b3f203a4d8a6"></script>
 
     <!-- SG VENDRORS -->
     <link rel="stylesheet" href="vendors/tippy/tippy.css">
@@ -23,8 +23,8 @@
 
     <!-- SG -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=b0963b8d-daa0-ef34-4c38-1325b45d05b9" type="text/css">
-    <script src="tuikdocs.js?v=b0963b8d-daa0-ef34-4c38-1325b45d05b9"></script>
+    <link rel="stylesheet" href="css/main.css?v=09551e6f-47ba-e080-60a6-b3f203a4d8a6" type="text/css">
+    <script src="tuikdocs.js?v=09551e6f-47ba-e080-60a6-b3f203a4d8a6"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -1106,6 +1106,44 @@
 </article>
 
 
+<h3 class="sg-h3">HTML</h3>
+<p>HTML tags will be escaped. If you wish to display HTML content within the tooltip please refere to <a href="components/tooltips#toccustomtooltipelement">providing your own tooltip element</a> section below.</p>
+
+
+
+<article class="sg-example" id="tooltipEscape">
+    
+    <section class="sg-example__render">
+        <button class="tuiButton js-tooltip-escape" title="Tooltip will <escape>html</escape> tags">Hover Me!</button> 
+
+    </section>
+    <script class="js-rendered-script">new tuik.Tooltip('.js-tooltip-escape');
+</script>
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;button class=&#34;tuiButton js-tooltip-escape&#34; title=&#34;Tooltip will &lt;escape&gt;html&lt;/escape&gt; tags&#34;&gt;Hover Me!&lt;/button&gt; 
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Tooltip(&#39;.js-tooltip-escape&#39;);
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;button class=&#34;tuiButton js-tooltip-escape&#34; title=&#34;Tooltip will &lt;escape&gt;html&lt;/escape&gt; tags&#34;&gt;Hover Me!&lt;/button&gt; 
+
+        </textarea>
+      
+    
+</article>
+
+
 <h3 class="sg-h3">Positioning</h3>
 <p class="sg-p">Positioning can be defined within the markup by defining the <em>data-tuiTooltip-placement</em> attribute.</p>
 
@@ -1244,7 +1282,7 @@ new tuik.Tooltip(&#39;.js-tooltip-pos-opts-right&#39;, { placement: &#39;right&#
 </article>
 
 
-<h3 class="sg-h3">Providing your own tooltip element</h3>
+<h2 class="sg-h2" id="toccustomtooltipelement">Providing your own tooltip element</h2>
 <p class="sg-p">You can provide a custom tooltip element by providing it to the constructor.</p>
 
 
@@ -1291,6 +1329,62 @@ new tuik.Tooltip(&#39;.js-tooltip-pos-opts-right&#39;, { placement: &#39;right&#
 &lt;div class=&#34;tuiTooltip js-managed-tooltip&#34;&gt;
    &lt;div class=&#34;tuiTooltip__content&#34;&gt;
        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+   &lt;/div&gt;
+   &lt;div class=&#34;tuiTooltip__pointer&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+<h3 class="sg-h3">HTML</h3>
+<p>When defining custom tooltip elements, it is possible to render HTML content within the tooltip.</p>
+
+
+
+<article class="sg-example" id="tooltipManagedHtml">
+    
+    <section class="sg-example__render">
+        <button class="tuiButton js-managed-html-tooltip-trigger">With HTML content!</button>
+<div class="tuiTooltip js-managed-html-tooltip">
+   <div class="tuiTooltip__content">
+       Here is a tooltip with <strong>BOLD</strong> text.
+   </div>
+   <div class="tuiTooltip__pointer"></div>
+</div>
+
+    </section>
+    <script class="js-rendered-script">new tuik.Tooltip('.js-managed-html-tooltip-trigger', document.querySelector('.js-managed-html-tooltip'));
+</script>
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;button class=&#34;tuiButton js-managed-html-tooltip-trigger&#34;&gt;With HTML content!&lt;/button&gt;
+&lt;div class=&#34;tuiTooltip js-managed-html-tooltip&#34;&gt;
+   &lt;div class=&#34;tuiTooltip__content&#34;&gt;
+       Here is a tooltip with &lt;strong&gt;BOLD&lt;/strong&gt; text.
+   &lt;/div&gt;
+   &lt;div class=&#34;tuiTooltip__pointer&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Tooltip(&#39;.js-managed-html-tooltip-trigger&#39;, document.querySelector(&#39;.js-managed-html-tooltip&#39;));
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;button class=&#34;tuiButton js-managed-html-tooltip-trigger&#34;&gt;With HTML content!&lt;/button&gt;
+&lt;div class=&#34;tuiTooltip js-managed-html-tooltip&#34;&gt;
+   &lt;div class=&#34;tuiTooltip__content&#34;&gt;
+       Here is a tooltip with &lt;strong&gt;BOLD&lt;/strong&gt; text.
    &lt;/div&gt;
    &lt;div class=&#34;tuiTooltip__pointer&#34;&gt;&lt;/div&gt;
 &lt;/div&gt;

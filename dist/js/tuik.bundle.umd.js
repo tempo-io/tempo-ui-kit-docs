@@ -2509,6 +2509,12 @@ var Utils = function () {
             isElement: function isElement(object) {
                 return (typeof HTMLElement === 'undefined' ? 'undefined' : _typeof(HTMLElement)) === 'object' ? object instanceof HTMLElement : // DOM2
                 object && (typeof o === 'undefined' ? 'undefined' : _typeof(o)) === 'object' && object !== null && object.nodeType === 1 && typeof object.nodeName === 'string';
+            },
+
+            escape: function escape(html) {
+                var el = document.createElement('textarea');
+                el.textContent = html;
+                return el.innerHTML;
             }
         },
 
@@ -3415,6 +3421,7 @@ var Tooltip = function () {
 
         // static
 
+
         Tooltip.handleTipMouseOver = function handleTipMouseOver(e) {
             if (!e) {
                 return;
@@ -3457,7 +3464,7 @@ var Tooltip = function () {
         };
 
         Tooltip.populate = function populate(targetElement, tooltipElement) {
-            var title = targetElement.getAttribute(ClassNames.DATA_TITLE) || tooltipElement.querySelector('.' + ClassNames.TOOLTIP_CONTENT).innerHTML.trim();
+            var title = Utils.DOM.escape(targetElement.getAttribute(ClassNames.DATA_TITLE) || tooltipElement.querySelector('.' + ClassNames.TOOLTIP_CONTENT).innerHTML.trim());
 
             if (title) {
                 tooltipElement.querySelector('.' + ClassNames.TOOLTIP_CONTENT).innerHTML = title;
