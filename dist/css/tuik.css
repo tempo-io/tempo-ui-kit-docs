@@ -1463,27 +1463,39 @@
   #TAGS
 \*------------------------------------*/
 .tuiTag {
-  background-color: rgba(217, 217, 217, 0.1);
+  background-color: #d9d9d9;
   border: 1px solid #d9d9d9;
   color: #555555;
-  font-size: 0.78571429em;
+  /* stylelint-disable-next-line */
   border-radius: 0.14285714em;
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: inline-flex;
-  padding: 0 0.4em;
-  line-height: 1.2727273em;
+  padding: 0 0.35714286em;
+  line-height: 1.4285714em;
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
+}
+.tuiTag .tuiTag__label {
+  color: #555555;
+}
+.tuiTag--subtle {
+  background-color: rgba(217, 217, 217, 0.1);
+  border: 1px solid #d9d9d9;
+  color: #555555;
+  /* stylelint-disable-next-line */
+}
+.tuiTag--subtle .tuiTag__label {
+  color: #555555;
 }
 .tuiTag__label {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  font-size: 1em;
+  font-size: 0.85714286em;
   text-decoration: none;
-  max-width: 9.0909091em;
+  max-width: 8.5714286em;
 }
 .tuiTag .tuiIcon-action-delete {
   text-decoration: none;
@@ -1496,9 +1508,9 @@
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  margin-left: 0.35714286em;
+  margin-left: 0.57142857em;
   color: #555555;
-  font-size: 0.42857143em;
+  font-size: 0.71428571em;
   cursor: pointer;
   border: 0;
   padding: 0;
@@ -1515,11 +1527,41 @@
   -webkit-box-align: center;
   -webkit-align-items: center;
           align-items: center;
-  margin-left: 0.35714286em;
+  margin-left: 0.57142857em;
   cursor: pointer;
   fill: #555555;
-  width: 0.42857143em;
-  height: 0.42857143em;
+  width: 0.71428571em;
+  height: 0.71428571em;
+}
+.tuiTag--blue {
+  background-color: #0099f2;
+  border: 1px solid #0099f2;
+  color: #ffffff;
+  /* stylelint-disable-next-line */
+}
+.tuiTag--blue .tuiTag__label {
+  color: #ffffff;
+}
+.tuiTag--blue.tuiTag--subtle {
+  background-color: #dae8f0;
+  border: 1px solid #1584e7;
+  color: #228ce3;
+  /* stylelint-disable-next-line */
+}
+.tuiTag--blue.tuiTag--subtle .tuiTag__label {
+  color: #228ce3;
+}
+.tuiTag--blue .tuiIcon-action-delete {
+  color: #ffffff;
+}
+.tuiTag--blue.tuiTag--subtle .tuiIcon-action-delete {
+  color: #228ce3;
+}
+.tuiTag--blue .tuiIcon {
+  fill: #ffffff;
+}
+.tuiTag--blue.tuiTag--subtle .tuiIcon {
+  fill: #228ce3;
 }
 /*------------------------------------*\
   #VARIABLES
