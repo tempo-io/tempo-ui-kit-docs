@@ -3547,6 +3547,10 @@ var Tooltip = function () {
                     tooltipElement = _this.tooltipElement;
                 }
 
+                if (!tooltipElement) {
+                    return;
+                }
+
                 if (_this._options.animate) {
                     tooltipElement.classList.add(ClassNames.ANIMATE_OPEN);
                 } else {
