@@ -1533,6 +1533,12 @@
   width: 0.71428571em;
   height: 0.71428571em;
 }
+.tuiTag--larger .tuiTag__label {
+  max-width: 12.857143em;
+}
+.tuiTag--full-width .tuiTag__label {
+  max-width: none;
+}
 .tuiTag--blue {
   background-color: #0099f2;
   border: 1px solid #0099f2;
