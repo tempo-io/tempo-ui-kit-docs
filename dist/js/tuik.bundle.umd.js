@@ -2928,6 +2928,7 @@ var Popover = function () {
         onOpened: null,
         onClosed: null,
         pointerless: false,
+        eventless: false,
         popper: {
             modifiers: {
                 arrow: {
@@ -2975,11 +2976,25 @@ var Popover = function () {
         /* public */
 
         Popover.prototype.toggle = function toggle() {
-            var _this = this;
-
             if (this._targetElement.getAttribute('disabled') || this._targetElement.getAttribute('disabled') === '') {
                 return;
             }
+
+            var isOpen = this._popoverElement.classList.contains(ClassNames.ISOPEN);
+
+            if (isOpen) {
+                if (this._popoverElement.tuiRefTargetElement === this._targetElement) {
+                    Popover.close(this._popoverElement);
+                } else {
+                    this.show(true);
+                }
+            } else {
+                this.show();
+            }
+        };
+
+        Popover.prototype.show = function show(useSamePopover) {
+            var _this = this;
 
             var onPopperUpdate = function onPopperUpdate(data) {
                 Popover.place(data.instance.popper, data.placement, _this._options.pointerless);
@@ -3001,33 +3016,26 @@ var Popover = function () {
                 _this._popoverElement.tuiRefTargetElement = _this._targetElement;
             };
 
-            var isOpen = this._popoverElement.classList.contains(ClassNames.ISOPEN);
-
-            if (isOpen) {
-                if (this._popoverElement.tuiRefTargetElement === this._targetElement) {
-                    Popover.close(this._popoverElement);
-                } else {
-                    initializePopper();
-
-                    if (this._targetElement.onOpened) {
-                        this._targetElement.onOpened.call();
-                    }
-                }
-            } else {
+            if (!useSamePopover) {
                 Popover.closeAllOpenPopovers();
-                initializePopper();
+            }
 
+            initializePopper();
+
+            if (!useSamePopover) {
                 this._bindHandlers();
                 this._popoverElement.classList.add(ClassNames.ISOPEN);
+            }
 
-                if (this._targetElement.onOpened) {
-                    this._targetElement.onOpened.call();
-                }
+            if (this._targetElement.onOpened) {
+                this._targetElement.onOpened.call();
             }
         };
 
         Popover.prototype.close = function close() {
-            this._popoverElement.tuiRefTargetElement.focus();
+            if (!this._options.eventless) {
+                this._popoverElement.tuiRefTargetElement.focus();
+            }
             Popover.close(this._popoverElement);
         };
 
@@ -3140,17 +3148,26 @@ var Popover = function () {
 
         Popover.prototype._bindHandlers = function _bindHandlers() {
             eventHandlers.add(this._popoverElement, 'tuikPopoverClose', Popover.handleClose, 'handlers');
-            eventHandlers.add(this._popoverElement, 'keydown', Popover.handleKeydown, 'handlers');
-            eventHandlers.add(this._targetElement, 'keydown', Popover.handleKeydown, 'handlers');
 
-            if (this._options.closeOnRoot) {
+            if (this._options.eventless) {
+                eventHandlers.remove(this._popoverElement, 'keydown', Popover.handleKeydown, 'handlers');
+                eventHandlers.remove(this._targetElement, 'keydown', Popover.handleKeydown, 'handlers');
+            } else {
+                eventHandlers.add(this._popoverElement, 'keydown', Popover.handleKeydown, 'handlers');
+                eventHandlers.add(this._targetElement, 'keydown', Popover.handleKeydown, 'handlers');
+            }
+
+            if (this._options.closeOnRoot && !this._options.eventless) {
                 eventHandlers.add(document, 'click', Popover.handleDocumentAction, 'handlers');
                 eventHandlers.add(document, 'keydown', Popover.handleDocumentAction, 'handlers');
+            } else {
+                eventHandlers.remove(document, 'click', Popover.handleDocumentAction, 'handlers');
+                eventHandlers.remove(document, 'keydown', Popover.handleDocumentAction, 'handlers');
             }
         };
 
         Popover.prototype._addEventListeners = function _addEventListeners() {
-            if (!this._targetElement || !this._popoverElement) {
+            if (!this._targetElement || !this._popoverElement || this._options.eventless) {
                 return;
             }
             var self = this;
@@ -3360,6 +3377,7 @@ var Tooltip = function () {
     var defaultOptions = {
         animate: false,
         placement: 'bottom',
+        triggerCouldBeRemoved: false,
         popper: {
             modifiers: {
                 arrow: {
@@ -3512,22 +3530,23 @@ var Tooltip = function () {
             }
         };
 
-        Tooltip.prototype._bindTooltip = function _bindTooltip(element) {
-            this._manageTitle(element);
-            this._injectHandlers(element);
-            this._addEventListeners(element);
+        Tooltip.prototype._bindTooltip = function _bindTooltip(triggerElement) {
+            this._manageTitle(triggerElement);
+            this._injectHandlers(triggerElement);
+            this._addEventListeners(triggerElement);
+            this._bindObserver(triggerElement);
         };
 
-        Tooltip.prototype._manageTitle = function _manageTitle(element) {
-            var title = element.getAttribute('title');
+        Tooltip.prototype._manageTitle = function _manageTitle(triggerElement) {
+            var title = triggerElement.getAttribute('title');
 
             if (title) {
-                element.setAttribute('title', '');
-                element.setAttribute(ClassNames.DATA_TITLE, title);
+                triggerElement.setAttribute('title', '');
+                triggerElement.setAttribute(ClassNames.DATA_TITLE, title);
             }
         };
 
-        Tooltip.prototype._injectHandlers = function _injectHandlers(element) {
+        Tooltip.prototype._injectHandlers = function _injectHandlers(triggerElement) {
             var _this = this;
 
             var show = function show() {
@@ -3540,7 +3559,7 @@ var Tooltip = function () {
 
                 if (_this._options.managedTooltip) {
                     tooltipElement = Tooltip.create(_this._options);
-                    if (!Tooltip.populate(element, tooltipElement)) {
+                    if (!Tooltip.populate(triggerElement, tooltipElement)) {
                         return;
                     }
                 } else {
@@ -3557,8 +3576,8 @@ var Tooltip = function () {
                     tooltipElement.classList.add(ClassNames.ISOPEN);
                 }
 
-                _this._popper = new Popper(element, tooltipElement, {
-                    placement: Tooltip.getInitialPosition(element, _this._options),
+                _this._popper = new Popper(triggerElement, tooltipElement, {
+                    placement: Tooltip.getInitialPosition(triggerElement, _this._options),
                     modifiers: _this._options.popper.modifiers,
                     onUpdate: onPopperUpdate,
                     onCreate: onPopperUpdate
@@ -3596,13 +3615,41 @@ var Tooltip = function () {
                 }
             };
 
-            element.showTooltip = show;
-            element.hideTooltip = hide;
+            triggerElement.showTooltip = show;
+            triggerElement.hideTooltip = hide;
         };
 
-        Tooltip.prototype._addEventListeners = function _addEventListeners(element) {
-            eventHandlers.add(element, 'mouseover', Tooltip.handleTipMouseOver);
-            eventHandlers.add(element, 'mouseout', Tooltip.handleTipMouseOut);
+        Tooltip.prototype._addEventListeners = function _addEventListeners(triggerElement) {
+            eventHandlers.add(triggerElement, 'mouseover', Tooltip.handleTipMouseOver);
+            eventHandlers.add(triggerElement, 'mouseout', Tooltip.handleTipMouseOut);
+        };
+
+        Tooltip.prototype._bindObserver = function _bindObserver(triggerElement) {
+            if (!this._options.triggerCouldBeRemoved) {
+                return;
+            }
+
+            if (triggerElement.observer) {
+                triggerElement.observer.disconnect();
+            }
+
+            var onDOMMutated = function onDOMMutated(mutationRecords) {
+                mutationRecords.forEach(function (mutationRecord) {
+                    for (var i = 0, len = mutationRecord.removedNodes.length; i < len; i++) {
+                        if (mutationRecord.removedNodes[i] === triggerElement) {
+                            triggerElement.hideTooltip();
+                            triggerElement.observer.disconnect();
+                            break;
+                        }
+                    }
+                });
+            };
+
+            var observer = new MutationObserver(onDOMMutated);
+            triggerElement.observer = observer;
+            triggerElement.observer.observe(triggerElement.parentElement, {
+                childList: true
+            });
         };
 
         return Tooltip;

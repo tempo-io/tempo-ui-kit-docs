@@ -833,6 +833,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+.tuiIcon-action-close:before {
+  content: '\e91c';
+}
 .tuiIcon-option-ellipse:before {
   content: '\e91b';
 }

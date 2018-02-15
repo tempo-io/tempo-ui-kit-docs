@@ -64,16 +64,21 @@
     sgIconQuickReference
 */
 
-var sgIconQuickReference = function(iconIds, containerSelector) {
+var sgIconQuickReference = function(icons, containerSelector) {
     var containterEl = document.querySelector(containerSelector);
 
-    var createIcon = function(iconId) {
-        var svgId = '#' + iconId;
-        var fontClass = 'tuiIcon-' + iconId;
-
+    var createIcon = function(icon) {
+        var svgId = '#' + icon.id;
+        var fontClass = 'tuiIcon-' + icon.id;
+        var deprecatedClass = '';
+        var deprecatedText = '';
+        if(icon.isDeprecated) {
+          deprecatedClass = ' sg-icon-deprecated';
+          deprecatedText = '<span style="text-decoration: underline;">This icon is deprecated</span><br />'
+        }
         var i = document.createElement('i');
-        i.setAttribute('class', fontClass + ' js-sg-icon-tip');
-        i.setAttribute('title', 'svg: <b>' + svgId + '</b><br /> font class: <b>' + fontClass + '</b>');
+        i.setAttribute('class', fontClass + ' js-sg-icon-tip' + deprecatedClass);
+        i.setAttribute('title', deprecatedText + 'svg: <b>' + svgId + '</b><br /> font class: <b>' + fontClass + '</b>');
 
         return i;
     };
