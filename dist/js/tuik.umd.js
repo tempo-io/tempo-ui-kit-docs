@@ -26,16 +26,35 @@ var classCallCheck = function (instance, Constructor) {
 var Utils = function () {
     var Utils = {
         DOM: {
-            hasParentWithClass: function hasParentWithClass(childNode, parentClass) {
-                if (!parentClass || !childNode) {
+            hasParentWithClass: function hasParentWithClass(childNode, parentClasses) {
+                if (!parentClasses || !childNode) {
+                    return false;
+                }
+
+                if (typeof parentClasses === 'string') {
+                    parentClasses = [parentClasses];
+                } else if (!Array.isArray(parentClasses)) {
                     return false;
                 }
 
                 var node = childNode;
                 var maxSearch = 50;
 
+                var containsClasses = function containsClasses(node, cssClasses) {
+                    var hasOneClass = false;
+
+                    for (var i = 0, len = cssClasses.length; i < len; i++) {
+                        if (node.classList && node.classList.contains(cssClasses[i])) {
+                            hasOneClass = true;
+                            break;
+                        }
+                    }
+
+                    return hasOneClass;
+                };
+
                 while (node !== null && maxSearch) {
-                    if (node.classList && node.classList.contains(parentClass)) {
+                    if (containsClasses(node, parentClasses)) {
                         return true;
                     }
                     node = node.parentNode;
@@ -485,7 +504,8 @@ var Popover = function () {
         PLACEMENTRIGHT: 'tuiPopover--right',
         PLACEMENTTOP: 'tuiPopover--top',
         PLACEMENTBOTTOM: 'tuiPopover--bottom',
-        PLACEMENTPOINTERLESS: 'tuiPopover--pointerless'
+        PLACEMENTPOINTERLESS: 'tuiPopover--pointerless',
+        TOIGNORE: null
     };
 
     var defaultOptions = {
@@ -496,6 +516,7 @@ var Popover = function () {
         onClosed: null,
         pointerless: false,
         eventless: false,
+        ignoreElementEventsCssClasses: null,
         popper: {
             modifiers: {
                 arrow: {
@@ -562,6 +583,8 @@ var Popover = function () {
 
         Popover.prototype.show = function show(useSamePopover) {
             var _this = this;
+
+            ClassNames.TOIGNORE = this._options.ignoreElementEventsCssClasses;
 
             var onPopperUpdate = function onPopperUpdate(data) {
                 Popover.place(data.instance.popper, data.placement, _this._options.pointerless);
@@ -634,8 +657,16 @@ var Popover = function () {
                 return;
             }
 
-            if (e.type !== 'keydown' && Utils.DOM.hasParentWithClass(e.target, ClassNames.POPOVER)) {
+            // do not close if event occured from within the dropdown
+            if (Utils.DOM.hasParentWithClass(e.target, ClassNames.POPOVER)) {
                 return;
+            }
+
+            // do not close if event occured from within an ignored item
+            if (ClassNames.TOIGNORE) {
+                if (Utils.DOM.hasParentWithClass(e.target, ClassNames.TOIGNORE)) {
+                    return;
+                }
             }
 
             Popover.closeAllOpenPopovers();

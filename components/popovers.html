@@ -11,9 +11,9 @@
     <meta name="description" content="Popovers" />
 
     <!-- TUIK -->
-    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=30b2c1aa-595f-7c08-d3ee-f41b12600fa5" type="text/css">
-    <link rel="stylesheet" href="dist/css/tuik.css?v=30b2c1aa-595f-7c08-d3ee-f41b12600fa5" type="text/css">
-    <script src="dist/js/tuik.bundle.js?v=30b2c1aa-595f-7c08-d3ee-f41b12600fa5"></script>
+    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=f9a344fd-ceb7-bec0-075e-d21cfd47f300" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css?v=f9a344fd-ceb7-bec0-075e-d21cfd47f300" type="text/css">
+    <script src="dist/js/tuik.bundle.js?v=f9a344fd-ceb7-bec0-075e-d21cfd47f300"></script>
 
     <!-- SG VENDRORS -->
     <link rel="stylesheet" href="vendors/tippy/tippy.css">
@@ -23,8 +23,8 @@
 
     <!-- SG -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=30b2c1aa-595f-7c08-d3ee-f41b12600fa5" type="text/css">
-    <script src="tuikdocs.js?v=30b2c1aa-595f-7c08-d3ee-f41b12600fa5"></script>
+    <link rel="stylesheet" href="css/main.css?v=f9a344fd-ceb7-bec0-075e-d21cfd47f300" type="text/css">
+    <script src="tuikdocs.js?v=f9a344fd-ceb7-bec0-075e-d21cfd47f300"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -1537,6 +1537,76 @@ document.querySelector(&#39;.js-trigger-close-eventless&#39;).addEventListener(&
    &lt;div class=&#34;tuiPopover__content&#34;&gt;
      &lt;div&gt;[LOOK IN YOUR CONSOLE]&lt;/div&gt;
    &lt;/div&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+
+<p class="sg-p">You can provide a list of items to ignore via the <em>ignoreElementEventsCssClasses</em> array. Any <em>click</em> or <em>keydown</em> events raised from these elements and their childs will be ignored.</p>
+<p class="sg-p">In the example below, we are ignoring elements with the <em>elementToIgnore</em> css class. Thus, even if clicking outside the popover should close the popove, clicking within that element will let the popover open.</p>
+
+
+
+
+<article class="sg-example sg-popover-display-wbutton" id="popoverIgnore">
+    
+    <section class="sg-example__render">
+        <button class="js-target-test tuiButton">Target</button>
+<div class="elementToIgnore">Clicking me will not close the popover if open</div>
+
+<div class="js-popover-test tuiPopover">
+   <div class="tuiPopover__content">
+       <div>[CONTENT]</div>
+     </div>
+   <div class="tuiPopover__pointer"></div>
+</div>
+
+    </section>
+    <script class="js-rendered-script">new tuik.Popover(document.querySelector('.js-target-test'), document.querySelector('.js-popover-test'), { ignoreElementEventsCssClasses: ['elementToIgnore']});
+document.querySelector('.closeBtn').addEventListener('click', function(e) {
+   e.target.remove();
+});
+</script>
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;button class=&#34;js-target-test tuiButton&#34;&gt;Target&lt;/button&gt;
+&lt;div class=&#34;elementToIgnore&#34;&gt;Clicking me will not close the popover if open&lt;/div&gt;
+
+&lt;div class=&#34;js-popover-test tuiPopover&#34;&gt;
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+       &lt;div&gt;[CONTENT]&lt;/div&gt;
+     &lt;/div&gt;
+   &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+      <section class="sg-example__source sg-example__source--script">
+          <pre><code class="js">new tuik.Popover(document.querySelector(&#39;.js-target-test&#39;), document.querySelector(&#39;.js-popover-test&#39;), { ignoreElementEventsCssClasses: [&#39;elementToIgnore&#39;]});
+document.querySelector(&#39;.closeBtn&#39;).addEventListener(&#39;click&#39;, function(e) {
+   e.target.remove();
+});
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;button class=&#34;js-target-test tuiButton&#34;&gt;Target&lt;/button&gt;
+&lt;div class=&#34;elementToIgnore&#34;&gt;Clicking me will not close the popover if open&lt;/div&gt;
+
+&lt;div class=&#34;js-popover-test tuiPopover&#34;&gt;
+   &lt;div class=&#34;tuiPopover__content&#34;&gt;
+       &lt;div&gt;[CONTENT]&lt;/div&gt;
+     &lt;/div&gt;
    &lt;div class=&#34;tuiPopover__pointer&#34;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
