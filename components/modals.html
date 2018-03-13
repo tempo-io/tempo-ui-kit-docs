@@ -11,9 +11,9 @@
     <meta name="description" content="Modals" />
 
     <!-- TUIK -->
-    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=f9a344fd-ceb7-bec0-075e-d21cfd47f300" type="text/css">
-    <link rel="stylesheet" href="dist/css/tuik.css?v=f9a344fd-ceb7-bec0-075e-d21cfd47f300" type="text/css">
-    <script src="dist/js/tuik.bundle.js?v=f9a344fd-ceb7-bec0-075e-d21cfd47f300"></script>
+    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=ff3a8c7e-1b3e-9240-b5b1-5f6bd3a76b8e" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css?v=ff3a8c7e-1b3e-9240-b5b1-5f6bd3a76b8e" type="text/css">
+    <script src="dist/js/tuik.bundle.js?v=ff3a8c7e-1b3e-9240-b5b1-5f6bd3a76b8e"></script>
 
     <!-- SG VENDRORS -->
     <link rel="stylesheet" href="vendors/tippy/tippy.css">
@@ -23,8 +23,8 @@
 
     <!-- SG -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=f9a344fd-ceb7-bec0-075e-d21cfd47f300" type="text/css">
-    <script src="tuikdocs.js?v=f9a344fd-ceb7-bec0-075e-d21cfd47f300"></script>
+    <link rel="stylesheet" href="css/main.css?v=ff3a8c7e-1b3e-9240-b5b1-5f6bd3a76b8e" type="text/css">
+    <script src="tuikdocs.js?v=ff3a8c7e-1b3e-9240-b5b1-5f6bd3a76b8e"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -1190,6 +1190,178 @@
                 &lt;button class=&#34;tuiButton tuiButton--subtle&#34;&gt;Action&lt;/button&gt;
             &lt;/div&gt;
         &lt;/footer&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+
+        </textarea>
+      
+    
+</article>
+
+
+<h3 class="sg-h3">With a form</h3>
+
+
+
+<article class="sg-example sg-modal-display" id="modalWithForm">
+    
+    <section class="sg-example__render">
+        <div class="tuiBlanket">
+    <article class="tuiDialog">
+        <header class="tuiDialog__header"><h1 class="tuiDialog__header__title">Form</h1></header>
+        <section class="tuiDialog__body">
+          <form class="tuiForm">
+             <div class="tuiForm__row tuiForm__row--no-input">
+                 <div class="tuiForm__col tuiForm__col--label">
+                     <label class="tuiLabel" for="fdF0">User</label>
+                 </div>
+                 <div class="tuiForm__col">
+                     <span>User name</span>
+                 </div>
+             </div>
+             <div class="tuiForm__row">
+                 <div class="tuiForm__col tuiForm__col--label">
+                     <label class="tuiLabel tuiLabel-is-required" for="fdF4">Name</label>
+                 </div>
+                 <div class="tuiForm__col">
+                     <input class="tuiTextField" type="text" id="fdF4">
+                 </div>
+             </div>
+             <div class="tuiForm__row">
+                 <div class="tuiForm__col tuiForm__col--label">
+                     <label class="tuiLabel" for="fdF5">Date</label>
+                 </div>
+                 <div class="tuiForm__col">
+                     <input class="tuiTextField tuiTextField--date" type="text" id="fdF5">
+                     <label class="tuiLabel" for="fdF6">to</label>
+                     <input class="tuiTextField tuiTextField--date" type="text" id="fdF6">
+                 </div>
+             </div>
+             <div class="tuiForm__row">
+                 <div class="tuiForm__col tuiForm__col--label"><label class="tuiLabel" for="f6">Comment</label></div>
+                 <div class="tuiForm__col"><textarea class="tuiTextField" id="f6"></textarea></div>
+             </div>
+             <footer class="tuiForm__footer">
+                 <div class="tuiForm__footer__secondary">
+                     <label class="tuiLabel" for="fdF7">Log Another <input class="tuiCheckbox" type="checkbox" id="fdF7"></label>
+                 </div>
+                 <div class="tuiForm__footer__actions">
+                     <button class="tuiButton tuiButton--primary">Submit</button>
+                     <button class="tuiButton tuiButton--subtle">Cancel</button>
+                 </div>
+             </footer>
+          </form>
+        </section>
+    </article>
+</div>
+
+    </section>
+    
+    
+
+    
+      <section class="sg-example__source">
+          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
+          <pre><code class="html">&lt;div class=&#34;tuiBlanket&#34;&gt;
+    &lt;article class=&#34;tuiDialog&#34;&gt;
+        &lt;header class=&#34;tuiDialog__header&#34;&gt;&lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Form&lt;/h1&gt;&lt;/header&gt;
+        &lt;section class=&#34;tuiDialog__body&#34;&gt;
+          &lt;form class=&#34;tuiForm&#34;&gt;
+             &lt;div class=&#34;tuiForm__row tuiForm__row--no-input&#34;&gt;
+                 &lt;div class=&#34;tuiForm__col tuiForm__col--label&#34;&gt;
+                     &lt;label class=&#34;tuiLabel&#34; for=&#34;fdF0&#34;&gt;User&lt;/label&gt;
+                 &lt;/div&gt;
+                 &lt;div class=&#34;tuiForm__col&#34;&gt;
+                     &lt;span&gt;User name&lt;/span&gt;
+                 &lt;/div&gt;
+             &lt;/div&gt;
+             &lt;div class=&#34;tuiForm__row&#34;&gt;
+                 &lt;div class=&#34;tuiForm__col tuiForm__col--label&#34;&gt;
+                     &lt;label class=&#34;tuiLabel tuiLabel-is-required&#34; for=&#34;fdF4&#34;&gt;Name&lt;/label&gt;
+                 &lt;/div&gt;
+                 &lt;div class=&#34;tuiForm__col&#34;&gt;
+                     &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;fdF4&#34; /&gt;
+                 &lt;/div&gt;
+             &lt;/div&gt;
+             &lt;div class=&#34;tuiForm__row&#34;&gt;
+                 &lt;div class=&#34;tuiForm__col tuiForm__col--label&#34;&gt;
+                     &lt;label class=&#34;tuiLabel&#34; for=&#34;fdF5&#34;&gt;Date&lt;/label&gt;
+                 &lt;/div&gt;
+                 &lt;div class=&#34;tuiForm__col&#34;&gt;
+                     &lt;input class=&#34;tuiTextField tuiTextField--date&#34; type=&#34;text&#34; id=&#34;fdF5&#34; /&gt;
+                     &lt;label class=&#34;tuiLabel&#34; for=&#34;fdF6&#34;&gt;to&lt;/label&gt;
+                     &lt;input class=&#34;tuiTextField tuiTextField--date&#34; type=&#34;text&#34; id=&#34;fdF6&#34; /&gt;
+                 &lt;/div&gt;
+             &lt;/div&gt;
+             &lt;div class=&#34;tuiForm__row&#34;&gt;
+                 &lt;div class=&#34;tuiForm__col tuiForm__col--label&#34;&gt;&lt;label class=&#34;tuiLabel&#34; for=&#34;f6&#34;&gt;Comment&lt;/label&gt;&lt;/div&gt;
+                 &lt;div class=&#34;tuiForm__col&#34;&gt;&lt;textarea class=&#34;tuiTextField&#34; id=&#34;f6&#34;&gt;&lt;/textarea&gt;&lt;/div&gt;
+             &lt;/div&gt;
+             &lt;footer class=&#34;tuiForm__footer&#34;&gt;
+                 &lt;div class=&#34;tuiForm__footer__secondary&#34;&gt;
+                     &lt;label class=&#34;tuiLabel&#34; for=&#34;fdF7&#34;&gt;Log Another &lt;input class=&#34;tuiCheckbox&#34; type=&#34;checkbox&#34; id=&#34;fdF7&#34; /&gt;&lt;/label&gt;
+                 &lt;/div&gt;
+                 &lt;div class=&#34;tuiForm__footer__actions&#34;&gt;
+                     &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Submit&lt;/button&gt;
+                     &lt;button class=&#34;tuiButton tuiButton--subtle&#34;&gt;Cancel&lt;/button&gt;
+                 &lt;/div&gt;
+             &lt;/footer&gt;
+          &lt;/form&gt;
+        &lt;/section&gt;
+    &lt;/article&gt;
+&lt;/div&gt;
+</code></pre>
+      </section>
+      
+
+      
+        <textarea class="sg-example__source__raw" style="display:none">
+          &lt;div class=&#34;tuiBlanket&#34;&gt;
+    &lt;article class=&#34;tuiDialog&#34;&gt;
+        &lt;header class=&#34;tuiDialog__header&#34;&gt;&lt;h1 class=&#34;tuiDialog__header__title&#34;&gt;Form&lt;/h1&gt;&lt;/header&gt;
+        &lt;section class=&#34;tuiDialog__body&#34;&gt;
+          &lt;form class=&#34;tuiForm&#34;&gt;
+             &lt;div class=&#34;tuiForm__row tuiForm__row--no-input&#34;&gt;
+                 &lt;div class=&#34;tuiForm__col tuiForm__col--label&#34;&gt;
+                     &lt;label class=&#34;tuiLabel&#34; for=&#34;fdF0&#34;&gt;User&lt;/label&gt;
+                 &lt;/div&gt;
+                 &lt;div class=&#34;tuiForm__col&#34;&gt;
+                     &lt;span&gt;User name&lt;/span&gt;
+                 &lt;/div&gt;
+             &lt;/div&gt;
+             &lt;div class=&#34;tuiForm__row&#34;&gt;
+                 &lt;div class=&#34;tuiForm__col tuiForm__col--label&#34;&gt;
+                     &lt;label class=&#34;tuiLabel tuiLabel-is-required&#34; for=&#34;fdF4&#34;&gt;Name&lt;/label&gt;
+                 &lt;/div&gt;
+                 &lt;div class=&#34;tuiForm__col&#34;&gt;
+                     &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; id=&#34;fdF4&#34; /&gt;
+                 &lt;/div&gt;
+             &lt;/div&gt;
+             &lt;div class=&#34;tuiForm__row&#34;&gt;
+                 &lt;div class=&#34;tuiForm__col tuiForm__col--label&#34;&gt;
+                     &lt;label class=&#34;tuiLabel&#34; for=&#34;fdF5&#34;&gt;Date&lt;/label&gt;
+                 &lt;/div&gt;
+                 &lt;div class=&#34;tuiForm__col&#34;&gt;
+                     &lt;input class=&#34;tuiTextField tuiTextField--date&#34; type=&#34;text&#34; id=&#34;fdF5&#34; /&gt;
+                     &lt;label class=&#34;tuiLabel&#34; for=&#34;fdF6&#34;&gt;to&lt;/label&gt;
+                     &lt;input class=&#34;tuiTextField tuiTextField--date&#34; type=&#34;text&#34; id=&#34;fdF6&#34; /&gt;
+                 &lt;/div&gt;
+             &lt;/div&gt;
+             &lt;div class=&#34;tuiForm__row&#34;&gt;
+                 &lt;div class=&#34;tuiForm__col tuiForm__col--label&#34;&gt;&lt;label class=&#34;tuiLabel&#34; for=&#34;f6&#34;&gt;Comment&lt;/label&gt;&lt;/div&gt;
+                 &lt;div class=&#34;tuiForm__col&#34;&gt;&lt;textarea class=&#34;tuiTextField&#34; id=&#34;f6&#34;&gt;&lt;/textarea&gt;&lt;/div&gt;
+             &lt;/div&gt;
+             &lt;footer class=&#34;tuiForm__footer&#34;&gt;
+                 &lt;div class=&#34;tuiForm__footer__secondary&#34;&gt;
+                     &lt;label class=&#34;tuiLabel&#34; for=&#34;fdF7&#34;&gt;Log Another &lt;input class=&#34;tuiCheckbox&#34; type=&#34;checkbox&#34; id=&#34;fdF7&#34; /&gt;&lt;/label&gt;
+                 &lt;/div&gt;
+                 &lt;div class=&#34;tuiForm__footer__actions&#34;&gt;
+                     &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Submit&lt;/button&gt;
+                     &lt;button class=&#34;tuiButton tuiButton--subtle&#34;&gt;Cancel&lt;/button&gt;
+                 &lt;/div&gt;
+             &lt;/footer&gt;
+          &lt;/form&gt;
+        &lt;/section&gt;
     &lt;/article&gt;
 &lt;/div&gt;
 

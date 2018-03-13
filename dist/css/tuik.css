@@ -681,6 +681,16 @@
   padding: 0;
   text-align: left;
 }
+.tuiDialog .tuiForm {
+  padding: 0;
+}
+.tuiDialog .tuiForm__row {
+  padding: 0;
+}
+.tuiDialog .tuiForm__footer {
+  padding-left: 0;
+  padding-right: 0;
+}
 /*------------------------------------*\
   #VARIABLES
 \*------------------------------------*/
@@ -696,11 +706,11 @@
   color: #ffffff;
   border-radius: 0.14285714em;
   display: inline-block;
-  padding: 0 0.4em;
-  font-size: 0.78571429em;
+  padding: 0 0.41666667em;
+  font-size: 0.85714286em;
   font-weight: bold;
-  line-height: 1.3636364em;
-  margin: 0.357em;
+  line-height: 1.6666667em;
+  margin: 0.41666667em;
   text-transform: uppercase;
 }
 .tuiLozenge--subtle {

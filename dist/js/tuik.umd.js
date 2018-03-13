@@ -652,6 +652,10 @@ var Popover = function () {
                 return;
             }
 
+            if (e.type === 'keydown' && e.which === Utils.KEYCODES.ESCAPE) {
+                Popover.closeAllOpenPopovers();
+            }
+
             // do not close if Right mouse click or Tab
             if (e && (e.which === Utils.KEYCODES.RIGHT_MOUSE_BUTTON_WHICH || e.type === 'keydown' && e.which === Utils.KEYCODES.TAB)) {
                 return;
@@ -755,7 +759,8 @@ var Popover = function () {
                 eventHandlers.add(this._targetElement, 'keydown', Popover.handleKeydown, 'handlers');
             }
 
-            if (this._options.closeOnRoot && !this._options.eventless) {
+            if (this._options.closeOnRoot) {
+                // && !this._options.eventless
                 eventHandlers.add(document, 'click', Popover.handleDocumentAction, 'handlers');
                 eventHandlers.add(document, 'keydown', Popover.handleDocumentAction, 'handlers');
             } else {
