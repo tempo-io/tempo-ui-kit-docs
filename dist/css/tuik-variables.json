@@ -1,8 +1,8 @@
 {
     "fontSize": "14px",
     "fontFamilySansSerif": "-apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif",
-    "popoverZindex": "4000",
     "blanketZindex": "5000",
+    "popoverZindex": "5250",
     "drowdownZindex": "5500",
     "tooltipZindex": "6000",
     "notificationZindex": "7000",
@@ -140,5 +140,19 @@
     "avatarIconSmallSize": "1.1428571em",
     "avatarIconMediumSize": "1.7142857em",
     "avatarIconLargeSize": "2.2857143em",
-    "avatarIconXlargeSize": "3.4285714em"
+    "avatarIconXlargeSize": "3.4285714em",
+    "toggleswitchTransitionDuration": "0.25s",
+    "toggleswitchTransitionTimingFunction": "ease",
+    "toggleswitchLabelWidth": "2.8571429em",
+    "toggleswitchLabelHeight": "1.4285714em",
+    "toggleswitchRailWidth": "100%",
+    "toggleswitchRailHeight": "100%",
+    "toggleswitchRailBackgroundColor": "#d9d9d9",
+    "toggleswitchRailBorderRadius": "7.1428571em",
+    "toggleswitchRailCheckedBackgroundColor": "#43b02a",
+    "toggleswitchKnobWidth": "1.1428571em",
+    "toggleswitchKnobHeight": "1.1428571em",
+    "toggleswitchKnobBorderRadius": "50%",
+    "toggleswitchKnobBackgroundColor": "#ffffff",
+    "toggleswitchKnobCheckedLeft": "1.6428571em"
 }

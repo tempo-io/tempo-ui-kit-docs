@@ -5,10 +5,10 @@
     <base href="/"></base>
     <title>
         
-            Text Fields - Tempo UI Kit and Guidelines
+            Toggle Switch - Tempo UI Kit and Guidelines
         
     </title>
-    <meta name="description" content="Text Fields" />
+    <meta name="description" content="Toggle Switch" />
 
     <!-- TUIK -->
     <link rel="stylesheet" href="dist/css/tuik-typography.css?v=5b6d8dbe-bce1-8f80-30cc-f72ffcca05dd" type="text/css">
@@ -577,7 +577,7 @@
                       
                     
                       
-                        <li class="sg-nav__links__element sg-nav__links__element-is-active ">
+                        <li class="sg-nav__links__element ">
                             <a href="components/textfields">Text Fields</a>
                             
                         </li>
@@ -601,7 +601,7 @@
                       
                     
                       
-                        <li class="sg-nav__links__element ">
+                        <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                             <a href="components/toggleswitch">Toggle Switch</a>
                             
                                 <em class="sg-draft-notification">Draft</em>
@@ -627,25 +627,32 @@
         
     
 
-    Text Fields
+    Toggle Switch
+    
+        <em class="sg-draft-notification">Draft</em>
+
     
 
     
 </h1>
 
+<p class="sg-p">A toggle switch represents a physical switch where users are able to turn things on or off.</p>
 
-<p class="sg-p">Use text fields to allow users to enter, select and search for text.</p>
-
-<h2 class="sg-h2">Single line</h2>
-<h3 class="sg-h3">Default</h3>
-
+<h2 class="sg-h2" id="toggleSwitchDefault">Examples</h2>
+<p class="sg-p">A container with a base class <em>.tuiToggleSwitch</em>. It includes a checkbox input <em>.tuiToggleSwitch__input</em> and a label element <em>.tuiToggleSwitch__label</em>. Icons are added within the label.</p>
 
 
-<article class="sg-example" id="textFieldsDefault">
+
+<article class="sg-example" id="toggleSwitchDefault">
     
     <section class="sg-example__render">
-        <input class="tuiTextField" type="text">
-<input class="tuiTextField" type="text" value="With some text...">
+        <div class="tuiToggleSwitch">
+   <input class="tuiToggleSwitch__input" id="toggleSwitch-1" type="checkbox">
+   <label class="tuiToggleSwitch__label" for="toggleSwitch-1">
+       <i class="tuiIcon-action-check"></i>
+       <i class="tuiIcon-action-close"></i>
+   </label>
+</div>
 
     </section>
     
@@ -654,339 +661,31 @@
     
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; /&gt;
-&lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; /&gt;
+          <pre><code class="html">&lt;div class=&#34;tuiToggleSwitch&#34;&gt;
+   &lt;input class=&#34;tuiToggleSwitch__input&#34; id=&#34;toggleSwitch-1&#34; type=&#34;checkbox&#34;&gt;
+   &lt;label class=&#34;tuiToggleSwitch__label&#34; for=&#34;toggleSwitch-1&#34;&gt;
+       &lt;i class=&#34;tuiIcon-action-check&#34;&gt;&lt;/i&gt;
+       &lt;i class=&#34;tuiIcon-action-close&#34;&gt;&lt;/i&gt;
+   &lt;/label&gt;
+&lt;/div&gt;
 </code></pre>
       </section>
       
 
       
         <textarea class="sg-example__source__raw" style="display:none">
-          &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; /&gt;
-&lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; /&gt;
+          &lt;div class=&#34;tuiToggleSwitch&#34;&gt;
+   &lt;input class=&#34;tuiToggleSwitch__input&#34; id=&#34;toggleSwitch-1&#34; type=&#34;checkbox&#34;&gt;
+   &lt;label class=&#34;tuiToggleSwitch__label&#34; for=&#34;toggleSwitch-1&#34;&gt;
+       &lt;i class=&#34;tuiIcon-action-check&#34;&gt;&lt;/i&gt;
+       &lt;i class=&#34;tuiIcon-action-close&#34;&gt;&lt;/i&gt;
+   &lt;/label&gt;
+&lt;/div&gt;
 
         </textarea>
       
     
 </article>
-
-
-<h3 class="sg-h3">Place holder</h3>
-<p class="sg-p">Placeholder text provides users with a short hint or example that describes the expected value for the text field. For example, 'Start typing to see names', or shows an example of a typical entry such as 'My first project'. You must prefix examples with 'e.g.' Only provide placeholder text where clarification is essential. In most cases, the label will provide sufficient guidance.</p>
-
-
-<article class="sg-example" id="textFieldsPlaceHolder">
-    
-    <section class="sg-example__render">
-        <input class="tuiTextField" type="text" placeholder="Placeholder text">
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;Placeholder text&#34; /&gt;</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;Placeholder text&#34; /&gt;
-        </textarea>
-      
-    
-</article>
-
-
-<h3 class="sg-h3">Disabled</h3>
-<p class="sg-p">Use disabled fields when there is a prerequisite condition that must be met before the user can enter a value, or when there is a scenario where that field would become available.</p>
-
-
-
-<article class="sg-example" id="textFieldsDisabled">
-    
-    <section class="sg-example__render">
-        <input class="tuiTextField" type="text" disabled="disabled">
-<input class="tuiTextField" type="text" placeholder="Placeholder text" disabled="disabled">
-<input class="tuiTextField" type="text" value="With some text..." disabled="disabled">
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; disabled=&#34;disabled&#34; /&gt;
-&lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;Placeholder text&#34; disabled=&#34;disabled&#34; /&gt;
-&lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; disabled=&#34;disabled&#34; /&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; disabled=&#34;disabled&#34; /&gt;
-&lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; placeholder=&#34;Placeholder text&#34; disabled=&#34;disabled&#34; /&gt;
-&lt;input class=&#34;tuiTextField&#34; type=&#34;text&#34; value=&#34;With some text...&#34; disabled=&#34;disabled&#34; /&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-<h3 class="sg-h3">Size</h3>
-<p class="sg-p">Modifiers are available to set the text input width to support date and time formats. Use <em>tuiTextField--date</em> for ISO date inputs <em>tuiTextField--hundreds</em> for numeric values in the hundreds and <em>tuiTextField--hours</em> for time entry.</p>
-
-
-
-<article class="sg-example" id="textFieldsSize">
-    
-    <section class="sg-example__render">
-        <input class="tuiTextField tuiTextField--date" type="text" placeholder="2017-01-01">
-<input class="tuiTextField tuiTextField--hours" type="text" placeholder="00:01">
-<input class="tuiTextField tuiTextField--hundreds" type="text" placeholder="999">
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;input class=&#34;tuiTextField tuiTextField--date&#34; type=&#34;text&#34; placeholder=&#34;2017-01-01&#34; /&gt;
-&lt;input class=&#34;tuiTextField tuiTextField--hours&#34; type=&#34;text&#34; placeholder=&#34;00:01&#34; /&gt;
-&lt;input class=&#34;tuiTextField tuiTextField--hundreds&#34; type=&#34;text&#34; placeholder=&#34;999&#34; /&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;input class=&#34;tuiTextField tuiTextField--date&#34; type=&#34;text&#34; placeholder=&#34;2017-01-01&#34; /&gt;
-&lt;input class=&#34;tuiTextField tuiTextField--hours&#34; type=&#34;text&#34; placeholder=&#34;00:01&#34; /&gt;
-&lt;input class=&#34;tuiTextField tuiTextField--hundreds&#34; type=&#34;text&#34; placeholder=&#34;999&#34; /&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-<h3 class="sg-h3">Full width <em class="sg-eperimental-notification">Experimental</em></h3>
-<p class="sg-p">You can have a text field render using 100% of it's parent width by adding the <em>tuiTextField--full-width</em> modifier. This modifier is flagged as experimental and will probably change in the near future.</p>
-
-
-
-
-<article class="sg-example" id="textFieldsFull">
-    
-    <section class="sg-example__render">
-        <input class="tuiTextField tuiTextField--full-width" type="text" placeholder="Full width">
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;input class=&#34;tuiTextField tuiTextField--full-width&#34; type=&#34;text&#34; placeholder=&#34;Full width&#34; /&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;input class=&#34;tuiTextField tuiTextField--full-width&#34; type=&#34;text&#34; placeholder=&#34;Full width&#34; /&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-
-
-<h2 class="sg-h2">Multi-line</h2>
-<h3 class="sg-h3">Default</h3>
-
-
-
-<article class="sg-example" id="textFieldsMultiLineDefault">
-    
-    <section class="sg-example__render">
-        <textarea class="tuiTextField"></textarea>
-<textarea class="tuiTextField">With some text...</textarea>
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;textarea class=&#34;tuiTextField&#34;&gt;&lt;/textarea&gt;
-&lt;textarea class=&#34;tuiTextField&#34;&gt;With some text...&lt;/textarea&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;textarea class=&#34;tuiTextField&#34;&gt;&lt;/textarea&gt;
-&lt;textarea class=&#34;tuiTextField&#34;&gt;With some text...&lt;/textarea&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-<h3 class="sg-h3">Place holder</h3>
-<p class="sg-p">Placeholder text provides users with a short hint or example that describes the expected value for the text field. For example, 'Start typing to see names', or shows an example of a typical entry such as 'My first project'. You must prefix examples with 'e.g.' Only provide placeholder text where clarification is essential. In most cases, the label will provide sufficient guidance.</p>
-
-
-<article class="sg-example" id="textFieldsMultiLinePlaceHolder">
-    
-    <section class="sg-example__render">
-        <textarea class="tuiTextField" placeholder="Placeholder text"></textarea>
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;textarea class=&#34;tuiTextField&#34; placeholder=&#34;Placeholder text&#34;&gt;&lt;/textarea&gt;</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;textarea class=&#34;tuiTextField&#34; placeholder=&#34;Placeholder text&#34;&gt;&lt;/textarea&gt;
-        </textarea>
-      
-    
-</article>
-
-
-<h3 class="sg-h3">Disabled</h3>
-<p class="sg-p">Use disabled fields when there is a prerequisite condition that must be met before the user can enter a value, or when there is a scenario where that field would become available.</p>
-
-
-
-<article class="sg-example" id="textFieldsMultiLineDisabled">
-    
-    <section class="sg-example__render">
-        <textarea class="tuiTextField" disabled="disabled"></textarea>
-<textarea class="tuiTextField" placeholder="Placeholder text" disabled="disabled"></textarea>
-<textarea class="tuiTextField" disabled="disabled">With some text...</textarea>
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;textarea class=&#34;tuiTextField&#34; disabled=&#34;disabled&#34;&gt;&lt;/textarea&gt;
-&lt;textarea class=&#34;tuiTextField&#34; placeholder=&#34;Placeholder text&#34; disabled=&#34;disabled&#34;&gt;&lt;/textarea&gt;
-&lt;textarea class=&#34;tuiTextField&#34; disabled=&#34;disabled&#34;&gt;With some text...&lt;/textarea&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;textarea class=&#34;tuiTextField&#34; disabled=&#34;disabled&#34;&gt;&lt;/textarea&gt;
-&lt;textarea class=&#34;tuiTextField&#34; placeholder=&#34;Placeholder text&#34; disabled=&#34;disabled&#34;&gt;&lt;/textarea&gt;
-&lt;textarea class=&#34;tuiTextField&#34; disabled=&#34;disabled&#34;&gt;With some text...&lt;/textarea&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-<h3 class="sg-h3">Resizability</h3>
-<p class="sg-p">Multi-line text fields must remain resizable at all times. You can restrict It to resize vertically only, but there should always be a way to make the text field larger.</p>
-
-
-
-<article class="sg-example" id="textFieldsMultiLineResize">
-    
-    <section class="sg-example__render">
-        <textarea class="tuiTextField">Default resize</textarea>
-<textarea class="tuiTextField tuiTextField--vertical-only">Vertical only resize</textarea>
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;textarea class=&#34;tuiTextField&#34;&gt;Default resize&lt;/textarea&gt;
-&lt;textarea class=&#34;tuiTextField tuiTextField--vertical-only&#34;&gt;Vertical only resize&lt;/textarea&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;textarea class=&#34;tuiTextField&#34;&gt;Default resize&lt;/textarea&gt;
-&lt;textarea class=&#34;tuiTextField tuiTextField--vertical-only&#34;&gt;Vertical only resize&lt;/textarea&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-<h3 class="sg-h3">Full width <em class="sg-eperimental-notification">Experimental</em></h3>
-<p class="sg-p">You can have a multi-line text field render using 100% of it's parent width by adding the <em>tuiTextField--full-width</em> modifier. This modifier is flagged as experimental and will probably change in the near future.</p>
-
-
-
-
-<article class="sg-example" id="textFieldsMultiLineFull">
-    
-    <section class="sg-example__render">
-        <textarea class="tuiTextField tuiTextField--full-width">Full width</textarea>
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;textarea class=&#34;tuiTextField tuiTextField--full-width&#34;&gt;Full width&lt;/textarea&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;textarea class=&#34;tuiTextField tuiTextField--full-width&#34;&gt;Full width&lt;/textarea&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-
-<h2 class="sg-h2">Guidelines</h2>
-
-<h3 class="sg-h3">Length</h3>
-<p class="sg-p">The length of the text field should reflect the expected length of content. This guideline applies to any form controls with a similar shape, such as drop-down menus and text boxes. Keep localization in mind when determining the length of your fields.</p>
-
-<h3 class="sg-h3">Accessibility</h3>
-<p class="sg-p">Auto-focus the first field by default. Users should then be able to tab through elements in the form in a logical sequence. This maintains Section 508 accessibility compliance.</p>
 
                 <form id="sg-try-example" method="post" action="http://jsfiddle.net/api/post/library/pure/" target="sgtryexample" style="display:none;">
     <input type="submit">

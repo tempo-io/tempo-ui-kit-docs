@@ -23,6 +23,24 @@ var classCallCheck = function (instance, Constructor) {
   }
 };
 
+var createClass = function () {
+  function defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  return function (Constructor, protoProps, staticProps) {
+    if (protoProps) defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) defineProperties(Constructor, staticProps);
+    return Constructor;
+  };
+}();
+
 var Utils = function () {
     var Utils = {
         DOM: {
@@ -459,41 +477,6 @@ var Dropdown = function () {
     return Dropdown;
 }(Popper);
 
-var Polyfills = function () {
-  // OBJECT ASSIGN
-  if (typeof Object.assign != 'function') {
-    // Must be writable: true, enumerable: false, configurable: true
-    Object.defineProperty(Object, "assign", {
-      value: function assign(target, varArgs) {
-        // .length of function is 2
-        if (target == null) {
-          // TypeError if undefined or null
-          throw new TypeError('Cannot convert undefined or null to object');
-        }
-
-        var to = Object(target);
-
-        for (var index = 1; index < arguments.length; index++) {
-          var nextSource = arguments[index];
-
-          if (nextSource != null) {
-            // Skip over if undefined or null
-            for (var nextKey in nextSource) {
-              // Avoid bugs when hasOwnProperty is shadowed
-              if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
-                to[nextKey] = nextSource[nextKey];
-              }
-            }
-          }
-        }
-        return to;
-      },
-      writable: true,
-      configurable: true
-    });
-  }
-}();
-
 var Popover = function () {
     var eventHandlers = new Utils.EventHandlers('tuiPopover');
 
@@ -732,12 +715,18 @@ var Popover = function () {
             } else {
                 switch (placement) {
                     case 'left':
+                    case 'left-start':
+                    case 'left-end':
                         popoverElement.classList.add(ClassNames.PLACEMENTLEFT);
                         break;
                     case 'right':
+                    case 'right-start':
+                    case 'right-end':
                         popoverElement.classList.add(ClassNames.PLACEMENTRIGHT);
                         break;
                     case 'top':
+                    case 'top-start':
+                    case 'top-end':
                         popoverElement.classList.add(ClassNames.PLACEMENTTOP);
                         break;
                     default:
@@ -789,6 +778,500 @@ var Popover = function () {
 
     return Popover;
 }(Popper);
+
+var Playbook = function () {
+
+  var HIGHLIGHTOFFSET = 5;
+  var TWO = 2;
+  var ONE_SECOND_IN_MS = 1000;
+  var currentStoryKey = void 0;
+  var _stories = [];
+  var _playedStoryKeys = void 0;
+  var blanketElement = void 0;
+  var highlightElement = void 0;
+  var popover = void 0;
+  var elementToHighlight = void 0;
+  var _currentPageIndex = void 0;
+  var currentPage = void 0;
+  var pages = void 0;
+  var _options = {};
+
+  var eventHandlers = new Utils.EventHandlers('tuiPlaybook');
+
+  var Playbook = function () {
+    function Playbook() {
+      classCallCheck(this, Playbook);
+    }
+
+    Playbook.play = function play(key, playbookOptions) {
+
+      currentStoryKey = key;
+      _currentPageIndex = 0;
+      _options = playbookOptions || {};
+
+      // -----
+      _playedStoryKeys = []; // since phantomjs will return null instead of "null"
+      if (Playbook.storageGet('_playedStoryKeys')) {
+        _playedStoryKeys = JSON.parse(Playbook.storageGet('_playedStoryKeys')) || [];
+      }
+
+      if (!_options.forcePlay && Playbook.storyHasAlreadyBeenPlayed()) {
+        return;
+      }
+      // ---
+
+      if (Playbook.onBeforePlay) {
+        Playbook.onBeforePlay(key);
+      }
+
+      Playbook.storageSet('_isPlaying', 'yes');
+      Playbook.storageSet('_storyKey', key);
+      Playbook.storageSet('_playbookOptions', JSON.stringify(playbookOptions));
+      Playbook.storageSet('_currentPageIndex', _currentPageIndex);
+
+      pages = Playbook.getStoryByKey(key).pages;
+
+      Playbook.createBlanketElement();
+      Playbook.displayCurrentPage();
+      Playbook.bindEventHandlerToEscape();
+    };
+
+    Playbook.displayCurrentPage = function displayCurrentPage() {
+      currentPage = pages[_currentPageIndex];
+      this.renderPage(currentPage);
+    };
+
+    Playbook.storyHasAlreadyBeenPlayed = function storyHasAlreadyBeenPlayed() {
+      for (var i = 0, len = _playedStoryKeys.length; i < len; i++) {
+        if (_playedStoryKeys[i] === currentStoryKey) {
+          return true;
+        }
+      }
+      return false;
+    };
+
+    Playbook.renderPage = function renderPage(currentPage) {
+      var counter = 5;
+
+      var validate = function validate(element) {
+        if (element === null) {
+          return false;
+        }
+        Playbook.positionHighlightElement(element);
+        popover = new Popover(element, Playbook.createPopoverElement(), {
+          eventless: true,
+          closeOnRoot: false,
+          placement: currentPage.popoverPlacement,
+          pointerless: currentPage.popoverIsPointerless
+        });
+        Playbook.setupPopoverContent();
+        popover.show();
+        return true;
+      };
+
+      elementToHighlight = document.querySelector(currentPage.selector);
+
+      if (!validate(elementToHighlight)) {
+        var timer = setInterval(function () {
+          counter--;
+          elementToHighlight = document.querySelector(currentPage.selector);
+
+          if (counter === 0 || elementToHighlight) {
+            clearInterval(timer);
+
+            if (!validate(elementToHighlight)) {
+              Playbook.stop();
+              throw new Error('Element does not exist');
+            }
+          }
+        }, ONE_SECOND_IN_MS);
+      }
+    };
+
+    Playbook.resume = function resume() {
+      if (Playbook.storageGet('_isPlaying') !== 'yes') {
+        return;
+      }
+
+      _options = JSON.parse(Playbook.storageGet('_playbookOptions'));
+      _currentPageIndex = parseInt(Playbook.storageGet('_currentPageIndex'), 10);
+      _currentPageIndex = isNaN(_currentPageIndex) ? null : _currentPageIndex;
+
+      _playedStoryKeys = JSON.parse(Playbook.storageGet('_playedStoryKeys')) || [];
+      currentStoryKey = Playbook.storageGet('_storyKey');
+
+      pages = Playbook.getStoryByKey(Playbook.storageGet('_storyKey')).pages;
+      Playbook.createBlanketElement();
+      Playbook.bindEventHandlerToEscape();
+      Playbook.displayCurrentPage();
+    };
+
+    Playbook.saveStoryKeyToPlayedStoryKeys = function saveStoryKeyToPlayedStoryKeys() {
+      if (!Playbook.storyHasAlreadyBeenPlayed(currentStoryKey)) {
+        _playedStoryKeys.push(currentStoryKey);
+        Playbook.storageSet('_playedStoryKeys', JSON.stringify(_playedStoryKeys));
+      }
+    };
+
+    Playbook.stop = function stop() {
+      if (_currentPageIndex + 1 === pages.length) {
+
+        Playbook.saveStoryKeyToPlayedStoryKeys();
+        if (Playbook.onBeforeCompleted) {
+          Playbook.onBeforeCompleted(currentStoryKey);
+        }
+      } else {
+        // eslint-disable-next-line
+        if (Playbook.onBeforeCancel) {
+          Playbook.onBeforeCancel(currentStoryKey, _currentPageIndex + 1);
+        }
+      }
+
+      Playbook.storageSet('_isPlaying', null);
+      Playbook.storageSet('_storyKey', null);
+      Playbook.storageSet('_playbookOptions', null);
+      Playbook.storageSet('_currentPageIndex', -1);
+      Playbook.removeBlanket();
+      Playbook.onPopoverClose();
+
+      eventHandlers.remove(document, 'keydown', Playbook.onDocumentKeyDown, 'escape');
+    };
+
+    Playbook.createPopoverElement = function createPopoverElement() {
+      var popoverElem = Playbook.popoverElement();
+
+      if (popoverElem === null) {
+        var popoverElement = Utils.DOM.createElement('<div class=\'tuiPopover js-playbook-popover tuiPopover--playbook\'>' + '   <header class="tuiPopover__header">' + '     <h1 class="tuiPopover__header__title js-playbook-popover-title"></h1>' + '   </header>' + '   <div class=\'tuiPopover__content\'>' + '     <div class=\'tuiPopover__contentText\'></div>' + '   </div>' + '   <div class=\'tuiPopover__pointer\'></div>' + '   <div class=\'tuiPopover__footer\'>' + '     <a href="#" class=\'js-popover-got-it-button\'>Don\'t show me again</a>' + '     <button class=\'tuiButton js-popover-ok-button\'>Next</button>' + '   </div>' + '</div>');
+
+        document.body.appendChild(popoverElement);
+        Playbook.bindEventListenersToFooterButtons();
+
+        return popoverElement;
+      }
+      return popoverElem;
+    };
+
+    Playbook.optOutClick = function optOutClick(e) {
+      e.preventDefault();
+
+      Playbook.saveStoryKeyToPlayedStoryKeys();
+      Playbook.stop();
+    };
+
+    Playbook.setupPopoverContent = function setupPopoverContent() {
+      var title = Playbook.storyTitle || 'Step {0} of {1}';
+
+      document.querySelector('.tuiPopover__contentText').innerHTML = currentPage.content;
+      document.querySelector('.js-playbook-popover-title').innerHTML = title.replace('{0}', JSON.parse(Playbook.storageGet('_currentPageIndex')) + 1).replace('{1}', pages.length);
+
+      if (currentPage.optOutLabel) {
+        Playbook.renameElement('.js-popover-got-it-button', currentPage.optOutLabel);
+      }
+
+      if (currentPage.actionLabel) {
+        Playbook.renameElement('.js-popover-ok-button', currentPage.actionLabel);
+      } else if (_currentPageIndex + 1 === pages.length) {
+        Playbook.renameElement('.js-popover-ok-button', 'Done');
+      } else {
+        Playbook.renameElement('.js-popover-ok-button', 'Next');
+      }
+    };
+
+    Playbook.bindEventListenersToFooterButtons = function bindEventListenersToFooterButtons() {
+      var _this = this;
+
+      var footerOkButton = document.querySelector('.js-popover-ok-button');
+      var footerGotItButton = document.querySelector('.js-popover-got-it-button');
+
+      footerOkButton.addEventListener('click', function () {
+        _this.onNextClick();
+      });
+
+      footerGotItButton.addEventListener('click', function (e) {
+        _this.optOutClick(e);
+      });
+    };
+
+    Playbook.onDocumentKeyDown = function onDocumentKeyDown(e) {
+      if (e.which === Utils.KEYCODES.ESCAPE) {
+        Playbook.stop();
+      }
+    };
+
+    Playbook.bindEventHandlerToEscape = function bindEventHandlerToEscape() {
+      eventHandlers.add(document, 'keydown', Playbook.onDocumentKeyDown, 'escape');
+    };
+
+    Playbook.createBlanketElement = function createBlanketElement() {
+      if (document.querySelectorAll('.tuiBlanket--playbook').length !== 0) {
+        return;
+      }
+
+      blanketElement = Utils.DOM.createElement('<div class=\'tuiBlanket tuiBlanket--playbook tuiBlanket--subtle\'></div>');
+      highlightElement = Utils.DOM.createElement('<div class=\'tuiBlanket__playbook-highlight\'></div>');
+
+      blanketElement.appendChild(highlightElement);
+      document.body.appendChild(blanketElement);
+
+      document.body.classList.add('tuiBlanket-is-displayed');
+    };
+
+    Playbook.positionHighlightElement = function positionHighlightElement(elementToHighlight) {
+
+      var elementPosition = elementToHighlight.getBoundingClientRect();
+
+      highlightElement.style.top = elementPosition.top - HIGHLIGHTOFFSET + 'px';
+      highlightElement.style.left = elementPosition.left - HIGHLIGHTOFFSET + 'px';
+      highlightElement.style.width = elementPosition.width + HIGHLIGHTOFFSET * TWO + 'px';
+      highlightElement.style.height = elementPosition.height + HIGHLIGHTOFFSET * TWO + 'px';
+      highlightElement.classList.add('tuiBlanket--playbook-highlight--transition');
+    };
+
+    Playbook.getStoryByKey = function getStoryByKey(key) {
+      var stories = this.stories();
+      var storyToPlay = void 0;
+
+      for (var i = 0, len = stories.length; i < len; i++) {
+        if (stories[i].key === key) {
+          storyToPlay = stories[i];
+        }
+      }
+
+      if (storyToPlay) {
+        return storyToPlay;
+      }
+
+      throw new Error('Unknown story key');
+    };
+
+    Playbook.addStory = function addStory(story) {
+      var isDuplicate = false;
+      for (var i = 0, len = _stories.length; i < len; i++) {
+        if (story.key === _stories[i].key) {
+          isDuplicate = true;
+          break;
+        }
+      }
+      if (isDuplicate) {
+        throw new Error('duplicate stories');
+      } else {
+        _stories.push(story);
+      }
+    };
+
+    Playbook.onNextClick = function onNextClick() {
+
+      if (currentPage.onNextClick) {
+        _currentPageIndex++;
+        Playbook.storageSet('_currentPageIndex', _currentPageIndex);
+
+        currentPage.onNextClick();
+      } else {
+        if (!pages[_currentPageIndex + 1]) {
+          Playbook.stop();
+          return;
+        }
+
+        _currentPageIndex++;
+        Playbook.storageSet('_currentPageIndex', _currentPageIndex);
+        Playbook.displayCurrentPage();
+      }
+    };
+
+    Playbook.storageGet = function storageGet(key) {
+      return localStorage.getItem(key);
+    };
+
+    Playbook.storageSet = function storageSet(key, value) {
+      localStorage.setItem(key, value);
+    };
+
+    Playbook.stories = function stories() {
+      return _stories;
+    };
+
+    Playbook.options = function options() {
+      return _options;
+    };
+
+    Playbook.currentPageIndex = function currentPageIndex() {
+      return _currentPageIndex;
+    };
+
+    Playbook.playedStoryKeys = function playedStoryKeys() {
+      return _playedStoryKeys;
+    };
+
+    Playbook.clearStories = function clearStories() {
+      _stories = [];
+    };
+
+    Playbook.onPopoverClose = function onPopoverClose() {
+      var popoverElem = Playbook.popoverElement();
+      if (popoverElem !== null) {
+        popover.close();
+      }
+    };
+
+    Playbook.popoverElement = function popoverElement() {
+      return document.querySelector('.js-playbook-popover');
+    };
+
+    Playbook.renameElement = function renameElement(className, text) {
+      document.querySelector(className).innerHTML = text;
+    };
+
+    Playbook.removeBlanket = function removeBlanket() {
+      blanketElement.parentElement.removeChild(blanketElement);
+      document.body.classList.remove('tuiBlanket-is-displayed');
+    };
+
+    return Playbook;
+  }();
+
+  return Playbook;
+}();
+
+var PlaybookPage = function () {
+    var PlaybookPage = function () {
+        function PlaybookPage(page) {
+            classCallCheck(this, PlaybookPage);
+
+            if (!page.selector) {
+                throw new Error('Page does not have selector');
+            } else if (!page.content) {
+                throw new Error('Page does not have content');
+            } else {
+                this._selector = page.selector;
+                this._content = page.content;
+                this._actionLabel = page.actionLabel;
+                this._optOutLabel = page.optOutLabel;
+                this._onNextClick = page.onNextClick;
+                this._onBeforeCancelClick = page.onBeforeCancelClick;
+                this._popoverPlacement = page.popoverPlacement;
+                this._popoverIsPointerless = page.popoverIsPointerless;
+            }
+        }
+
+        createClass(PlaybookPage, [{
+            key: 'selector',
+            get: function get() {
+                if (typeof this._selector === 'function') {
+                    return this._selector();
+                }
+                return this._selector;
+            }
+        }, {
+            key: 'content',
+            get: function get() {
+                return this._content;
+            }
+        }, {
+            key: 'actionLabel',
+            get: function get() {
+                return this._actionLabel;
+            }
+        }, {
+            key: 'optOutLabel',
+            get: function get() {
+                return this._optOutLabel;
+            }
+        }, {
+            key: 'onNextClick',
+            get: function get() {
+                return this._onNextClick;
+            }
+        }, {
+            key: 'onBeforeCancelClick',
+            get: function get() {
+                return this._onBeforeCancelClick;
+            }
+        }, {
+            key: 'popoverPlacement',
+            get: function get() {
+                return this._popoverPlacement || '';
+            }
+        }, {
+            key: 'popoverIsPointerless',
+            get: function get() {
+                return this._popoverIsPointerless || false;
+            }
+        }]);
+        return PlaybookPage;
+    }();
+
+    return PlaybookPage;
+}();
+
+var PlaybookStory = function () {
+    var PlaybookStory = function () {
+        function PlaybookStory(story) {
+            classCallCheck(this, PlaybookStory);
+
+            if (!story.key) {
+                throw new Error('The story has no key');
+            } else {
+                this._key = story.key;
+                this._pages = story.pages || [];
+            }
+        }
+
+        PlaybookStory.prototype.addPage = function addPage(page) {
+            var playbookPage = new PlaybookPage(page);
+            this._pages.push(playbookPage);
+        };
+
+        createClass(PlaybookStory, [{
+            key: 'key',
+            get: function get() {
+                return this._key;
+            }
+        }, {
+            key: 'pages',
+            get: function get() {
+                return this._pages;
+            }
+        }]);
+        return PlaybookStory;
+    }();
+
+    return PlaybookStory;
+}();
+
+var Polyfills = function () {
+  // OBJECT ASSIGN
+  if (typeof Object.assign != 'function') {
+    // Must be writable: true, enumerable: false, configurable: true
+    Object.defineProperty(Object, "assign", {
+      value: function assign(target, varArgs) {
+        // .length of function is 2
+        if (target == null) {
+          // TypeError if undefined or null
+          throw new TypeError('Cannot convert undefined or null to object');
+        }
+
+        var to = Object(target);
+
+        for (var index = 1; index < arguments.length; index++) {
+          var nextSource = arguments[index];
+
+          if (nextSource != null) {
+            // Skip over if undefined or null
+            for (var nextKey in nextSource) {
+              // Avoid bugs when hasOwnProperty is shadowed
+              if (Object.prototype.hasOwnProperty.call(nextSource, nextKey)) {
+                to[nextKey] = nextSource[nextKey];
+              }
+            }
+          }
+        }
+        return to;
+      },
+      writable: true,
+      configurable: true
+    });
+  }
+}();
 
 var Tab = function () {
     var eventHandlers = new Utils.EventHandlers('tuiTab');
@@ -1267,6 +1750,9 @@ exports.Dropdown = Dropdown;
 exports.Tab = Tab;
 exports.Tooltip = Tooltip;
 exports.Popover = Popover;
+exports.Playbook = Playbook;
+exports.PlaybookPage = PlaybookPage;
+exports.PlaybookStory = PlaybookStory;
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
