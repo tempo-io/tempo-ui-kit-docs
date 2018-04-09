@@ -683,16 +683,6 @@
   padding: 0;
   text-align: left;
 }
-.tuiDialog .tuiForm {
-  padding: 0;
-}
-.tuiDialog .tuiForm__row {
-  padding: 0;
-}
-.tuiDialog .tuiForm__footer {
-  padding-left: 0;
-  padding-right: 0;
-}
 /*------------------------------------*\
   #VARIABLES
 \*------------------------------------*/
