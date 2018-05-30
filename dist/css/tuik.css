@@ -1700,6 +1700,7 @@
 .tuiDropdown__list__item:focus {
   outline: 0;
   background-color: rgba(0, 115, 236, 0.15);
+  text-decoration: none;
 }
 .tuiDropdown__list__item[disabled] {
   cursor: not-allowed;
