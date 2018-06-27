@@ -11,9 +11,9 @@
     <meta name="description" content="Tooltips" />
 
     <!-- TUIK -->
-    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=4d09f76d-ed63-e438-3c08-bd76d6124556" type="text/css">
-    <link rel="stylesheet" href="dist/css/tuik.css?v=4d09f76d-ed63-e438-3c08-bd76d6124556" type="text/css">
-    <script src="dist/js/tuik.bundle.js?v=4d09f76d-ed63-e438-3c08-bd76d6124556"></script>
+    <link rel="stylesheet" href="dist/css/tuik-typography.css?v=4a7ce508-e46a-6308-b7e3-3650902be023" type="text/css">
+    <link rel="stylesheet" href="dist/css/tuik.css?v=4a7ce508-e46a-6308-b7e3-3650902be023" type="text/css">
+    <script src="dist/js/tuik.bundle.js?v=4a7ce508-e46a-6308-b7e3-3650902be023"></script>
 
     <!-- SG VENDRORS -->
     <link rel="stylesheet" href="vendors/tippy/tippy.css">
@@ -23,8 +23,8 @@
 
     <!-- SG -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-    <link rel="stylesheet" href="css/main.css?v=4d09f76d-ed63-e438-3c08-bd76d6124556" type="text/css">
-    <script src="tuikdocs.js?v=4d09f76d-ed63-e438-3c08-bd76d6124556"></script>
+    <link rel="stylesheet" href="css/main.css?v=4a7ce508-e46a-6308-b7e3-3650902be023" type="text/css">
+    <script src="tuikdocs.js?v=4a7ce508-e46a-6308-b7e3-3650902be023"></script>
 
 
     <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
@@ -1177,51 +1177,6 @@
 
 
 <h3 class="sg-h3">Positioning</h3>
-<p class="sg-p">Positioning can be defined within the markup by defining the <em>data-tuiTooltip-placement</em> attribute.</p>
-
-
-
-<article class="sg-example" id="tooltipScriptPositioning">
-    
-    <section class="sg-example__render">
-        <button class="tuiButton js-tooltip-pos" data-tuitooltip-placement="top" title="Tooltip content top!">Top</button>
-<button class="tuiButton js-tooltip-pos" data-tuitooltip-placement="left" title="Tooltip content left!">Left</button>
-<button class="tuiButton js-tooltip-pos" data-tuitooltip-placement="bottom" title="Tooltip content bottom!">Bottom</button>
-<button class="tuiButton js-tooltip-pos" data-tuitooltip-placement="right" title="Tooltip content right!">Right</button>
-
-    </section>
-    <script class="js-rendered-script">new tuik.Tooltip('.js-tooltip-pos');
-</script>
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;button class=&#34;tuiButton js-tooltip-pos&#34; data-tuiTooltip-placement=&#34;top&#34; title=&#34;Tooltip content top!&#34;&gt;Top&lt;/button&gt;
-&lt;button class=&#34;tuiButton js-tooltip-pos&#34; data-tuiTooltip-placement=&#34;left&#34; title=&#34;Tooltip content left!&#34;&gt;Left&lt;/button&gt;
-&lt;button class=&#34;tuiButton js-tooltip-pos&#34; data-tuiTooltip-placement=&#34;bottom&#34; title=&#34;Tooltip content bottom!&#34;&gt;Bottom&lt;/button&gt;
-&lt;button class=&#34;tuiButton js-tooltip-pos&#34; data-tuiTooltip-placement=&#34;right&#34; title=&#34;Tooltip content right!&#34;&gt;Right&lt;/button&gt;
-</code></pre>
-      </section>
-      
-      <section class="sg-example__source sg-example__source--script">
-          <pre><code class="js">new tuik.Tooltip(&#39;.js-tooltip-pos&#39;);
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;button class=&#34;tuiButton js-tooltip-pos&#34; data-tuiTooltip-placement=&#34;top&#34; title=&#34;Tooltip content top!&#34;&gt;Top&lt;/button&gt;
-&lt;button class=&#34;tuiButton js-tooltip-pos&#34; data-tuiTooltip-placement=&#34;left&#34; title=&#34;Tooltip content left!&#34;&gt;Left&lt;/button&gt;
-&lt;button class=&#34;tuiButton js-tooltip-pos&#34; data-tuiTooltip-placement=&#34;bottom&#34; title=&#34;Tooltip content bottom!&#34;&gt;Bottom&lt;/button&gt;
-&lt;button class=&#34;tuiButton js-tooltip-pos&#34; data-tuiTooltip-placement=&#34;right&#34; title=&#34;Tooltip content right!&#34;&gt;Right&lt;/button&gt;
-
-        </textarea>
-      
-    
-</article>
-
 
 <p class="sg-p">Positioning can also be acheived by defining the <em>placement</em> option.</p>
 
@@ -1315,7 +1270,8 @@ new tuik.Tooltip(&#39;.js-tooltip-pos-opts-right&#39;, { placement: &#39;right&#
 
 
 <h2 class="sg-h2" id="toccustomtooltipelement">Providing your own tooltip element</h2>
-<p class="sg-p">You can provide a custom tooltip element by providing it to the constructor.</p>
+<p class="sg-p">You can provide a custom tooltip element by providing it to the options.template property.</p>
+<p class="sg-p">Keep in mind that the provided tooltip element must have some classes for the tooltip to work, see the documentation <a target="_blank" href="https://popper.js.org/tooltip-documentation.html">here</a>.</p>
 
 
 
@@ -1324,15 +1280,12 @@ new tuik.Tooltip(&#39;.js-tooltip-pos-opts-right&#39;, { placement: &#39;right&#
     
     <section class="sg-example__render">
         <button class="tuiButton js-managed-tooltip-trigger">No title!</button>
-<div class="tuiTooltip js-managed-tooltip">
-   <div class="tuiTooltip__content">
-       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-   </div>
-   <div class="tuiTooltip__pointer"></div>
-</div>
 
     </section>
-    <script class="js-rendered-script">new tuik.Tooltip('.js-managed-tooltip-trigger', document.querySelector('.js-managed-tooltip'));
+    <script class="js-rendered-script">new tuik.Tooltip('.js-managed-tooltip-trigger', {
+  title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+  template: '<div class="tooltip tuiTooltip js-managed-tooltip"><div class="tooltip__inner tuiTooltip__content"></div><div class="tooltip__arrow tuiTooltip__pointer"></div></div>'
+});
 </script>
     
 
@@ -1340,17 +1293,14 @@ new tuik.Tooltip(&#39;.js-tooltip-pos-opts-right&#39;, { placement: &#39;right&#
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
           <pre><code class="html">&lt;button class=&#34;tuiButton js-managed-tooltip-trigger&#34;&gt;No title!&lt;/button&gt;
-&lt;div class=&#34;tuiTooltip js-managed-tooltip&#34;&gt;
-   &lt;div class=&#34;tuiTooltip__content&#34;&gt;
-       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-   &lt;/div&gt;
-   &lt;div class=&#34;tuiTooltip__pointer&#34;&gt;&lt;/div&gt;
-&lt;/div&gt;
 </code></pre>
       </section>
       
       <section class="sg-example__source sg-example__source--script">
-          <pre><code class="js">new tuik.Tooltip(&#39;.js-managed-tooltip-trigger&#39;, document.querySelector(&#39;.js-managed-tooltip&#39;));
+          <pre><code class="js">new tuik.Tooltip(&#39;.js-managed-tooltip-trigger&#39;, {
+  title: &#39;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&#39;,
+  template: &#39;&lt;div class=&#34;tooltip tuiTooltip js-managed-tooltip&#34;&gt;&lt;div class=&#34;tooltip__inner tuiTooltip__content&#34;&gt;&lt;/div&gt;&lt;div class=&#34;tooltip__arrow tuiTooltip__pointer&#34;&gt;&lt;/div&gt;&lt;/div&gt;&#39;
+});
 </code></pre>
       </section>
       
@@ -1358,12 +1308,6 @@ new tuik.Tooltip(&#39;.js-tooltip-pos-opts-right&#39;, { placement: &#39;right&#
       
         <textarea class="sg-example__source__raw" style="display:none">
           &lt;button class=&#34;tuiButton js-managed-tooltip-trigger&#34;&gt;No title!&lt;/button&gt;
-&lt;div class=&#34;tuiTooltip js-managed-tooltip&#34;&gt;
-   &lt;div class=&#34;tuiTooltip__content&#34;&gt;
-       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-   &lt;/div&gt;
-   &lt;div class=&#34;tuiTooltip__pointer&#34;&gt;&lt;/div&gt;
-&lt;/div&gt;
 
         </textarea>
       
@@ -1380,19 +1324,12 @@ new tuik.Tooltip(&#39;.js-tooltip-pos-opts-right&#39;, { placement: &#39;right&#
     
     <section class="sg-example__render">
         <button class="tuiButton js-managed-html-tooltip-trigger">With HTML content!</button>
-<div class="tuiTooltip js-managed-html-tooltip">
-   <div class="tuiTooltip__content">
-       Here is a tooltip with <strong>BOLD</strong> text.
-   </div>
-   <div class="tuiTooltip__pointer"></div>
-</div>
 
     </section>
-    <script class="js-rendered-script">new tuik.Tooltip('.js-managed-html-tooltip-trigger', 
-   document.querySelector('.js-managed-html-tooltip'), 
-   {triggerCouldBeRemoved: true }
-);
-document.querySelector('.js-managed-html-tooltip-trigger').addEventListener('click', function(e) { e.target.remove(); })
+    <script class="js-rendered-script">new tuik.Tooltip('.js-managed-html-tooltip-trigger', {
+  title: '<span>Here is a tooltip with <strong>BOLD</strong> text.</span>',
+  html: true
+});
 </script>
     
 
@@ -1400,21 +1337,14 @@ document.querySelector('.js-managed-html-tooltip-trigger').addEventListener('cli
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
           <pre><code class="html">&lt;button class=&#34;tuiButton js-managed-html-tooltip-trigger&#34;&gt;With HTML content!&lt;/button&gt;
-&lt;div class=&#34;tuiTooltip js-managed-html-tooltip&#34;&gt;
-   &lt;div class=&#34;tuiTooltip__content&#34;&gt;
-       Here is a tooltip with &lt;strong&gt;BOLD&lt;/strong&gt; text.
-   &lt;/div&gt;
-   &lt;div class=&#34;tuiTooltip__pointer&#34;&gt;&lt;/div&gt;
-&lt;/div&gt;
 </code></pre>
       </section>
       
       <section class="sg-example__source sg-example__source--script">
-          <pre><code class="js">new tuik.Tooltip(&#39;.js-managed-html-tooltip-trigger&#39;, 
-   document.querySelector(&#39;.js-managed-html-tooltip&#39;), 
-   {triggerCouldBeRemoved: true }
-);
-document.querySelector(&#39;.js-managed-html-tooltip-trigger&#39;).addEventListener(&#39;click&#39;, function(e) { e.target.remove(); })
+          <pre><code class="js">new tuik.Tooltip(&#39;.js-managed-html-tooltip-trigger&#39;, {
+  title: &#39;&lt;span&gt;Here is a tooltip with &lt;strong&gt;BOLD&lt;/strong&gt; text.&lt;/span&gt;&#39;,
+  html: true
+});
 </code></pre>
       </section>
       
@@ -1422,69 +1352,6 @@ document.querySelector(&#39;.js-managed-html-tooltip-trigger&#39;).addEventListe
       
         <textarea class="sg-example__source__raw" style="display:none">
           &lt;button class=&#34;tuiButton js-managed-html-tooltip-trigger&#34;&gt;With HTML content!&lt;/button&gt;
-&lt;div class=&#34;tuiTooltip js-managed-html-tooltip&#34;&gt;
-   &lt;div class=&#34;tuiTooltip__content&#34;&gt;
-       Here is a tooltip with &lt;strong&gt;BOLD&lt;/strong&gt; text.
-   &lt;/div&gt;
-   &lt;div class=&#34;tuiTooltip__pointer&#34;&gt;&lt;/div&gt;
-&lt;/div&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-<h2 class="sg-h2">Removable triggers  <em class="sg-eperimental-notification">Experimental</em></h2>
-<p class="sg-p">Sometimes the trigger element might be removed from the DOM while the tooltip is displayed. When this can occure, you can use the <em>triggerCouldBeRemoved</em> option to handle this.</p>
-
-<div class="sg-callout sg-callout--warning">
-    <h4 class="sg-callout__title">Mutation Observers</h4>
-    <p class="sg-callout__p">Since this feature uses mutation observers please use with caution and only enable when theres a possibility that the trigger might be removed from the DOM while the tooltip is displayed.</p>
-</div>
-
-
-
-
-<article class="sg-example" id="tooltipScriptnuke">
-    
-    <section class="sg-example__render">
-        <button class="tuiButton js-tooltip-nuke-handled" title="Tooltip will be removed">Will be removed on click</button>
-<button class="tuiButton js-tooltip-nuke-not-handled" title="Tooltip will stay">Will not be removed on click</button>
-
-    </section>
-    <script class="js-rendered-script">new tuik.Tooltip('.js-tooltip-nuke-not-handled');
-new tuik.Tooltip('.js-tooltip-nuke-handled', {triggerCouldBeRemoved: true});
-
-var removeOnClick = function(e) { e.target.remove(); };
-document.querySelector('.js-tooltip-nuke-handled').addEventListener('click', removeOnClick)
-document.querySelector('.js-tooltip-nuke-not-handled').addEventListener('click', removeOnClick)
-</script>
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;button class=&#34;tuiButton js-tooltip-nuke-handled&#34; title=&#34;Tooltip will be removed&#34;&gt;Will be removed on click&lt;/button&gt;
-&lt;button class=&#34;tuiButton js-tooltip-nuke-not-handled&#34; title=&#34;Tooltip will stay&#34;&gt;Will not be removed on click&lt;/button&gt;
-</code></pre>
-      </section>
-      
-      <section class="sg-example__source sg-example__source--script">
-          <pre><code class="js">new tuik.Tooltip(&#39;.js-tooltip-nuke-not-handled&#39;);
-new tuik.Tooltip(&#39;.js-tooltip-nuke-handled&#39;, {triggerCouldBeRemoved: true});
-
-var removeOnClick = function(e) { e.target.remove(); };
-document.querySelector(&#39;.js-tooltip-nuke-handled&#39;).addEventListener(&#39;click&#39;, removeOnClick)
-document.querySelector(&#39;.js-tooltip-nuke-not-handled&#39;).addEventListener(&#39;click&#39;, removeOnClick)
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;button class=&#34;tuiButton js-tooltip-nuke-handled&#34; title=&#34;Tooltip will be removed&#34;&gt;Will be removed on click&lt;/button&gt;
-&lt;button class=&#34;tuiButton js-tooltip-nuke-not-handled&#34; title=&#34;Tooltip will stay&#34;&gt;Will not be removed on click&lt;/button&gt;
 
         </textarea>
       

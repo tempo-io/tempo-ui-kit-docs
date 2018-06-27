@@ -86,6 +86,9 @@
   background-color: #fefefe;
   border-color: #d9d9d9;
 }
+.tuiButton::-moz-focus-inner {
+  border: 0;
+}
 .tuiButton:active {
   background-color: #d9d9d9;
   border-color: #d9d9d9;
@@ -981,6 +984,7 @@
 .tuiBlanket--subtle {
   background-color: transparent;
   overflow: hidden;
+  overflow-y: auto;
 }
 /*------------------------------------*\
   #BODY
@@ -1115,23 +1119,28 @@
   background-color: #12485a;
   border-radius: 0.21428571em;
   padding: 0.21428571em 0.57142857em;
-  margin: 0.35714286em 0 0 0;
-  display: none;
 }
-.tuiTooltip--top {
+.tuiTooltip--top,
+.tuiTooltip[x-placement^='top'] {
   margin: 0 0 0.35714286em 0;
 }
-.tuiTooltip--right {
+.tuiTooltip--right,
+.tuiTooltip[x-placement^='right'] {
   margin: 0 0 0 0.35714286em;
 }
-.tuiTooltip--bottom {
+.tuiTooltip--bottom,
+.tuiTooltip[x-placement^='bottom'] {
   margin: 0.35714286em 0 0 0;
 }
-.tuiTooltip--left {
+.tuiTooltip--left,
+.tuiTooltip[x-placement^='left'] {
   margin: 0 0.35714286em 0 0;
 }
 .tuiTooltip-is-visible {
   display: block;
+}
+.tuiTooltip__container {
+  display: inline-block;
 }
 .tuiTooltip__content {
   font-weight: 100;
@@ -1152,7 +1161,8 @@
   top: -0.35714286em;
   margin-left: -0.17857143em;
 }
-.tuiTooltip--top .tuiTooltip__pointer {
+.tuiTooltip--top .tuiTooltip__pointer,
+.tuiTooltip[x-placement^='top'] .tuiTooltip__pointer {
   width: 0;
   height: 0;
   border-left: 0.35714286em solid transparent;
@@ -1166,7 +1176,8 @@
   bottom: -0.35714286em;
   margin-left: -0.17857143em;
 }
-.tuiTooltip--right .tuiTooltip__pointer {
+.tuiTooltip--right .tuiTooltip__pointer,
+.tuiTooltip[x-placement^='right'] .tuiTooltip__pointer {
   width: 0;
   height: 0;
   border-top: 0.35714286em solid transparent;
@@ -1174,12 +1185,13 @@
   border-right: 0.35714286em solid #12485a;
   border-left: 0 solid transparent;
   position: absolute;
-  top: 50%;
+  top: 50% !important;
   margin-top: -0.35714286em;
   margin-left: 0;
   left: -0.35714286em;
 }
-.tuiTooltip--left .tuiTooltip__pointer {
+.tuiTooltip--left .tuiTooltip__pointer,
+.tuiTooltip[x-placement^='left'] .tuiTooltip__pointer {
   width: 0;
   height: 0;
   border-top: 0.35714286em solid transparent;
@@ -1187,16 +1199,11 @@
   border-left: 0.35714286em solid #12485a;
   border-right: 0 solid transparent;
   position: absolute;
-  top: 50%;
+  top: 50% !important;
   margin-top: -0.35714286em;
   left: auto;
   margin-left: 0;
   right: -0.35714286em;
-}
-.tuiTooltip--right .tuiTooltip__pointer--managed,
-.tuiTooltip--left .tuiTooltip__pointer--managed {
-  top: unset;
-  margin-top: unset;
 }
 /*------------------------------------*\
   #ANIMATIONS
@@ -1205,7 +1212,7 @@
   display: none;
 }
 .tuiTooltip.tuiFade.in {
-  display: block;
+  display: block !important;
   -webkit-animation: fadeIn 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
        -o-animation: fadeIn 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
           animation: fadeIn 0.3s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
@@ -1215,6 +1222,7 @@
   -webkit-animation: fadeOut 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
        -o-animation: fadeOut 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
           animation: fadeOut 0.3s cubic-bezier(0.215, 0.61, 0.355, 1) forwards;
+  pointer-events: none;
 }
 @-webkit-keyframes fadeIn {
   from {
@@ -2234,7 +2242,7 @@
   border-right: 1.14285714em solid #d9d9d9;
   border-left: 0 solid transparent;
   position: absolute;
-  top: 50%;
+  top: 50% !important;
   margin-top: -1.14285714em;
   margin-left: 0;
   left: -1.14285714em;
@@ -2248,7 +2256,7 @@
   border-right: 1.07142857em solid white;
   border-left: 0 solid transparent;
   position: absolute;
-  top: 50%;
+  top: 50% !important;
   margin-top: -1.07142857em;
   margin-left: 0;
   left: -1.07142857em;
@@ -2263,7 +2271,7 @@
   border-left: 1.14285714em solid #d9d9d9;
   border-right: 0 solid transparent;
   position: absolute;
-  top: 50%;
+  top: 50% !important;
   margin-top: -1.14285714em;
   left: auto;
   margin-left: 0;
@@ -2278,7 +2286,7 @@
   border-left: 1.07142857em solid white;
   border-right: 0 solid transparent;
   position: absolute;
-  top: 50%;
+  top: 50% !important;
   margin-top: -1.07142857em;
   left: auto;
   margin-left: 0;

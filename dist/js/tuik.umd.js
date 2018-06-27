@@ -4,12 +4,13 @@
   */
  
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('popper.js')) :
-	typeof define === 'function' && define.amd ? define(['exports', 'popper.js'], factory) :
-	(factory((global.tuik = {}),global.Popper));
-}(this, (function (exports,Popper) { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports, require('popper.js'), require('tooltip.js')) :
+	typeof define === 'function' && define.amd ? define(['exports', 'popper.js', 'tooltip.js'], factory) :
+	(factory((global.tuik = {}),global.Popper,global.Tooltip));
+}(this, (function (exports,Popper,Tooltip) { 'use strict';
 
 Popper = Popper && Popper.hasOwnProperty('default') ? Popper['default'] : Popper;
+Tooltip = Tooltip && Tooltip.hasOwnProperty('default') ? Tooltip['default'] : Tooltip;
 
 var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) {
   return typeof obj;
@@ -1440,315 +1441,55 @@ var Tab = function () {
     return Tab;
 }();
 
-var Tooltip = function () {
-    var eventHandlers = new Utils.EventHandlers('tuiTooltip');
-    var FADE_CSS_ANIMATION_DELAY_MS = 300; // refs to the .tuiTooltip.tuiFade.in and .tuiTooltip.tuiFade.out classes
+var eventHandlers = new Utils.EventHandlers('tuiTooltip');
 
-    var ClassNames = {
-        TOOLTIP: 'js-tuiTooltip-injected',
-        TOOLTIP_CONTENT: 'js-tuiTooltip-content',
-        TOOLTIP_MANAGED_POINTER: 'tuiTooltip__pointer--managed',
-        ISOPEN: 'tuiTooltip-is-visible',
-        ANIMATE: 'tuiFade',
-        ANIMATE_OPEN: 'in',
-        ANIMATE_CLOSE: 'out',
-        PLACEMENTLEFT: 'tuiTooltip--left',
-        PLACEMENTRIGHT: 'tuiTooltip--right',
-        PLACEMENTTOP: 'tuiTooltip--top',
-        PLACEMENTBOTTOM: 'tuiTooltip--bottom',
-        DATA_TITLE: 'data-tuiTooltip-title',
-        DATA_POSITION: 'data-tuiTooltip-placement'
-    };
+var handleFadeIn = function handleFadeIn(tooltip) {
+    tooltip.classList.add('tuiFade');
+    tooltip.classList.remove('out');
+    tooltip.classList.add('in');
+};
 
-    var defaultOptions = {
-        animate: false,
-        placement: 'bottom',
-        triggerCouldBeRemoved: false,
-        popper: {
-            modifiers: {
-                arrow: {
-                    element: '.tuiTooltip__pointer'
-                },
-                flip: {
-                    enabled: true
-                }
-            }
-        }
-    };
+var handleFadeOut = function handleFadeOut(tooltip) {
+    tooltip.classList.add('tuiFade');
+    tooltip.classList.remove('in');
+    tooltip.classList.add('out');
+};
 
-    var Tooltip = function () {
-        // constructor(triggerRef) managed
-        // constructor(triggerRef, options) managed
-        // constructor(triggerRef, tooltipRef) unmanaged
-        // constructor(triggerRef, tooltipRef, options) unmanaged
-        function Tooltip(triggersRef, tooltipRef, options) {
-            classCallCheck(this, Tooltip);
+var TuiTooltip = function TuiTooltip(selector) {
+    var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
 
-            // validating dependencies
-            if (typeof Popper === 'undefined') {
-                throw new Error('TUIK requires Popper.js (https://popper.js.org)');
-            }
+    if (!options.template) {
+        options.template = '<div class="tooltip tuiTooltip" role="tooltip"><div class="tooltip__arrow tuiTooltip__pointer"></div><div class="tooltip__inner tuiTooltip__content"></div></div>';
+    }
+    if (options.animate) {
+        options.delay = { hide: 300 };
+        options.popperOptions = {
+            onCreate: function onCreate(_ref) {
+                var instance = _ref.instance;
 
-            var isManaged = this.isManaged(arguments); // eslint-disable-line
-            var triggerElements = Utils.DOM.refToElements(triggersRef);
-            var tooltipElement = Utils.DOM.refToElement(tooltipRef);
-
-            defaultOptions.managedTooltip = isManaged;
-            if (isManaged) {
-                options = tooltipRef;
-            }
-
-            this._options = Object.assign({}, defaultOptions, options);
-            this.triggerElements = triggerElements;
-            this.tooltipElement = tooltipElement;
-
-            this._initialize();
-
-            return this;
-        }
-
-        Tooltip.prototype.isManaged = function isManaged(args) {
-            var isManaged = true;
-
-            // eslint-disable-next-line
-            if (args.length === 3) {
-                isManaged = false;
-            }
-
-            // if the second arg is a DOM element or a CSS selector (string)
-            if (Utils.DOM.isNode(args[1]) || Utils.DOM.isElement(args[1]) || typeof args[1] === 'string') {
-                isManaged = false;
-            }
-
-            return isManaged;
-        };
-
-        // static
-
-
-        Tooltip.handleTipMouseOver = function handleTipMouseOver(e) {
-            if (!e) {
-                return;
-            }
-
-            e.currentTarget.showTooltip();
-        };
-
-        Tooltip.handleTipMouseOut = function handleTipMouseOut(e) {
-            if (!e) {
-                return;
-            }
-
-            e.currentTarget.hideTooltip();
-        };
-
-        Tooltip.create = function create(options) {
-            var tooltipElement = document.querySelector('.' + ClassNames.TOOLTIP);
-
-            // <fix> popper where the positioning is off when we reuse the same element
-            if (tooltipElement) {
-                // <fix> IE
-                // tooltipElement.remove();
-                tooltipElement.parentElement.removeChild(tooltipElement);
-                // </fix>
-            }
-
-            // if (!tooltipElement) {
-            tooltipElement = Utils.DOM.createElement('<div class="tuiTooltip ' + ClassNames.TOOLTIP + '">' + ('   <div class="tuiTooltip__content ' + ClassNames.TOOLTIP_CONTENT + '">') + '   </div>' + ('   <div class="tuiTooltip__pointer ' + ClassNames.TOOLTIP_MANAGED_POINTER + '"></div>') + '</div>');
-
-            document.querySelector('body').appendChild(tooltipElement);
-            // }
-            // </fix>
-
-            if (options.animate) {
-                tooltipElement.classList.add(ClassNames.ANIMATE);
-            }
-
-            return tooltipElement;
-        };
-
-        Tooltip.populate = function populate(targetElement, tooltipElement) {
-            var title = Utils.DOM.escape(targetElement.getAttribute(ClassNames.DATA_TITLE) || tooltipElement.querySelector('.' + ClassNames.TOOLTIP_CONTENT).innerHTML.trim());
-
-            if (title) {
-                tooltipElement.querySelector('.' + ClassNames.TOOLTIP_CONTENT).innerHTML = title;
-            }
-
-            return title;
-        };
-
-        Tooltip.place = function place(toolTipElement, placement) {
-            toolTipElement.classList.remove(ClassNames.PLACEMENTLEFT);
-            toolTipElement.classList.remove(ClassNames.PLACEMENTRIGHT);
-            toolTipElement.classList.remove(ClassNames.PLACEMENTTOP);
-            toolTipElement.classList.remove(ClassNames.PLACEMENTBOTTOM);
-
-            switch (placement) {
-                case 'left':
-                    toolTipElement.classList.add(ClassNames.PLACEMENTLEFT);
-                    break;
-                case 'right':
-                    toolTipElement.classList.add(ClassNames.PLACEMENTRIGHT);
-                    break;
-                case 'top':
-                    toolTipElement.classList.add(ClassNames.PLACEMENTTOP);
-                    break;
-                default:
-                    toolTipElement.classList.add(ClassNames.PLACEMENTBOTTOM);
-            }
-        };
-
-        Tooltip.getInitialPosition = function getInitialPosition(targetElement, options) {
-            var placement = targetElement.getAttribute(ClassNames.DATA_POSITION);
-
-            if (!placement) {
-                placement = options.placement;
-            }
-
-            return placement;
-        };
-
-        // private
-
-        Tooltip.prototype._initialize = function _initialize() {
-            for (var i = 0, len = this.triggerElements.length; i < len; i++) {
-                this._bindTooltip(this.triggerElements[i]);
-            }
-        };
-
-        Tooltip.prototype._bindTooltip = function _bindTooltip(triggerElement) {
-            this._manageTitle(triggerElement);
-            this._injectHandlers(triggerElement);
-            this._addEventListeners(triggerElement);
-            this._bindObserver(triggerElement);
-        };
-
-        Tooltip.prototype._manageTitle = function _manageTitle(triggerElement) {
-            var title = triggerElement.getAttribute('title');
-
-            if (title) {
-                triggerElement.setAttribute('title', '');
-                triggerElement.setAttribute(ClassNames.DATA_TITLE, title);
-            }
-        };
-
-        Tooltip.prototype._injectHandlers = function _injectHandlers(triggerElement) {
-            var _this = this;
-
-            var show = function show() {
-                _this.isClosingWithAnimation = false;
-                var tooltipElement = void 0;
-
-                var onPopperUpdate = function onPopperUpdate(data) {
-                    Tooltip.place(data.instance.popper, data.placement);
-                };
-
-                if (_this._options.managedTooltip) {
-                    tooltipElement = Tooltip.create(_this._options);
-                    if (!Tooltip.populate(triggerElement, tooltipElement)) {
-                        return;
-                    }
-                } else {
-                    tooltipElement = _this.tooltipElement;
-                }
-
-                if (!tooltipElement) {
-                    return;
-                }
-
-                if (_this._options.animate) {
-                    tooltipElement.classList.add(ClassNames.ANIMATE_OPEN);
-                } else {
-                    tooltipElement.classList.add(ClassNames.ISOPEN);
-                }
-
-                _this._popper = new Popper(triggerElement, tooltipElement, {
-                    placement: Tooltip.getInitialPosition(triggerElement, _this._options),
-                    modifiers: _this._options.popper.modifiers,
-                    onUpdate: onPopperUpdate,
-                    onCreate: onPopperUpdate
+                handleFadeIn(instance.popper); // Mouseover not triggered on create
+                eventHandlers.add(instance.reference, 'mouseover', function () {
+                    return handleFadeIn(instance.popper);
                 });
-
-                _this._popper.update();
-            };
-
-            var hide = function hide() {
-                _this.isClosingWithAnimation = _this._options.animate;
-                var tooltipElement = document.querySelector('.' + ClassNames.TOOLTIP);
-
-                if (_this._options.managedTooltip) {
-                    tooltipElement = document.querySelector('.' + ClassNames.TOOLTIP);
-                } else {
-                    tooltipElement = _this.tooltipElement;
-                }
-
-                if (!tooltipElement) {
-                    return;
-                }
-
-                if (_this._options.animate) {
-                    tooltipElement.classList.remove(ClassNames.ANIMATE_OPEN);
-                    tooltipElement.classList.add(ClassNames.ANIMATE_CLOSE);
-
-                    setTimeout(function () {
-                        if (_this.isClosingWithAnimation) {
-                            tooltipElement.classList.remove(ClassNames.ANIMATE);
-                            tooltipElement.classList.remove(ClassNames.ANIMATE_CLOSE);
-                        }
-                    }, FADE_CSS_ANIMATION_DELAY_MS);
-                } else {
-                    tooltipElement.classList.remove(ClassNames.ISOPEN);
-                }
-            };
-
-            triggerElement.showTooltip = show;
-            triggerElement.hideTooltip = hide;
-        };
-
-        Tooltip.prototype._addEventListeners = function _addEventListeners(triggerElement) {
-            eventHandlers.add(triggerElement, 'mouseover', Tooltip.handleTipMouseOver);
-            eventHandlers.add(triggerElement, 'mouseout', Tooltip.handleTipMouseOut);
-        };
-
-        Tooltip.prototype._bindObserver = function _bindObserver(triggerElement) {
-            if (!this._options.triggerCouldBeRemoved) {
-                return;
-            }
-
-            if (triggerElement.observer) {
-                triggerElement.observer.disconnect();
-            }
-
-            var onDOMMutated = function onDOMMutated(mutationRecords) {
-                mutationRecords.forEach(function (mutationRecord) {
-                    for (var i = 0, len = mutationRecord.removedNodes.length; i < len; i++) {
-                        if (mutationRecord.removedNodes[i] === triggerElement) {
-                            triggerElement.hideTooltip();
-                            triggerElement.observer.disconnect();
-                            break;
-                        }
-                    }
+                eventHandlers.add(instance.reference, 'mouseout', function () {
+                    return handleFadeOut(instance.popper);
                 });
-            };
-
-            var observer = new MutationObserver(onDOMMutated);
-            triggerElement.observer = observer;
-            triggerElement.observer.observe(triggerElement.parentElement, {
-                childList: true
-            });
+            }
         };
-
-        return Tooltip;
-    }(); // class
-
-    return Tooltip;
-}(Popper);
+    }
+    var references = document.querySelectorAll(selector);
+    var tooltips = [];
+    for (var i = 0; i < references.length; i++) {
+        tooltips.push(new Tooltip(references[i], options));
+    }
+    return tooltips;
+};
 
 exports.Polyfills = Polyfills;
 exports.Utils = Utils;
 exports.Dropdown = Dropdown;
 exports.Tab = Tab;
-exports.Tooltip = Tooltip;
+exports.Tooltip = TuiTooltip;
 exports.Popover = Popover;
 exports.Playbook = Playbook;
 exports.PlaybookPage = PlaybookPage;
