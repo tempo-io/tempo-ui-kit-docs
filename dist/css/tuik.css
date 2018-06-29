@@ -2575,3 +2575,81 @@ _:future,
 .tuiToggleSwitch__input:checked + .tuiToggleSwitch__label:after {
   left: 1.6428571em;
 }
+/*------------------------------------*\
+  #VARIABLES
+\*------------------------------------*/
+/*------------------------------------*\
+  #RADIOBUTTONS
+\*------------------------------------*/
+.tuiRadioButton {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  margin-bottom: 0.71428571em;
+}
+.tuiRadioButton__custom {
+  display: none;
+}
+.tuiRadioButton__input {
+  width: 1.1428571em;
+  height: 1.1428571em;
+  margin: 0;
+  opacity: 0;
+}
+.tuiRadioButton__input + .tuiRadioButton__custom {
+  position: relative;
+  top: 0;
+  left: -1.1428571em;
+  display: inline-block;
+  width: 1.0000000em;
+  height: 1.0000000em;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  pointer-events: none;
+  border: 1px solid #d9d9d9;
+  border-radius: 100vh;
+  -webkit-transition: border-color 0.25s ease;
+  -o-transition: border-color 0.25s ease;
+  transition: border-color 0.25s ease;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 0.071428571em 0.071428571em 0 rgba(0, 0, 0, 0.05);
+          box-shadow: 0 0.071428571em 0.071428571em 0 rgba(0, 0, 0, 0.05);
+}
+/* stylelint-disable-next-line */
+.tuiRadioButton__input:checked + .tuiRadioButton__custom {
+  border-color: #0073ec;
+}
+/* stylelint-disable-next-line */
+.tuiRadioButton__input + .tuiRadioButton__custom::after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  content: '';
+}
+/* stylelint-disable-next-line */
+.tuiRadioButton__input:checked + .tuiRadioButton__custom::after {
+  width: 0.71428571em;
+  height: 0.71428571em;
+  margin: 0.14285714em 0 0 0.14285714em;
+  opacity: 1;
+  border-radius: 100vh;
+  background-color: #0073ec;
+}
+/* stylelint-disable-next-line */
+.tuiRadioButton__input[disabled] + .tuiRadioButton__custom,
+.tuiRadioButton__label--disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.tuiRadioButton__label {
+  font-weight: normal;
+  margin: -0.071428571em 0 0 -0.50000000em;
+}
+.tuiRadioButton__label__text {
+  color: #333333;
+}
+.tuiRadioButton__label__description {
+  font-size: 0.85714286em;
+  color: #999999;
+}

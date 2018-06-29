@@ -154,5 +154,13 @@
     "toggleswitchKnobHeight": "1.1428571em",
     "toggleswitchKnobBorderRadius": "50%",
     "toggleswitchKnobBackgroundColor": "#ffffff",
-    "toggleswitchKnobCheckedLeft": "1.6428571em"
+    "toggleswitchKnobCheckedLeft": "1.6428571em",
+    "radioButtonTransitionDuration": "0.25s",
+    "radioButtonTransitionTimingFunction": "ease",
+    "radioButtonInputSize": "1.1428571em",
+    "radioButtonCustomSize": "1.0000000em",
+    "radioButtonCustomBorderColor": "#d9d9d9",
+    "radioButtonCustomBackgroundColor": "#ffffff",
+    "radioButtonCustomCheckedColor": "#0073ec",
+    "radioButtonCustomKnobSize": "0.71428571em"
 }

@@ -5,10 +5,10 @@
     <base href="/"></base>
     <title>
         
-            Button Groups Primary - Tempo UI Kit and Guidelines
+            Radio Buttons - Tempo UI Kit and Guidelines
         
     </title>
-    <meta name="description" content="Button groups primary" />
+    <meta name="description" content="Radio Buttons" />
 
     <!-- TUIK -->
     <link rel="stylesheet" href="dist/css/tuik-typography.css?v=4d360d2d-7e2e-ece2-ab01-da0373d88d61" type="text/css">
@@ -563,7 +563,7 @@
                       
                     
                       
-                        <li class="sg-nav__links__element ">
+                        <li class="sg-nav__links__element sg-nav__links__element-is-active ">
                             <a href="components/radiobuttons">Radio Buttons</a>
                             
                                 <em class="sg-draft-notification">Draft</em>
@@ -637,25 +637,38 @@
         
     
 
-    Button Groups Primary
+    Radio Buttons
     
+        <em class="sg-draft-notification">Draft</em>
 
     
-        <em class="sg-eperimental-notification">This page is hidden</em>
 
     
 </h1>
 
+<p class="sg-p">A radio button is a graphical control element that allows the user to choose only one of a predefined set of mutually exclusive options.</p>
 
-<h2 class="sg-h2">Default button</h2>
+<h2 class="sg-h2" id="radiobuttonDefault">Default</h2>
+<p class="sg-p">A container with a base class <em>tuiRadioButton</em>. It includes an input element with class <em>tuiRadioButton__input</em> and of input type <em>radio</em>. The container also includes a custom span with class <em>tuiRadioButton__custom</em> and a label elment <em>tuiRadioButton__label</em>.</p>
 
 
 
-<article class="sg-example" id="buttonGroupPrimary">
+<article class="sg-example" id="radiobuttonDefault">
     
     <section class="sg-example__render">
-        <div class="tuiButtonGroup">
-   <button class="tuiButton tuiButton--primary">First button</button><button class="tuiButton tuiButton--primary">Mid button</button><button class="tuiButton tuiButton--primary">Last button</button>
+        <div class="tuiRadioButton">
+   <input class="tuiRadioButton__input" name="radioDefault" type="radio" id="radio1" checked="checked">
+   <span class="tuiRadioButton__custom"></span>
+   <label class="tuiRadioButton__label" for="radio1">
+       <span class="tuiRadioButton__label__text">Default radio button</span>
+   </label>
+</div>
+<div class="tuiRadioButton">
+   <input class="tuiRadioButton__input" name="radioDefault" type="radio" id="radio2">
+   <span class="tuiRadioButton__custom"></span>
+   <label class="tuiRadioButton__label" for="radio2">
+       <span class="tuiRadioButton__label__text">Default radio button</span>
+   </label>
 </div>
 
     </section>
@@ -665,8 +678,19 @@
     
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Last button&lt;/button&gt;
+          <pre><code class="html">&lt;div class=&#34;tuiRadioButton&#34;&gt;
+   &lt;input class=&#34;tuiRadioButton__input&#34; name=&#34;radioDefault&#34; type=&#34;radio&#34; id=&#34;radio1&#34; checked&gt;
+   &lt;span class=&#34;tuiRadioButton__custom&#34;&gt;&lt;/span&gt;
+   &lt;label class=&#34;tuiRadioButton__label&#34; for=&#34;radio1&#34;&gt;
+       &lt;span class=&#34;tuiRadioButton__label__text&#34;&gt;Default radio button&lt;/span&gt;
+   &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiRadioButton&#34;&gt;
+   &lt;input class=&#34;tuiRadioButton__input&#34; name=&#34;radioDefault&#34; type=&#34;radio&#34; id=&#34;radio2&#34;&gt;
+   &lt;span class=&#34;tuiRadioButton__custom&#34;&gt;&lt;/span&gt;
+   &lt;label class=&#34;tuiRadioButton__label&#34; for=&#34;radio2&#34;&gt;
+       &lt;span class=&#34;tuiRadioButton__label__text&#34;&gt;Default radio button&lt;/span&gt;
+   &lt;/label&gt;
 &lt;/div&gt;
 </code></pre>
       </section>
@@ -674,8 +698,19 @@
 
       
         <textarea class="sg-example__source__raw" style="display:none">
-          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34;&gt;Last button&lt;/button&gt;
+          &lt;div class=&#34;tuiRadioButton&#34;&gt;
+   &lt;input class=&#34;tuiRadioButton__input&#34; name=&#34;radioDefault&#34; type=&#34;radio&#34; id=&#34;radio1&#34; checked&gt;
+   &lt;span class=&#34;tuiRadioButton__custom&#34;&gt;&lt;/span&gt;
+   &lt;label class=&#34;tuiRadioButton__label&#34; for=&#34;radio1&#34;&gt;
+       &lt;span class=&#34;tuiRadioButton__label__text&#34;&gt;Default radio button&lt;/span&gt;
+   &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiRadioButton&#34;&gt;
+   &lt;input class=&#34;tuiRadioButton__input&#34; name=&#34;radioDefault&#34; type=&#34;radio&#34; id=&#34;radio2&#34;&gt;
+   &lt;span class=&#34;tuiRadioButton__custom&#34;&gt;&lt;/span&gt;
+   &lt;label class=&#34;tuiRadioButton__label&#34; for=&#34;radio2&#34;&gt;
+       &lt;span class=&#34;tuiRadioButton__label__text&#34;&gt;Default radio button&lt;/span&gt;
+   &lt;/label&gt;
 &lt;/div&gt;
 
         </textarea>
@@ -684,16 +719,27 @@
 </article>
 
 
+<h2 class="sg-h2" id="radiobuttonDisabled">Disabled</h2>
+<p class="sg-p">The <em>disabled</em> attribute specifies that the radio button is read-only. The radio button is unusable and un-clickable. Adding the modifier class <em>tuiRadioButton__label--disabled</em> to the label element is also needed.</p>
 
-<h3 class="sg-h3">Disabled</h3>
 
 
-
-<article class="sg-example" id="buttonGroupDisabledFirstPrimary">
+<article class="sg-example" id="radiobuttonDisabled">
     
     <section class="sg-example__render">
-        <div class="tuiButtonGroup">
-   <button class="tuiButton tuiButton--primary" disabled="disabled">Disabled button</button><button class="tuiButton">Mid button</button><button class="tuiButton">Last button</button>
+        <div class="tuiRadioButton">
+   <input class="tuiRadioButton__input" name="radioDisabled" type="radio" id="radio3" checked="checked" disabled="disabled">
+   <span class="tuiRadioButton__custom"></span>
+   <label class="tuiRadioButton__label tuiRadioButton__label--disabled" for="radio3">
+       <span class="tuiRadioButton__label__text">Disabled radio button</span>
+   </label>
+</div>
+<div class="tuiRadioButton">
+   <input class="tuiRadioButton__input" name="radioDisabled" type="radio" id="radio4" disabled="disabled">
+   <span class="tuiRadioButton__custom"></span>
+   <label class="tuiRadioButton__label tuiRadioButton__label--disabled" for="radio4">
+       <span class="tuiRadioButton__label__text">Disabled radio button</span>
+   </label>
 </div>
 
     </section>
@@ -703,8 +749,19 @@
     
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+          <pre><code class="html">&lt;div class=&#34;tuiRadioButton&#34;&gt;
+   &lt;input class=&#34;tuiRadioButton__input&#34; name=&#34;radioDisabled&#34; type=&#34;radio&#34; id=&#34;radio3&#34; checked disabled&gt;
+   &lt;span class=&#34;tuiRadioButton__custom&#34;&gt;&lt;/span&gt;
+   &lt;label class=&#34;tuiRadioButton__label tuiRadioButton__label--disabled&#34; for=&#34;radio3&#34;&gt;
+       &lt;span class=&#34;tuiRadioButton__label__text&#34;&gt;Disabled radio button&lt;/span&gt;
+   &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiRadioButton&#34;&gt;
+   &lt;input class=&#34;tuiRadioButton__input&#34; name=&#34;radioDisabled&#34; type=&#34;radio&#34; id=&#34;radio4&#34; disabled&gt;
+   &lt;span class=&#34;tuiRadioButton__custom&#34;&gt;&lt;/span&gt;
+   &lt;label class=&#34;tuiRadioButton__label tuiRadioButton__label--disabled&#34; for=&#34;radio4&#34;&gt;
+       &lt;span class=&#34;tuiRadioButton__label__text&#34;&gt;Disabled radio button&lt;/span&gt;
+   &lt;/label&gt;
 &lt;/div&gt;
 </code></pre>
       </section>
@@ -712,8 +769,19 @@
 
       
         <textarea class="sg-example__source__raw" style="display:none">
-          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+          &lt;div class=&#34;tuiRadioButton&#34;&gt;
+   &lt;input class=&#34;tuiRadioButton__input&#34; name=&#34;radioDisabled&#34; type=&#34;radio&#34; id=&#34;radio3&#34; checked disabled&gt;
+   &lt;span class=&#34;tuiRadioButton__custom&#34;&gt;&lt;/span&gt;
+   &lt;label class=&#34;tuiRadioButton__label tuiRadioButton__label--disabled&#34; for=&#34;radio3&#34;&gt;
+       &lt;span class=&#34;tuiRadioButton__label__text&#34;&gt;Disabled radio button&lt;/span&gt;
+   &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiRadioButton&#34;&gt;
+   &lt;input class=&#34;tuiRadioButton__input&#34; name=&#34;radioDisabled&#34; type=&#34;radio&#34; id=&#34;radio4&#34; disabled&gt;
+   &lt;span class=&#34;tuiRadioButton__custom&#34;&gt;&lt;/span&gt;
+   &lt;label class=&#34;tuiRadioButton__label tuiRadioButton__label--disabled&#34; for=&#34;radio4&#34;&gt;
+       &lt;span class=&#34;tuiRadioButton__label__text&#34;&gt;Disabled radio button&lt;/span&gt;
+   &lt;/label&gt;
 &lt;/div&gt;
 
         </textarea>
@@ -722,14 +790,29 @@
 </article>
 
 
+<h2 class="sg-h2" id="radiobuttonDescription">Label with description</h2>
+<p class="sg-p">By adding a div with class <em>tuiRadioButton__label__description</em> within the label element user are able to add more detailed description to the label.</p>
 
 
 
-<article class="sg-example" id="buttonGroupDisabledMidPrimary">
+<article class="sg-example" id="radiobuttonDescription">
     
     <section class="sg-example__render">
-        <div class="tuiButtonGroup">
-   <button class="tuiButton">First button</button><button class="tuiButton tuiButton--primary" disabled="disabled">Disabled button</button><button class="tuiButton">Last button</button>
+        <div class="tuiRadioButton">
+   <input class="tuiRadioButton__input" name="radioDescription" type="radio" id="radio5" checked="checked">
+   <span class="tuiRadioButton__custom"></span>
+   <label class="tuiRadioButton__label" for="radio5">
+       <span class="tuiRadioButton__label__text">Radio button with description</span>
+       <div class="tuiRadioButton__label__description">Description</div>
+   </label>
+</div>
+<div class="tuiRadioButton">
+   <input class="tuiRadioButton__input" name="radioDescription" type="radio" id="radio6">
+   <span class="tuiRadioButton__custom"></span>
+   <label class="tuiRadioButton__label" for="radio6">
+       <span class="tuiRadioButton__label__text">Radio button with description</span>
+       <div class="tuiRadioButton__label__description">Description</div>
+   </label>
 </div>
 
     </section>
@@ -739,8 +822,21 @@
     
       <section class="sg-example__source">
           <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+          <pre><code class="html">&lt;div class=&#34;tuiRadioButton&#34;&gt;
+   &lt;input class=&#34;tuiRadioButton__input&#34; name=&#34;radioDescription&#34; type=&#34;radio&#34; id=&#34;radio5&#34; checked&gt;
+   &lt;span class=&#34;tuiRadioButton__custom&#34;&gt;&lt;/span&gt;
+   &lt;label class=&#34;tuiRadioButton__label&#34; for=&#34;radio5&#34;&gt;
+       &lt;span class=&#34;tuiRadioButton__label__text&#34;&gt;Radio button with description&lt;/span&gt;
+       &lt;div class=&#34;tuiRadioButton__label__description&#34;&gt;Description&lt;/div&gt;
+   &lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&#34;tuiRadioButton&#34;&gt;
+   &lt;input class=&#34;tuiRadioButton__input&#34; name=&#34;radioDescription&#34; type=&#34;radio&#34; id=&#34;radio6&#34;&gt;
+   &lt;span class=&#34;tuiRadioButton__custom&#34;&gt;&lt;/span&gt;
+   &lt;label class=&#34;tuiRadioButton__label&#34; for=&#34;radio6&#34;&gt;
+       &lt;span class=&#34;tuiRadioButton__label__text&#34;&gt;Radio button with description&lt;/span&gt;
+       &lt;div class=&#34;tuiRadioButton__label__description&#34;&gt;Description&lt;/div&gt;
+   &lt;/label&gt;
 &lt;/div&gt;
 </code></pre>
       </section>
@@ -748,263 +844,21 @@
 
       
         <textarea class="sg-example__source__raw" style="display:none">
-          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
+          &lt;div class=&#34;tuiRadioButton&#34;&gt;
+   &lt;input class=&#34;tuiRadioButton__input&#34; name=&#34;radioDescription&#34; type=&#34;radio&#34; id=&#34;radio5&#34; checked&gt;
+   &lt;span class=&#34;tuiRadioButton__custom&#34;&gt;&lt;/span&gt;
+   &lt;label class=&#34;tuiRadioButton__label&#34; for=&#34;radio5&#34;&gt;
+       &lt;span class=&#34;tuiRadioButton__label__text&#34;&gt;Radio button with description&lt;/span&gt;
+       &lt;div class=&#34;tuiRadioButton__label__description&#34;&gt;Description&lt;/div&gt;
+   &lt;/label&gt;
 &lt;/div&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-
-
-
-<article class="sg-example" id="buttonGroupDisabledLastPrimary">
-    
-    <section class="sg-example__render">
-        <div class="tuiButtonGroup">
-   <button class="tuiButton">First button</button><button class="tuiButton">Mid button</button><button class="tuiButton tuiButton--primary" disabled="disabled">Disabled button</button>
-</div>
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
-&lt;/div&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary&#34; disabled=&#34;disabled&#34;&gt;Disabled button&lt;/button&gt;
-&lt;/div&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-<h2 class="sg-h2">Active state</h2>
-
-
-
-
-<article class="sg-example" id="buttonGroupFirstActivePrimary">
-    
-    <section class="sg-example__render">
-        <div class="tuiButtonGroup">
-   <button class="tuiButton tuiButton--primary tuiButton-is-active">First button</button><button class="tuiButton">Mid button</button><button class="tuiButton">Last button</button>
-</div>
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
-&lt;/div&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
-&lt;/div&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-
-
-
-<article class="sg-example" id="buttonGroupMidActivePrimary">
-    
-    <section class="sg-example__render">
-        <div class="tuiButtonGroup">
-   <button class="tuiButton">First button</button><button class="tuiButton tuiButton--primary tuiButton-is-active">Mid button</button><button class="tuiButton">Last button</button>
-</div>
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
-&lt;/div&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Last button&lt;/button&gt;
-&lt;/div&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-
-
-
-<article class="sg-example" id="buttonGroupLastActivePrimary">
-    
-    <section class="sg-example__render">
-        <div class="tuiButtonGroup">
-   <button class="tuiButton">First button</button><button class="tuiButton">Mid button</button><button class="tuiButton tuiButton--primary tuiButton-is-active">Last button</button>
-</div>
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;Last button&lt;/button&gt;
-&lt;/div&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;button class=&#34;tuiButton&#34;&gt;First button&lt;/button&gt;&lt;button class=&#34;tuiButton&#34;&gt;Mid button&lt;/button&gt;&lt;button class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;&gt;Last button&lt;/button&gt;
-&lt;/div&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-<h2 class="sg-h2">Using anchors</h2>
-
-
-
-<article class="sg-example" id="buttonGroupSemanticsAnchorsFirstActivePrimary">
-    
-    <section class="sg-example__render">
-        <div class="tuiButtonGroup">
-   <a class="tuiButton tuiButton--primary tuiButton-is-active" href="#">First anchor</a><a class="tuiButton" href="#">Mid anchor</a><a class="tuiButton" href="#">Last anchor</a>
-</div>
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
-&lt;/div&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
-&lt;/div&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-
-
-
-<article class="sg-example" id="buttonGroupSemanticsAnchorsMidActivePrimary">
-    
-    <section class="sg-example__render">
-        <div class="tuiButtonGroup">
-   <a class="tuiButton" href="#">First anchor</a><a class="tuiButton tuiButton--primary tuiButton-is-active" href="#">Mid anchor</a><a class="tuiButton" href="#">Last anchor</a>
-</div>
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;a class=&#34;tuiButton&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
-&lt;/div&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;a class=&#34;tuiButton&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
-&lt;/div&gt;
-
-        </textarea>
-      
-    
-</article>
-
-
-
-
-
-<article class="sg-example" id="buttonGroupSemanticsAnchorsLastActivePrimary">
-    
-    <section class="sg-example__render">
-        <div class="tuiButtonGroup">
-   <a class="tuiButton" href="#">First anchor</a><a class="tuiButton" href="#">Mid anchor</a><a class="tuiButton tuiButton--primary tuiButton-is-active" href="#">Last anchor</a>
-</div>
-
-    </section>
-    
-    
-
-    
-      <section class="sg-example__source">
-          <button class="sg-example__source__try" onclick="sgTryExample(this)" tabindex="-1">Try it!</button>
-          <pre><code class="html">&lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;a class=&#34;tuiButton&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
-&lt;/div&gt;
-</code></pre>
-      </section>
-      
-
-      
-        <textarea class="sg-example__source__raw" style="display:none">
-          &lt;div class=&#34;tuiButtonGroup&#34;&gt;
-   &lt;a class=&#34;tuiButton&#34; href=&#34;#&#34;&gt;First anchor&lt;/a&gt;&lt;a class=&#34;tuiButton&#34;  href=&#34;#&#34;&gt;Mid anchor&lt;/a&gt;&lt;a class=&#34;tuiButton tuiButton--primary tuiButton-is-active&#34;  href=&#34;#&#34;&gt;Last anchor&lt;/a&gt;
+&lt;div class=&#34;tuiRadioButton&#34;&gt;
+   &lt;input class=&#34;tuiRadioButton__input&#34; name=&#34;radioDescription&#34; type=&#34;radio&#34; id=&#34;radio6&#34;&gt;
+   &lt;span class=&#34;tuiRadioButton__custom&#34;&gt;&lt;/span&gt;
+   &lt;label class=&#34;tuiRadioButton__label&#34; for=&#34;radio6&#34;&gt;
+       &lt;span class=&#34;tuiRadioButton__label__text&#34;&gt;Radio button with description&lt;/span&gt;
+       &lt;div class=&#34;tuiRadioButton__label__description&#34;&gt;Description&lt;/div&gt;
+   &lt;/label&gt;
 &lt;/div&gt;
 
         </textarea>
